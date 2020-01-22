@@ -2,13 +2,13 @@
   "private": true,
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/nodejs-monorepo-templates/typescript-monorepo-esm#readme",
+  "homepage": "https://github.com/ksxnodeapps/ts-schema-autogen#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nodejs-monorepo-templates/typescript-monorepo-esm.git"
+    "url": "git+https://github.com/ksxnodeapps/ts-schema-autogen.git"
   },
   "bugs": {
-    "url": "https://github.com/nodejs-monorepo-templates/typescript-monorepo-esm/issues"
+    "url": "https://github.com/ksxnodeapps/ts-schema-autogen/issues"
   },
   "devDependencies": {
     "standard": "^14.3.1",
