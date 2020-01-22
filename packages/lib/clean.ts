@@ -1,5 +1,5 @@
 import { Instruction, FSX, Path } from '@ts-schema-autogen/types'
-import { FileTreeRemovalFailure, Success } from '@ts-schema-autogen/status'
+import { FileTreeRemovalFailure, MultipleFailures, Success } from '@ts-schema-autogen/status'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
 import { FileFormatDescriptor } from './file-format-descriptor'
@@ -22,21 +22,31 @@ export namespace cleanUnit {
 }
 
 export async function clean (param: clean.Param): Promise<clean.Return> {
-  const configResult = await new ConfigLoader(param).loadConfig(param.configFile)
-  if (configResult.code) return configResult
+  const configLoader = new ConfigLoader(param)
+  const errors: Array<
+    Exclude<ConfigLoader.LoaderReturn, Success<any>> |
+    FileTreeRemovalFailure<unknown>
+  > = []
 
-  const removalPromises = cleanUnit({
-    fsx: param.fsx,
-    instruction: configResult.value.instruction
-  })
+  for (const configFile of param.configFiles) {
+    const configResult = await configLoader.loadConfig(configFile)
+    if (configResult.code) {
+      errors.push(configResult)
+      continue
+    }
 
-  const removalErrors: any[] = []
-  for (const promise of removalPromises) {
-    await promise.catch(error => removalErrors.push(error))
+    const removalPromises = cleanUnit({
+      fsx: param.fsx,
+      instruction: configResult.value.instruction
+    })
+
+    for (const promise of removalPromises) {
+      await promise.catch(error => errors.push(new FileTreeRemovalFailure(error)))
+    }
   }
 
-  return removalErrors.length
-    ? new FileTreeRemovalFailure(removalErrors)
+  return errors.length
+    ? new MultipleFailures(errors)
     : new Success(undefined)
 }
 
@@ -45,12 +55,11 @@ export namespace clean {
     readonly fsx: FSX.Mod
     readonly path: Path.Mod
     readonly loaders: readonly FileFormatDescriptor[]
-    readonly configFile: string
+    readonly configFiles: Iterable<string>
   }
 
   type ConfigLoaderFailure = Exclude<ConfigLoader.LoaderReturn, Success<any>>
   export type Return =
-    ConfigLoaderFailure |
-    FileTreeRemovalFailure<unknown[]> |
+    MultipleFailures<Array<ConfigLoaderFailure | FileTreeRemovalFailure<unknown>>> |
     Success<void>
 }
