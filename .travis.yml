@@ -1,0 +1,40 @@
+branches:
+  except:
+    - draft
+    - tmp
+    - /.*\.(draft|tmp)$/
+    - /^(draft|tmp)\..*/
+
+language: node_js
+
+node_js:
+  - '12.11.0'
+  - '13'
+
+cache:
+  directories:
+    - $HOME/.pnpm-store
+    - $HOME/.node-gyp
+    - $HOME/.node_libraries
+
+before_cache:
+  - pnpm store prune
+
+before_install:
+  - curl -L https://unpkg.com/@pnpm/self-installer | node
+  - pnpm --version
+  - bash ci/before-install.sh
+
+install:
+  - pnpm recursive install
+  - bash ci/install.sh
+
+script:
+  - pnpm run test:ci
+  - pnpm run build
+
+after_script:
+  - bash ci/after-script.sh
+
+env:
+  - SHOW_SPAWN_CMD=true
