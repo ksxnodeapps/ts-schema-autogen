@@ -2,7 +2,7 @@ import { ok, err } from '@tsfun/result'
 import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '@tsfun/object'
 import { ensureArray } from '@ts-schema-autogen/utils'
 import { Config, FSX, Path } from '@ts-schema-autogen/types'
-import { FileReadingFailure, FileParsingFailure, CircularReference, Success } from '@ts-schema-autogen/status'
+import { FileReadingFailure, TextParsingFailure, CircularReference, Success } from '@ts-schema-autogen/status'
 import { FileFormatDescriptor } from './file-format-descriptor'
 
 export interface ConfigParseError {
@@ -25,7 +25,7 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
     parseErrors.push({ loader, error: parseResult.error })
   }
 
-  return new FileParsingFailure(parseErrors)
+  return new TextParsingFailure(parseErrors)
 }
 
 export namespace loadConfigFile {
@@ -37,7 +37,7 @@ export namespace loadConfigFile {
 
   export type Return =
     FileReadingFailure |
-    FileParsingFailure<ConfigParseError[]> |
+    TextParsingFailure<ConfigParseError[]> |
     Success<Config>
 }
 
@@ -63,7 +63,7 @@ export namespace loadConfig {
 
   export type Return =
     FileReadingFailure |
-    FileParsingFailure<ConfigParseError[]>
+    TextParsingFailure<ConfigParseError[]>
 }
 
 export class ConfigLoader {
@@ -115,7 +115,7 @@ export namespace ConfigLoader {
 
   export type LoaderReturn =
     FileReadingFailure |
-    FileParsingFailure<ConfigParseError[]> |
+    TextParsingFailure<ConfigParseError[]> |
     CircularReference<string[]> |
     Success<Config>
 }

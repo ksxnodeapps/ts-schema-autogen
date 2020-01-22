@@ -19,7 +19,7 @@ import {
   OutputFileConflict,
   FileWritingFailure,
   FileReadingFailure,
-  FileParsingFailure,
+  TextParsingFailure,
   CircularReference,
   Success
 } from '@ts-schema-autogen/status'
@@ -159,7 +159,7 @@ export namespace SchemaWriter {
   export type SingleConfigReturn<Definition> =
     FileReadingFailure |
     FileWritingFailure |
-    FileParsingFailure<ConfigParseError[]> |
+    TextParsingFailure<ConfigParseError[]> |
     CircularReference<string[]> |
     OutputFileConflict |
     Success<Generator<FileWritingInstruction<Definition>, void>>

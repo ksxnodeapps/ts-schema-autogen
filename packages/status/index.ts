@@ -4,7 +4,7 @@ import { OutputDescriptor } from '@ts-schema-autogen/types'
 export enum Status {
   CircularReference = 8,
   FileRemovalFailure = 7,
-  FileParsingFailure = 6,
+  TextParsingFailure = 6,
   FileReadingFailure = 5,
   FileWritingFailure = 4,
   OutputFileConflict = 3,
@@ -79,9 +79,9 @@ export class FileReadingFailure extends Failure<unknown> {
   public readonly code = Status.FileReadingFailure
 }
 
-/** Failed to parse content of a file */
-export class FileParsingFailure<Error> extends Failure<Error> {
-  public readonly code = Status.FileParsingFailure
+/** Failed to parse a text data into structured data */
+export class TextParsingFailure<Error> extends Failure<Error> {
+  public readonly code = Status.TextParsingFailure
 }
 
 /** Failed to delete a file */
