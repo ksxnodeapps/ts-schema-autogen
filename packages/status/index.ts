@@ -3,7 +3,7 @@ import { OutputDescriptor } from '@ts-schema-autogen/types'
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
   CircularReference = 8,
-  FileRemovalFailure = 7,
+  FileTreeRemovalFailure = 7,
   TextParsingFailure = 6,
   FileReadingFailure = 5,
   FileWritingFailure = 4,
@@ -84,9 +84,9 @@ export class TextParsingFailure<Error> extends Failure<Error> {
   public readonly code = Status.TextParsingFailure
 }
 
-/** Failed to delete a file */
-export class FileRemovalFailure<Error> extends Failure<Error> {
-  public readonly code = Status.FileRemovalFailure
+/** Failed to delete a file or directory */
+export class FileTreeRemovalFailure<Error> extends Failure<Error> {
+  public readonly code = Status.FileTreeRemovalFailure
 }
 
 /** Two or more configs inherit from each other directly or indirectly */

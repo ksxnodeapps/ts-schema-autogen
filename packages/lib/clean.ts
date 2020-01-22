@@ -1,5 +1,5 @@
 import { Instruction, FSX, Path } from '@ts-schema-autogen/types'
-import { FileRemovalFailure, Success } from '@ts-schema-autogen/status'
+import { FileTreeRemovalFailure, Success } from '@ts-schema-autogen/status'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
 import { FileFormatDescriptor } from './file-format-descriptor'
@@ -36,7 +36,7 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
   }
 
   return removalErrors.length
-    ? new FileRemovalFailure(removalErrors)
+    ? new FileTreeRemovalFailure(removalErrors)
     : new Success(undefined)
 }
 
@@ -51,6 +51,6 @@ export namespace clean {
   type ConfigLoaderFailure = Exclude<ConfigLoader.LoaderReturn, Success<any>>
   export type Return =
     ConfigLoaderFailure |
-    FileRemovalFailure<unknown[]> |
+    FileTreeRemovalFailure<unknown[]> |
     Success<void>
 }
