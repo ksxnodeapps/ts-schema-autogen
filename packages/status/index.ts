@@ -72,6 +72,18 @@ export abstract class Failure<Error> extends ResultBase {
   }
 }
 
+export abstract class FileSystemFailure<Error> extends Failure<Error> {
+  constructor (
+    /** Path to the filesystem entity that the failed operation was attempted on */
+    public readonly path: string,
+
+    /** Exact error message */
+    error: Error
+  ) {
+    super(error)
+  }
+}
+
 /** More than one errors */
 export class MultipleFailures<Error extends Iterable<Failure<any>>> extends Failure<Error> {
   public readonly code = Status.MultipleFailures
@@ -87,12 +99,12 @@ export namespace OutputFileConflict {
 }
 
 /** Failed to write data to a file */
-export class FileWritingFailure extends Failure<readonly any[]> {
+export class FileWritingFailure extends FileSystemFailure<unknown> {
   public readonly code = Status.FileWritingFailure
 }
 
 /** Failed to read data from a file */
-export class FileReadingFailure extends Failure<unknown> {
+export class FileReadingFailure extends FileSystemFailure<unknown> {
   public readonly code = Status.FileReadingFailure
 }
 
@@ -102,7 +114,7 @@ export class TextParsingFailure<Error> extends Failure<Error> {
 }
 
 /** Failed to delete a file or directory */
-export class FileTreeRemovalFailure<Error> extends Failure<Error> {
+export class FileTreeRemovalFailure<Error> extends FileSystemFailure<Error> {
   public readonly code = Status.FileTreeRemovalFailure
 }
 

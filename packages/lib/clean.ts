@@ -5,13 +5,13 @@ import { ensureOutputDescriptorArray } from './output-descriptor'
 import { FileFormatDescriptor } from './file-format-descriptor'
 import { ConfigLoader } from './load-config'
 
-export function cleanUnit (param: cleanUnit.Param) {
+export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
   const { remove } = param.fsx
-  const promises = listSymbolInstruction(param.instruction)
+  const result = listSymbolInstruction(param.instruction)
     .map(instruction => ensureOutputDescriptorArray(instruction.output))
     .reduce((acc, cur) => [...acc, ...cur], [])
-    .map(desc => remove(desc.filename))
-  return promises
+    .map(({ filename }) => ({ filename, promise: remove(filename) }))
+  return result
 }
 
 export namespace cleanUnit {
@@ -19,6 +19,13 @@ export namespace cleanUnit {
     readonly fsx: FSX.Mod
     readonly instruction: Instruction
   }
+
+  export interface ReturnItem {
+    readonly filename: string
+    readonly promise: Promise<void>
+  }
+
+  export type Return = ReturnItem[]
 }
 
 export async function clean (param: clean.Param): Promise<clean.Return> {
@@ -35,13 +42,15 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
       continue
     }
 
-    const removalPromises = cleanUnit({
+    const removalResults = cleanUnit({
       fsx: param.fsx,
       instruction: configResult.value.instruction
     })
 
-    for (const promise of removalPromises) {
-      await promise.catch(error => errors.push(new FileTreeRemovalFailure(error)))
+    for (const { filename, promise } of removalResults) {
+      await promise.catch(error =>
+        errors.push(new FileTreeRemovalFailure(filename, error))
+      )
     }
   }
 

@@ -65,7 +65,8 @@ export async function writeSchemaFiles (param: writeSchemaFiles.Param): Promise<
   const { fsx, instruction } = param
   const duplicationCheckingArray: OutputDescriptor[] = []
   const duplicationMap = new Map<string, OutputDescriptor[]>()
-  const writeFuncs: Array<() => Promise<void>> = []
+  const writeFuncs: Array<() => Promise<unknown>> = []
+  const writeErrors: FileWritingFailure[] = []
 
   for (const { schema, instruction: { output } } of instruction) {
     const descriptors = ensureOutputDescriptorArray(output)
@@ -80,17 +81,18 @@ export async function writeSchemaFiles (param: writeSchemaFiles.Param): Promise<
       }
 
       duplicationCheckingArray.push(desc)
-      writeFuncs.push(() => fsx.writeFile(filename, serialize(schema, desc)))
+      writeFuncs.push(
+        () => fsx
+          .writeFile(filename, serialize(schema, desc))
+          .catch(error => writeErrors.push(new FileWritingFailure(filename, error)))
+      )
     }
   }
 
   if (duplicationMap.size) return new OutputFileConflict(duplicationMap)
 
-  const writeErrors: any[] = []
-  await Promise.all(
-    writeFuncs.map(fn => fn().catch(error => writeErrors.push(error)))
-  )
-  if (writeErrors.length) return new FileWritingFailure(writeErrors)
+  await Promise.all(writeFuncs.map(fn => fn()))
+  if (writeErrors.length) return new MultipleFailures(writeErrors)
 
   return new Success(undefined)
 }
@@ -103,7 +105,7 @@ export namespace writeSchemaFiles {
 
   export type Return =
     OutputFileConflict |
-    FileWritingFailure |
+    MultipleFailures<FileWritingFailure[]> |
     Success<void>
 }
 
