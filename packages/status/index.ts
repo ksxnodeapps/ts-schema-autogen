@@ -2,14 +2,31 @@ import { OutputDescriptor } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
+  /** Two or more configs inherit from each other directly or indirectly */
   CircularReference = 8,
+
+  /** Failed to delete a file or directory */
   FileTreeRemovalFailure = 7,
+
+  /** Failed to parse text data into structured data */
   TextParsingFailure = 6,
+
+  /** Failed to read data from a file */
   FileReadingFailure = 5,
+
+  /** Failed to write data to a file */
   FileWritingFailure = 4,
+
+  /** More than one configs target the same output file */
   OutputFileConflict = 3,
+
+  /** More than one errors */
   MultipleFailures = 2,
+
+  /** Failures unaccounted for */
   FatalError = 1,
+
+  /** Operation succeeded */
   Success = 0
 }
 
@@ -60,7 +77,7 @@ export class MultipleFailures<Error extends Iterable<Failure<any>>> extends Fail
   public readonly code = Status.MultipleFailures
 }
 
-/** Multiple config target one output file */
+/** Multiple configs target the same output file */
 export class OutputFileConflict extends Failure<OutputFileConflict.Error> {
   public readonly code = Status.OutputFileConflict
 }
@@ -69,12 +86,12 @@ export namespace OutputFileConflict {
   export interface Error extends Map<string, readonly OutputDescriptor[]> {}
 }
 
-/** Failed to write a file */
+/** Failed to write data to a file */
 export class FileWritingFailure extends Failure<readonly any[]> {
   public readonly code = Status.FileWritingFailure
 }
 
-/** Failed to read a file */
+/** Failed to read data from a file */
 export class FileReadingFailure extends Failure<unknown> {
   public readonly code = Status.FileReadingFailure
 }
