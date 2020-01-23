@@ -1,6 +1,5 @@
 import { MaybeArray, ensureArray } from '@ts-schema-autogen/utils'
 import { OutputDescriptor } from '@ts-schema-autogen/types'
-export { OutputDescriptor }
 
 /**
  * Convert an output filename or descriptor into a descriptor
