@@ -37,3 +37,18 @@ export namespace Path {
     resolve (base: string, ...paths: string[]): string
   }
 }
+
+/** Interfaces of process */
+export namespace Process {
+  export interface Mod {
+    cwd (): string
+  }
+}
+
+/** Interfaces of console */
+export namespace Console {
+  export interface Mod {
+    info (...args: any[]): void
+    error (...args: any[]): void
+  }
+}
