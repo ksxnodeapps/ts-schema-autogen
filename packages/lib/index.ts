@@ -1,6 +1,7 @@
 export * from '@ts-schema-autogen/types'
 export * from '@ts-schema-autogen/status'
 export * from './clean'
+export * from './config-parser'
 export * from './generate'
 export * from './instruction'
 export * from './list-config'
