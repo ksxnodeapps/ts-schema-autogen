@@ -67,16 +67,6 @@ const MERGE_OMITTED_KEYS = ['input', 'list', 'output', 'symbol'] as const
 const MERGE_CONFLICT_RESOLVER = ([value]: [unknown, unknown]) =>
   value === undefined ? PropertyPreference.Right : PropertyPreference.Left
 
-export namespace loadConfig {
-  export interface Param extends loadConfigFile.Param {
-    readonly path: Path.Mod
-  }
-
-  export type Return =
-    FileReadingFailure |
-    TextParsingFailure<ConfigParseError[]>
-}
-
 /** Load and cache config files */
 export class ConfigLoader {
   constructor (private readonly param: ConfigLoader.ConstructorParam) {}
