@@ -1,7 +1,7 @@
 import { Result, tryExec } from '@tsfun/result'
 import { Config } from '@ts-schema-autogen/types'
 
-export interface FileFormatDescriptor {
+export interface ConfigParser {
   /**
    * Should the loader accept the file?
    * @param filename Path to the file
@@ -16,7 +16,7 @@ export interface FileFormatDescriptor {
   parseConfigText (text: string, filename: string): Result<Config, unknown>
 }
 
-export async function createJsonFormatDescriptor (): Promise<FileFormatDescriptor> {
+export async function createJsonFormatDescriptor (): Promise<ConfigParser> {
   const { extname } = await import('path')
   const EXT = ['.json', '']
   const testFileName = (filename: string) => EXT.includes(extname(filename))
@@ -24,7 +24,7 @@ export async function createJsonFormatDescriptor (): Promise<FileFormatDescripto
   return { testFileName, parseConfigText }
 }
 
-export async function createYamlFormatDescriptor (): Promise<FileFormatDescriptor> {
+export async function createYamlFormatDescriptor (): Promise<ConfigParser> {
   const { extname } = await import('path')
   const { safeLoad } = await import('js-yaml')
   const EXT = ['.yaml', '.yml', '']

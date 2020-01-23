@@ -3,12 +3,12 @@ import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '
 import { ensureArray } from '@ts-schema-autogen/utils'
 import { Config, FSX, Path } from '@ts-schema-autogen/types'
 import { FileReadingFailure, TextParsingFailure, CircularReference, Success } from '@ts-schema-autogen/status'
-import { FileFormatDescriptor } from './file-format-descriptor'
+import { ConfigParser } from './config-parser'
 
 /** Error carried by {@link TextParsingFailure} */
 export interface ConfigParseError {
   /** Used parser */
-  loader: FileFormatDescriptor
+  parser: ConfigParser
 
   /** Error that `loader.parseConfigText` thrown */
   error: unknown
@@ -23,11 +23,11 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
 
   const parseErrors = []
 
-  for (const loader of param.loaders) {
-    if (!loader.testFileName(filename)) continue
-    const parseResult = loader.parseConfigText(text, filename)
+  for (const parser of param.parsers) {
+    if (!parser.testFileName(filename)) continue
+    const parseResult = parser.parseConfigText(text, filename)
     if (parseResult.tag) return new Success(parseResult.value)
-    parseErrors.push({ loader, error: parseResult.error })
+    parseErrors.push({ parser, error: parseResult.error })
   }
 
   return new TextParsingFailure(parseErrors)
@@ -42,7 +42,7 @@ export namespace loadConfigFile {
     readonly filename: string
 
     /** List of parsers to be attempted on the config file */
-    readonly loaders: Iterable<FileFormatDescriptor>
+    readonly parsers: Iterable<ConfigParser>
   }
 
   export type Return =
@@ -118,7 +118,7 @@ export namespace ConfigLoader {
     readonly path: Path.Mod
 
     /** Parsers to be attempted on each config file */
-    readonly loaders: readonly FileFormatDescriptor[]
+    readonly parsers: readonly ConfigParser[]
   }
 
   export type LoaderReturn =

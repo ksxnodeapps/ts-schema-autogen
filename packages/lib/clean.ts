@@ -3,7 +3,7 @@ import { MaybeAsyncIterable } from '@ts-schema-autogen/utils'
 import { FileTreeRemovalFailure, MultipleFailures, Success } from '@ts-schema-autogen/status'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
-import { FileFormatDescriptor } from './file-format-descriptor'
+import { ConfigParser } from './config-parser'
 import { ConfigLoader } from './load-config'
 
 /** Determine output files from instruction and delete them */
@@ -76,8 +76,8 @@ export namespace clean {
     /** `path` module to get directory names and resolve paths */
     readonly path: Path.Mod
 
-    /** Descriptors to convert text data to structured data */
-    readonly loaders: readonly FileFormatDescriptor[]
+    /** Parsers to convert text data to structured data */
+    readonly parsers: readonly ConfigParser[]
 
     /** List of config filenames */
     readonly configFiles: MaybeAsyncIterable<string>
