@@ -15,16 +15,25 @@ export namespace TJS {
 /** Interfaces of fs-extra */
 export namespace FSX {
   export interface Mod {
+    stat (path: string): Promise<Stats>
+    readdir (dirname: string): Promise<readonly string[]>
     readFile (filename: string): Promise<string>
     writeFile (filename: string, content: string): Promise<void>
     remove (filename: string): Promise<void>
+  }
+
+  export interface Stats {
+    isFile (): boolean
+    isDirectory (): boolean
   }
 }
 
 /** Interfaces of path */
 export namespace Path {
   export interface Mod {
+    join (base: string, ...paths: string[]): string
     dirname (path: string): string
+    basename (path: string): string
     resolve (base: string, ...paths: string[]): string
   }
 }
