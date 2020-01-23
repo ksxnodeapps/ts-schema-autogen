@@ -3,8 +3,8 @@ import { addProperty, objectExtends } from '@tsfun/object'
 import { getAsyncArray } from '@ts-schema-autogen/utils'
 import { Status } from '@ts-schema-autogen/status'
 import { SchemaWriter, listConfigFiles } from '@ts-schema-autogen/lib'
-import { ModuleSet } from './module-set'
-import parsers from './parsers'
+import { ModuleSet } from '../module-set'
+import parsers from '../parsers'
 
 export async function generate<Prog, Def> (param: generate.Param<Prog, Def>) {
   const { modules } = param
