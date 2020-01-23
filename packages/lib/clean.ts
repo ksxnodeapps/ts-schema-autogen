@@ -5,6 +5,7 @@ import { ensureOutputDescriptorArray } from './output-descriptor'
 import { FileFormatDescriptor } from './file-format-descriptor'
 import { ConfigLoader } from './load-config'
 
+/** Determine output files from instruction and delete them */
 export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
   const { remove } = param.fsx
   const result = listSymbolInstruction(param.instruction)
@@ -16,18 +17,25 @@ export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
 
 export namespace cleanUnit {
   export interface Param {
+    /** `fs-extra` module to perform file deletion */
     readonly fsx: FSX.Mod
+
+    /** Instruction whose output files need to be deleted */
     readonly instruction: Instruction
   }
 
   export interface ReturnItem {
+    /** Path to the deleted file */
     readonly filename: string
+
+    /** Promise that resolves when deletion completes */
     readonly promise: Promise<void>
   }
 
   export type Return = ReturnItem[]
 }
 
+/** Determine output files from multiple configs and delete them */
 export async function clean (param: clean.Param): Promise<clean.Return> {
   const configLoader = new ConfigLoader(param)
   const errors: Array<
@@ -61,9 +69,16 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
 
 export namespace clean {
   export interface Param {
+    /** `fs-extra` module to perform file deletion */
     readonly fsx: FSX.Mod
+
+    /** `path` module to get directory names and resolve paths */
     readonly path: Path.Mod
+
+    /** Descriptors to convert text data to structured data */
     readonly loaders: readonly FileFormatDescriptor[]
+
+    /** List of config filenames */
     readonly configFiles: Iterable<string>
   }
 

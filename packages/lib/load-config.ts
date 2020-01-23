@@ -5,11 +5,16 @@ import { Config, FSX, Path } from '@ts-schema-autogen/types'
 import { FileReadingFailure, TextParsingFailure, CircularReference, Success } from '@ts-schema-autogen/status'
 import { FileFormatDescriptor } from './file-format-descriptor'
 
+/** Error carried by {@link TextParsingFailure} */
 export interface ConfigParseError {
+  /** Used parser */
   loader: FileFormatDescriptor
+
+  /** Error that `loader.parseConfigText` thrown */
   error: unknown
 }
 
+/** Load a config file */
 export async function loadConfigFile (param: loadConfigFile.Param): Promise<loadConfigFile.Return> {
   const { filename } = param
   const readingResult = await param.fsx.readFile(filename).then(ok, err)
@@ -30,8 +35,13 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
 
 export namespace loadConfigFile {
   export interface Param {
+    /** `fs-extra` module to read config file */
     readonly fsx: FSX.Mod
+
+    /** Path to the config file */
     readonly filename: string
+
+    /** List of parsers to be attempted on the config file */
     readonly loaders: Iterable<FileFormatDescriptor>
   }
 
@@ -41,6 +51,7 @@ export namespace loadConfigFile {
     Success<Config>
 }
 
+/** Merge a config with extensions */
 export function mergeConfig (primary: Config, ...inherited: Config[]): Config {
   const newInstruction = inherited.reduce(
     (instruction, config) => deepMergeWithPreference(
@@ -66,6 +77,7 @@ export namespace loadConfig {
     TextParsingFailure<ConfigParseError[]>
 }
 
+/** Load and cache config files */
 export class ConfigLoader {
   constructor (private readonly param: ConfigLoader.ConstructorParam) {}
   private readonly simpleCache = new Map<string, Config>()
@@ -101,6 +113,7 @@ export class ConfigLoader {
     return new Success(config)
   }
 
+  /** Load a config file from cache or from filesystem */
   public loadConfig (filename: string) {
     return this.prvLoadConfig(filename, [])
   }
@@ -108,8 +121,13 @@ export class ConfigLoader {
 
 export namespace ConfigLoader {
   export interface ConstructorParam {
+    /** `fs-extra` module to read config files */
     readonly fsx: FSX.Mod
+
+    /** `path` module */
     readonly path: Path.Mod
+
+    /** Parsers to be attempted on each config file */
     readonly loaders: readonly FileFormatDescriptor[]
   }
 
