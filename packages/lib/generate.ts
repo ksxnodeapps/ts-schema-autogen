@@ -156,7 +156,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
 
   /**
    * Write schemas according to multiple config files
-   * @param configPaths Paths to config files
+   * @param configPaths List of paths to config files
    */
   public async writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn> {
     const { errors, instruction } = SchemaWriter.joinCfgRes(
