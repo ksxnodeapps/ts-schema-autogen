@@ -2,7 +2,9 @@ dependencies:
   '@ts-schema-autogen/lib': 'link:../lib'
   '@ts-schema-autogen/status': 'link:../status'
   '@ts-schema-autogen/types': 'link:../types'
+  '@ts-schema-autogen/utils': 'link:../utils'
   '@tsfun/object': 0.0.14
+  '@tsfun/pipe': 0.0.10
   '@types/node': 13.1.8
   '@types/yargs': 15.0.1
   tslib: 1.10.0
@@ -17,6 +19,23 @@ packages:
     dev: false
     resolution:
       integrity: sha512-MqH27rg1J+4CBYC0n4WTaULUNjnRj1y9vzV6ndXwnM/finXy7fdCA1kKBxgs7vIyMFTkBHkqMOt8Fq90MCyskA==
+  /@tsfun/pipe/0.0.10:
+    dependencies:
+      '@tsfun/tap': 0.0.9
+      '@types/node': 13.1.8
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-WrQoqGJ5OhumvtNwz7A7s88Y/2jjEayfkS6fWsnZWX2q2miIPYxb+TiG51y5V15zfcbRFY4p0DbwYv8Z3EKd9A==
+  /@tsfun/tap/0.0.9:
+    dependencies:
+      '@types/node': 13.1.8
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-00ULLfaVuFb4H0KyHZqutAuNE3WewDEZzUt+fQifl83hElfO+AX5yCoxjMi7e4JZX0cJi/pmce6HuEOhJOzqdg==
   /@types/color-name/1.1.1:
     dev: false
     resolution:
@@ -232,7 +251,9 @@ specifiers:
   '@ts-schema-autogen/lib': ^0.0.0
   '@ts-schema-autogen/status': ^0.0.0
   '@ts-schema-autogen/types': ^0.0.0
+  '@ts-schema-autogen/utils': ^0.0.0
   '@tsfun/object': ^0.0.14
+  '@tsfun/pipe': ^0.0.10
   '@types/node': ^13.1.8
   '@types/yargs': ^15.0.1
   tslib: ^1.10.0
