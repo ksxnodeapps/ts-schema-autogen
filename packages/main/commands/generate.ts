@@ -3,10 +3,12 @@ import { addProperty, objectExtends } from '@tsfun/object'
 import { getAsyncArray } from '@ts-schema-autogen/utils'
 import { Status } from '@ts-schema-autogen/status'
 import { SchemaWriter, listConfigFiles } from '@ts-schema-autogen/lib'
-import { ModuleSet } from '../module-set'
+import { base } from '../param'
 import parsers from '../parsers'
 
-export async function cmdGenerate<Prog, Def> (param: cmdGenerate.Param<Prog, Def>) {
+export interface GenerateParam<Program, Definition> extends base.Param<Program, Definition> {}
+
+export async function cmdGenerate<Prog, Def> (param: GenerateParam<Prog, Def>) {
   const { modules } = param
   const { console } = modules
   const { basename, ignored } = param.args
@@ -26,16 +28,4 @@ export async function cmdGenerate<Prog, Def> (param: cmdGenerate.Param<Prog, Def
 
   console.info('[SUCCESS]')
   return Status.Success
-}
-
-export namespace cmdGenerate {
-  export interface Param<Program, Definition> {
-    readonly modules: ModuleSet<Program, Definition>
-    readonly args: CliArguments
-  }
-
-  export interface CliArguments {
-    readonly basename: string
-    readonly ignored: readonly string[]
-  }
 }
