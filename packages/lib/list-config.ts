@@ -1,6 +1,7 @@
 import traverse from 'fast-traverse'
 import { FSX, Path } from '@ts-schema-autogen/types'
 
+/** List all config files within a directory recursively */
 export async function * listConfigFiles (param: listConfigFiles.Param) {
   const { ignored } = param
   const { stat, readdir } = param.fsx
