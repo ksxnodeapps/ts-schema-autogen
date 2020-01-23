@@ -1,4 +1,5 @@
 import { Instruction, FSX, Path } from '@ts-schema-autogen/types'
+import { MaybeAsyncIterable } from '@ts-schema-autogen/utils'
 import { FileTreeRemovalFailure, MultipleFailures, Success } from '@ts-schema-autogen/status'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
@@ -43,7 +44,7 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
     FileTreeRemovalFailure<unknown>
   > = []
 
-  for (const configFile of param.configFiles) {
+  for await (const configFile of param.configFiles) {
     const configResult = await configLoader.loadConfig(configFile)
     if (configResult.code) {
       errors.push(configResult)
@@ -79,7 +80,7 @@ export namespace clean {
     readonly loaders: readonly FileFormatDescriptor[]
 
     /** List of config filenames */
-    readonly configFiles: Iterable<string>
+    readonly configFiles: MaybeAsyncIterable<string>
   }
 
   type ConfigLoaderFailure = Exclude<ConfigLoader.LoaderReturn, Success<any>>
