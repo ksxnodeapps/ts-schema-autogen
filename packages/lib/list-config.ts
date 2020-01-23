@@ -1,17 +1,24 @@
-import { Item, traverse } from 'fast-traverse'
+import traverse from 'fast-traverse'
 import { FSX, Path } from '@ts-schema-autogen/types'
 
-export function listConfigFiles (param: listConfigFiles.Param): listConfigFiles.Return {
+export async function * listConfigFiles (param: listConfigFiles.Param) {
   const { ignored } = param
   const { stat, readdir } = param.fsx
   const { join } = param.path
-  return traverse({
+
+  const traversalResults = traverse({
     deep: item => !ignored.includes(item.basename),
     dirname: param.root,
     stat,
     readdir,
     join
   })
+
+  for await (const item of traversalResults) {
+    for (const basename of item.list) {
+      yield join(item.dirname, basename)
+    }
+  }
 }
 
 export namespace listConfigFiles {
@@ -31,7 +38,4 @@ export namespace listConfigFiles {
     /** Config basename */
     readonly basename: string
   }
-
-  export interface Return
-  extends AsyncGenerator<Item<string | undefined, string, readonly string[]>> {}
 }
