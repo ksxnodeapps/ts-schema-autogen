@@ -4,7 +4,7 @@ import { CompilerOptions, Settings } from './types'
 export namespace TJS {
   export interface Mod<Program, Definition> {
     getProgramFromFiles (files: string[], compilerOptions?: CompilerOptions, basePath?: string): Program
-    buildGenerator (program: Program, settings?: Settings): Generator<Definition>
+    buildGenerator (program: Program, settings?: Settings): Generator<Definition> | null
   }
 
   export interface Generator<Definition> {

@@ -44,6 +44,8 @@ export function * generateUnit<
   )
   const generator = buildGenerator(program, instruction.schemaSettings)
 
+  if (!generator) throw new Error('Failed to build generator')
+
   for (const symbolInstruction of listSymbolInstruction(instruction)) {
     const schema = generator.getSchemaForSymbol(symbolInstruction.symbol)
     yield { instruction: symbolInstruction, schema }
