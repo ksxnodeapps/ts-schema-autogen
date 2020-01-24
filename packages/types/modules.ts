@@ -48,7 +48,11 @@ export namespace Process {
 /** Interfaces of console */
 export namespace Console {
   export interface Mod {
-    info (...args: any[]): void
-    error (...args: any[]): void
+    readonly info: LogFunc
+    readonly error: LogFunc
+  }
+
+  export interface LogFunc {
+    (...args: any[]): void
   }
 }
