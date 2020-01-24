@@ -15,7 +15,7 @@ export async function cmdGenerate<Prog, Def> (param: GenerateParam<Prog, Def>) {
   const writeResult = await writer.writeSchemas(await configFilesPromise)
   if (writeResult.code) {
     console.error('[ERROR] Failed to generate JSON schemas')
-    console.error(writeResult) // TODO: Implement Failure::toString() and use it here
+    writeResult.print(console.error)
     return writeResult.code
   }
 

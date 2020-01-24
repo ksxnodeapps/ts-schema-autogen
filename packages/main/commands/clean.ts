@@ -19,7 +19,7 @@ export async function cmdClean (param: CleanParam) {
   }))
   if (cleanResult.code) {
     console.error('[ERROR] Failed to clean')
-    console.error(cleanResult) // TODO: Implement toString and use it
+    cleanResult.print(console.error)
     return cleanResult.code
   }
   console.info('[SUCCESS]')
