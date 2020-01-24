@@ -1,4 +1,5 @@
-import { inspect } from 'util' // TODO: Create wrapper that adds indent to inspect
+import { inspect } from 'util'
+import { iterateIndentedLines } from '@ts-schema-autogen/utils'
 import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
@@ -99,7 +100,8 @@ export abstract class FileSystemFailure<Error> extends Failure<Error> {
   public * log () {
     yield this.name
     yield Failure.indent(1) + 'path: ' + this.path
-    yield Failure.indent(1) + 'error: ' + inspect(this.error)
+    yield Failure.indent(1) + 'error:'
+    yield * iterateIndentedLines(2, inspect(this.error))
   }
 }
 
@@ -153,7 +155,7 @@ extends Failure<readonly Error[]> {
     for (const item of this.error) {
       yield Failure.indent(1) + item.parser.name
       for (const error of item.error) {
-        yield Failure.indent(2) + inspect(error)
+        yield * iterateIndentedLines(2, inspect(error))
       }
     }
   }
