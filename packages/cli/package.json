@@ -1,0 +1,33 @@
+{
+  "name": "@ts-schema-autogen/cli",
+  "version": "0.0.0",
+  "description": "Read instruction files and generate json schema files",
+  "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/ksxnodeapps/ts-schema-autogen#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksxnodeapps/ts-schema-autogen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ksxnodeapps/ts-schema-autogen/issues"
+  },
+  "keywords": [
+    "typescript",
+    "json",
+    "schema",
+    "generate",
+    "auto"
+  ],
+  "sideEffects": false,
+  "dependencies": {
+    "typescript-json-schema": "^0.42.0",
+    "fs-extra": "^8.1.0",
+    "yargs": "^15.1.0",
+    "tslib": "^1.10.0",
+    "@ts-schema-autogen/main": "^0.0.0",
+    "@types/fs-extra": "^8.0.1",
+    "@types/yargs": "^15.0.1",
+    "@types/node": "^13.1.8"
+  }
+}
