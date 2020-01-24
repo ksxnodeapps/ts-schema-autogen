@@ -47,7 +47,7 @@ export namespace loadConfigFile {
 
   export type Return =
     FileReadingFailure |
-    TextParsingFailure<ConfigParseError[]> |
+    TextParsingFailure<ConfigParseError> |
     Success<Config>
 }
 
@@ -123,7 +123,7 @@ export namespace ConfigLoader {
 
   export type LoaderReturn =
     FileReadingFailure |
-    TextParsingFailure<ConfigParseError[]> |
-    CircularReference<string[]> |
+    TextParsingFailure<ConfigParseError> |
+    CircularReference |
     Success<Config>
 }

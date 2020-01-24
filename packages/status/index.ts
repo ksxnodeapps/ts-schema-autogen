@@ -1,4 +1,5 @@
-import { OutputDescriptor } from '@ts-schema-autogen/types'
+import { inspect } from 'util' // TODO: Create wrapper that adds indent to inspect
+import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
@@ -70,6 +71,18 @@ export abstract class Failure<Error> extends ResultBase {
   ) {
     super()
   }
+
+  /** Return an iterable of lines */
+  public abstract log (): Iterable<string>
+
+  /** Use `log` to log lines from `this.log()` */
+  public print (log: Console.LogFunc): void {
+    for (const line of this.log()) {
+      log(line)
+    }
+  }
+
+  protected static indent = (level: number) => ' '.repeat(4 * level)
 }
 
 export abstract class FileSystemFailure<Error> extends Failure<Error> {
@@ -82,16 +95,38 @@ export abstract class FileSystemFailure<Error> extends Failure<Error> {
   ) {
     super(error)
   }
+
+  public * log () {
+    yield this.name
+    yield Failure.indent(1) + 'path: ' + this.path
+    yield Failure.indent(1) + 'error: ' + inspect(this.error)
+  }
 }
 
 /** More than one errors */
 export class MultipleFailures<Error extends Iterable<Failure<any>>> extends Failure<Error> {
   public readonly code = Status.MultipleFailures
+
+  public * log () {
+    yield this.name
+    for (const item of this.error) {
+      for (const line of item.log()) {
+        yield Failure.indent(1) + line
+      }
+    }
+  }
 }
 
 /** Multiple configs target the same output file */
 export class OutputFileConflict extends Failure<OutputFileConflict.Error> {
   public readonly code = Status.OutputFileConflict
+
+  public * log () {
+    yield this.name
+    for (const [filename] of this.error) {
+      yield Failure.indent(1) + filename
+    }
+  }
 }
 
 export namespace OutputFileConflict {
@@ -109,8 +144,32 @@ export class FileReadingFailure extends FileSystemFailure<unknown> {
 }
 
 /** Failed to parse a text data into structured data */
-export class TextParsingFailure<Error> extends Failure<Error> {
+export class TextParsingFailure<Error extends TextParsingFailure.ConfigParseError<any>>
+extends Failure<readonly Error[]> {
   public readonly code = Status.TextParsingFailure
+
+  public * log () {
+    yield this.name
+    for (const item of this.error) {
+      yield Failure.indent(1) + item.parser.name
+      for (const error of item.error) {
+        yield Failure.indent(2) + inspect(error)
+      }
+    }
+  }
+}
+
+export namespace TextParsingFailure {
+  /** Error carried by {@link TextParsingFailure} */
+  export interface ConfigParseError<Error> {
+    readonly parser: {
+      /** Name of the parser */
+      readonly name: string
+    }
+
+    /** Error that `loader.parseConfigText` thrown */
+    readonly error: Error
+  }
 }
 
 /** Failed to delete a file or directory */
@@ -119,6 +178,13 @@ export class FileTreeRemovalFailure<Error> extends FileSystemFailure<Error> {
 }
 
 /** Two or more configs inherit from each other directly or indirectly */
-export class CircularReference<Error> extends Failure<Error> {
+export class CircularReference extends Failure<Iterable<string>> {
   public readonly code = Status.CircularReference
+
+  public * log () {
+    yield this.name
+    for (const filename of this.error) {
+      yield Failure.indent(1) + filename
+    }
+  }
 }

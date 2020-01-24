@@ -180,8 +180,8 @@ export namespace SchemaWriter {
   export type SingleConfigReturn<Definition> =
     FileReadingFailure |
     FileWritingFailure |
-    TextParsingFailure<ConfigParseError[]> |
-    CircularReference<string[]> |
+    TextParsingFailure<ConfigParseError> |
+    CircularReference |
     OutputFileConflict |
     Success<Generator<FileWritingInstruction<Definition>, void>>
 
