@@ -17,8 +17,8 @@ export namespace FSX {
   export interface Mod {
     stat (path: string): Promise<Stats>
     readdir (dirname: string): Promise<readonly string[]>
-    readFile (filename: string): Promise<string>
-    writeFile (filename: string, content: string): Promise<void>
+    readFile (filename: string, encoding: 'utf8'): Promise<string>
+    writeFile (filename: string, content: string, encoding: 'utf8'): Promise<void>
     remove (filename: string): Promise<void>
   }
 

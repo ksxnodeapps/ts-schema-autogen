@@ -89,7 +89,7 @@ export async function writeSchemaFiles (param: writeSchemaFiles.Param): Promise<
       duplicationCheckingArray.push(desc)
       writeFuncs.push(
         () => fsx
-          .writeFile(filename, serialize(schema, desc))
+          .writeFile(filename, serialize(schema, desc), 'utf8')
           .catch(error => writeErrors.push(new FileWritingFailure(filename, error)))
       )
     }

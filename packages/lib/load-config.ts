@@ -17,7 +17,7 @@ export interface ConfigParseError {
 /** Load a config file */
 export async function loadConfigFile (param: loadConfigFile.Param): Promise<loadConfigFile.Return> {
   const { filename } = param
-  const readingResult = await param.fsx.readFile(filename).then(ok, err)
+  const readingResult = await param.fsx.readFile(filename, 'utf8').then(ok, err)
   if (!readingResult.tag) return new FileReadingFailure(filename, readingResult.error)
   const text = readingResult.value
 
