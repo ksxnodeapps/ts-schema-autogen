@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "dependencies": {
+    "@ts-schema-autogen/lib": "file:../../packages/lib"
+  }
+}

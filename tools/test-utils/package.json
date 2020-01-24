@@ -1,0 +1,9 @@
+{
+  "name": "@tools/test-utils",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "simple-fake-fs": "^0.0.4",
+    "@ts-schema-autogen/types": "../../packages/types"
+  }
+}
