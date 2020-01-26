@@ -4,6 +4,9 @@ import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
+  /** File content is outdated */
+  OutdatedFile = 9,
+
   /** Two or more configs inherit from each other directly or indirectly */
   CircularReference = 8,
 
@@ -188,5 +191,28 @@ export class CircularReference extends Failure<Iterable<string>> {
     for (const filename of this.error) {
       yield Failure.indent(1) + filename
     }
+  }
+}
+
+export class OutdatedFile extends FileSystemFailure<OutdatedFile.Error> {
+  public readonly code = Status.OutdatedFile
+
+  public * log () {
+    yield this.name
+    const { receivedContent } = this.error
+    yield Failure.indent(1) + 'file: ' + this.path
+    if (receivedContent === null) {
+      yield Failure.indent(1) + 'expected: file exists'
+      yield Failure.indent(1) + 'received: file does not exist'
+    } else {
+      yield Failure.indent(1) + 'content mismatches' // TODO LATER: Convert this to a diff message
+    }
+  }
+}
+
+export namespace OutdatedFile {
+  export interface Error {
+    readonly expectedContent: string
+    readonly receivedContent: string | null // `null` means "file does not exist"
   }
 }
