@@ -182,7 +182,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * Write schemas according to multiple config files
    * @param configPaths List of paths to config files
    */
-  public async writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn> {
+  public writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn> {
     const act: processWriteInstructions.Act<never> =
       (filename, content) => this.param.fsx.writeFile(filename, content, 'utf8')
     return this.mayWriteSchemas(act, configPaths)
@@ -192,7 +192,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * Test if schema files referred to by config files are up-to-date
    * @param configPaths List of paths to config files
    */
-  public async testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn> {
+  public testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn> {
     const { readFile } = this.param.fsx
     async function act (filename: string, expectedContent: string): Promise<OutdatedFile | void> {
       const receivedContent = await readFile(filename, 'utf8')
