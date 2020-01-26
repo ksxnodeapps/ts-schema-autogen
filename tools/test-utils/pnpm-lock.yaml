@@ -29,6 +29,6 @@ packages:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@ts-schema-autogen/types': ../../packages/types
+  '@ts-schema-autogen/types': 'file:../../packages/types'
   simple-fake-console: ^0.1.4
   simple-fake-fs: ^0.0.5
