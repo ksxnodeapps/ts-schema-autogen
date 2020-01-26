@@ -187,6 +187,21 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
       (filename, content) => this.param.fsx.writeFile(filename, content, 'utf8')
     return this.mayWriteSchemas(act, configPaths)
   }
+
+  /**
+   * Test if schema files referred to by config files are up-to-date
+   * @param configPaths List of paths to config files
+   */
+  public async testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn> {
+    const { readFile } = this.param.fsx
+    async function act (filename: string, expectedContent: string): Promise<OutdatedFile | void> {
+      const receivedContent = await readFile(filename, 'utf8')
+      if (expectedContent !== receivedContent) {
+        return new OutdatedFile(filename, { expectedContent, receivedContent })
+      }
+    }
+    return this.mayWriteSchemas(act, configPaths)
+  }
 }
 
 export namespace SchemaWriter {
@@ -204,9 +219,12 @@ export namespace SchemaWriter {
     Success<Generator<FileWritingInstruction<Definition>, void>>
 
   type SingleConfigFailure = Exclude<SingleConfigReturn<never>, Success<any>>
-  export type WriteSchemaReturn =
-    MultipleFailures<SingleConfigFailure[]> |
+  type WriteTestSchemaReturn<Extra extends Failure<any>> =
+    MultipleFailures<Array<SingleConfigFailure | Extra>> |
     OutputFileConflict |
     FileWritingFailure |
     Success<void>
+
+  export type WriteSchemaReturn = WriteTestSchemaReturn<never>
+  export type TestSchemaReturn = WriteTestSchemaReturn<OutdatedFile>
 }
