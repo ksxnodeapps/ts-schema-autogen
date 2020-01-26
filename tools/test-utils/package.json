@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "simple-fake-fs": "^0.0.4",
+    "simple-fake-fs": "^0.0.5",
     "@ts-schema-autogen/types": "../../packages/types"
   }
 }
