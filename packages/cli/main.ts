@@ -4,7 +4,7 @@ import process from 'process'
 import * as tjs from 'typescript-json-schema'
 import * as fsx from 'fs-extra'
 import yargs from 'yargs'
-import { Status, ModuleSet, cmdGenerate, cmdClean } from '@ts-schema-autogen/main'
+import { Status, ModuleSet, cmdTest, cmdGenerate, cmdClean } from '@ts-schema-autogen/main'
 
 const modules: ModuleSet<tjs.Program, tjs.Definition> = {
   path,
@@ -35,6 +35,12 @@ const handleStatus = (status: Promise<Status>) => status
 
 // tslint:disable-next-line:no-unused-expression
 yargs
+  .command(
+    'test',
+    'Check for out-of-date schema files',
+    buildArgs,
+    args => handleStatus(cmdTest({ args, modules }))
+  )
   .command(
     'generate',
     'Generate schema files',
