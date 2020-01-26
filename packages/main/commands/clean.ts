@@ -18,7 +18,7 @@ export async function cmdClean (param: CleanParam) {
     }))
   }))
   if (cleanResult.code) {
-    console.error('[ERROR] Failed to clean')
+    console.error('[FAILURE] Failed to clean')
     cleanResult.print(console.error)
     return cleanResult.code
   }

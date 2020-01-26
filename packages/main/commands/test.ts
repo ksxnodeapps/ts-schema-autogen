@@ -14,11 +14,11 @@ export async function cmdTest<Prog, Def> (param: TestParam<Prog, Def>) {
   const writer = new SchemaWriter(addProperty(modules, 'parsers', await parsers))
   const testResult = await writer.testSchemas(await configFilesPromise)
   if (testResult.code) {
-    console.error('[FAILED] Some errors occurred')
+    console.error('[FAILURE] Some errors occurred')
     testResult.print(console.error)
     return testResult.code
   }
 
-  console.info('[PASSED] All tests passed')
+  console.info('[SUCCESS] All tests passed')
   return Status.Success
 }
