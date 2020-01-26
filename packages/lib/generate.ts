@@ -21,6 +21,7 @@ import {
   FileReadingFailure,
   TextParsingFailure,
   CircularReference,
+  OutdatedFile,
   Success
 } from '@ts-schema-autogen/status'
 
@@ -166,20 +167,25 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     return new Success(writeInstruction)
   }
 
+  private async mayWriteSchemas<ActFailure extends OutdatedFile> (
+    act: processWriteInstructions.Act<ActFailure>,
+    configPaths: readonly string[]
+  ) {
+    const { errors, instruction } = SchemaWriter.joinCfgRes(
+      await Promise.all(configPaths.map(x => this.singleConfig(x)))
+    )
+    if (errors.length) return new MultipleFailures(errors)
+    return processWriteInstructions({ act, instruction })
+  }
+
   /**
    * Write schemas according to multiple config files
    * @param configPaths List of paths to config files
    */
   public async writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn> {
-    const { errors, instruction } = SchemaWriter.joinCfgRes(
-      await Promise.all(configPaths.map(x => this.singleConfig(x)))
-    )
-    if (errors.length) return new MultipleFailures(errors)
-
     const act: processWriteInstructions.Act<never> =
       (filename, content) => this.param.fsx.writeFile(filename, content, 'utf8')
-
-    return processWriteInstructions({ act, instruction })
+    return this.mayWriteSchemas(act, configPaths)
   }
 }
 
