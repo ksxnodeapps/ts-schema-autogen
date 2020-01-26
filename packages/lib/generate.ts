@@ -66,7 +66,7 @@ export namespace generateUnit {
 }
 
 export const serialize = (schema: any, { indent }: OutputDescriptor) =>
-  JSON.stringify(schema, undefined, getIndent(indent))
+  JSON.stringify(schema, undefined, getIndent(indent)) + '\n'
 
 /** Call a function on a list of {@link FileWritingInstruction} */
 export async function processWriteInstructions<ActFailure extends Failure<any>> (
