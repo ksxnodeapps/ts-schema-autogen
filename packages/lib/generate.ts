@@ -183,8 +183,9 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * @param configPaths List of paths to config files
    */
   public writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn> {
+    const { writeFile } = this.param.fsx
     const act: processWriteInstructions.Act<never> =
-      (filename, content) => this.param.fsx.writeFile(filename, content, 'utf8')
+      (filename, content) => writeFile(filename, content, 'utf8')
     return this.mayWriteSchemas(act, configPaths)
   }
 
