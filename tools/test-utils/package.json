@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "simple-fake-fs": "^0.0.5",
+    "simple-fake-console": "^0.1.4",
     "@ts-schema-autogen/types": "../../packages/types"
   }
 }
