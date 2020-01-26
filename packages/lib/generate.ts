@@ -10,11 +10,11 @@ import {
   Instruction,
   SymbolInstruction,
   OutputDescriptor,
-  TJS,
-  FSX
+  TJS
 } from '@ts-schema-autogen/types'
 
 import {
+  Failure,
   MultipleFailures,
   OutputFileConflict,
   FileWritingFailure,
@@ -68,13 +68,15 @@ export namespace generateUnit {
 export const serialize = (schema: any, { indent }: OutputDescriptor) =>
   JSON.stringify(schema, undefined, getIndent(indent))
 
-/** Write schema data to output files according to a list of {@link FileWritingInstruction} */
-export async function writeSchemaFiles (param: writeSchemaFiles.Param): Promise<writeSchemaFiles.Return> {
-  const { fsx, instruction } = param
+/** Call a function on a list of {@link FileWritingInstruction} */
+export async function processWriteInstructions<ActFailure extends Failure<any>> (
+  param: processWriteInstructions.Param<ActFailure>
+): Promise<processWriteInstructions.Return<ActFailure>> {
+  const { act, instruction } = param
   const duplicationCheckingArray: OutputDescriptor[] = []
   const duplicationMap = new Map<string, OutputDescriptor[]>()
-  const writeFuncs: Array<() => Promise<unknown>> = []
-  const writeErrors: FileWritingFailure[] = []
+  const actFuncs: Array<() => Promise<unknown>> = []
+  const actErrors: Array<ActFailure | FileWritingFailure> = []
 
   for (const { schema, instruction: { output } } of instruction) {
     const descriptors = ensureOutputDescriptorArray(output)
@@ -89,34 +91,42 @@ export async function writeSchemaFiles (param: writeSchemaFiles.Param): Promise<
       }
 
       duplicationCheckingArray.push(desc)
-      writeFuncs.push(
-        () => fsx
-          .writeFile(filename, serialize(schema, desc), 'utf8')
-          .catch(error => writeErrors.push(new FileWritingFailure(filename, error)))
+      actFuncs.push(
+        () => act(filename, serialize(schema, desc))
+          .then(failure => failure && actErrors.push(failure))
+          .catch(error => actErrors.push(new FileWritingFailure(filename, error)))
       )
     }
   }
 
   if (duplicationMap.size) return new OutputFileConflict(duplicationMap)
 
-  await Promise.all(writeFuncs.map(fn => fn()))
-  if (writeErrors.length) return new MultipleFailures(writeErrors)
+  await Promise.all(actFuncs.map(fn => fn()))
+  if (actErrors.length) return new MultipleFailures(actErrors)
 
   return new Success(undefined)
 }
 
-export namespace writeSchemaFiles {
-  export interface Param {
-    /** `fs-extra` module to write schema files */
-    readonly fsx: FSX.Mod
+export namespace processWriteInstructions {
+  export interface Param<Failure> {
+    /** Function to be called on each {@link FileWritingInstruction} */
+    readonly act: Act<Failure>
 
     /** List of writing instructions */
     readonly instruction: Iterable<FileWritingInstruction<any>>
   }
 
-  export type Return =
+  export interface Act<Failure> {
+    /**
+     * @param filename Path to a file
+     * @param content Content to write or compare to the file
+     */
+    (filename: string, content: string): Promise<Failure | void>
+  }
+
+  export type Return<ActFailure extends Failure<any>> =
     OutputFileConflict |
-    MultipleFailures<FileWritingFailure[]> |
+    MultipleFailures<Array<ActFailure | FileWritingFailure>> |
     Success<void>
 }
 
@@ -166,10 +176,10 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     )
     if (errors.length) return new MultipleFailures(errors)
 
-    return writeSchemaFiles({
-      fsx: this.param.fsx,
-      instruction
-    })
+    const act: processWriteInstructions.Act<never> =
+      (filename, content) => this.param.fsx.writeFile(filename, content, 'utf8')
+
+    return processWriteInstructions({ act, instruction })
   }
 }
 
