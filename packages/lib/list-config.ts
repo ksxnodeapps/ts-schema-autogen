@@ -17,7 +17,7 @@ export async function * listConfigFiles (param: listConfigFiles.Param) {
 
   for await (const item of traversalResults) {
     for (const basename of item.list) {
-      yield join(item.dirname, basename)
+      if (basename === param.basename) yield join(item.dirname, basename)
     }
   }
 }
