@@ -15,10 +15,10 @@ const modules: ModuleSet<tjs.Program, tjs.Definition> = {
 }
 
 export const buildArgs = (yargs: yargs.Argv) => yargs
-  .option('basename', {
+  .option('pattern', {
     type: 'string',
-    describe: 'Extension-less name of config files',
-    default: 'schema.autogen'
+    describe: 'Regular expression that matches basename of config files',
+    default: '\\.schema\\.autogen(\\.(json|yaml|yml))?$'
   })
   .option('ignored', {
     type: 'array',

@@ -13,7 +13,7 @@ export async function cmdClean (param: CleanParam) {
     parsers: await parsers,
     configFiles: listConfigFiles(objectExtends(modules, {
       root: modules.process.cwd(),
-      basename: args.basename,
+      pattern: new RegExp(args.pattern),
       ignored: args.ignored
     }))
   }))

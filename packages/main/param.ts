@@ -7,7 +7,7 @@ export namespace base {
   }
 
   export interface CliArguments {
-    readonly basename: string
+    readonly pattern: string
     readonly ignored: readonly string[]
   }
 }
