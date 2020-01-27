@@ -11,3 +11,7 @@ it('number → number', () => {
 it('none → undefined', () => {
   expect(getIndent('none')).toBe(undefined)
 })
+
+it('default → 2', () => {
+  expect(getIndent()).toBe(2)
+})
