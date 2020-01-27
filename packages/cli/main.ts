@@ -4,7 +4,7 @@ import process from 'process'
 import * as tjs from 'typescript-json-schema'
 import * as fsx from 'fs-extra'
 import yargs from 'yargs'
-import { Status, ModuleSet, cmdTest, cmdGenerate, cmdClean } from '@ts-schema-autogen/main'
+import { DEFAULT_PATTERN, DEFAULT_IGNORED, Status, ModuleSet, cmdTest, cmdGenerate, cmdClean } from '@ts-schema-autogen/main'
 
 const modules: ModuleSet<tjs.Program, tjs.Definition> = {
   path,
@@ -18,12 +18,12 @@ export const buildArgs = (yargs: yargs.Argv) => yargs
   .option('pattern', {
     type: 'string',
     describe: 'Regular expression that matches basename of config files',
-    default: '\\.schema\\.autogen(\\.(json|yaml|yml))?$'
+    default: DEFAULT_PATTERN
   })
   .option('ignored', {
     type: 'array',
     describe: 'Name of directories to be ignored',
-    default: ['.git', 'node_modules']
+    default: DEFAULT_IGNORED
   })
 
 const handleStatus = (status: Promise<Status>) => status
