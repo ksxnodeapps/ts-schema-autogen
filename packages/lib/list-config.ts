@@ -3,7 +3,7 @@ import { FSX, Path } from '@ts-schema-autogen/types'
 
 /** List all config files within a directory recursively */
 export async function * listConfigFiles (param: listConfigFiles.Param) {
-  const { ignored } = param
+  const { ignored, pattern } = param
   const { stat, readdir } = param.fsx
   const { join } = param.path
 
@@ -17,7 +17,7 @@ export async function * listConfigFiles (param: listConfigFiles.Param) {
 
   for await (const item of traversalResults) {
     for (const basename of item.list) {
-      if (basename === param.basename) yield join(item.dirname, basename)
+      if (pattern.test(basename)) yield join(item.dirname, basename)
     }
   }
 }
@@ -36,7 +36,7 @@ export namespace listConfigFiles {
     /** Ignored directories */
     readonly ignored: readonly string[]
 
-    /** Config basename */
-    readonly basename: string
+    /** RegExp pattern that matches basename of config files */
+    readonly pattern: RegExp
   }
 }
