@@ -1,0 +1,5 @@
+dependencies:
+  '@ts-schema-autogen/main': 'link:../../packages/main'
+lockfileVersion: 5.1
+specifiers:
+  '@ts-schema-autogen/main': 'file:../../packages/main'
