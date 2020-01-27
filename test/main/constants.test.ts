@@ -2,6 +2,22 @@ import { DEFAULT_PATTERN } from '@ts-schema-autogen/main'
 
 describe('DEFAULT_PATTERN', () => {
   describe('matches', () => {
+    it('".schema.autogen"', () => {
+      expect('.schema.autogen').toMatch(new RegExp(DEFAULT_PATTERN))
+    })
+
+    it('".schema.autogen.json"', () => {
+      expect('.schema.autogen.json').toMatch(new RegExp(DEFAULT_PATTERN))
+    })
+
+    it('".schema.autogen.yaml"', () => {
+      expect('.schema.autogen.yaml').toMatch(new RegExp(DEFAULT_PATTERN))
+    })
+
+    it('".schema.autogen.yml"', () => {
+      expect('.schema.autogen.yml').toMatch(new RegExp(DEFAULT_PATTERN))
+    })
+
     it('names that end with ".schema.autogen"', () => {
       expect('abc.schema.autogen').toMatch(new RegExp(DEFAULT_PATTERN))
     })
