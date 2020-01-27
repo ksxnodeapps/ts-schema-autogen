@@ -4,7 +4,16 @@ import process from 'process'
 import * as tjs from 'typescript-json-schema'
 import * as fsx from 'fs-extra'
 import yargs from 'yargs'
-import { DEFAULT_PATTERN, DEFAULT_IGNORED, Status, ModuleSet, cmdTest, cmdGenerate, cmdClean } from '@ts-schema-autogen/main'
+
+import {
+  DEFAULT_PATTERN,
+  DEFAULT_IGNORED,
+  Status,
+  ModuleSet,
+  cmdTest,
+  cmdGenerate,
+  cmdClean
+} from '@ts-schema-autogen/main'
 
 const modules: ModuleSet<tjs.Program, tjs.Definition> = {
   path,
