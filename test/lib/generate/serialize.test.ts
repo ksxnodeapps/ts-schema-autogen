@@ -7,9 +7,9 @@ const object = {
   c: [0, 1, 2]
 }
 
-it('indent = 2', () => {
-  expect(serialize(object, { indent: 2, filename: undefined! }))
-    .toBe(JSON.stringify(object, undefined, 2) + '\n')
+it('indent = 4', () => {
+  expect(serialize(object, { indent: 4, filename: undefined! }))
+    .toBe(JSON.stringify(object, undefined, 4) + '\n')
 })
 
 it('indent = "tab"', () => {
