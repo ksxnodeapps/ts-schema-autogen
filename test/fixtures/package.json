@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "@types/js-yaml": "^3.12.1",
+    "@ts-schema-autogen/types": "file:../../packages/types"
+  }
+}
