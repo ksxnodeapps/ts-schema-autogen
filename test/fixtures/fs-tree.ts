@@ -1,4 +1,5 @@
 import { safeDump } from 'js-yaml'
+import { FsTree } from './utils/types'
 import unit from './utils/unit'
 
 import {
@@ -11,7 +12,7 @@ import {
 const dump = <X> (x: X) => safeDump(x)
 const dumpConfig = (config: Config) => dump(config)
 
-export const fsTree = {
+export const fsTree: FsTree = {
   yaml: {
     'single-symbol': {
       'single-output': {
@@ -46,7 +47,7 @@ export const fsTree = {
             })
           })
         },
-        'output-descriptor': {
+        'output-descriptor': dumpConfig({
           generator: undefined!,
           instruction: unit<SingleSymbolInstruction>({
             symbol: 'Foo',
@@ -62,7 +63,7 @@ export const fsTree = {
               })
             ]
           })
-        }
+        })
       }
     },
     'multi-symbol': {
