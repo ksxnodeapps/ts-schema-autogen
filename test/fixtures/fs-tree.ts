@@ -47,23 +47,25 @@ export const fsTree: FsTree = {
             })
           })
         },
-        'output-descriptor': dumpConfig({
-          generator: undefined!,
-          instruction: unit<SingleSymbolInstruction>({
-            symbol: 'Foo',
-            output: [
-              'non-descriptor.schema.json',
-              unit<OutputDescriptor>({
-                filename: 'default-descriptor.schema.json'
-              }),
-              unit<OutputDescriptor>({
-                filename: 'custom-descriptor.schema.json',
-                format: 'json',
-                indent: 'tab'
-              })
-            ]
+        'output-descriptor': {
+          '.schema.autogen.yaml': dumpConfig({
+            generator: undefined!,
+            instruction: unit<SingleSymbolInstruction>({
+              symbol: 'Foo',
+              output: [
+                'non-descriptor.schema.json',
+                unit<OutputDescriptor>({
+                  filename: 'default-descriptor.schema.json'
+                }),
+                unit<OutputDescriptor>({
+                  filename: 'custom-descriptor.schema.json',
+                  format: 'json',
+                  indent: 'tab'
+                })
+              ]
+            })
           })
-        })
+        }
       }
     },
     'multi-symbol': {
