@@ -72,8 +72,6 @@ export const fsTree: FsTree = {
           '.schema.autogen.yaml': dumpConfig({
             generator: undefined!,
             instruction: unit<MultiSymbolInstruction>({
-              compilerOptions: {},
-              input: [],
               list: [
                 {
                   output: 'foo.schema.json',
