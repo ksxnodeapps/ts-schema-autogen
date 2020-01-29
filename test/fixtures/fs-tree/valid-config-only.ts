@@ -1,6 +1,6 @@
 import { safeDump } from 'js-yaml'
-import { FsTree } from './utils/types'
-import unit from './utils/unit'
+import { FsTree } from '../utils/types'
+import unit from '../utils/unit'
 
 import {
   Config,
