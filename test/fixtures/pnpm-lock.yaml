@@ -1,5 +1,4 @@
 dependencies:
-  '@tools/test-utils': 'link:../../tools/test-utils'
   '@ts-schema-autogen/types': 'link:../../packages/types'
   '@types/js-yaml': 3.12.1
   js-yaml: 3.13.1
@@ -35,7 +34,6 @@ packages:
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 specifiers:
-  '@tools/test-utils': 'file:../../tools/test-utils'
   '@ts-schema-autogen/types': 'file:../../packages/types'
   '@types/js-yaml': ^3.12.1
   js-yaml: ^3.13.1
