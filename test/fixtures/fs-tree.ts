@@ -144,7 +144,8 @@ const subTree = (dump: Dump) => ({
 })
 
 export const fsTree: FsTree = {
-  yaml: subTree(safeDump)
+  yaml: subTree(safeDump),
+  json: subTree(config => JSON.stringify(config, undefined, 2))
 }
 
 export default fsTree
