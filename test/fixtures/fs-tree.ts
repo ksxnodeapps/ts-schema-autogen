@@ -86,6 +86,23 @@ export const fsTree: FsTree = {
               ]
             })
           })
+        },
+        'output-descriptor': {
+          '.schema.autogen.yaml': dumpConfig({
+            generator: undefined!,
+            instruction: unit<MultiSymbolInstruction>({
+              list: [
+                {
+                  output: 'foo.schema.json',
+                  symbol: 'Foo'
+                },
+                {
+                  output: 'bar.schema.json',
+                  symbol: 'Bar'
+                }
+              ]
+            })
+          })
         }
       }
     }
