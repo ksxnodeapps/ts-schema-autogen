@@ -18,7 +18,7 @@ export namespace FSX {
     stat (path: string): Promise<Stats>
     readdir (dirname: string): Promise<readonly string[]>
     readFile (filename: string, encoding: 'utf8'): Promise<string>
-    writeFile (filename: string, content: string, encoding: 'utf8'): Promise<void>
+    outputFile (filename: string, content: string): Promise<void>
     remove (filename: string): Promise<void>
   }
 
