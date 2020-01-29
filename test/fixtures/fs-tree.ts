@@ -104,6 +104,41 @@ export const fsTree: FsTree = {
             })
           })
         }
+      },
+      'multi-output': {
+        'output-filename': {
+          '.schema.autogen.yaml': dumpConfig({
+            generator: undefined!,
+            instruction: unit<MultiSymbolInstruction>({
+              list: [
+                {
+                  output: [
+                    'foo.filename.schema.json',
+                    {
+                      filename: 'foo.default.schema.json'
+                    },
+                    {
+                      filename: 'foo.custom.schema.json',
+                      format: 'json',
+                      indent: 'tab'
+                    }
+                  ],
+                  symbol: 'Foo'
+                },
+                {
+                  output: [
+                    {
+                      filename: 'bar.4.schema.json',
+                      format: 'json',
+                      indent: 4
+                    }
+                  ],
+                  symbol: 'Bar'
+                }
+              ]
+            })
+          })
+        }
       }
     }
   }
