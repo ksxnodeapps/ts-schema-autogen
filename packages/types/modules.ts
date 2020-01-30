@@ -35,7 +35,6 @@ export namespace Path {
     join (base: string, ...paths: string[]): string
     dirname (path: string): string
     basename (path: string): string
-    resolve (base: string, ...paths: string[]): string
   }
 }
 

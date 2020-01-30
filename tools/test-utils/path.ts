@@ -1,8 +1,6 @@
 import { Path } from '@ts-schema-autogen/types'
 
 export class FakePath implements Path.Mod {
-  constructor (private readonly cwd: string) {}
-
   public readonly isAbsolute = (path: string): boolean => path.startsWith('/')
 
   public readonly join = (...paths: string[]): string => {
@@ -15,14 +13,6 @@ export class FakePath implements Path.Mod {
     const left = head.endsWith('/') ? head.slice(0, -1) : head
     const right = tail.startsWith('/') ? tail.slice(1) : tail
     return left + '/' + right
-  }
-
-  public readonly resolve = (...paths: string[]): string => {
-    if (!paths.length) return '.'
-    const [head, ...rest] = paths
-    const tail = this.resolve(...rest)
-    if (tail.startsWith('/')) return tail
-    return this.join(this.cwd, head, tail)
   }
 
   public readonly dirname = (path: string): string => {
