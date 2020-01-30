@@ -1,5 +1,6 @@
 import { ok, err } from '@tsfun/result'
 import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '@tsfun/object'
+import { createJoinFunction } from 'better-path-join'
 import { ensureArray } from '@ts-schema-autogen/utils'
 import { Config, FSX, Path } from '@ts-schema-autogen/types'
 import { FileReadingFailure, TextParsingFailure, CircularReference, Success } from '@ts-schema-autogen/status'
@@ -77,7 +78,8 @@ export class ConfigLoader {
     circularGuard: string[]
   ): Promise<ConfigLoader.LoaderReturn> {
     const { simpleCache, param } = this
-    const { dirname, resolve } = param.path
+    const { dirname } = param.path
+    const join = createJoinFunction(param.path)
 
     if (circularGuard.includes(filename)) {
       return new CircularReference(circularGuard)
@@ -87,7 +89,7 @@ export class ConfigLoader {
       return new Success(simpleCache.get(filename)!)
     }
 
-    const lcfRet = await loadConfigFile(addProperty(param, 'filename', resolve(filename)))
+    const lcfRet = await loadConfigFile(addProperty(param, 'filename', filename))
     if (lcfRet.code) return lcfRet
 
     let config = lcfRet.value
@@ -95,7 +97,7 @@ export class ConfigLoader {
 
     if (!config.extends) return new Success(config)
     for (const path of ensureArray(config.extends)) {
-      const absPath = resolve(dirname(filename), path) // use resolve because join cannot handle when `path` is absolute
+      const absPath = join(dirname(filename), path)
       const res = await this.prvLoadConfig(absPath, circularGuard.concat(filename))
       if (res.code) return res
       config = mergeConfig(config, res.value)
