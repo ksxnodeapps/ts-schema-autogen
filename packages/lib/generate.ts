@@ -1,4 +1,4 @@
-import { addProperty } from '@tsfun/object'
+import { objectExtends } from '@tsfun/object'
 import { ensureArray, concatIterable, getIndent } from '@ts-schema-autogen/utils'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
@@ -10,7 +10,8 @@ import {
   Instruction,
   SymbolInstruction,
   OutputDescriptor,
-  TJS
+  TJS,
+  Path
 } from '@ts-schema-autogen/types'
 
 import {
@@ -60,6 +61,18 @@ export namespace generateUnit {
 
     /** Instruction that tells types, input, and output */
     readonly instruction: Instruction
+
+    /** Path resolver */
+    readonly resolvePath: PathResolver
+  }
+
+  export interface PathResolver {
+    /**
+     * Resolve output path
+     * @param output Output path from instruction (relative to config file)
+     * @returns Resolved path to pass to writer function (relative to working directory)
+     */
+    (output: string): string
   }
 
   export interface Return<Definition>
@@ -157,22 +170,29 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
   /**
    * Write schemas according to one config file
    * @param configPath Path to the config file
+   * @param path Path module
    */
-  public async singleConfig (configPath: string): Promise<SchemaWriter.SingleConfigReturn<Def>> {
+  public async singleConfig (configPath: string, path: Path.Mod): Promise<SchemaWriter.SingleConfigReturn<Def>> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
+    const { join } = path
+    const dirname = path.dirname(configPath)
     const writeInstruction = generateUnit(
-      addProperty(this.param, 'instruction', config.value.instruction)
+      objectExtends(this.param, {
+        instruction: config.value.instruction,
+        resolvePath: (filename: string) => join(dirname, filename)
+      })
     )
     return new Success(writeInstruction)
   }
 
   private async mayWriteSchemas<ActFailure extends OutdatedFile> (
     act: processWriteInstructions.Act<ActFailure>,
-    configPaths: readonly string[]
+    configPaths: readonly string[],
+    path: Path.Mod
   ) {
     const { errors, instruction } = SchemaWriter.joinCfgRes(
-      await Promise.all(configPaths.map(x => this.singleConfig(x)))
+      await Promise.all(configPaths.map(x => this.singleConfig(x, path)))
     )
     if (errors.length) return new MultipleFailures(errors)
     return processWriteInstructions({ act, instruction })
@@ -186,7 +206,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     const { outputFile } = this.param.fsx
     const act: processWriteInstructions.Act<never> =
       (filename, content) => outputFile(filename, content)
-    return this.mayWriteSchemas(act, configPaths)
+    return this.mayWriteSchemas(act, configPaths, this.param.path)
   }
 
   /**
@@ -201,7 +221,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
         return new OutdatedFile(filename, { expectedContent, receivedContent })
       }
     }
-    return this.mayWriteSchemas(act, configPaths)
+    return this.mayWriteSchemas(act, configPaths, this.param.path)
   }
 }
 
