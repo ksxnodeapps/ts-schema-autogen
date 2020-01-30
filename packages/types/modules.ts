@@ -31,6 +31,7 @@ export namespace FSX {
 /** Interfaces of path */
 export namespace Path {
   export interface Mod {
+    isAbsolute (path: string): boolean
     join (base: string, ...paths: string[]): string
     dirname (path: string): string
     basename (path: string): string

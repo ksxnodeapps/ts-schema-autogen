@@ -3,6 +3,8 @@ import { Path } from '@ts-schema-autogen/types'
 export class FakePath implements Path.Mod {
   constructor (private readonly cwd: string) {}
 
+  public readonly isAbsolute = (path: string): boolean => path.startsWith('/')
+
   public readonly join = (...paths: string[]): string => {
     if (!paths.length) return '.'
     const [head, ...rest] = paths
