@@ -95,7 +95,7 @@ export class ConfigLoader {
 
     if (!config.extends) return new Success(config)
     for (const path of ensureArray(config.extends)) {
-      const absPath = resolve(dirname(filename), path)
+      const absPath = resolve(dirname(filename), path) // use resolve because join cannot handle when `path` is absolute
       const res = await this.prvLoadConfig(absPath, circularGuard.concat(filename))
       if (res.code) return res
       config = mergeConfig(config, res.value)
