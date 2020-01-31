@@ -5,6 +5,7 @@
   "dependencies": {
     "simple-fake-fs": "^0.0.6",
     "simple-fake-console": "^0.1.4",
+    "simple-fake-path": "^0.0.1",
     "@ts-schema-autogen/types": "file:../../packages/types"
   }
 }
