@@ -1,7 +1,7 @@
 dependencies:
   '@ts-schema-autogen/types': 'link:../../packages/types'
   simple-fake-console: 0.1.4
-  simple-fake-fs: 0.0.6
+  simple-fake-fs: 0.0.7
   simple-fake-path: 0.0.1
 lockfileVersion: 5.1
 packages:
@@ -22,13 +22,13 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-Tr9GzFMNDgXLu2Pr2NbDIvbJC55vopEu0Mv72PXuWAuDvMqZCL3e16SKYSJE3VTWtYxO/y2TQ7o82Q5C4scc/A==
-  /simple-fake-fs/0.0.6:
+  /simple-fake-fs/0.0.7:
     dependencies:
-      '@types/node': 13.5.0
+      '@types/node': 13.5.2
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-dNLXr0aRfg0rZbUC17klFJ45HvHaVUDe+82MaFV4TvBeE/fPwi17qvRCGbz0rnvzrpsIN6fLHvGXj2qvE6sz3A==
+      integrity: sha512-jkANqneqCOHOwxhKZFG6b0kBJIE6cpBjTroQR1uXQJ75IARHHfrIqLEdmgpjJdMce+2UH3zm04JZRKya5csSPw==
   /simple-fake-path/0.0.1:
     dependencies:
       '@types/node': 13.5.2
@@ -43,5 +43,5 @@ packages:
 specifiers:
   '@ts-schema-autogen/types': 'file:../../packages/types'
   simple-fake-console: ^0.1.4
-  simple-fake-fs: ^0.0.6
+  simple-fake-fs: ^0.0.7
   simple-fake-path: ^0.0.1
