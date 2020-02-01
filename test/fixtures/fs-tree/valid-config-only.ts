@@ -13,7 +13,7 @@ interface Dump {
   (config: Config): string
 }
 
-const subTree = (dump: Dump) => ({
+const subTree = (dump: Dump): FsTree => ({
   'single-symbol': {
     'single-output': {
       'output-filename': {
