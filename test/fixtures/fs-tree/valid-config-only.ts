@@ -13,11 +13,11 @@ interface Dump {
   (config: Config): string
 }
 
-const subTree = (dump: Dump): FsTree => ({
+const subTree = (basename: string, dump: Dump): FsTree => ({
   'single-symbol': {
     'single-output': {
       'output-filename': {
-        '.schema.autogen.yaml': dump({
+        [basename]: dump({
           generator: undefined!,
           instruction: unit<SingleSymbolInstruction>({
             symbol: 'Foo',
@@ -39,7 +39,7 @@ const subTree = (dump: Dump): FsTree => ({
     },
     'multiple-output': {
       'output-filename': {
-        '.schema.autogen.yaml': dump({
+        [basename]: dump({
           generator: undefined!,
           instruction: unit<SingleSymbolInstruction>({
             symbol: 'Foo',
@@ -48,7 +48,7 @@ const subTree = (dump: Dump): FsTree => ({
         })
       },
       'output-descriptor': {
-        '.schema.autogen.yaml': dump({
+        [basename]: dump({
           generator: undefined!,
           instruction: unit<SingleSymbolInstruction>({
             symbol: 'Foo',
@@ -71,7 +71,7 @@ const subTree = (dump: Dump): FsTree => ({
   'multi-symbol': {
     'single-output': {
       'output-filename': {
-        '.schema.autogen.yaml': dump({
+        [basename]: dump({
           generator: undefined!,
           instruction: unit<MultiSymbolInstruction>({
             list: [
@@ -88,7 +88,7 @@ const subTree = (dump: Dump): FsTree => ({
         })
       },
       'output-descriptor': {
-        '.schema.autogen.yaml': dump({
+        [basename]: dump({
           generator: undefined!,
           instruction: unit<MultiSymbolInstruction>({
             list: [
@@ -107,7 +107,7 @@ const subTree = (dump: Dump): FsTree => ({
     },
     'multi-output': {
       'output-filename': {
-        '.schema.autogen.yaml': dump({
+        [basename]: dump({
           generator: undefined!,
           instruction: unit<MultiSymbolInstruction>({
             list: [
@@ -144,8 +144,8 @@ const subTree = (dump: Dump): FsTree => ({
 })
 
 export const fsTree: FsTree = {
-  yaml: subTree(safeDump),
-  json: subTree(config => JSON.stringify(config, undefined, 2))
+  yaml: subTree('.schema.autogen.yaml', safeDump),
+  json: subTree('.schema.autogen.json', config => JSON.stringify(config, undefined, 2))
 }
 
 export default fsTree
