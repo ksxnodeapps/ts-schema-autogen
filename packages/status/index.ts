@@ -225,6 +225,6 @@ export class MissingFileParser extends Failure<void> {
 
   public * log () {
     yield this.name
-    yield 'No parser specified'
+    yield Failure.indent(1) + 'No parser specified'
   }
 }
