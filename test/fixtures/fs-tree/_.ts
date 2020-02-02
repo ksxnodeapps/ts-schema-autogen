@@ -1,4 +1,4 @@
-export { safeDump } from 'js-yaml'
+export { safeDump, dump } from 'js-yaml'
 export { FsTree } from '../utils/types'
 export { default as unit } from '../utils/unit'
 export * from '@ts-schema-autogen/types'

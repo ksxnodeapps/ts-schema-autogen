@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`base is defined, extension is undefined result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "a": Object {
+          "b": "base",
+        },
+        "c": "base",
+      },
+      "schemaSettings": Object {
+        "a": "base",
+        "b": Object {
+          "c": "base",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`base is undefined, extension is defined result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "a": Object {
+          "b": "extension",
+        },
+        "c": "extension",
+      },
+      "schemaSettings": Object {
+        "a": "extension",
+        "b": Object {
+          "c": "extension",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`both are defined result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "a": Object {
+          "b": "base",
+        },
+        "c": "base",
+      },
+      "schemaSettings": Object {
+        "a": "base",
+        "b": Object {
+          "c": "base",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`both are undefined result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "a": Object {
+          "b": undefined,
+        },
+        "c": undefined,
+      },
+      "schemaSettings": Object {
+        "a": undefined,
+        "b": Object {
+          "c": undefined,
+        },
+      },
+    },
+  },
+}
+`;

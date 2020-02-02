@@ -1,7 +1,86 @@
 dependencies:
   '@tools/test-utils': 'link:../../tools/test-utils'
   '@ts-schema-autogen/lib': 'link:../../packages/lib'
+  '@tsfun/result': 0.0.15
+  '@types/js-yaml': 3.12.2
+  js-yaml: 3.13.1
 lockfileVersion: 5.1
+packages:
+  /@tsfun/prv-option-result-common/0.0.10:
+    dependencies:
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-UTXoMYDAtedfqgeb2e562qsOJqA4aBM6Ql41f+gXs/EACo2ILf/8pUyAh6iXq1tKsIjXebu3pNdD7YDtQvTMiw==
+  /@tsfun/prv-types/0.0.6:
+    dependencies:
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-s97gvRX2SjGTdU+Odsi6RgsVFi+xNOx3T6Jew2mo7m7Wj6eJmM0HB0HlFPmwIIi2MtXIpSr71TZmRVcMeU3Atw==
+  /@tsfun/result/0.0.15:
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.10
+      '@tsfun/prv-types': 0.0.6
+      '@tsfun/tap': 0.0.9
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-doM0jLMIRgriynd+jRgdqZmkBeSbcURyKlxgf6bSJQSHcVvQxQVJ//tHjbM29G6+40fVEdqwh3TSxWGrd4uaUA==
+  /@tsfun/tap/0.0.9:
+    dependencies:
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-00ULLfaVuFb4H0KyHZqutAuNE3WewDEZzUt+fQifl83hElfO+AX5yCoxjMi7e4JZX0cJi/pmce6HuEOhJOzqdg==
+  /@types/js-yaml/3.12.2:
+    dev: false
+    resolution:
+      integrity: sha512-0CFu/g4mDSNkodVwWijdlr8jH7RoplRWNgovjFLEZeT+QEbbZXjBmCe3HwaWheAlCbHwomTwzZoSedeOycABug==
+  /@types/node/13.5.3:
+    dev: false
+    resolution:
+      integrity: sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
+  /argparse/1.0.10:
+    dependencies:
+      sprintf-js: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
+  /esprima/4.0.1:
+    dev: false
+    engines:
+      node: '>=4'
+    hasBin: true
+    resolution:
+      integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
+  /js-yaml/3.13.1:
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-YfbcO7jXDdyj0DGxYVSlSeQNHbD7XPWvrVWeVUujrQEoZzWJIRrCPoyk6kL6IAjAG2IolMK4T0hNUe0HOUs5Jw==
+  /sprintf-js/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+  /tslib/1.10.0:
+    dev: false
+    resolution:
+      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@tools/test-utils': 'file:../../tools/test-utils'
   '@ts-schema-autogen/lib': 'file:../../packages/lib'
+  '@tsfun/result': ^0.0.15
+  '@types/js-yaml': ^3.12.2
+  js-yaml: ^3.13.1
