@@ -3,6 +3,7 @@ import { FakeFileSystem, FakePath } from '@tools/test-utils'
 
 import {
   Status,
+  Success,
   ConfigLoader,
   createYamlFormatDescriptor,
   createJsonFormatDescriptor
@@ -41,6 +42,11 @@ describe('valid config', () => {
         error: undefined,
         value: expect.any(Object)
       })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
     })
   })
 })
