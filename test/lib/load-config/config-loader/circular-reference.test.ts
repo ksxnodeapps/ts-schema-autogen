@@ -5,26 +5,21 @@ import {
   Status,
   CircularReference,
   ConfigLoader,
-  createYamlFormatDescriptor,
   createJsonFormatDescriptor
 } from '@ts-schema-autogen/lib'
-
-const getParsers = () => Promise.all([
-  createJsonFormatDescriptor('JSON Parser'),
-  createYamlFormatDescriptor('YAML Parser')
-])
 
 async function setup (filename: string) {
   const fsx = new FakeFileSystem('/', fsTree)
   const path = new FakePath()
-  const parsers = await getParsers()
   const configLoader = new ConfigLoader({
     fsx,
     path,
-    parsers
+    parsers: [
+      await createJsonFormatDescriptor('JSON Parser')
+    ]
   })
   const result = await configLoader.loadConfig(filename)
-  return { filename, fsx, path, parsers, configLoader, result }
+  return { filename, fsx, path, configLoader, result }
 }
 
 describe('0 → 0', () => {
