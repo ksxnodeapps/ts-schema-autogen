@@ -31,7 +31,12 @@ describe('when a directory is read as file', () => {
 
   it('result matches snapshot', async () => {
     const { result } = await setup(cfgFile)
-    expect(result).toMatchSnapshot({
+    expect(result).toMatchSnapshot()
+  })
+
+  it('result has expected properties', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result).toMatchObject({
       code: Status.FileReadingFailure,
       error: expect.anything(),
       path: cfgFile
@@ -49,7 +54,12 @@ describe('when file does not exist', () => {
 
   it('result matches snapshot', async () => {
     const { result } = await setup(cfgFile)
-    expect(result).toMatchSnapshot({
+    expect(result).toMatchSnapshot()
+  })
+
+  it('result has expected properties', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result).toMatchObject({
       code: Status.FileReadingFailure,
       error: expect.anything(),
       path: cfgFile

@@ -1,18 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`when a directory is read as file result matches snapshot 1`] = `
-Object {
+FileReadingFailure {
   "code": 5,
-  "error": Anything,
+  "error": EISDIR {
+    "code": "EISDIR",
+    "errno": -21,
+    "path": Array [
+      "json",
+      "single-symbol",
+      "single-output",
+      "output-filename",
+    ],
+    "syscall": "read",
+  },
   "path": "json/single-symbol/single-output/output-filename",
   "value": undefined,
 }
 `;
 
 exports[`when file does not exist result matches snapshot 1`] = `
-Object {
+FileReadingFailure {
   "code": 5,
-  "error": Anything,
+  "error": ENOENT {
+    "code": "ENOENT",
+    "errno": -2,
+    "path": Array [
+      "[DOES NOT EXIST]",
+    ],
+    "syscall": "read",
+  },
   "path": "[DOES NOT EXIST]",
   "value": undefined,
 }
