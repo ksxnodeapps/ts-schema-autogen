@@ -23,6 +23,7 @@ import {
   TextParsingFailure,
   CircularReference,
   OutdatedFile,
+  MissingFileParser,
   Success
 } from '@ts-schema-autogen/status'
 
@@ -237,6 +238,7 @@ export namespace SchemaWriter {
     TextParsingFailure<ConfigParseError> |
     CircularReference |
     OutputFileConflict |
+    MissingFileParser |
     Success<Generator<FileWritingInstruction<Definition>, void>>
 
   type SingleConfigFailure = Exclude<SingleConfigReturn<never>, Success<any>>
