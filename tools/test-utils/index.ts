@@ -1,5 +1,6 @@
 export * from './console'
 export * from './fs'
 export * from './path'
+export * from './print-result'
 export * from './process'
 export * from './typescript-json-schema'
