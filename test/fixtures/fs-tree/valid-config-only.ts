@@ -66,27 +66,29 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
           })
         })
       },
-      'output-descriptor': dump({
-        generator: null!,
-        extends: [
-          '../../../extensions/abc.yaml',
-          '../../../extensions/abc.json'
-        ],
-        instruction: unit<SingleSymbolInstruction>({
-          compilerOptions: {
-            '(base.compilerOptions) filename': basename
-          } as any,
-          schemaSettings: {
-            '(base.schemaSettings) filename': basename
-          } as any,
-          symbol: 'Foo',
-          output: unit<OutputDescriptor>({
-            filename: 'output.schema.json',
-            format: 'json',
-            indent: 'tab'
+      'output-descriptor': {
+        [basename]: dump({
+          generator: null!,
+          extends: [
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
+          ],
+          instruction: unit<SingleSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
+            symbol: 'Foo',
+            output: unit<OutputDescriptor>({
+              filename: 'output.schema.json',
+              format: 'json',
+              indent: 'tab'
+            })
           })
         })
-      })
+      }
     },
     'multiple-output': {
       'output-filename': {
