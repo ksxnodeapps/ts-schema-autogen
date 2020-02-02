@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`valid config yaml/single-symbol/single-output/output-filename/.schema.autogen.yaml result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.yaml",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "output": "output.schema.json",
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.yaml",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+      "symbol": "Foo",
+    },
+  },
+}
+`;

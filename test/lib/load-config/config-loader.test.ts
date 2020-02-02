@@ -24,4 +24,13 @@ describe('valid config', () => {
     const result = await configLoader.loadConfig(filename)
     return { filename, fsx, path, configLoader, result }
   }
+
+  describe('yaml/single-symbol/single-output/output-filename/.schema.autogen.yaml', () => {
+    const cfgFile = 'yaml/single-symbol/single-output/output-filename/.schema.autogen.yaml'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+  })
 })
