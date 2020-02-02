@@ -18,6 +18,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
   'extensions': {
     'abc.yaml': safeDump({
       generator: null!,
+      extends: 'def-json',
       instruction: {
         compilerOptions: {
           '(extensions.abc.compilerOptions) format': 'YAML',
@@ -33,6 +34,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     } as Config),
     'abc.json': JSON.stringify({
       generator: null!,
+      extends: 'def-yaml',
       instruction: {
         compilerOptions: {
           '(extensions.abc.compilerOptions) format': 'JSON',
