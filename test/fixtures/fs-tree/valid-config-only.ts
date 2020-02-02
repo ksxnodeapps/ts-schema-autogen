@@ -55,6 +55,12 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             '../../extensions/abc.json'
           ],
           instruction: unit<SingleSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
             symbol: 'Foo',
             output: 'output.schema.json'
           })
@@ -67,6 +73,12 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
           '../../extensions/abc.json'
         ],
         instruction: unit<SingleSymbolInstruction>({
+          compilerOptions: {
+            '(base.compilerOptions) filename': basename
+          } as any,
+          schemaSettings: {
+            '(base.schemaSettings) filename': basename
+          } as any,
           symbol: 'Foo',
           output: unit<OutputDescriptor>({
             filename: 'output.schema.json',
@@ -85,6 +97,12 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             '../../extensions/abc.json'
           ],
           instruction: unit<SingleSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
             symbol: 'Foo',
             output: 'output.schema.json'
           })
@@ -98,6 +116,12 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             '../../extensions/abc.json'
           ],
           instruction: unit<SingleSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
             symbol: 'Foo',
             output: [
               'non-descriptor.schema.json',
@@ -125,6 +149,12 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             '../../extensions/abc.json'
           ],
           instruction: unit<MultiSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
             list: [
               {
                 output: 'foo.schema.json',
@@ -146,6 +176,12 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             '../../extensions/abc.json'
           ],
           instruction: unit<MultiSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
             list: [
               {
                 output: 'foo.schema.json',
@@ -169,6 +205,12 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             '../../extensions/abc.json'
           ],
           instruction: unit<MultiSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
             list: [
               {
                 output: [
