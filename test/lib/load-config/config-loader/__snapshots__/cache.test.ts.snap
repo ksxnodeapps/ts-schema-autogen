@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "1": "compilerOptions",
+        "2": "compilerOptions",
+        "3": "compilerOptions",
+      },
+      "schemaSettings": Object {
+        "1": "schemaSettings",
+        "2": "schemaSettings",
+        "3": "schemaSettings",
+      },
+    },
+  },
+}
+`;
