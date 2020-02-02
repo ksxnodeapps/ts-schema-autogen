@@ -49,7 +49,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'single-output': {
       'output-filename': {
         [basename]: dump({
-          generator: undefined!,
+          generator: null!,
           extends: [
             '../../extensions/abc.yaml',
             '../../extensions/abc.json'
@@ -67,7 +67,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         })
       },
       'output-descriptor': dump({
-        generator: undefined!,
+        generator: null!,
         extends: [
           '../../extensions/abc.yaml',
           '../../extensions/abc.json'
@@ -91,7 +91,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'multiple-output': {
       'output-filename': {
         [basename]: dump({
-          generator: undefined!,
+          generator: null!,
           extends: [
             '../../extensions/abc.yaml',
             '../../extensions/abc.json'
@@ -110,7 +110,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       },
       'output-descriptor': {
         [basename]: dump({
-          generator: undefined!,
+          generator: null!,
           extends: [
             '../../extensions/abc.yaml',
             '../../extensions/abc.json'
@@ -143,7 +143,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'single-output': {
       'output-filename': {
         [basename]: dump({
-          generator: undefined!,
+          generator: null!,
           extends: [
             '../../extensions/abc.yaml',
             '../../extensions/abc.json'
@@ -170,7 +170,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       },
       'output-descriptor': {
         [basename]: dump({
-          generator: undefined!,
+          generator: null!,
           extends: [
             '../../extensions/abc.yaml',
             '../../extensions/abc.json'
@@ -199,7 +199,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'multi-output': {
       'output-filename': {
         [basename]: dump({
-          generator: undefined!,
+          generator: null!,
           extends: [
             '../../extensions/abc.yaml',
             '../../extensions/abc.json'
