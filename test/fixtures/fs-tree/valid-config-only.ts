@@ -17,6 +17,7 @@ interface Dump {
 const subTree = (basename: string, dump: Dump): FsTree => ({
   'extensions': {
     'abc.yaml': safeDump({
+      generator: null!,
       instruction: {
         compilerOptions: {
           '(extensions.abc.compilerOptions) format': 'YAML',
@@ -31,6 +32,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       } as InstructionSharedProperties
     } as Config),
     'abc.json': JSON.stringify({
+      generator: null!,
       instruction: {
         compilerOptions: {
           '(extensions.abc.compilerOptions) format': 'JSON',
@@ -45,6 +47,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       } as InstructionSharedProperties
     } as Config, undefined, 2),
     'def-yaml': safeDump({
+      generator: null!,
       instruction: {
         compilerOptions: {
           '(extensions.def.compilerOptions) format': 'YAML',
@@ -59,6 +62,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       } as InstructionSharedProperties
     } as Config),
     'def-json': JSON.stringify({
+      generator: null!,
       instruction: {
         compilerOptions: {
           '(extensions.def.compilerOptions) format': 'JSON',
