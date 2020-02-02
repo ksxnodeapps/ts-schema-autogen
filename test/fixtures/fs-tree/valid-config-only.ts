@@ -43,6 +43,34 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
           '(extensions.abc.schemaSettings) filename': 'abc.json'
         }
       } as InstructionSharedProperties
+    } as Config, undefined, 2),
+    'def-yaml': safeDump({
+      instruction: {
+        compilerOptions: {
+          '(extensions.def.compilerOptions) format': 'YAML',
+          '(extensions.def.compilerOptions) property': 'compilerOptions',
+          '(extensions.def.compilerOptions) filename': 'def-yaml'
+        },
+        schemaSettings: {
+          '(extensions.def.schemaSettings) format': 'YAML',
+          '(extensions.def.schemaSettings) property': 'schemaSettings',
+          '(extensions.def.schemaSettings) filename': 'def-yaml'
+        }
+      } as InstructionSharedProperties
+    } as Config),
+    'def-json': JSON.stringify({
+      instruction: {
+        compilerOptions: {
+          '(extensions.def.compilerOptions) format': 'JSON',
+          '(extensions.def.compilerOptions) property': 'compilerOptions',
+          '(extensions.def.compilerOptions) filename': 'def-json'
+        },
+        schemaSettings: {
+          '(extensions.def.schemaSettings) format': 'JSON',
+          '(extensions.def.schemaSettings) property': 'schemaSettings',
+          '(extensions.def.schemaSettings) filename': 'def-json'
+        }
+      } as InstructionSharedProperties
     } as Config, undefined, 2)
   },
   'single-symbol': {
