@@ -1,5 +1,161 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`valid config json/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.json result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.json",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": Array [
+            "foo.filename.schema.json",
+            Object {
+              "filename": "foo.default.schema.json",
+            },
+            Object {
+              "filename": "foo.custom.schema.json",
+              "format": "json",
+              "indent": "tab",
+            },
+          ],
+          "symbol": "Foo",
+        },
+        Object {
+          "output": Array [
+            Object {
+              "filename": "bar.4.schema.json",
+              "format": "json",
+              "indent": 4,
+            },
+          ],
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.json",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+    },
+  },
+}
+`;
+
+exports[`valid config json/multiple-symbol/multiple-output/output-filename/.schema.autogen.json result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.json",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": Array [
+            "abc.foo.schema.json",
+            "def.foo.schema.json",
+            "ghi.foo.schema.json",
+          ],
+          "symbol": "Foo",
+        },
+        Object {
+          "output": Array [
+            "abc.bar.schema.json",
+            "def.bar.schema.json",
+            "ghi.bar.schema.json",
+          ],
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.json",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+    },
+  },
+}
+`;
+
+exports[`valid config json/multiple-symbol/single-output/output-descriptor/.schema.autogen.json result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.json",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": "foo.schema.json",
+          "symbol": "Foo",
+        },
+        Object {
+          "output": "bar.schema.json",
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.json",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+    },
+  },
+}
+`;
+
+exports[`valid config json/multiple-symbol/single-output/output-filename/.schema.autogen.json result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.json",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": "foo.schema.json",
+          "symbol": "Foo",
+        },
+        Object {
+          "output": "bar.schema.json",
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.json",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+    },
+  },
+}
+`;
+
 exports[`valid config json/single-symbol/multiple-output/output-descriptor/.schema.autogen.json result matches snapshot 1`] = `
 Success {
   "code": 0,
@@ -109,6 +265,162 @@ Success {
         "(extensions.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
+    },
+  },
+}
+`;
+
+exports[`valid config yaml/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.yaml result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.yaml",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": Array [
+            "foo.filename.schema.json",
+            Object {
+              "filename": "foo.default.schema.json",
+            },
+            Object {
+              "filename": "foo.custom.schema.json",
+              "format": "json",
+              "indent": "tab",
+            },
+          ],
+          "symbol": "Foo",
+        },
+        Object {
+          "output": Array [
+            Object {
+              "filename": "bar.4.schema.json",
+              "format": "json",
+              "indent": 4,
+            },
+          ],
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.yaml",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+    },
+  },
+}
+`;
+
+exports[`valid config yaml/multiple-symbol/multiple-output/output-filename/.schema.autogen.yaml result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.yaml",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": Array [
+            "abc.foo.schema.json",
+            "def.foo.schema.json",
+            "ghi.foo.schema.json",
+          ],
+          "symbol": "Foo",
+        },
+        Object {
+          "output": Array [
+            "abc.bar.schema.json",
+            "def.bar.schema.json",
+            "ghi.bar.schema.json",
+          ],
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.yaml",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+    },
+  },
+}
+`;
+
+exports[`valid config yaml/multiple-symbol/single-output/output-descriptor/.schema.autogen.yaml result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.yaml",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": "foo.schema.json",
+          "symbol": "Foo",
+        },
+        Object {
+          "output": "bar.schema.json",
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.yaml",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
+    },
+  },
+}
+`;
+
+exports[`valid config yaml/multiple-symbol/single-output/output-filename/.schema.autogen.yaml result matches snapshot 1`] = `
+Success {
+  "code": 0,
+  "error": undefined,
+  "value": Object {
+    "instruction": Object {
+      "compilerOptions": Object {
+        "(base.compilerOptions) filename": ".schema.autogen.yaml",
+        "(extensions.compilerOptions) filename": "abc.yaml",
+        "(extensions.compilerOptions) format": "YAML",
+        "(extensions.compilerOptions) property": "compilerOptions",
+      },
+      "list": Array [
+        Object {
+          "output": "foo.schema.json",
+          "symbol": "Foo",
+        },
+        Object {
+          "output": "bar.schema.json",
+          "symbol": "Bar",
+        },
+      ],
+      "schemaSettings": Object {
+        "(base.schemaSettings) filename": ".schema.autogen.yaml",
+        "(extensions.schemaSettings) filename": "abc.yaml",
+        "(extensions.schemaSettings) format": "YAML",
+        "(extensions.schemaSettings) property": "schemaSettings",
+      },
     },
   },
 }

@@ -210,4 +210,188 @@ describe('valid config', () => {
       expect(result).toBeInstanceOf(Success)
     })
   })
+
+  describe('yaml/multiple-symbol/single-output/output-filename/.schema.autogen.yaml', () => {
+    const cfgFile = 'yaml/multiple-symbol/single-output/output-filename/.schema.autogen.yaml'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
+
+  describe('json/multiple-symbol/single-output/output-filename/.schema.autogen.json', () => {
+    const cfgFile = 'json/multiple-symbol/single-output/output-filename/.schema.autogen.json'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
+
+  describe('yaml/multiple-symbol/single-output/output-descriptor/.schema.autogen.yaml', () => {
+    const cfgFile = 'yaml/multiple-symbol/single-output/output-descriptor/.schema.autogen.yaml'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
+
+  describe('json/multiple-symbol/single-output/output-descriptor/.schema.autogen.json', () => {
+    const cfgFile = 'json/multiple-symbol/single-output/output-descriptor/.schema.autogen.json'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
+
+  describe('yaml/multiple-symbol/multiple-output/output-filename/.schema.autogen.yaml', () => {
+    const cfgFile = 'yaml/multiple-symbol/multiple-output/output-filename/.schema.autogen.yaml'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
+
+  describe('json/multiple-symbol/multiple-output/output-filename/.schema.autogen.json', () => {
+    const cfgFile = 'json/multiple-symbol/multiple-output/output-filename/.schema.autogen.json'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
+
+  describe('yaml/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.yaml', () => {
+    const cfgFile = 'yaml/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.yaml'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
+
+  describe('json/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.json', () => {
+    const cfgFile = 'json/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.json'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
 })
