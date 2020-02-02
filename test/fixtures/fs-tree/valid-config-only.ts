@@ -198,7 +198,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         })
       }
     },
-    'multi-output': {
+    'multiple-output': {
       'output-filename': {
         [basename]: dump({
           generator: null!,
