@@ -49,4 +49,27 @@ describe('valid config', () => {
       expect(result).toBeInstanceOf(Success)
     })
   })
+
+  describe('json/single-symbol/single-output/output-filename/.schema.autogen.json', () => {
+    const cfgFile = 'json/single-symbol/single-output/output-filename/.schema.autogen.json'
+
+    it('result matches snapshot', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
+    })
+
+    it('result is a Success', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toBeInstanceOf(Success)
+    })
+  })
 })
