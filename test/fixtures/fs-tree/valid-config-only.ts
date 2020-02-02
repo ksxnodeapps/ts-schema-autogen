@@ -141,7 +141,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       }
     }
   },
-  'multi-symbol': {
+  'multiple-symbol': {
     'single-output': {
       'output-filename': {
         [basename]: dump({
