@@ -99,8 +99,6 @@ export class ConfigLoader {
     if (lcfRet.code) return lcfRet
 
     let config = lcfRet.value
-    simpleCache.set(filename, config)
-
     if (!config.extends) return new Success(config)
     for (const path of ensureArray(config.extends)) {
       const absPath = join(dirname(filename), path)
@@ -108,6 +106,8 @@ export class ConfigLoader {
       if (res.code) return res
       config = mergeConfig(config, res.value)
     }
+
+    simpleCache.set(filename, config)
     return new Success(config)
   }
 
