@@ -52,14 +52,14 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       generator: null!,
       instruction: {
         compilerOptions: {
-          '(extensions.def.compilerOptions) format': 'YAML',
-          '(extensions.def.compilerOptions) property': 'compilerOptions',
-          '(extensions.def.compilerOptions) filename': 'def-yaml'
+          '(extensions.def-yaml.compilerOptions) format': 'YAML',
+          '(extensions.def-yaml.compilerOptions) property': 'compilerOptions',
+          '(extensions.def-yaml.compilerOptions) filename': 'def-yaml'
         },
         schemaSettings: {
-          '(extensions.def.schemaSettings) format': 'YAML',
-          '(extensions.def.schemaSettings) property': 'schemaSettings',
-          '(extensions.def.schemaSettings) filename': 'def-yaml'
+          '(extensions.def-yaml.schemaSettings) format': 'YAML',
+          '(extensions.def-yaml.schemaSettings) property': 'schemaSettings',
+          '(extensions.def-yaml.schemaSettings) filename': 'def-yaml'
         }
       } as InstructionSharedProperties
     } as Config),
@@ -67,14 +67,14 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       generator: null!,
       instruction: {
         compilerOptions: {
-          '(extensions.def.compilerOptions) format': 'JSON',
-          '(extensions.def.compilerOptions) property': 'compilerOptions',
-          '(extensions.def.compilerOptions) filename': 'def-json'
+          '(extensions.def-json.compilerOptions) format': 'JSON',
+          '(extensions.def-json.compilerOptions) property': 'compilerOptions',
+          '(extensions.def-json.compilerOptions) filename': 'def-json'
         },
         schemaSettings: {
-          '(extensions.def.schemaSettings) format': 'JSON',
-          '(extensions.def.schemaSettings) property': 'schemaSettings',
-          '(extensions.def.schemaSettings) filename': 'def-json'
+          '(extensions.def-json.schemaSettings) format': 'JSON',
+          '(extensions.def-json.schemaSettings) property': 'schemaSettings',
+          '(extensions.def-json.schemaSettings) filename': 'def-json'
         }
       } as InstructionSharedProperties
     } as Config, undefined, 2)
