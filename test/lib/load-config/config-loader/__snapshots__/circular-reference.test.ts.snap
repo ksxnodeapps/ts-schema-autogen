@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`0 → (a0 → a1 → a0, b0 → b1 → b0) error messages 1`] = `
+"
+CircularReference
+    tree/0.json
+    tree/1/a/0.json
+    tree/1/a/1.json
+"
+`;
+
+exports[`0 → (a0 → a1 → a0, b0 → b1 → b0) result matches snapshot 1`] = `
+CircularReference {
+  "code": 8,
+  "error": Array [
+    "tree/0.json",
+    "tree/1/a/0.json",
+    "tree/1/a/1.json",
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`0 → 0 error messages 1`] = `
+"
+CircularReference
+    1/0.json
+"
+`;
+
+exports[`0 → 0 result matches snapshot 1`] = `
+CircularReference {
+  "code": 8,
+  "error": Array [
+    "1/0.json",
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`0 → 1 → (a0 → a1 → 3 → 1, b0 → b1 → 3 → 1, c0 → c1 → 3 → 4) error messages 1`] = `
+"
+CircularReference
+    tree/0.json
+    tree/1/a/0.json
+    tree/1/a/1.json
+"
+`;
+
+exports[`0 → 1 → (a0 → a1 → 3 → 1, b0 → b1 → 3 → 1, c0 → c1 → 3 → 4) result matches snapshot 1`] = `
+CircularReference {
+  "code": 8,
+  "error": Array [
+    "tree/0.json",
+    "tree/1/a/0.json",
+    "tree/1/a/1.json",
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`0 → 1 → 0 error messages 1`] = `
+"
+CircularReference
+    2/0.json
+    2/1.json
+"
+`;
+
+exports[`0 → 1 → 0 result matches snapshot 1`] = `
+CircularReference {
+  "code": 8,
+  "error": Array [
+    "2/0.json",
+    "2/1.json",
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`0 → 1 → 2 → 0 error messages 1`] = `
+"
+CircularReference
+    3/0.json
+    3/1.json
+    3/2.json
+"
+`;
+
+exports[`0 → 1 → 2 → 0 result matches snapshot 1`] = `
+CircularReference {
+  "code": 8,
+  "error": Array [
+    "3/0.json",
+    "3/1.json",
+    "3/2.json",
+  ],
+  "value": undefined,
+}
+`;
