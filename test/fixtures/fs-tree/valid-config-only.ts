@@ -4,6 +4,7 @@ import unit from '../utils/unit'
 
 import {
   Config,
+  InstructionSharedProperties,
   SingleSymbolInstruction,
   MultiSymbolInstruction,
   OutputDescriptor
@@ -14,6 +15,36 @@ interface Dump {
 }
 
 const subTree = (basename: string, dump: Dump): FsTree => ({
+  'extensions': {
+    'abc.yaml': safeDump({
+      instruction: {
+        compilerOptions: {
+          'extension format': 'YAML',
+          'extension property': 'compilerOptions',
+          '(compilerOptions) extends': 'abc.yaml'
+        },
+        schemaSettings: {
+          'extension format': 'YAML',
+          'extension property': 'schemaSettings',
+          '(schemaSettings) extends': 'abc.yaml'
+        }
+      } as InstructionSharedProperties
+    } as Config),
+    'abc.json': JSON.stringify({
+      instruction: {
+        compilerOptions: {
+          'extension format': 'JSON',
+          'extension property': 'compilerOptions',
+          '(compilerOptions) extends': 'abc.json'
+        },
+        schemaSettings: {
+          'extension format': 'JSON',
+          'extension property': 'schemaSettings',
+          '(schemaSettings) extends': 'abc.json'
+        }
+      } as InstructionSharedProperties
+    } as Config, undefined, 2)
+  },
   'single-symbol': {
     'single-output': {
       'output-filename': {
