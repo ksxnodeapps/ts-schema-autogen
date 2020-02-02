@@ -160,9 +160,7 @@ extends Failure<readonly Error[]> {
     yield this.name
     for (const item of this.error) {
       yield Failure.indent(1) + item.parser.name
-      for (const error of item.error) {
-        yield * iterateIndentedLines(2, inspect(error))
-      }
+      yield * iterateIndentedLines(2, String(item.error))
     }
   }
 }
