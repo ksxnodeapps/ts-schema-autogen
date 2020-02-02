@@ -51,8 +51,8 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         [basename]: dump({
           generator: null!,
           extends: [
-            '../../extensions/abc.yaml',
-            '../../extensions/abc.json'
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
           ],
           instruction: unit<SingleSymbolInstruction>({
             compilerOptions: {
@@ -69,8 +69,8 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       'output-descriptor': dump({
         generator: null!,
         extends: [
-          '../../extensions/abc.yaml',
-          '../../extensions/abc.json'
+          '../../../extensions/abc.yaml',
+          '../../../extensions/abc.json'
         ],
         instruction: unit<SingleSymbolInstruction>({
           compilerOptions: {
@@ -93,8 +93,8 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         [basename]: dump({
           generator: null!,
           extends: [
-            '../../extensions/abc.yaml',
-            '../../extensions/abc.json'
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
           ],
           instruction: unit<SingleSymbolInstruction>({
             compilerOptions: {
@@ -112,8 +112,8 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         [basename]: dump({
           generator: null!,
           extends: [
-            '../../extensions/abc.yaml',
-            '../../extensions/abc.json'
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
           ],
           instruction: unit<SingleSymbolInstruction>({
             compilerOptions: {
@@ -145,8 +145,8 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         [basename]: dump({
           generator: null!,
           extends: [
-            '../../extensions/abc.yaml',
-            '../../extensions/abc.json'
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
           ],
           instruction: unit<MultiSymbolInstruction>({
             compilerOptions: {
@@ -172,8 +172,8 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         [basename]: dump({
           generator: null!,
           extends: [
-            '../../extensions/abc.yaml',
-            '../../extensions/abc.json'
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
           ],
           instruction: unit<MultiSymbolInstruction>({
             compilerOptions: {
@@ -201,8 +201,8 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
         [basename]: dump({
           generator: null!,
           extends: [
-            '../../extensions/abc.yaml',
-            '../../extensions/abc.json'
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
           ],
           instruction: unit<MultiSymbolInstruction>({
             compilerOptions: {
