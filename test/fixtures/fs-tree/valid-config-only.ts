@@ -50,6 +50,10 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       'output-filename': {
         [basename]: dump({
           generator: undefined!,
+          extends: [
+            '../../extensions/abc.yaml',
+            '../../extensions/abc.json'
+          ],
           instruction: unit<SingleSymbolInstruction>({
             symbol: 'Foo',
             output: 'output.schema.json'
@@ -58,6 +62,10 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       },
       'output-descriptor': dump({
         generator: undefined!,
+        extends: [
+          '../../extensions/abc.yaml',
+          '../../extensions/abc.json'
+        ],
         instruction: unit<SingleSymbolInstruction>({
           symbol: 'Foo',
           output: unit<OutputDescriptor>({
@@ -72,6 +80,10 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       'output-filename': {
         [basename]: dump({
           generator: undefined!,
+          extends: [
+            '../../extensions/abc.yaml',
+            '../../extensions/abc.json'
+          ],
           instruction: unit<SingleSymbolInstruction>({
             symbol: 'Foo',
             output: 'output.schema.json'
@@ -81,6 +93,10 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       'output-descriptor': {
         [basename]: dump({
           generator: undefined!,
+          extends: [
+            '../../extensions/abc.yaml',
+            '../../extensions/abc.json'
+          ],
           instruction: unit<SingleSymbolInstruction>({
             symbol: 'Foo',
             output: [
@@ -104,6 +120,10 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       'output-filename': {
         [basename]: dump({
           generator: undefined!,
+          extends: [
+            '../../extensions/abc.yaml',
+            '../../extensions/abc.json'
+          ],
           instruction: unit<MultiSymbolInstruction>({
             list: [
               {
@@ -121,6 +141,10 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       'output-descriptor': {
         [basename]: dump({
           generator: undefined!,
+          extends: [
+            '../../extensions/abc.yaml',
+            '../../extensions/abc.json'
+          ],
           instruction: unit<MultiSymbolInstruction>({
             list: [
               {
@@ -140,6 +164,10 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       'output-filename': {
         [basename]: dump({
           generator: undefined!,
+          extends: [
+            '../../extensions/abc.yaml',
+            '../../extensions/abc.json'
+          ],
           instruction: unit<MultiSymbolInstruction>({
             list: [
               {
