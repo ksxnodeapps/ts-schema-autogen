@@ -1,18 +1,14 @@
-import { safeDump } from 'js-yaml'
-import { FsTree } from '../utils/types'
-import unit from '../utils/unit'
-
 import {
   Config,
   InstructionSharedProperties,
   SingleSymbolInstruction,
   MultiSymbolInstruction,
-  OutputDescriptor
-} from '@ts-schema-autogen/types'
-
-interface Dump {
-  (config: Config): string
-}
+  OutputDescriptor,
+  FsTree,
+  Dump,
+  safeDump,
+  unit
+} from './_'
 
 const subTree = (basename: string, dump: Dump): FsTree => ({
   'extensions': {
