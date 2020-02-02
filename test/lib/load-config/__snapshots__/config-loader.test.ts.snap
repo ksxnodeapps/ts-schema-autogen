@@ -8,9 +8,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -40,9 +40,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -57,9 +57,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -81,9 +81,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -98,9 +98,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -122,9 +122,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -139,9 +139,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -155,9 +155,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -172,9 +172,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": Array [
         "non-descriptor.schema.json",
@@ -189,9 +189,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },
@@ -207,9 +207,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": Array [
         "abc.schema.json",
@@ -218,9 +218,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },
@@ -236,9 +236,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": Object {
         "filename": "output.schema.json",
@@ -247,9 +247,9 @@ Success {
       },
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },
@@ -265,16 +265,16 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.json",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": "output.schema.json",
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },
@@ -290,9 +290,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -322,9 +322,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -339,9 +339,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -363,9 +363,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -380,9 +380,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -404,9 +404,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -421,9 +421,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "list": Array [
         Object {
@@ -437,9 +437,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
     },
   },
@@ -454,9 +454,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": Array [
         "non-descriptor.schema.json",
@@ -471,9 +471,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },
@@ -489,9 +489,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": Array [
         "abc.schema.json",
@@ -500,9 +500,9 @@ Success {
       ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },
@@ -518,9 +518,9 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": Object {
         "filename": "output.schema.json",
@@ -529,9 +529,9 @@ Success {
       },
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },
@@ -547,16 +547,16 @@ Success {
     "instruction": Object {
       "compilerOptions": Object {
         "(base.compilerOptions) filename": ".schema.autogen.yaml",
-        "(extensions.compilerOptions) filename": "abc.yaml",
-        "(extensions.compilerOptions) format": "YAML",
-        "(extensions.compilerOptions) property": "compilerOptions",
+        "(extensions.abc.compilerOptions) filename": "abc.yaml",
+        "(extensions.abc.compilerOptions) format": "YAML",
+        "(extensions.abc.compilerOptions) property": "compilerOptions",
       },
       "output": "output.schema.json",
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
-        "(extensions.schemaSettings) filename": "abc.yaml",
-        "(extensions.schemaSettings) format": "YAML",
-        "(extensions.schemaSettings) property": "schemaSettings",
+        "(extensions.abc.schemaSettings) filename": "abc.yaml",
+        "(extensions.abc.schemaSettings) format": "YAML",
+        "(extensions.abc.schemaSettings) property": "schemaSettings",
       },
       "symbol": "Foo",
     },

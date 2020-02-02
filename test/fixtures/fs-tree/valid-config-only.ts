@@ -19,28 +19,28 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'abc.yaml': safeDump({
       instruction: {
         compilerOptions: {
-          '(extensions.compilerOptions) format': 'YAML',
-          '(extensions.compilerOptions) property': 'compilerOptions',
-          '(extensions.compilerOptions) filename': 'abc.yaml'
+          '(extensions.abc.compilerOptions) format': 'YAML',
+          '(extensions.abc.compilerOptions) property': 'compilerOptions',
+          '(extensions.abc.compilerOptions) filename': 'abc.yaml'
         },
         schemaSettings: {
-          '(extensions.schemaSettings) format': 'YAML',
-          '(extensions.schemaSettings) property': 'schemaSettings',
-          '(extensions.schemaSettings) filename': 'abc.yaml'
+          '(extensions.abc.schemaSettings) format': 'YAML',
+          '(extensions.abc.schemaSettings) property': 'schemaSettings',
+          '(extensions.abc.schemaSettings) filename': 'abc.yaml'
         }
       } as InstructionSharedProperties
     } as Config),
     'abc.json': JSON.stringify({
       instruction: {
         compilerOptions: {
-          '(extensions.compilerOptions) format': 'JSON',
-          '(extensions.compilerOptions) property': 'compilerOptions',
-          '(extensions.compilerOptions) filename': 'abc.json'
+          '(extensions.abc.compilerOptions) format': 'JSON',
+          '(extensions.abc.compilerOptions) property': 'compilerOptions',
+          '(extensions.abc.compilerOptions) filename': 'abc.json'
         },
         schemaSettings: {
-          '(extensions.schemaSettings) format': 'JSON',
-          '(extensions.schemaSettings) property': 'schemaSettings',
-          '(extensions.schemaSettings) filename': 'abc.json'
+          '(extensions.abc.schemaSettings) format': 'JSON',
+          '(extensions.abc.schemaSettings) property': 'schemaSettings',
+          '(extensions.abc.schemaSettings) filename': 'abc.json'
         }
       } as InstructionSharedProperties
     } as Config, undefined, 2)
