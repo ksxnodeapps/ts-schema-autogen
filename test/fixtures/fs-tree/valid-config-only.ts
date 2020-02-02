@@ -19,13 +19,13 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'abc.yaml': safeDump({
       instruction: {
         compilerOptions: {
-          'extension format': 'YAML',
-          'extension property': 'compilerOptions',
+          '(compilerOptions) format': 'YAML',
+          '(compilerOptions) property': 'compilerOptions',
           '(compilerOptions) extends': 'abc.yaml'
         },
         schemaSettings: {
-          'extension format': 'YAML',
-          'extension property': 'schemaSettings',
+          '(schemaSettings) format': 'YAML',
+          '(schemaSettings) property': 'schemaSettings',
           '(schemaSettings) extends': 'abc.yaml'
         }
       } as InstructionSharedProperties
@@ -33,13 +33,13 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'abc.json': JSON.stringify({
       instruction: {
         compilerOptions: {
-          'extension format': 'JSON',
-          'extension property': 'compilerOptions',
+          '(compilerOptions) format': 'JSON',
+          '(compilerOptions) property': 'compilerOptions',
           '(compilerOptions) extends': 'abc.json'
         },
         schemaSettings: {
-          'extension format': 'JSON',
-          'extension property': 'schemaSettings',
+          '(schemaSettings) format': 'JSON',
+          '(schemaSettings) property': 'schemaSettings',
           '(schemaSettings) extends': 'abc.json'
         }
       } as InstructionSharedProperties
