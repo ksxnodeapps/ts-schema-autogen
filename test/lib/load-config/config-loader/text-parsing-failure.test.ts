@@ -1,5 +1,5 @@
 import fsTree from '../../../fixtures/fs-tree/invalid-syntax'
-import { FakeFileSystem, FakePath } from '@tools/test-utils'
+import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
   Status,
@@ -54,4 +54,9 @@ it('result has expected properties', async () => {
 it('result is a TextParsingFailure', async () => {
   const { result } = await setup(cfgFile)
   expect(result).toBeInstanceOf(TextParsingFailure)
+})
+
+it('error messages', async () => {
+  const { result } = await setup(cfgFile)
+  expect(printResult(result)).toMatchSnapshot()
 })

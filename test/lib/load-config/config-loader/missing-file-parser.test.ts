@@ -1,5 +1,5 @@
 import fsTree from '../../../fixtures/fs-tree/valid-config-only'
-import { FakeFileSystem, FakePath } from '@tools/test-utils'
+import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
   Status,
@@ -34,4 +34,9 @@ it('result has expected properties', async () => {
 it('result is a MissingFileParser', async () => {
   const { result } = await setup(cfgFile)
   expect(result).toBeInstanceOf(MissingFileParser)
+})
+
+it('error messages', async () => {
+  const { result } = await setup(cfgFile)
+  expect(printResult(result)).toMatchSnapshot()
 })

@@ -1,5 +1,5 @@
 import fsTree from '../../../fixtures/fs-tree/valid-config-only'
-import { FakeFileSystem, FakePath } from '@tools/test-utils'
+import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
   Status,
@@ -47,6 +47,11 @@ describe('when a directory is read as file', () => {
     const { result } = await setup(cfgFile)
     expect(result).toBeInstanceOf(FileReadingFailure)
   })
+
+  it('error messages', async () => {
+    const { result } = await setup(cfgFile)
+    expect(printResult(result)).toMatchSnapshot()
+  })
 })
 
 describe('when file does not exist', () => {
@@ -69,5 +74,10 @@ describe('when file does not exist', () => {
   it('result is a FileReadingFailure', async () => {
     const { result } = await setup(cfgFile)
     expect(result).toBeInstanceOf(FileReadingFailure)
+  })
+
+  it('error messages', async () => {
+    const { result } = await setup(cfgFile)
+    expect(printResult(result)).toMatchSnapshot()
   })
 })

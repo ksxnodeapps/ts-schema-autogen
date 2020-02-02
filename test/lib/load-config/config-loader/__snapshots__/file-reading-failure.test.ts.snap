@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`when a directory is read as file error messages 1`] = `
+"
+FileReadingFailure
+    path: json/single-symbol/single-output/output-filename
+    error:
+        EISDIR {
+          syscall: 'read',
+          path: [ 'json', 'single-symbol', 'single-output', 'output-filename' ],
+          errno: -21,
+          code: 'EISDIR'
+        }
+"
+`;
+
 exports[`when a directory is read as file result matches snapshot 1`] = `
 FileReadingFailure {
   "code": 5,
@@ -17,6 +31,20 @@ FileReadingFailure {
   "path": "json/single-symbol/single-output/output-filename",
   "value": undefined,
 }
+`;
+
+exports[`when file does not exist error messages 1`] = `
+"
+FileReadingFailure
+    path: [DOES NOT EXIST]
+    error:
+        ENOENT {
+          syscall: 'read',
+          path: [ '[DOES NOT EXIST]' ],
+          errno: -2,
+          code: 'ENOENT'
+        }
+"
 `;
 
 exports[`when file does not exist result matches snapshot 1`] = `
