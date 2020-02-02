@@ -241,6 +241,49 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             ]
           })
         })
+      },
+      'output-descriptor': {
+        [basename]: dump({
+          generator: null!,
+          extends: [
+            '../../../extensions/abc.yaml',
+            '../../../extensions/abc.json'
+          ],
+          instruction: unit<MultiSymbolInstruction>({
+            compilerOptions: {
+              '(base.compilerOptions) filename': basename
+            } as any,
+            schemaSettings: {
+              '(base.schemaSettings) filename': basename
+            } as any,
+            list: [
+              {
+                output: [
+                  'foo.filename.schema.json',
+                  {
+                    filename: 'foo.default.schema.json'
+                  },
+                  {
+                    filename: 'foo.custom.schema.json',
+                    format: 'json',
+                    indent: 'tab'
+                  }
+                ],
+                symbol: 'Foo'
+              },
+              {
+                output: [
+                  {
+                    filename: 'bar.4.schema.json',
+                    format: 'json',
+                    indent: 4
+                  }
+                ],
+                symbol: 'Bar'
+              }
+            ]
+          })
+        })
       }
     }
   }
