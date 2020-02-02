@@ -10,8 +10,8 @@ import {
 } from '@ts-schema-autogen/lib'
 
 const getParsers = () => Promise.all([
-  createYamlFormatDescriptor('YAML Parser'),
-  createJsonFormatDescriptor('JSON Parser')
+  createJsonFormatDescriptor('JSON Parser'),
+  createYamlFormatDescriptor('YAML Parser')
 ])
 
 describe('valid config', () => {
