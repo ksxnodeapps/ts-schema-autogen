@@ -104,11 +104,19 @@ Success {
       },
       "list": Array [
         Object {
-          "output": "foo.schema.json",
+          "output": Object {
+            "filename": "foo.schema.json",
+            "format": "json",
+            "indent": "tab",
+          },
           "symbol": "Foo",
         },
         Object {
-          "output": "bar.schema.json",
+          "output": Object {
+            "filename": "bar.schema.json",
+            "format": "json",
+            "indent": "tab",
+          },
           "symbol": "Bar",
         },
       ],
@@ -203,7 +211,11 @@ Success {
         "(extensions.compilerOptions) format": "YAML",
         "(extensions.compilerOptions) property": "compilerOptions",
       },
-      "output": "output.schema.json",
+      "output": Array [
+        "abc.schema.json",
+        "def.schema.json",
+        "ghi.schema.json",
+      ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
         "(extensions.schemaSettings) filename": "abc.yaml",
@@ -374,11 +386,19 @@ Success {
       },
       "list": Array [
         Object {
-          "output": "foo.schema.json",
+          "output": Object {
+            "filename": "foo.schema.json",
+            "format": "json",
+            "indent": "tab",
+          },
           "symbol": "Foo",
         },
         Object {
-          "output": "bar.schema.json",
+          "output": Object {
+            "filename": "bar.schema.json",
+            "format": "json",
+            "indent": "tab",
+          },
           "symbol": "Bar",
         },
       ],
@@ -473,7 +493,11 @@ Success {
         "(extensions.compilerOptions) format": "YAML",
         "(extensions.compilerOptions) property": "compilerOptions",
       },
-      "output": "output.schema.json",
+      "output": Array [
+        "abc.schema.json",
+        "def.schema.json",
+        "ghi.schema.json",
+      ],
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
         "(extensions.schemaSettings) filename": "abc.yaml",

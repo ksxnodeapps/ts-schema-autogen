@@ -106,7 +106,11 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
               '(base.schemaSettings) filename': basename
             } as any,
             symbol: 'Foo',
-            output: 'output.schema.json'
+            output: [
+              'abc.schema.json',
+              'def.schema.json',
+              'ghi.schema.json'
+            ]
           })
         })
       },
@@ -186,11 +190,19 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             } as any,
             list: [
               {
-                output: 'foo.schema.json',
+                output: unit<OutputDescriptor>({
+                  filename: 'foo.schema.json',
+                  format: 'json',
+                  indent: 'tab'
+                }),
                 symbol: 'Foo'
               },
               {
-                output: 'bar.schema.json',
+                output: unit<OutputDescriptor>({
+                  filename: 'bar.schema.json',
+                  format: 'json',
+                  indent: 'tab'
+                }),
                 symbol: 'Bar'
               }
             ]
@@ -216,25 +228,17 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             list: [
               {
                 output: [
-                  'foo.filename.schema.json',
-                  {
-                    filename: 'foo.default.schema.json'
-                  },
-                  {
-                    filename: 'foo.custom.schema.json',
-                    format: 'json',
-                    indent: 'tab'
-                  }
+                  'abc.foo.schema.json',
+                  'def.foo.schema.json',
+                  'ghi.foo.schema.json'
                 ],
                 symbol: 'Foo'
               },
               {
                 output: [
-                  {
-                    filename: 'bar.4.schema.json',
-                    format: 'json',
-                    indent: 4
-                  }
+                  'abc.bar.schema.json',
+                  'def.bar.schema.json',
+                  'ghi.bar.schema.json'
                 ],
                 symbol: 'Bar'
               }
