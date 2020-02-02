@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`result matches snapshot 1`] = `
+TextParsingFailure {
+  "code": 6,
+  "error": Array [
+    Object {
+      "error": [SyntaxError: Unexpected token e in JSON at position 1],
+      "parser": Object {
+        "name": "JSON Parser",
+        "parseConfigText": [Function],
+        "testFileName": [Function],
+      },
+    },
+    Object {
+      "error": [YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in "invalid-config" at line 1, column 11:
+    neither: a: valid: yaml: nor: a: valid: json:
+              ^],
+      "parser": Object {
+        "name": "YAML Parser",
+        "parseConfigText": [Function],
+        "testFileName": [Function],
+      },
+    },
+  ],
+  "value": undefined,
+}
+`;
