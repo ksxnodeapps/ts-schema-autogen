@@ -21,7 +21,7 @@ describe('valid config', () => {
       path,
       parsers: await getParsers()
     })
-    const result = configLoader.loadConfig(filename)
+    const result = await configLoader.loadConfig(filename)
     return { filename, fsx, path, configLoader, result }
   }
 })
