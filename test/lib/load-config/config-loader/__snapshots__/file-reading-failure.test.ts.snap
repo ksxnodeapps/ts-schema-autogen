@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when a directory is read as file result matches snapshot 1`] = `
+Object {
+  "code": 5,
+  "error": Anything,
+  "path": "json/single-symbol/single-output/output-filename",
+  "value": undefined,
+}
+`;
+
+exports[`when file does not exist result matches snapshot 1`] = `
+Object {
+  "code": 5,
+  "error": Anything,
+  "path": "[DOES NOT EXIST]",
+  "value": undefined,
+}
+`;
