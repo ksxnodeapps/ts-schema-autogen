@@ -2,6 +2,7 @@ import validCfgOnly from '../../fixtures/fs-tree/valid-config-only'
 import { FakeFileSystem, FakePath } from '@tools/test-utils'
 
 import {
+  Status,
   ConfigLoader,
   createYamlFormatDescriptor,
   createJsonFormatDescriptor
@@ -31,6 +32,15 @@ describe('valid config', () => {
     it('result matches snapshot', async () => {
       const { result } = await setup(cfgFile)
       expect(result).toMatchSnapshot()
+    })
+
+    it('result contains expected properties', async () => {
+      const { result } = await setup(cfgFile)
+      expect(result).toMatchObject({
+        code: Status.Success,
+        error: undefined,
+        value: expect.any(Object)
+      })
     })
   })
 })
