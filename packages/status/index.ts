@@ -4,6 +4,9 @@ import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
+  /** No file parser specified */
+  MissingFileParser = 10,
+
   /** File content is outdated */
   OutdatedFile = 9,
 
@@ -214,5 +217,14 @@ export namespace OutdatedFile {
   export interface Error {
     readonly expectedContent: string
     readonly receivedContent: string | null // `null` means "file does not exist"
+  }
+}
+
+export class MissingFileParser extends Failure<void> {
+  public readonly code = Status.MissingFileParser
+
+  public * log () {
+    yield this.name
+    yield 'No parser specified'
   }
 }

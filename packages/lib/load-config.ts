@@ -3,7 +3,7 @@ import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '
 import { createJoinFunction } from 'better-path-join'
 import { ensureArray } from '@ts-schema-autogen/utils'
 import { Config, FSX, Path } from '@ts-schema-autogen/types'
-import { FileReadingFailure, TextParsingFailure, CircularReference, Success } from '@ts-schema-autogen/status'
+import { FileReadingFailure, TextParsingFailure, CircularReference, MissingFileParser, Success } from '@ts-schema-autogen/status'
 import { ConfigParser } from './config-parser'
 
 /** Error carried by {@link TextParsingFailure} */
@@ -31,6 +31,11 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
     parseErrors.push({ parser, error: parseResult.error })
   }
 
+  // Since param.parsers is an iterable, its length cannot be known.
+  // The loop above would exit the function should parsers succeeded.
+  // If param.parsers is empty, the loop above would be skip, and the branch below would be reached.
+  if (!parseErrors.length) return new MissingFileParser(undefined)
+
   return new TextParsingFailure(parseErrors)
 }
 
@@ -49,6 +54,7 @@ export namespace loadConfigFile {
   export type Return =
     FileReadingFailure |
     TextParsingFailure<ConfigParseError> |
+    MissingFileParser |
     Success<Config>
 }
 
@@ -126,6 +132,7 @@ export namespace ConfigLoader {
   export type LoaderReturn =
     FileReadingFailure |
     TextParsingFailure<ConfigParseError> |
+    MissingFileParser |
     CircularReference |
     Success<Config>
 }
