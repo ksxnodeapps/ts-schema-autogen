@@ -1,4 +1,4 @@
-import fsTree from '../../fixtures/fs-tree/valid-config-only'
+import validCfgOnly from '../../fixtures/fs-tree/valid-config-only'
 import { FakeFileSystem, FakePath } from '@tools/test-utils'
 
 import {
@@ -13,13 +13,15 @@ const getParsers = () => Promise.all([
 ])
 
 describe('valid config', () => {
-  async function setup () {
-    const fsx = new FakeFileSystem('/', fsTree)
+  async function setup (filename: string) {
+    const fsx = new FakeFileSystem('/', validCfgOnly)
     const path = new FakePath()
     const configLoader = new ConfigLoader({
       fsx,
       path,
       parsers: await getParsers()
     })
+    const result = configLoader.loadConfig(filename)
+    return { filename, fsx, path, configLoader, result }
   }
 })
