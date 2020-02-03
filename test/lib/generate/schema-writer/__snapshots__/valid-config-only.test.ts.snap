@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`one config file that specifies one output file calls outputFile 1`] = `
+Array [
+  Array [
+    "output.schema.json",
+    "{
+  \\"symbol\\": \\"Foo\\",
+  \\"type\\": \\"schema\\"
+}
+",
+  ],
+]
+`;
+
+exports[`one config file that specifies one output file creates output file 1`] = `
+"{
+  \\"symbol\\": \\"Foo\\",
+  \\"type\\": \\"schema\\"
+}
+"
+`;

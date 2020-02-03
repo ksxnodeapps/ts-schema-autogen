@@ -3,6 +3,7 @@ import TJS from '../../../fixtures/tjs'
 import { FakeFileSystem, FakePath } from '@tools/test-utils'
 
 import {
+  Success,
   SchemaWriter,
   createJsonConfigParser,
   createYamlConfigParser
@@ -26,3 +27,23 @@ async function setup (configPaths: readonly string[]) {
   const result = await schemaWriter.writeSchemas(configPaths)
   return { fsx, path, tjs, result }
 }
+
+describe('one config file that specifies one output file', () => {
+  const configPaths = ['yaml/single-symbol/single-output/output-filename/.schema.autogen.yaml']
+  const expectedOutput = 'yaml/single-symbol/single-output/output-filename/output.schema.json'
+
+  it('returns a Success', async () => {
+    const { result } = await setup(configPaths)
+    expect(result).toBeInstanceOf(Success)
+  })
+
+  it('calls outputFile', async () => {
+    const { fsx } = await setup(configPaths)
+    expect(fsx.outputFile.mock.calls).toMatchSnapshot()
+  })
+
+  it('creates output file', async () => {
+    const { fsx } = await setup(configPaths)
+    expect(fsx.readFileSync(expectedOutput)).toMatchSnapshot()
+  })
+})
