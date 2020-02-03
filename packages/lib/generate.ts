@@ -40,6 +40,7 @@ export function * generateUnit<
 > (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
   const { tjs, instruction } = param
   const { buildGenerator, getProgramFromFiles } = tjs
+  // TODO: Move checking for input elsewhere
   if (!instruction.input) return
   const program = getProgramFromFiles(
     ensureArray(instruction.input),
