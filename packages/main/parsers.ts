@@ -1,7 +1,7 @@
-import { ConfigParser, createJsonFormatDescriptor, createYamlFormatDescriptor } from '@ts-schema-autogen/lib'
-export { ConfigParser, createJsonFormatDescriptor, createYamlFormatDescriptor }
+import { ConfigParser, createJsonConfigParser, createYamlConfigParser } from '@ts-schema-autogen/lib'
+export { ConfigParser, createJsonConfigParser as createJsonFormatDescriptor, createYamlConfigParser as createYamlFormatDescriptor }
 export const parsers = Promise.all([
-  createJsonFormatDescriptor('JSON Parser'),
-  createYamlFormatDescriptor('YAML Parser')
+  createJsonConfigParser('JSON Parser'),
+  createYamlConfigParser('YAML Parser')
 ])
 export default parsers

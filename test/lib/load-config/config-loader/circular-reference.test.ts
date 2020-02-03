@@ -5,7 +5,7 @@ import {
   Status,
   CircularReference,
   ConfigLoader,
-  createJsonFormatDescriptor
+  createJsonConfigParser
 } from '@ts-schema-autogen/lib'
 
 async function setup (filename: string) {
@@ -15,7 +15,7 @@ async function setup (filename: string) {
     fsx,
     path,
     parsers: [
-      await createJsonFormatDescriptor('JSON Parser')
+      await createJsonConfigParser('JSON Parser')
     ]
   })
   const result = await configLoader.loadConfig(filename)

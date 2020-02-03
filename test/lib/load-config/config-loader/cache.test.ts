@@ -3,7 +3,7 @@ import { FakeFileSystem, FakePath } from '@tools/test-utils'
 
 import {
   ConfigLoader,
-  createJsonFormatDescriptor
+  createJsonConfigParser
 } from '@ts-schema-autogen/lib'
 
 async function loadFile (filename: string) {
@@ -13,7 +13,7 @@ async function loadFile (filename: string) {
     fsx,
     path,
     parsers: [
-      await createJsonFormatDescriptor('JSON Parser')
+      await createJsonConfigParser('JSON Parser')
     ]
   })
   const result = await configLoader.loadConfig(filename)

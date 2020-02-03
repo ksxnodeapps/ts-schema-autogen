@@ -19,7 +19,7 @@ export interface ConfigParser {
   parseConfigText (text: string, filename: string): Result<Config, unknown>
 }
 
-export async function createJsonFormatDescriptor (name: string): Promise<ConfigParser> {
+export async function createJsonConfigParser (name: string): Promise<ConfigParser> {
   const { extname } = await import('path')
   const EXT = ['.json', '']
   const testFileName = (filename: string) => EXT.includes(extname(filename))
@@ -27,7 +27,7 @@ export async function createJsonFormatDescriptor (name: string): Promise<ConfigP
   return { name, testFileName, parseConfigText }
 }
 
-export async function createYamlFormatDescriptor (name: string): Promise<ConfigParser> {
+export async function createYamlConfigParser (name: string): Promise<ConfigParser> {
   const { extname } = await import('path')
   const { safeLoad } = await import('js-yaml')
   const EXT = ['.yaml', '.yml', '']

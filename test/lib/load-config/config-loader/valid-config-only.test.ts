@@ -5,13 +5,13 @@ import {
   Status,
   Success,
   ConfigLoader,
-  createYamlFormatDescriptor,
-  createJsonFormatDescriptor
+  createYamlConfigParser,
+  createJsonConfigParser
 } from '@ts-schema-autogen/lib'
 
 const getParsers = () => Promise.all([
-  createJsonFormatDescriptor('JSON Parser'),
-  createYamlFormatDescriptor('YAML Parser')
+  createJsonConfigParser('JSON Parser'),
+  createYamlConfigParser('YAML Parser')
 ])
 
 async function setup (filename: string) {
