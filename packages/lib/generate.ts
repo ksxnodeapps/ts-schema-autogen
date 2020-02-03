@@ -38,7 +38,7 @@ export function * generateUnit<
   Prog = Program,
   Def = Definition
 > (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
-  const { tjs, instruction } = param
+  const { tjs, instruction, resolvePath } = param
   const { buildGenerator, getProgramFromFiles } = tjs
   // TODO: Move checking for input elsewhere
   if (!instruction.input) return
@@ -52,7 +52,16 @@ export function * generateUnit<
 
   for (const symbolInstruction of listSymbolInstruction(instruction)) {
     const schema = generator.getSchemaForSymbol(symbolInstruction.symbol)
-    yield { instruction: symbolInstruction, schema }
+    const output = ensureOutputDescriptorArray(symbolInstruction.output)
+      .map(({ filename, ...rest }) => ({
+        filename: resolvePath(filename),
+        ...rest
+      }))
+    const instruction: SymbolInstruction = {
+      ...symbolInstruction,
+      output
+    }
+    yield { instruction, schema }
   }
 }
 
