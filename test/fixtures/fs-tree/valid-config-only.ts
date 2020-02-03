@@ -91,6 +91,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: 'foo.ts',
             symbol: 'Foo',
             output: 'output.schema.json'
           })
@@ -110,6 +111,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: 'foo.ts',
             symbol: 'Foo',
             output: unit<OutputDescriptor>({
               filename: 'output.schema.json',
@@ -135,6 +137,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: ['foo/lib.ts', 'foo/utils.ts'],
             symbol: 'Foo',
             output: [
               'abc.schema.json',
@@ -158,6 +161,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: ['foo/lib.ts', 'foo/utils.ts'],
             symbol: 'Foo',
             output: [
               'non-descriptor.schema.json',
@@ -191,6 +195,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: ['foo.ts', 'bar.ts'],
             list: [
               {
                 output: 'foo.schema.json',
@@ -218,6 +223,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: ['foo.ts', 'bar.ts'],
             list: [
               {
                 output: unit<OutputDescriptor>({
@@ -255,6 +261,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: ['foo.ts', 'bar.ts'],
             list: [
               {
                 output: [
@@ -290,6 +297,7 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
             schemaSettings: {
               '(base.schemaSettings) filename': basename
             } as any,
+            input: ['foo.ts', 'bar.ts'],
             list: [
               {
                 output: [
