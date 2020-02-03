@@ -37,9 +37,14 @@ describe('one config file that specifies one output file', () => {
     expect(result).toBeInstanceOf(Success)
   })
 
-  it('calls outputFile', async () => {
+  it('calls outputFile once', async () => {
     const { fsx } = await setup(configPaths)
-    expect(fsx.outputFile.mock.calls).toMatchSnapshot()
+    expect(fsx.outputFile).toBeCalledTimes(1)
+  })
+
+  it('calls outputFile with expected argument', async () => {
+    const { fsx } = await setup(configPaths)
+    expect(fsx.outputFile).toBeCalledWith(expectedOutput, expect.any(String))
   })
 
   it('creates output file', async () => {
