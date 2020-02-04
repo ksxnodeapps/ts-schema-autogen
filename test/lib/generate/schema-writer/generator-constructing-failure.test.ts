@@ -47,3 +47,8 @@ it('returns a GeneratorConstructingFailure', async () => {
   const { result } = await setup()
   expect(result).toBeInstanceOf(GeneratorConstructingFailure)
 })
+
+it('does not call outputFile', async () => {
+  const { fsx } = await setup()
+  expect(fsx.outputFile).not.toBeCalled()
+})
