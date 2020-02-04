@@ -313,6 +313,39 @@ Array [
 ]
 `;
 
+exports[`one config file that specifies multiple output file calls outputFile 1`] = `
+Array [
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
+  },
+]
+`;
+
 exports[`one config file that specifies one output file creates output file 1`] = `
 Object {
   "symbol": "Foo",

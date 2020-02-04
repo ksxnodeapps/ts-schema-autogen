@@ -81,6 +81,90 @@ describe('one config file that specifies one output file', () => {
   })
 })
 
+describe('one config file that specifies multiple output file', () => {
+  const configPaths = ['yaml/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.yaml']
+  const fooOutputFiles = [
+    'yaml/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json',
+    'yaml/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json',
+    'yaml/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json'
+  ]
+  const barOutputFiles = [
+    'yaml/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json'
+  ]
+
+  it('returns a Success', async () => {
+    const { result } = await setup(configPaths)
+    expect(result).toBeInstanceOf(Success)
+  })
+
+  it('calls outputFile', async () => {
+    const { fsx } = await setup(configPaths)
+    const snapshot = fsx.outputFile.mock.calls
+      .map(([filename, content]) => ({ filename, content: JSON.parse(content) }))
+    expect(snapshot).toMatchSnapshot()
+  })
+
+  it('calls getProgramFromFiles once', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.getProgramFromFiles).toBeCalledTimes(1)
+  })
+
+  it('calls getProgramFromFiles with expected arguments', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.getProgramFromFiles).toBeCalledWith(
+      expect.any(Array),
+      expect.any(Object)
+    )
+  })
+
+  it('calls buildGenerator once', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.buildGenerator).toBeCalledTimes(1)
+  })
+
+  it('calls buildGenerator with expected arguments', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.buildGenerator).toBeCalledWith(
+      expect.anything(),
+      expect.any(Object)
+    )
+  })
+
+  describe('creates output files', () => {
+    async function fetchOutput () {
+      const { fsx, ...rest } = await setup(configPaths)
+      const fooOutput = fooOutputFiles.map(filename => fsx.readFileSync(filename))
+      const barOutput = barOutputFiles.map(filename => fsx.readFileSync(filename))
+      return { ...rest, fsx, fooOutput, barOutput }
+    }
+
+    it('all output are the same object', async () => {
+      const { fooOutput } = await fetchOutput()
+      const first = JSON.parse(fooOutput[0])
+      expect(fooOutput.map(json => JSON.parse(json))).toEqual([first, first, first])
+    })
+
+    it('all output are formatted according to instruction', async () => {
+      const { fooOutput, barOutput } = await fetchOutput()
+      const reformat = (json: string, indent?: number | string) =>
+        JSON.stringify(JSON.parse(json), undefined, indent) + '\n'
+      expect({
+        fooOutput,
+        barOutput
+      }).toEqual({
+        fooOutput: [
+          reformat(fooOutput[0], 2),
+          reformat(fooOutput[1], 2),
+          reformat(fooOutput[2], '\t')
+        ],
+        barOutput: [
+          reformat(barOutput[0], 4)
+        ]
+      })
+    })
+  })
+})
+
 describe('multiple config files and multiple output', () => {
   async function getConfigPaths () {
     const path = new FakePath()
