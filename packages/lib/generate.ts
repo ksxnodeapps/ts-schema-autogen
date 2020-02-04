@@ -24,6 +24,7 @@ import {
   CircularReference,
   OutdatedFile,
   MissingFileParser,
+  MissingInputFile,
   Success
 } from '@ts-schema-autogen/status'
 
@@ -40,8 +41,7 @@ export function generateUnit<
 > (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
   const { tjs, instruction, resolvePath } = param
   const { buildGenerator, getProgramFromFiles } = tjs
-  // TODO: Convert the line below into a Failure
-  if (!instruction.input) return new Success([])
+  if (!instruction.input) return new MissingInputFile()
   const program = getProgramFromFiles(
     ensureArray(instruction.input),
     instruction.compilerOptions
@@ -93,6 +93,7 @@ export namespace generateUnit {
   }
 
   export type Return<Definition> =
+    MissingInputFile |
     Success<Iterable<FileWritingInstruction<Definition>>>
 }
 
@@ -200,6 +201,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
         resolvePath: (filename: string) => join(dirname, filename)
       })
     )
+    if (writeInstruction.code) return writeInstruction
     return new Success(writeInstruction.value)
   }
 
@@ -255,6 +257,7 @@ export namespace SchemaWriter {
     CircularReference |
     OutputFileConflict |
     MissingFileParser |
+    MissingInputFile |
     Success<Iterable<FileWritingInstruction<Definition>>>
 
   type SingleConfigFailure = Exclude<SingleConfigReturn<never>, Success<any>>
