@@ -18,6 +18,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": Array [
@@ -79,6 +83,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": Array [
@@ -132,6 +140,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": Object {
@@ -185,6 +197,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": "foo.schema.json",
@@ -230,6 +246,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo/lib.ts",
+        "foo/utils.ts",
+      ],
       "output": Array [
         "non-descriptor.schema.json",
         Object {
@@ -277,6 +297,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo/lib.ts",
+        "foo/utils.ts",
+      ],
       "output": Array [
         "abc.schema.json",
         "def.schema.json",
@@ -318,6 +342,7 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": "foo.ts",
       "output": Object {
         "filename": "output.schema.json",
         "format": "json",
@@ -359,6 +384,7 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": "foo.ts",
       "output": "output.schema.json",
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.json",
@@ -396,6 +422,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": Array [
@@ -457,6 +487,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": Array [
@@ -510,6 +544,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": Object {
@@ -563,6 +601,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo.ts",
+        "bar.ts",
+      ],
       "list": Array [
         Object {
           "output": "foo.schema.json",
@@ -608,6 +650,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo/lib.ts",
+        "foo/utils.ts",
+      ],
       "output": Array [
         "non-descriptor.schema.json",
         Object {
@@ -655,6 +701,10 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": Array [
+        "foo/lib.ts",
+        "foo/utils.ts",
+      ],
       "output": Array [
         "abc.schema.json",
         "def.schema.json",
@@ -696,6 +746,7 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": "foo.ts",
       "output": Object {
         "filename": "output.schema.json",
         "format": "json",
@@ -737,6 +788,7 @@ Success {
         "(extensions.def-yaml.compilerOptions) format": "YAML",
         "(extensions.def-yaml.compilerOptions) property": "compilerOptions",
       },
+      "input": "foo.ts",
       "output": "output.schema.json",
       "schemaSettings": Object {
         "(base.schemaSettings) filename": ".schema.autogen.yaml",
