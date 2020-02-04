@@ -47,6 +47,32 @@ describe('one config file that specifies one output file', () => {
     expect(fsx.outputFile).toBeCalledWith(expectedOutput, expect.any(String))
   })
 
+  it('calls getProgramFromFiles once', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.getProgramFromFiles).toBeCalledTimes(1)
+  })
+
+  it('calls getProgramFromFiles with expected arguments', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.getProgramFromFiles).toBeCalledWith(
+      configPaths,
+      expect.any(Object)
+    )
+  })
+
+  it('calls buildGenerator once', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.buildGenerator).toBeCalledTimes(1)
+  })
+
+  it('calls buildGenerator with expected arguments', async () => {
+    const { tjs } = await setup(configPaths)
+    expect(tjs.buildGenerator).toBeCalledWith(
+      expect.anything(),
+      expect.any(Object)
+    )
+  })
+
   it('creates output file', async () => {
     const { fsx } = await setup(configPaths)
     const text = fsx.readFileSync(expectedOutput)
