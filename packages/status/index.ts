@@ -4,6 +4,9 @@ import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
+  /** Failed to build schema generator */
+  GeneratorConstructingFailure = 12,
+
   /** No input file specified */
   MissingInputFile = 11,
 
@@ -236,5 +239,26 @@ export class MissingInputFile extends Failure<void> {
   public * log () {
     yield this.name
     yield Failure.indent(1) + 'No input file specified'
+  }
+}
+
+export class GeneratorConstructingFailure<Program, Settings>
+extends Failure<GeneratorConstructingFailure.Error<Program, Settings>> {
+  public readonly code = Status.GeneratorConstructingFailure
+
+  public * log () {
+    yield this.name
+    yield Failure.indent(1) + 'Failed to build schema generator'
+    yield Failure.indent(1) + 'program:'
+    yield * iterateIndentedLines(2, inspect(this.error.program))
+    yield Failure.indent(1) + 'settings:'
+    yield * iterateIndentedLines(2, inspect(this.error.settings))
+  }
+}
+
+export namespace GeneratorConstructingFailure {
+  export interface Error<Program, Settings> {
+    readonly program: Program
+    readonly settings: Settings
   }
 }

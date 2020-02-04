@@ -7,6 +7,7 @@ import { ConfigParseError, ConfigLoader } from './load-config'
 import {
   Program,
   Definition,
+  Settings,
   Instruction,
   SymbolInstruction,
   OutputDescriptor,
@@ -25,6 +26,7 @@ import {
   OutdatedFile,
   MissingFileParser,
   MissingInputFile,
+  GeneratorConstructingFailure,
   Success
 } from '@ts-schema-autogen/status'
 
@@ -38,7 +40,7 @@ export interface FileWritingInstruction<Definition> {
 export function generateUnit<
   Prog = Program,
   Def = Definition
-> (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
+> (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Prog, Def> {
   const { tjs, instruction, resolvePath } = param
   const { buildGenerator, getProgramFromFiles } = tjs
   if (!instruction.input) return new MissingInputFile()
@@ -46,9 +48,10 @@ export function generateUnit<
     ensureArray(instruction.input),
     instruction.compilerOptions
   )
-  const generator = buildGenerator(program, instruction.schemaSettings)
+  const settings = instruction.schemaSettings
+  const generator = buildGenerator(program, settings)
 
-  if (!generator) throw new Error('Failed to build generator')
+  if (!generator) return new GeneratorConstructingFailure({ program, settings })
 
   function * generate (): Generator<FileWritingInstruction<Def>, void> {
     for (const symbolInstruction of listSymbolInstruction(instruction)) {
@@ -92,8 +95,9 @@ export namespace generateUnit {
     (output: string): string
   }
 
-  export type Return<Definition> =
+  export type Return<Program, Definition> =
     MissingInputFile |
+    GeneratorConstructingFailure<Program, Settings | undefined> |
     Success<Iterable<FileWritingInstruction<Definition>>>
 }
 
@@ -170,7 +174,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
 
   private readonly loader = new ConfigLoader(this.param)
 
-  private static joinCfgRes<Def> (list: Iterable<SchemaWriter.SingleConfigReturn<Def>>) {
+  private static joinCfgRes<Prog, Def> (list: Iterable<SchemaWriter.SingleConfigReturn<Prog, Def>>) {
     const errors = []
     let instruction: Iterable<FileWritingInstruction<Def>> = []
 
@@ -190,7 +194,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * @param configPath Path to the config file
    * @param path Path module
    */
-  public async singleConfig (configPath: string, path: Path.Mod): Promise<SchemaWriter.SingleConfigReturn<Def>> {
+  public async singleConfig (configPath: string, path: Path.Mod): Promise<SchemaWriter.SingleConfigReturn<Prog, Def>> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
     const { join } = path
@@ -221,7 +225,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * Write schemas according to multiple config files
    * @param configPaths List of paths to config files
    */
-  public writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn> {
+  public writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn<Prog, Def>> {
     const { outputFile } = this.param.fsx
     const act: processWriteInstructions.Act<never> =
       (filename, content) => outputFile(filename, content)
@@ -232,7 +236,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * Test if schema files referred to by config files are up-to-date
    * @param configPaths List of paths to config files
    */
-  public testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn> {
+  public testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn<Prog, Def>> {
     const { readFile } = this.param.fsx
     async function act (filename: string, expectedContent: string): Promise<OutdatedFile | void> {
       const receivedContent = await readFile(filename, 'utf8')
@@ -250,7 +254,7 @@ export namespace SchemaWriter {
     readonly tjs: TJS.Mod<Program, Definition>
   }
 
-  export type SingleConfigReturn<Definition> =
+  export type SingleConfigReturn<Program, Definition> =
     FileReadingFailure |
     FileWritingFailure |
     TextParsingFailure<ConfigParseError> |
@@ -258,15 +262,19 @@ export namespace SchemaWriter {
     OutputFileConflict |
     MissingFileParser |
     MissingInputFile |
+    GeneratorConstructingFailure<Program, Settings | undefined> |
     Success<Iterable<FileWritingInstruction<Definition>>>
 
-  type SingleConfigFailure = Exclude<SingleConfigReturn<never>, Success<any>>
-  type WriteTestSchemaReturn<Extra extends Failure<any>> =
-    MultipleFailures<Array<SingleConfigFailure | Extra>> |
+  type SingleConfigFailure<Program, Definition> =
+    Exclude<SingleConfigReturn<Program, Definition>, Success<any>>
+  type WriteTestSchemaReturn<Extra extends Failure<any>, Program, Definition> =
+    MultipleFailures<Array<SingleConfigFailure<Program, Definition> | Extra>> |
     OutputFileConflict |
     FileWritingFailure |
     Success<void>
 
-  export type WriteSchemaReturn = WriteTestSchemaReturn<never>
-  export type TestSchemaReturn = WriteTestSchemaReturn<OutdatedFile>
+  export type WriteSchemaReturn<Program, Definition> =
+    WriteTestSchemaReturn<never, Program, Definition>
+  export type TestSchemaReturn<Program, Definition> =
+    WriteTestSchemaReturn<OutdatedFile, Program, Definition>
 }
