@@ -1,4 +1,4 @@
-import { objectExtends } from '@tsfun/object'
+import { addProperty, objectExtends } from '@tsfun/object'
 import { ensureArray, concatIterable, getIndent } from '@ts-schema-autogen/utils'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
@@ -57,14 +57,8 @@ export function generateUnit<
     for (const symbolInstruction of listSymbolInstruction(instruction)) {
       const schema = generator!.getSchemaForSymbol(symbolInstruction.symbol)
       const output = ensureOutputDescriptorArray(symbolInstruction.output)
-        .map(({ filename, ...rest }) => ({
-          filename: resolvePath(filename),
-          ...rest
-        }))
-      const instruction: SymbolInstruction = {
-        ...symbolInstruction,
-        output
-      }
+        .map(item => addProperty(item, 'filename', resolvePath(item.filename)))
+      const instruction: SymbolInstruction = addProperty(symbolInstruction, 'output', output)
       yield { instruction, schema }
     }
   }

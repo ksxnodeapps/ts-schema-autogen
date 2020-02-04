@@ -2,7 +2,7 @@ dependencies:
   '@ts-schema-autogen/status': 'link:../status'
   '@ts-schema-autogen/types': 'link:../types'
   '@ts-schema-autogen/utils': 'link:../utils'
-  '@tsfun/object': 0.0.14
+  '@tsfun/object': 0.0.16
   '@tsfun/result': 0.0.15
   '@types/js-yaml': 3.12.1
   '@types/node': 13.1.8
@@ -12,14 +12,14 @@ dependencies:
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/object/0.0.14:
+  /@tsfun/object/0.0.16:
     dependencies:
-      '@types/node': 13.1.8
+      '@types/node': 13.5.2
       tslib: 1.10.0
       utility-types: 3.10.0
     dev: false
     resolution:
-      integrity: sha512-MqH27rg1J+4CBYC0n4WTaULUNjnRj1y9vzV6ndXwnM/finXy7fdCA1kKBxgs7vIyMFTkBHkqMOt8Fq90MCyskA==
+      integrity: sha512-75/OG0K2mcr4Jl4lczo7tHvhELGI5pbvV0XvKU4jVVh4LOFlZ3kYPgOTfNTYO+rampS8p1Z0XqLzCMNXPPenUg==
   /@tsfun/prv-option-result-common/0.0.10:
     dependencies:
       '@types/node': 13.1.8
@@ -120,7 +120,7 @@ specifiers:
   '@ts-schema-autogen/status': ^0.0.0
   '@ts-schema-autogen/types': ^0.0.0
   '@ts-schema-autogen/utils': ^0.0.0
-  '@tsfun/object': ^0.0.14
+  '@tsfun/object': ^0.0.16
   '@tsfun/result': ^0.0.15
   '@types/js-yaml': ^3.12.1
   '@types/node': ^13.1.8
