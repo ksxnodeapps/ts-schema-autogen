@@ -2,365 +2,320 @@
 
 exports[`multiple config files and multiple output calls outputFile 1`] = `
 Array [
-  Array [
-    "yaml/single-symbol/single-output/output-filename/output.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/single-symbol/single-output/output-descriptor/output.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/single-symbol/multiple-output/output-filename/abc.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/single-symbol/multiple-output/output-filename/def.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/single-symbol/multiple-output/output-filename/ghi.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/single-output/output-filename/foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/single-output/output-filename/bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/single-output/output-descriptor/foo.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/single-output/output-descriptor/bar.schema.json",
-    "{
-	\\"symbol\\": \\"Bar\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "yaml/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
-    "{
-    \\"symbol\\": \\"Bar\\",
-    \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/single-output/output-filename/output.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/single-output/output-descriptor/output.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/multiple-output/output-filename/abc.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/multiple-output/output-filename/def.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/multiple-output/output-filename/ghi.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/single-output/output-filename/foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/single-output/output-filename/bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/single-output/output-descriptor/foo.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/single-output/output-descriptor/bar.schema.json",
-    "{
-	\\"symbol\\": \\"Bar\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
-    "{
-  \\"symbol\\": \\"Bar\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
-    "{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
-    "{
-	\\"symbol\\": \\"Foo\\",
-	\\"type\\": \\"schema\\"
-}
-",
-  ],
-  Array [
-    "json/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
-    "{
-    \\"symbol\\": \\"Bar\\",
-    \\"type\\": \\"schema\\"
-}
-",
-  ],
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/single-output/output-filename/output.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/single-output/output-descriptor/output.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/multiple-output/output-filename/abc.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/multiple-output/output-filename/def.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/multiple-output/output-filename/ghi.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/single-output/output-filename/foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/single-output/output-filename/bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/single-output/output-descriptor/foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/single-output/output-descriptor/bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "yaml/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/single-output/output-filename/output.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/single-output/output-descriptor/output.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/multiple-output/output-filename/abc.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/multiple-output/output-filename/def.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/multiple-output/output-filename/ghi.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/single-output/output-filename/foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/single-output/output-filename/bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/single-output/output-descriptor/foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/single-output/output-descriptor/bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Foo",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
+  },
+  Object {
+    "content": Object {
+      "symbol": "Bar",
+      "type": "schema",
+    },
+    "filename": "json/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
+  },
 ]
 `;
 
 exports[`one config file that specifies one output file creates output file 1`] = `
-"{
-  \\"symbol\\": \\"Foo\\",
-  \\"type\\": \\"schema\\"
+Object {
+  "symbol": "Foo",
+  "type": "schema",
 }
-"
 `;

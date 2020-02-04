@@ -49,7 +49,9 @@ describe('one config file that specifies one output file', () => {
 
   it('creates output file', async () => {
     const { fsx } = await setup(configPaths)
-    expect(fsx.readFileSync(expectedOutput)).toMatchSnapshot()
+    const text = fsx.readFileSync(expectedOutput)
+    const snapshot = JSON.parse(text)
+    expect(snapshot).toMatchSnapshot()
   })
 })
 
@@ -80,6 +82,8 @@ describe('multiple config files and multiple output', () => {
 
   it('calls outputFile', async () => {
     const { fsx } = await setup(await getConfigPaths())
-    expect(fsx.outputFile.mock.calls).toMatchSnapshot()
+    const snapshot = fsx.outputFile.mock.calls
+      .map(([filename, content]) => ({ filename, content: JSON.parse(content) }))
+    expect(snapshot).toMatchSnapshot()
   })
 })
