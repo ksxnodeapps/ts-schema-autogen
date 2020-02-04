@@ -55,7 +55,7 @@ describe('one config file that specifies one output file', () => {
   it('calls getProgramFromFiles with expected arguments', async () => {
     const { tjs } = await setup(configPaths)
     expect(tjs.getProgramFromFiles).toBeCalledWith(
-      configPaths,
+      expect.any(Array),
       expect.any(Object)
     )
   })
