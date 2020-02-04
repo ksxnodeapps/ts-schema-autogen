@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns result matching snapshots 1`] = `
+MultipleFailures {
+  "code": 2,
+  "error": Array [
+    GeneratorConstructingFailure {
+      "code": 11,
+      "error": Object {
+        "program": Program {
+          "getSchema": [Function],
+        },
+        "settings": undefined,
+      },
+      "value": undefined,
+    },
+  ],
+  "value": undefined,
+}
+`;
