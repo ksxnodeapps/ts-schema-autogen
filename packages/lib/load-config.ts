@@ -34,7 +34,7 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
   // Since param.parsers is an iterable, its length cannot be known.
   // The loop above would exit the function should parsers succeeded.
   // If param.parsers is empty, the loop above would be skip, and the branch below would be reached.
-  if (!parseErrors.length) return new MissingFileParser(undefined)
+  if (!parseErrors.length) return new MissingFileParser()
 
   return new TextParsingFailure(parseErrors)
 }
