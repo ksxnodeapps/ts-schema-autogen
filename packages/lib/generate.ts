@@ -50,7 +50,6 @@ export function generateUnit<
 
   if (!generator) throw new Error('Failed to build generator')
 
-  // TODO: Convert this into a class
   function * generate (): Generator<FileWritingInstruction<Def>, void> {
     for (const symbolInstruction of listSymbolInstruction(instruction)) {
       const schema = generator!.getSchemaForSymbol(symbolInstruction.symbol)
