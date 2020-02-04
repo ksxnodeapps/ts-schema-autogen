@@ -5,10 +5,7 @@ import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
   /** Failed to build schema generator */
-  GeneratorConstructingFailure = 12,
-
-  /** No input file specified */
-  MissingInputFile = 11,
+  GeneratorConstructingFailure = 11,
 
   /** No file parser specified */
   MissingFileParser = 10,
@@ -230,15 +227,6 @@ export class MissingFileParser extends Failure<void> {
   public * log () {
     yield this.name
     yield Failure.indent(1) + 'No parser specified'
-  }
-}
-
-export class MissingInputFile extends Failure<void> {
-  public readonly code = Status.MissingInputFile
-
-  public * log () {
-    yield this.name
-    yield Failure.indent(1) + 'No input file specified'
   }
 }
 
