@@ -52,3 +52,34 @@ describe('one config file that specifies one output file', () => {
     expect(fsx.readFileSync(expectedOutput)).toMatchSnapshot()
   })
 })
+
+describe('multiple config files and multiple output', () => {
+  async function getConfigPaths () {
+    const path = new FakePath()
+    const { product, map } = await import('iter-tools')
+    const base = () => product(
+      ['single-symbol', 'multiple-symbol'],
+      ['single-output', 'multiple-output'],
+      ['output-filename', 'output-descriptor']
+    )
+    const yaml = map(
+      prefix => path.join('yaml', ...prefix, '.schema.autogen.yaml'),
+      base()
+    )
+    const json = map(
+      prefix => path.join('json', ...prefix, '.schema.autogen.json'),
+      base()
+    )
+    return [...yaml, ...json]
+  }
+
+  it('returns a Success', async () => {
+    const { result } = await setup(await getConfigPaths())
+    expect(result).toBeInstanceOf(Success)
+  })
+
+  it('calls outputFile', async () => {
+    const { fsx } = await setup(await getConfigPaths())
+    expect(fsx.outputFile.mock.calls).toMatchSnapshot()
+  })
+})
