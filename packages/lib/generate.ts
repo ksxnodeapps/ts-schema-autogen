@@ -34,14 +34,14 @@ export interface FileWritingInstruction<Definition> {
 }
 
 /** Create a {@link FileWritingInstruction} from an `Instruction` */
-export function * generateUnit<
+export function generateUnit<
   Prog = Program,
   Def = Definition
 > (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
   const { tjs, instruction, resolvePath } = param
   const { buildGenerator, getProgramFromFiles } = tjs
-  // TODO: Move checking for input elsewhere
-  if (!instruction.input) return
+  // TODO: Convert the line below into a Failure
+  if (!instruction.input) return new Success([])
   const program = getProgramFromFiles(
     ensureArray(instruction.input),
     instruction.compilerOptions
@@ -50,19 +50,26 @@ export function * generateUnit<
 
   if (!generator) throw new Error('Failed to build generator')
 
-  for (const symbolInstruction of listSymbolInstruction(instruction)) {
-    const schema = generator.getSchemaForSymbol(symbolInstruction.symbol)
-    const output = ensureOutputDescriptorArray(symbolInstruction.output)
-      .map(({ filename, ...rest }) => ({
-        filename: resolvePath(filename),
-        ...rest
-      }))
-    const instruction: SymbolInstruction = {
-      ...symbolInstruction,
-      output
+  // TODO: Convert this into a class
+  function * generate (): Generator<FileWritingInstruction<Def>, void> {
+    for (const symbolInstruction of listSymbolInstruction(instruction)) {
+      const schema = generator!.getSchemaForSymbol(symbolInstruction.symbol)
+      const output = ensureOutputDescriptorArray(symbolInstruction.output)
+        .map(({ filename, ...rest }) => ({
+          filename: resolvePath(filename),
+          ...rest
+        }))
+      const instruction: SymbolInstruction = {
+        ...symbolInstruction,
+        output
+      }
+      yield { instruction, schema }
     }
-    yield { instruction, schema }
   }
+
+  return new Success({
+    [Symbol.iterator]: generate
+  })
 }
 
 export namespace generateUnit {
@@ -86,8 +93,8 @@ export namespace generateUnit {
     (output: string): string
   }
 
-  export interface Return<Definition>
-  extends Generator<FileWritingInstruction<Definition>, void, unknown> {}
+  export type Return<Definition> =
+    Success<Iterable<FileWritingInstruction<Definition>>>
 }
 
 export const serialize = (schema: any, { indent }: OutputDescriptor) =>
@@ -194,7 +201,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
         resolvePath: (filename: string) => join(dirname, filename)
       })
     )
-    return new Success(writeInstruction)
+    return new Success(writeInstruction.value)
   }
 
   private async mayWriteSchemas<ActFailure extends OutdatedFile> (
@@ -249,7 +256,7 @@ export namespace SchemaWriter {
     CircularReference |
     OutputFileConflict |
     MissingFileParser |
-    Success<Generator<FileWritingInstruction<Definition>, void>>
+    Success<Iterable<FileWritingInstruction<Definition>>>
 
   type SingleConfigFailure = Exclude<SingleConfigReturn<never>, Success<any>>
   type WriteTestSchemaReturn<Extra extends Failure<any>> =
