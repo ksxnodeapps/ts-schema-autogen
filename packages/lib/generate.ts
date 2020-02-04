@@ -129,9 +129,7 @@ export async function processWriteInstructions<ActFailure extends Failure<any>> 
   if (duplicationMap.size) return new OutputFileConflict(duplicationMap)
 
   await Promise.all(actFuncs.map(fn => fn()))
-  if (actErrors.length) return new MultipleFailures(actErrors)
-
-  return new Success(undefined)
+  return MultipleFailures.maybe(actErrors) || new Success(undefined)
 }
 
 export namespace processWriteInstructions {
@@ -153,7 +151,7 @@ export namespace processWriteInstructions {
 
   export type Return<ActFailure extends Failure<any>> =
     OutputFileConflict |
-    MultipleFailures<Array<ActFailure | FileWritingFailure>> |
+    MultipleFailures.Maybe<ActFailure | FileWritingFailure> |
     Success<void>
 }
 
@@ -208,8 +206,8 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     const { errors, instruction } = SchemaWriter.joinCfgRes(
       await Promise.all(configPaths.map(x => this.singleConfig(x, path)))
     )
-    if (errors.length) return new MultipleFailures(errors)
-    return processWriteInstructions({ act, instruction })
+    return MultipleFailures.maybe(errors) ||
+      processWriteInstructions({ act, instruction })
   }
 
   /**
@@ -258,7 +256,7 @@ export namespace SchemaWriter {
   type SingleConfigFailure<Program, Definition> =
     Exclude<SingleConfigReturn<Program, Definition>, Success<any>>
   type WriteTestSchemaReturn<Extra extends Failure<any>, Program, Definition> =
-    MultipleFailures<Array<SingleConfigFailure<Program, Definition> | Extra>> |
+    MultipleFailures.Maybe<SingleConfigFailure<Program, Definition> | Extra> |
     OutputFileConflict |
     FileWritingFailure |
     Success<void>

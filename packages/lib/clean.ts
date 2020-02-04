@@ -63,9 +63,7 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
     }
   }
 
-  return errors.length
-    ? new MultipleFailures(errors)
-    : new Success(undefined)
+  return MultipleFailures.maybe(errors) || new Success(undefined)
 }
 
 export namespace clean {
@@ -85,6 +83,6 @@ export namespace clean {
 
   type ConfigLoaderFailure = Exclude<ConfigLoader.LoaderReturn, Success<any>>
   export type Return =
-    MultipleFailures<Array<ConfigLoaderFailure | FileTreeRemovalFailure<unknown>>> |
+    MultipleFailures.Maybe<ConfigLoaderFailure | FileTreeRemovalFailure<unknown>> |
     Success<void>
 }

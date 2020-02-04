@@ -1,5 +1,5 @@
 import { inspect } from 'util'
-import { iterateIndentedLines } from '@ts-schema-autogen/utils'
+import { iterateIndentedLines, maybeMultipleFailures } from '@ts-schema-autogen/utils'
 import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
@@ -126,6 +126,20 @@ export class MultipleFailures<Error extends Iterable<Failure<any>>> extends Fail
       }
     }
   }
+
+  public static maybe<
+    Error extends Failure<any>
+  > (list: readonly Error[]): MultipleFailures.Maybe<Error> | null {
+    return maybeMultipleFailures(list, MultipleFailures)
+  }
+}
+
+export namespace MultipleFailures {
+  /** Error or set of errors */
+  export type Maybe<
+    Error extends Failure<any>,
+    List extends Iterable<Error> = readonly Error[]
+  > = Error | MultipleFailures<List>
 }
 
 /** Multiple configs target the same output file */
