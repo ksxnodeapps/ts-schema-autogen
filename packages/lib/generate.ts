@@ -112,7 +112,7 @@ export async function processWriteInstructions<ActFailure extends Failure<any>> 
       const { filename } = desc
 
       const duplicatedFiles = descriptors.filter(x => x.filename === filename)
-      if (duplicatedFiles.length > 1) {
+      if (duplicatedFiles.length > 0) {
         duplicationMap.set(filename, duplicatedFiles)
         continue
       }
