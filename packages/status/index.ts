@@ -144,6 +144,18 @@ export class MultipleFailures<Error extends Iterable<Failure<any>>> extends Fail
   > (list: readonly Error[]): MultipleFailures.Maybe<Error> | null {
     return maybeMultipleFailures(list, MultipleFailures)
   }
+
+  public getStatusCode () {
+    const codes = new Set<Status>()
+    for (const failure of this.error) {
+      codes.add(failure.getStatusCode())
+    }
+    if (codes.size === 1) {
+      const [status] = codes
+      return status
+    }
+    return super.getStatusCode()
+  }
 }
 
 export namespace MultipleFailures {
