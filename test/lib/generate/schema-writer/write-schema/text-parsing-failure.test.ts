@@ -1,4 +1,4 @@
-import fsTree from '../../../../fixtures/fs-tree/invalid-syntax'
+import fsTree from '../../../../fixtures/fs-tree/text-parsing-failure'
 import TJS from '../../../../fixtures/tjs'
 import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
