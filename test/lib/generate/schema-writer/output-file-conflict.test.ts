@@ -1,8 +1,9 @@
 import fsTree from '../../../fixtures/fs-tree/output-file-conflict'
 import TJS from '../../../fixtures/tjs'
-import { FakeFileSystem, FakePath } from '@tools/test-utils'
+import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
+  Status,
   OutputFileConflict,
   SchemaWriter,
   createJsonConfigParser
@@ -40,9 +41,22 @@ describe('obvious conflicts', () => {
     expect(result).toBeInstanceOf(OutputFileConflict)
   })
 
+  it('returns result containing expected properties', async () => {
+    const { result } = await setup(configPaths)
+    expect(result).toMatchObject({
+      code: Status.OutputFileConflict,
+      error: expect.any(Map)
+    })
+  })
+
   it('does not call outputFile', async () => {
     const { fsx } = await setup(configPaths)
     expect(fsx.outputFile).not.toBeCalled()
+  })
+
+  it('error messages', async () => {
+    const { result } = await setup(configPaths)
+    expect(printResult(result)).toMatchSnapshot()
   })
 })
 
@@ -62,9 +76,22 @@ describe('not obvious conflicts', () => {
     expect(result).toBeInstanceOf(OutputFileConflict)
   })
 
+  it('returns result containing expected properties', async () => {
+    const { result } = await setup(configPaths)
+    expect(result).toMatchObject({
+      code: Status.OutputFileConflict,
+      error: expect.any(Map)
+    })
+  })
+
   it('does not call outputFile', async () => {
     const { fsx } = await setup(configPaths)
     expect(fsx.outputFile).not.toBeCalled()
+  })
+
+  it('error messages', async () => {
+    const { result } = await setup(configPaths)
+    expect(printResult(result)).toMatchSnapshot()
   })
 })
 
@@ -85,9 +112,22 @@ describe('more than one conflicts', () => {
     expect(result).toBeInstanceOf(OutputFileConflict)
   })
 
+  it('returns result containing expected properties', async () => {
+    const { result } = await setup(configPaths)
+    expect(result).toMatchObject({
+      code: Status.OutputFileConflict,
+      error: expect.any(Map)
+    })
+  })
+
   it('does not call outputFile', async () => {
     const { fsx } = await setup(configPaths)
     expect(fsx.outputFile).not.toBeCalled()
+  })
+
+  it('error messages', async () => {
+    const { result } = await setup(configPaths)
+    expect(printResult(result)).toMatchSnapshot()
   })
 })
 
@@ -109,8 +149,21 @@ describe('mixed with non conflicts', () => {
     expect(result).toBeInstanceOf(OutputFileConflict)
   })
 
+  it('returns result containing expected properties', async () => {
+    const { result } = await setup(configPaths)
+    expect(result).toMatchObject({
+      code: Status.OutputFileConflict,
+      error: expect.any(Map)
+    })
+  })
+
   it('does not call outputFile', async () => {
     const { fsx } = await setup(configPaths)
     expect(fsx.outputFile).not.toBeCalled()
+  })
+
+  it('error messages', async () => {
+    const { result } = await setup(configPaths)
+    expect(printResult(result)).toMatchSnapshot()
   })
 })

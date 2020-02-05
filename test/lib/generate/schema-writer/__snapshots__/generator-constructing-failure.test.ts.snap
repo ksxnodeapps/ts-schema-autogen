@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`error messages 1`] = `
+"
+GeneratorConstructingFailure
+    Failed to build schema generator
+    program:
+        Program { getSchema: [Function (anonymous)] }
+    settings:
+        undefined
+"
+`;
+
 exports[`returns result matching snapshots 1`] = `
 GeneratorConstructingFailure {
   "code": 11,

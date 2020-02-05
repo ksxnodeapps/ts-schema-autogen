@@ -1,7 +1,8 @@
-import { FakeFileSystem, FakePath, FakeTJS } from '@tools/test-utils'
+import { FakeFileSystem, FakePath, FakeTJS, printResult } from '@tools/test-utils'
 
 import {
   Config,
+  Status,
   GeneratorConstructingFailure,
   SchemaWriter,
   createJsonConfigParser
@@ -48,7 +49,23 @@ it('returns a GeneratorConstructingFailure', async () => {
   expect(result).toBeInstanceOf(GeneratorConstructingFailure)
 })
 
+it('returns result containing expected properties', async () => {
+  const { result } = await setup()
+  expect(result).toMatchObject({
+    code: Status.GeneratorConstructingFailure,
+    error: {
+      program: expect.any(Object),
+      settings: undefined
+    }
+  })
+})
+
 it('does not call outputFile', async () => {
   const { fsx } = await setup()
   expect(fsx.outputFile).not.toBeCalled()
+})
+
+it('error messages', async () => {
+  const { result } = await setup()
+  expect(printResult(result)).toMatchSnapshot()
 })

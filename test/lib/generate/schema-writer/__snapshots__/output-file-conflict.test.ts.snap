@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mixed with non conflicts error messages 1`] = `
+"
+OutputFileConflict
+    mixed-with-non-conflicts/shared-output.json
+"
+`;
+
 exports[`mixed with non conflicts returns result matching snapshot 1`] = `
 OutputFileConflict {
   "code": 3,
@@ -15,6 +22,13 @@ OutputFileConflict {
   },
   "value": undefined,
 }
+`;
+
+exports[`more than one conflicts error messages 1`] = `
+"
+OutputFileConflict
+    more-than-one-conflicts/shared-output.json
+"
 `;
 
 exports[`more than one conflicts returns result matching snapshot 1`] = `
@@ -37,6 +51,13 @@ OutputFileConflict {
 }
 `;
 
+exports[`not obvious conflicts error messages 1`] = `
+"
+OutputFileConflict
+    not-obvious-conflicts/shared-output/schema.json
+"
+`;
+
 exports[`not obvious conflicts returns result matching snapshot 1`] = `
 OutputFileConflict {
   "code": 3,
@@ -52,6 +73,13 @@ OutputFileConflict {
   },
   "value": undefined,
 }
+`;
+
+exports[`obvious conflicts error messages 1`] = `
+"
+OutputFileConflict
+    obvious-conflicts/shared-output.json
+"
 `;
 
 exports[`obvious conflicts returns result matching snapshot 1`] = `
