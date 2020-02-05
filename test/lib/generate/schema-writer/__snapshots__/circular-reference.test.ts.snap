@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`multiple circular references error messages 1`] = `
+"
+MultipleFailures
+    CircularReference
+        1/0.json
+    CircularReference
+        2/0.json
+        2/1.json
+    CircularReference
+        3/0.json
+        3/1.json
+        3/2.json
+    CircularReference
+        tree/0.json
+        tree/1/a/0.json
+        tree/1/a/1.json
+    CircularReference
+        diamond/0.json
+        diamond/1.json
+        diamond/2/a/0.json
+        diamond/2/a/1.json
+        diamond/3/return.json
+"
+`;
+
+exports[`multiple circular references returns result matching snapshot 1`] = `
+MultipleFailures {
+  "code": 2,
+  "error": Array [
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "1/0.json",
+      ],
+      "value": undefined,
+    },
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "2/0.json",
+        "2/1.json",
+      ],
+      "value": undefined,
+    },
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "3/0.json",
+        "3/1.json",
+        "3/2.json",
+      ],
+      "value": undefined,
+    },
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "tree/0.json",
+        "tree/1/a/0.json",
+        "tree/1/a/1.json",
+      ],
+      "value": undefined,
+    },
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "diamond/0.json",
+        "diamond/1.json",
+        "diamond/2/a/0.json",
+        "diamond/2/a/1.json",
+        "diamond/3/return.json",
+      ],
+      "value": undefined,
+    },
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`one circular reference error messages 1`] = `
+"
+CircularReference
+    tree/0.json
+    tree/1/a/0.json
+    tree/1/a/1.json
+"
+`;
+
+exports[`one circular reference returns result matching snapshot 1`] = `
+CircularReference {
+  "code": 8,
+  "error": Array [
+    "tree/0.json",
+    "tree/1/a/0.json",
+    "tree/1/a/1.json",
+  ],
+  "value": undefined,
+}
+`;
