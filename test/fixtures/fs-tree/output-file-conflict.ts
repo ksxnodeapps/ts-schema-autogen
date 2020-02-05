@@ -63,6 +63,36 @@ export const fsTree: FsTree = {
         symbol: 'Baz'
       }
     })
+  },
+  'mixed-with-non-conflicts': {
+    'conflicted-foo.json': file({
+      generator: null!,
+      instruction: {
+        output: 'shared-output.json',
+        symbol: 'Foo'
+      }
+    }),
+    'okay-foo.json': file({
+      generator: null!,
+      instruction: {
+        output: 'foo.schema.json',
+        symbol: 'Foo'
+      }
+    }),
+    'conflicted-bar.json': file({
+      generator: null!,
+      instruction: {
+        output: 'shared-output.json',
+        symbol: 'Bar'
+      }
+    }),
+    'okay-bar.json': file({
+      generator: null!,
+      instruction: {
+        output: 'bar.schema.json',
+        symbol: 'Bar'
+      }
+    })
   }
 }
 
