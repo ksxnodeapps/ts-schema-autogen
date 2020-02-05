@@ -6,22 +6,28 @@ import {
   Status,
   TextParsingFailure,
   SchemaWriter,
-  createJsonConfigParser
+  createJsonConfigParser,
+  createYamlConfigParser
 } from '@ts-schema-autogen/lib'
+
+const getParsers = () => Promise.all([
+  createJsonConfigParser('JSON Parser'),
+  createYamlConfigParser('YAML Parser')
+])
 
 async function setup (configPaths: readonly string[]) {
   const fsx = new FakeFileSystem('/', fsTree)
   const path = new FakePath()
   const tjs = new TJS()
-  const parser = await createJsonConfigParser('JSON Parser')
+  const parsers = await getParsers()
   const schemaWriter = new SchemaWriter({
     fsx,
     path,
     tjs,
-    parsers: [parser]
+    parsers
   })
   const result = await schemaWriter.writeSchemas(configPaths)
-  return { fsx, path, tjs, parser, result }
+  return { fsx, path, tjs, parsers, result }
 }
 
 const configPaths = ['invalid-config']
@@ -37,13 +43,19 @@ it('returns a TextParsingFailure', async () => {
 })
 
 it('returns result containing expected properties', async () => {
-  const { result, parser } = await setup(configPaths)
+  const { result, parsers: [json, yaml] } = await setup(configPaths)
   expect(result).toMatchObject({
     code: Status.TextParsingFailure,
-    error: [{
-      error: expect.anything(),
-      parser
-    }]
+    error: [
+      {
+        error: expect.anything(),
+        parser: json
+      },
+      {
+        error: expect.anything(),
+        parser: yaml
+      }
+    ]
   })
 })
 
