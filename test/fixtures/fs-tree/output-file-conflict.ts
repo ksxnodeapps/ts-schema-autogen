@@ -42,21 +42,21 @@ export const fsTree: FsTree = {
     })
   },
   'more-than-one-conflicts': {
-    foo: file({
+    'foo.json': file({
       generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Foo'
       }
     }),
-    bar: file({
+    'bar.json': file({
       generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Bar'
       }
     }),
-    baz: file({
+    'baz.json': file({
       generator: null!,
       instruction: {
         output: 'shared-output.json',
