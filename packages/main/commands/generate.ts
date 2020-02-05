@@ -16,7 +16,7 @@ export async function cmdGenerate<Prog, Def> (param: GenerateParam<Prog, Def>) {
   if (writeResult.code) {
     console.error('[FAILURE] Failed to generate JSON schemas')
     writeResult.print(console.error)
-    return writeResult.code
+    return writeResult.getStatusCode()
   }
 
   console.info('[SUCCESS]')

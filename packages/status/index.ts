@@ -55,6 +55,11 @@ export abstract class ResultBase {
   public get name () {
     return Status[this.code]
   }
+
+  /** Return status code to pass to `process.exit`, it is usually (but not always) `this.code` */
+  public getStatusCode (): Status {
+    return this.code
+  }
 }
 
 /** Container of value should operation went without errors */

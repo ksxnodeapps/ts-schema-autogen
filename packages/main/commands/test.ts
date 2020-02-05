@@ -16,7 +16,7 @@ export async function cmdTest<Prog, Def> (param: TestParam<Prog, Def>) {
   if (testResult.code) {
     console.error('[FAILURE] Some errors occurred')
     testResult.print(console.error)
-    return testResult.code
+    return testResult.getStatusCode()
   }
 
   console.info('[SUCCESS] All tests passed')
