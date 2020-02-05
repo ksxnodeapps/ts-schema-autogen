@@ -207,6 +207,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     configPaths: readonly string[],
     path: Path.Mod
   ) {
+    if (!this.param.parsers.length) return new MissingFileParser()
     const { errors, instruction } = SchemaWriter.joinCfgRes(
       await Promise.all(configPaths.map(x => this.singleConfig(x, path)))
     )
