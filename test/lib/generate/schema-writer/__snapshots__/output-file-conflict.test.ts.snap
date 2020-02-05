@@ -1,15 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`obvious duplication returns result matching snapshot 1`] = `
+exports[`mixed with non conflicts returns result matching snapshot 1`] = `
 OutputFileConflict {
   "code": 3,
   "error": Map {
-    "obvious-duplication/shared-output.json" => Array [
+    "mixed-with-non-conflicts/shared-output.json" => Array [
       Object {
-        "filename": "obvious-duplication/shared-output.json",
+        "filename": "mixed-with-non-conflicts/shared-output.json",
       },
       Object {
-        "filename": "obvious-duplication/shared-output.json",
+        "filename": "mixed-with-non-conflicts/shared-output.json",
+      },
+    ],
+  },
+  "value": undefined,
+}
+`;
+
+exports[`more than one conflicts returns result matching snapshot 1`] = `
+OutputFileConflict {
+  "code": 3,
+  "error": Map {
+    "more-than-one-conflicts/shared-output.json" => Array [
+      Object {
+        "filename": "more-than-one-conflicts/shared-output.json",
+      },
+      Object {
+        "filename": "more-than-one-conflicts/shared-output.json",
+      },
+      Object {
+        "filename": "more-than-one-conflicts/shared-output.json",
+      },
+    ],
+  },
+  "value": undefined,
+}
+`;
+
+exports[`not obvious conflicts returns result matching snapshot 1`] = `
+OutputFileConflict {
+  "code": 3,
+  "error": Map {
+    "not-obvious-conflicts/shared-output/schema.json" => Array [
+      Object {
+        "filename": "not-obvious-conflicts/shared-output/schema.json",
+      },
+      Object {
+        "filename": "not-obvious-conflicts/shared-output/schema.json",
+      },
+    ],
+  },
+  "value": undefined,
+}
+`;
+
+exports[`obvious conflicts returns result matching snapshot 1`] = `
+OutputFileConflict {
+  "code": 3,
+  "error": Map {
+    "obvious-conflicts/shared-output.json" => Array [
+      Object {
+        "filename": "obvious-conflicts/shared-output.json",
+      },
+      Object {
+        "filename": "obvious-conflicts/shared-output.json",
       },
     ],
   },
