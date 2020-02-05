@@ -40,6 +40,29 @@ export const fsTree: FsTree = {
         symbol: 'Bar'
       }
     })
+  },
+  'more-than-one-conflicts': {
+    foo: file({
+      generator: null!,
+      instruction: {
+        output: 'shared-output.json',
+        symbol: 'Foo'
+      }
+    }),
+    bar: file({
+      generator: null!,
+      instruction: {
+        output: 'shared-output.json',
+        symbol: 'Bar'
+      }
+    }),
+    baz: file({
+      generator: null!,
+      instruction: {
+        output: 'shared-output.json',
+        symbol: 'Baz'
+      }
+    })
   }
 }
 
