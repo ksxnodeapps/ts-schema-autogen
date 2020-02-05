@@ -7,6 +7,7 @@ export class FakeFileSystem extends StringPathFileSystem implements FSX.Mod {
   }
 
   public readonly stat = this.mkfn(this.statSync)
+  public readonly pathExists = this.mkfn(this.existsSync)
   public readonly readdir = this.mkfn(this.readdirSync)
   public readonly readFile = this.mkfn(this.readFileSync)
   public readonly outputFile = this.mkfn(this.outputFileSync)

@@ -16,6 +16,7 @@ export namespace TJS {
 export namespace FSX {
   export interface Mod {
     stat (path: string): Promise<Stats>
+    pathExists (path: string): Promise<boolean>
     readdir (dirname: string): Promise<readonly string[]>
     readFile (filename: string, encoding: 'utf8'): Promise<string>
     outputFile (filename: string, content: string): Promise<void>
