@@ -1,5 +1,5 @@
-import fsTree from '../../../fixtures/fs-tree/valid-config-only'
-import TJS from '../../../fixtures/tjs'
+import fsTree from '../../../../fixtures/fs-tree/valid-config-only'
+import TJS from '../../../../fixtures/tjs'
 import { FakeFileSystem, FakePath } from '@tools/test-utils'
 
 import {

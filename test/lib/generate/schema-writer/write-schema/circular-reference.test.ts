@@ -1,5 +1,5 @@
-import fsTree from '../../../fixtures/fs-tree/circular-reference'
-import TJS from '../../../fixtures/tjs'
+import fsTree from '../../../../fixtures/fs-tree/circular-reference'
+import TJS from '../../../../fixtures/tjs'
 import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {

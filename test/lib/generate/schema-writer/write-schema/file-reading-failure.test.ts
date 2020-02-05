@@ -1,5 +1,5 @@
-import fsTree from '../../../fixtures/fs-tree/file-reading-failure'
-import TJS from '../../../fixtures/tjs'
+import fsTree from '../../../../fixtures/fs-tree/file-reading-failure'
+import TJS from '../../../../fixtures/tjs'
 import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
