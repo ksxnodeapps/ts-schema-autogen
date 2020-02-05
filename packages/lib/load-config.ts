@@ -31,11 +31,6 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
     parseErrors.push({ parser, error: parseResult.error })
   }
 
-  // Since param.parsers is an iterable, its length cannot be known.
-  // The loop above would exit the function should parsers succeeded.
-  // If param.parsers is empty, the loop above would be skip, and the branch below would be reached.
-  if (!parseErrors.length) return new MissingFileParser()
-
   return new TextParsingFailure(parseErrors)
 }
 
@@ -54,7 +49,6 @@ export namespace loadConfigFile {
   export type Return =
     FileReadingFailure |
     TextParsingFailure<ConfigParseError> |
-    MissingFileParser |
     Success<Config>
 }
 
@@ -94,6 +88,8 @@ export class ConfigLoader {
     if (simpleCache.has(filename)) {
       return new Success(simpleCache.get(filename)!)
     }
+
+    if (!param.parsers.length) return new MissingFileParser()
 
     const lcfRet = await loadConfigFile(addProperty(param, 'filename', filename))
     if (lcfRet.code) return lcfRet
