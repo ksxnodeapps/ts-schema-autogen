@@ -127,6 +127,13 @@ export class MultipleFailures<Error extends Iterable<Failure<any>>> extends Fail
     }
   }
 
+  /**
+   * Create a `MultipleFailures` or a single `Failure` from a list of failures
+   * @param list List of failures
+   * @returns `MultipleFailures` if `list` has more than one failures
+   * @returns sole element of `list` if it has exactly one failure
+   * @returns `null` if `list` is empty
+   */
   public static maybe<
     Error extends Failure<any>
   > (list: readonly Error[]): MultipleFailures.Maybe<Error> | null {
