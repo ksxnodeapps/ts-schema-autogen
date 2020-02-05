@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error messages 1`] = `
+"
+TextParsingFailure
+    JSON Parser
+        SyntaxError: Unexpected token e in JSON at position 1
+"
+`;
+
+exports[`returns result matching snapshot 1`] = `
+TextParsingFailure {
+  "code": 6,
+  "error": Array [
+    Object {
+      "error": [SyntaxError: Unexpected token e in JSON at position 1],
+      "parser": Object {
+        "name": "JSON Parser",
+        "parseConfigText": [Function],
+        "testFileName": [Function],
+      },
+    },
+  ],
+  "value": undefined,
+}
+`;
