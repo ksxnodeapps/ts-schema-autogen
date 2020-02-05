@@ -55,6 +55,11 @@ describe('a ← -', () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.FileReadingFailure)
+  })
 })
 
 describe('a ← ( - - - )', () => {
@@ -86,6 +91,11 @@ describe('a ← ( - - - )', () => {
   it('error messages', async () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
+  })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.FileReadingFailure)
   })
 })
 
@@ -119,6 +129,11 @@ describe('a ← b ← -', () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.FileReadingFailure)
+  })
 })
 
 describe('a ← b/', () => {
@@ -150,5 +165,10 @@ describe('a ← b/', () => {
   it('error messages', async () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
+  })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.FileReadingFailure)
   })
 })

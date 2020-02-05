@@ -47,6 +47,11 @@ describe('0 → 0', () => {
     const { result } = await setup(cfgFile)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result.getStatusCode()).toBe(Status.CircularReference)
+  })
 })
 
 describe('0 → 1 → 0', () => {
@@ -73,6 +78,11 @@ describe('0 → 1 → 0', () => {
   it('error messages', async () => {
     const { result } = await setup(cfgFile)
     expect(printResult(result)).toMatchSnapshot()
+  })
+
+  it('status code', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result.getStatusCode()).toBe(Status.CircularReference)
   })
 })
 
@@ -101,6 +111,11 @@ describe('0 → 1 → 2 → 0', () => {
     const { result } = await setup(cfgFile)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result.getStatusCode()).toBe(Status.CircularReference)
+  })
 })
 
 describe('0 → (a0 → a1 → a0, b0 → b1 → b0)', () => {
@@ -128,6 +143,11 @@ describe('0 → (a0 → a1 → a0, b0 → b1 → b0)', () => {
     const { result } = await setup(cfgFile)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result.getStatusCode()).toBe(Status.CircularReference)
+  })
 })
 
 describe('0 → 1 → (a0 → a1 → 3 → 1, b0 → b1 → 3 → 1, c0 → c1 → 3 → 4)', () => {
@@ -154,5 +174,10 @@ describe('0 → 1 → (a0 → a1 → 3 → 1, b0 → b1 → 3 → 1, c0 → c1 �
   it('error messages', async () => {
     const { result } = await setup(cfgFile)
     expect(printResult(result)).toMatchSnapshot()
+  })
+
+  it('status code', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result.getStatusCode()).toBe(Status.CircularReference)
   })
 })

@@ -60,3 +60,8 @@ it('error messages', async () => {
   const { result } = await setup(cfgFile)
   expect(printResult(result)).toMatchSnapshot()
 })
+
+it('status code', async () => {
+  const { result } = await setup(cfgFile)
+  expect(result.getStatusCode()).toBe(Status.TextParsingFailure)
+})

@@ -52,6 +52,11 @@ describe('when a directory is read as file', () => {
     const { result } = await setup(cfgFile)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result.getStatusCode()).toBe(Status.FileReadingFailure)
+  })
 })
 
 describe('when file does not exist', () => {
@@ -79,5 +84,10 @@ describe('when file does not exist', () => {
   it('error messages', async () => {
     const { result } = await setup(cfgFile)
     expect(printResult(result)).toMatchSnapshot()
+  })
+
+  it('status code', async () => {
+    const { result } = await setup(cfgFile)
+    expect(result.getStatusCode()).toBe(Status.FileReadingFailure)
   })
 })

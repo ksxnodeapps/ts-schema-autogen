@@ -69,3 +69,8 @@ it('error messages', async () => {
   const { result } = await setup()
   expect(printResult(result)).toMatchSnapshot()
 })
+
+it('status code', async () => {
+  const { result } = await setup()
+  expect(result.getStatusCode()).toBe(Status.GeneratorConstructingFailure)
+})

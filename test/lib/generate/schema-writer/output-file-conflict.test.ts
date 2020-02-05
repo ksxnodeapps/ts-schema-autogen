@@ -58,6 +58,11 @@ describe('obvious conflicts', () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.OutputFileConflict)
+  })
 })
 
 describe('not obvious conflicts', () => {
@@ -92,6 +97,11 @@ describe('not obvious conflicts', () => {
   it('error messages', async () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
+  })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.OutputFileConflict)
   })
 })
 
@@ -129,6 +139,11 @@ describe('more than one conflicts', () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
   })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.OutputFileConflict)
+  })
 })
 
 describe('mixed with non conflicts', () => {
@@ -165,5 +180,10 @@ describe('mixed with non conflicts', () => {
   it('error messages', async () => {
     const { result } = await setup(configPaths)
     expect(printResult(result)).toMatchSnapshot()
+  })
+
+  it('status code', async () => {
+    const { result } = await setup(configPaths)
+    expect(result.getStatusCode()).toBe(Status.OutputFileConflict)
   })
 })
