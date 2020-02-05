@@ -231,9 +231,12 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * @param configPaths List of paths to config files
    */
   public testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn<Prog, Def>> {
-    const { readFile } = this.param.fsx
+    const { pathExists, readFile } = this.param.fsx
     async function act (filename: string, expectedContent: string): Promise<OutdatedFile | void> {
-      const receivedContent = await readFile(filename, 'utf8')
+      const exists = pathExists(filename)
+      const content = readFile(filename, 'utf8')
+      const receivedContent = (await exists) ? await content : null
+      content.catch(() => undefined) // silence error/warning of unhandled rejection
       if (expectedContent !== receivedContent) {
         return new OutdatedFile(filename, { expectedContent, receivedContent })
       }
