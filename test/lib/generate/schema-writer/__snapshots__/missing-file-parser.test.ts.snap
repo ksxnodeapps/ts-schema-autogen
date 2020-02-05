@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error messages 1`] = `
+"
+MissingFileParser
+    No parser specified
+"
+`;
+
+exports[`returns result matching snapshot 1`] = `
+MissingFileParser {
+  "code": 10,
+  "error": undefined,
+  "value": undefined,
+}
+`;
