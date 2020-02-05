@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`content mismatches multiple output files from one config file is outdated error messages 1`] = `
+"
+MultipleFailures
+    OutdatedFile
+        file: content-mismatches/baz/default.json
+        content mismatches
+    OutdatedFile
+        file: content-mismatches/baz/minified.json
+        content mismatches
+"
+`;
+
+exports[`content mismatches multiple output files from one config file is outdated returns a result matching snapshot 1`] = `
+MultipleFailures {
+  "code": 2,
+  "error": Array [
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{
+  \\"symbol\\": \\"Baz\\",
+  \\"type\\": \\"schema\\"
+}
+",
+        "receivedContent": "{
+  \\"symbol\\": \\"Foo\\",
+  \\"type\\": \\"schema\\"
+}
+",
+      },
+      "path": "content-mismatches/baz/default.json",
+      "value": undefined,
+    },
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{\\"symbol\\":\\"Baz\\",\\"type\\":\\"schema\\"}
+",
+        "receivedContent": "{\\"symbol\\":\\"Bar\\",\\"type\\":\\"schema\\"}
+",
+      },
+      "path": "content-mismatches/baz/minified.json",
+      "value": undefined,
+    },
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`content mismatches one output file from one config file is outdated error messages 1`] = `
+"
+OutdatedFile
+    file: content-mismatches/bar/filename.json
+    content mismatches
+"
+`;
+
+exports[`content mismatches one output file from one config file is outdated returns a result matching snapshot 1`] = `
+OutdatedFile {
+  "code": 9,
+  "error": Object {
+    "expectedContent": "{
+  \\"symbol\\": \\"Bar\\",
+  \\"type\\": \\"schema\\"
+}
+",
+    "receivedContent": "{
+  \\"symbol\\": \\"Foo\\",
+  \\"type\\": \\"schema\\"
+}
+",
+  },
+  "path": "content-mismatches/bar/filename.json",
+  "value": undefined,
+}
+`;
+
+exports[`content missing multiple output files from one config file is outdated error messages 1`] = `
+"
+MultipleFailures
+    OutdatedFile
+        file: content-missing/baz/default.json
+        expected: file exists
+        received: file does not exist
+    OutdatedFile
+        file: content-missing/baz/minified.json
+        expected: file exists
+        received: file does not exist
+"
+`;
+
+exports[`content missing multiple output files from one config file is outdated returns a result matching snapshot 1`] = `
+MultipleFailures {
+  "code": 2,
+  "error": Array [
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{
+  \\"symbol\\": \\"Baz\\",
+  \\"type\\": \\"schema\\"
+}
+",
+        "receivedContent": null,
+      },
+      "path": "content-missing/baz/default.json",
+      "value": undefined,
+    },
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{\\"symbol\\":\\"Baz\\",\\"type\\":\\"schema\\"}
+",
+        "receivedContent": null,
+      },
+      "path": "content-missing/baz/minified.json",
+      "value": undefined,
+    },
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`content missing one output file from one config file is outdated error messages 1`] = `
+"
+OutdatedFile
+    file: content-missing/bar/filename.json
+    expected: file exists
+    received: file does not exist
+"
+`;
+
+exports[`content missing one output file from one config file is outdated returns a result matching snapshot 1`] = `
+OutdatedFile {
+  "code": 9,
+  "error": Object {
+    "expectedContent": "{
+  \\"symbol\\": \\"Bar\\",
+  \\"type\\": \\"schema\\"
+}
+",
+    "receivedContent": null,
+  },
+  "path": "content-missing/bar/filename.json",
+  "value": undefined,
+}
+`;
+
+exports[`mixing all up-to-date with all out-of-date error messages 1`] = `
+"
+MultipleFailures
+    OutdatedFile
+        file: content-missing/bar/filename.json
+        expected: file exists
+        received: file does not exist
+    OutdatedFile
+        file: content-missing/baz/default.json
+        expected: file exists
+        received: file does not exist
+    OutdatedFile
+        file: content-missing/baz/minified.json
+        expected: file exists
+        received: file does not exist
+    OutdatedFile
+        file: content-mismatches/bar/filename.json
+        content mismatches
+    OutdatedFile
+        file: content-mismatches/baz/default.json
+        content mismatches
+    OutdatedFile
+        file: content-mismatches/baz/minified.json
+        content mismatches
+"
+`;
+
+exports[`mixing all up-to-date with all out-of-date returns a result matching snapshot 1`] = `
+MultipleFailures {
+  "code": 2,
+  "error": Array [
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{
+  \\"symbol\\": \\"Bar\\",
+  \\"type\\": \\"schema\\"
+}
+",
+        "receivedContent": null,
+      },
+      "path": "content-missing/bar/filename.json",
+      "value": undefined,
+    },
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{
+  \\"symbol\\": \\"Baz\\",
+  \\"type\\": \\"schema\\"
+}
+",
+        "receivedContent": null,
+      },
+      "path": "content-missing/baz/default.json",
+      "value": undefined,
+    },
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{\\"symbol\\":\\"Baz\\",\\"type\\":\\"schema\\"}
+",
+        "receivedContent": null,
+      },
+      "path": "content-missing/baz/minified.json",
+      "value": undefined,
+    },
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{
+  \\"symbol\\": \\"Bar\\",
+  \\"type\\": \\"schema\\"
+}
+",
+        "receivedContent": "{
+  \\"symbol\\": \\"Foo\\",
+  \\"type\\": \\"schema\\"
+}
+",
+      },
+      "path": "content-mismatches/bar/filename.json",
+      "value": undefined,
+    },
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{
+  \\"symbol\\": \\"Baz\\",
+  \\"type\\": \\"schema\\"
+}
+",
+        "receivedContent": "{
+  \\"symbol\\": \\"Foo\\",
+  \\"type\\": \\"schema\\"
+}
+",
+      },
+      "path": "content-mismatches/baz/default.json",
+      "value": undefined,
+    },
+    OutdatedFile {
+      "code": 9,
+      "error": Object {
+        "expectedContent": "{\\"symbol\\":\\"Baz\\",\\"type\\":\\"schema\\"}
+",
+        "receivedContent": "{\\"symbol\\":\\"Bar\\",\\"type\\":\\"schema\\"}
+",
+      },
+      "path": "content-mismatches/baz/minified.json",
+      "value": undefined,
+    },
+  ],
+  "value": undefined,
+}
+`;

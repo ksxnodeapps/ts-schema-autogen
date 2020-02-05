@@ -3,6 +3,7 @@
   "dependencies": {
     "js-yaml": "^3.13.1",
     "@types/js-yaml": "^3.12.1",
+    "@tsfun/object": "^0.0.16",
     "@ts-schema-autogen/types": "file:../../packages/types",
     "@tools/test-utils": "file:../../tools/test-utils"
   }
