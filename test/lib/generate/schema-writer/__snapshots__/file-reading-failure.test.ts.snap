@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a ← ( - - - ) error messages 1`] = `
+"
+FileReadingFailure
+    path: not-exist-0.json
+    error:
+        ENOENT {
+          syscall: 'read',
+          path: [ 'not-exist-0.json' ],
+          errno: -2,
+          code: 'ENOENT'
+        }
+"
+`;
+
+exports[`a ← ( - - - ) returns result matching snapshot 1`] = `
+FileReadingFailure {
+  "code": 5,
+  "error": ENOENT {
+    "code": "ENOENT",
+    "errno": -2,
+    "path": Array [
+      "not-exist-0.json",
+    ],
+    "syscall": "read",
+  },
+  "path": "not-exist-0.json",
+  "value": undefined,
+}
+`;
+
+exports[`a ← - error messages 1`] = `
+"
+FileReadingFailure
+    path: not-exist.json
+    error:
+        ENOENT {
+          syscall: 'read',
+          path: [ 'not-exist.json' ],
+          errno: -2,
+          code: 'ENOENT'
+        }
+"
+`;
+
+exports[`a ← - returns result matching snapshot 1`] = `
+FileReadingFailure {
+  "code": 5,
+  "error": ENOENT {
+    "code": "ENOENT",
+    "errno": -2,
+    "path": Array [
+      "not-exist.json",
+    ],
+    "syscall": "read",
+  },
+  "path": "not-exist.json",
+  "value": undefined,
+}
+`;
+
+exports[`a ← b ← - error messages 1`] = `
+"
+FileReadingFailure
+    path: not-exist.json
+    error:
+        ENOENT {
+          syscall: 'read',
+          path: [ 'not-exist.json' ],
+          errno: -2,
+          code: 'ENOENT'
+        }
+"
+`;
+
+exports[`a ← b ← - returns result matching snapshot 1`] = `
+FileReadingFailure {
+  "code": 5,
+  "error": ENOENT {
+    "code": "ENOENT",
+    "errno": -2,
+    "path": Array [
+      "not-exist.json",
+    ],
+    "syscall": "read",
+  },
+  "path": "not-exist.json",
+  "value": undefined,
+}
+`;
+
+exports[`a ← b/ error messages 1`] = `
+"
+FileReadingFailure
+    path: directory
+    error:
+        EISDIR {
+          syscall: 'read',
+          path: [ 'directory' ],
+          errno: -21,
+          code: 'EISDIR'
+        }
+"
+`;
+
+exports[`a ← b/ returns result matching snapshot 1`] = `
+FileReadingFailure {
+  "code": 5,
+  "error": EISDIR {
+    "code": "EISDIR",
+    "errno": -21,
+    "path": Array [
+      "directory",
+    ],
+    "syscall": "read",
+  },
+  "path": "directory",
+  "value": undefined,
+}
+`;
