@@ -55,8 +55,8 @@ export const fsTree: FsTree = {
       }
     },
     3: {
-      return: config('../1.json'),
-      escape: config('../4.json')
+      'return.json': config('../1.json'),
+      'escape.json': config('../4.json')
     },
     '4.json': config()
   }
