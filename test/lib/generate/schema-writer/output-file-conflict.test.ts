@@ -24,10 +24,10 @@ async function setup (configPaths: readonly string[]) {
   return { fsx, path, tjs, result }
 }
 
-describe('obvious duplication', () => {
+describe('obvious conflicts', () => {
   const configPaths = [
-    'obvious-duplication/foo.json',
-    'obvious-duplication/bar.json'
+    'obvious-conflicts/foo.json',
+    'obvious-conflicts/bar.json'
   ]
 
   it('returns result matching snapshot', async () => {

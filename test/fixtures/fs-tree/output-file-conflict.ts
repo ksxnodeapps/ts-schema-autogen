@@ -3,7 +3,7 @@ import { Config, FsTree } from './_'
 const file = (config: Config) => JSON.stringify(config)
 
 export const fsTree: FsTree = {
-  'obvious-duplication': {
+  'obvious-conflicts': {
     'foo.json': file({
       generator: null!,
       instruction: {
@@ -19,7 +19,7 @@ export const fsTree: FsTree = {
       }
     })
   },
-  'not-obvious-duplication': {
+  'not-obvious-conflicts': {
     foo: {
       '.schema.autogen.json': file({
         generator: null!,
