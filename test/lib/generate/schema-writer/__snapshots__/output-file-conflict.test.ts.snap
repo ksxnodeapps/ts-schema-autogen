@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`obvious duplication returns result matching snapshot 1`] = `
+OutputFileConflict {
+  "code": 3,
+  "error": Map {
+    "obvious-duplication/shared-output.json" => Array [
+      Object {
+        "filename": "obvious-duplication/shared-output.json",
+      },
+      Object {
+        "filename": "obvious-duplication/shared-output.json",
+      },
+    ],
+  },
+  "value": undefined,
+}
+`;
