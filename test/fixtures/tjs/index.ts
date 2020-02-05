@@ -6,7 +6,7 @@ export interface Def {
 }
 
 export class TJS extends FakeTJS<Def> {
-  public readonly defMap = new Map<string, Def>(
+  protected readonly defMap = new Map<string, Def>(
     [
       'Foo',
       'Bar',
