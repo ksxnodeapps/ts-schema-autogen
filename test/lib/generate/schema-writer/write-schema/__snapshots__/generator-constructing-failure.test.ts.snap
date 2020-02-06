@@ -4,8 +4,10 @@ exports[`error messages 1`] = `
 "
 GeneratorConstructingFailure
     Failed to build schema generator
-    program:
-        Program { getSchema: [Function (anonymous)] }
+    input:
+        abc.ts
+        def.ts
+        ghi.ts
     settings:
         undefined
 "
@@ -15,9 +17,11 @@ exports[`returns result matching snapshots 1`] = `
 GeneratorConstructingFailure {
   "code": 11,
   "error": Object {
-    "program": Program {
-      "getSchema": [Function],
-    },
+    "input": Array [
+      "abc.ts",
+      "def.ts",
+      "ghi.ts",
+    ],
     "settings": undefined,
   },
   "value": undefined,

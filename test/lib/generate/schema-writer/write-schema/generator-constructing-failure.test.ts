@@ -22,6 +22,7 @@ async function setup () {
   const configPath = 'config.json'
   fsx.writeFileSync(configPath, JSON.stringify({
     instruction: {
+      input: ['abc.ts', 'def.ts', 'ghi.ts'],
       symbol: 'Foo',
       output: 'output.json'
     }
