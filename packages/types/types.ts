@@ -36,7 +36,7 @@ export interface SymbolInstruction {
 /** Shared properties of instruction interfaces */
 export interface InstructionSharedProperties {
   /** Compiler options to pass to typescript-json-schema module */
-  readonly compilerOptions?: CompilerOptions
+  readonly compilerOptions?: Partial<CompilerOptions>
   /** Settings to pass to typescript-json-schema module */
   readonly schemaSettings?: Settings
   /** TypeScript source file(s) */
