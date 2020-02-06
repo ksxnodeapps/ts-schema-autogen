@@ -60,11 +60,11 @@ MultipleFailures
     FileTreeRemovalFailure
         path: output-file-conflict/obvious-conflicts/shared-output.json
         error:
-            [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted]
+            RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted
     FileTreeRemovalFailure
         path: output-file-conflict/obvious-conflicts/shared-output.json
         error:
-            [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted]
+            RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted
     TextParsingFailure
         JSON Parser
             SyntaxError: Unexpected token e in JSON at position 1
@@ -75,23 +75,23 @@ MultipleFailures
     FileTreeRemovalFailure
         path: valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json
         error:
-            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json' cannot be deleted]
+            RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json' cannot be deleted
     FileTreeRemovalFailure
         path: valid-config-only/yaml/single-symbol/single-output/output-descriptor/output.schema.json
         error:
-            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-descriptor/output.schema.json' cannot be deleted]
+            RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-descriptor/output.schema.json' cannot be deleted
     FileTreeRemovalFailure
         path: valid-config-only/yaml/single-symbol/multiple-output/output-filename/abc.schema.json
         error:
-            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/abc.schema.json' cannot be deleted]
+            RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/abc.schema.json' cannot be deleted
     FileTreeRemovalFailure
         path: valid-config-only/yaml/single-symbol/multiple-output/output-filename/def.schema.json
         error:
-            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/def.schema.json' cannot be deleted]
+            RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/def.schema.json' cannot be deleted
     FileTreeRemovalFailure
         path: valid-config-only/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json
         error:
-            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json' cannot be deleted]
+            RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json' cannot be deleted
 "
 `;
 

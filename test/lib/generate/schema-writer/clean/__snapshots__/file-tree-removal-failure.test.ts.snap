@@ -6,11 +6,11 @@ MultipleFailures
     FileTreeRemovalFailure
         path: container/bar.unremovable
         error:
-            [RemovalError: File or directory 'container/bar.unremovable' cannot be deleted]
+            RemovalError: File or directory 'container/bar.unremovable' cannot be deleted
     FileTreeRemovalFailure
         path: container/baz.unremovable
         error:
-            [RemovalError: File or directory 'container/baz.unremovable' cannot be deleted]
+            RemovalError: File or directory 'container/baz.unremovable' cannot be deleted
 "
 `;
 
@@ -40,7 +40,7 @@ exports[`one failure error messages 1`] = `
 FileTreeRemovalFailure
     path: container/bar.unremovable
     error:
-        [RemovalError: File or directory 'container/bar.unremovable' cannot be deleted]
+        RemovalError: File or directory 'container/bar.unremovable' cannot be deleted
 "
 `;
 

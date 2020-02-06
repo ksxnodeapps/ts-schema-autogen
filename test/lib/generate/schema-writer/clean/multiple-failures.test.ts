@@ -32,7 +32,7 @@ class RemovalError extends Error {
   public readonly name = this.constructor.name
 
   public [inspect.custom] () {
-    return `[${this.name}: ${this.message}]`
+    return `${this.name}: ${this.message}`
   }
 }
 
