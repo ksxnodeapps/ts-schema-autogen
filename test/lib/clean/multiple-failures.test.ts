@@ -1,5 +1,6 @@
-import createFsTree from '../../../fixtures/fs-tree/multiple-failures'
-import TJS from '../../../fixtures/tjs'
+import { inspect } from 'util'
+import createFsTree from '../../fixtures/fs-tree/multiple-failures'
+import TJS from '../../fixtures/tjs'
 import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
@@ -15,8 +16,28 @@ const getParsers = () => Promise.all([
   createYamlConfigParser('YAML Parser')
 ])
 
+class MockedFileSystem extends FakeFileSystem {
+  public readonly remove = jest.fn(
+    (path: string) => path.endsWith('.removable')
+      ? Promise.resolve()
+      : Promise.reject(new RemovalError(path))
+  )
+}
+
+class RemovalError extends Error {
+  constructor (path: string) {
+    super(`File or directory ${inspect(path)} cannot be deleted`)
+  }
+
+  public readonly name = this.constructor.name
+
+  public [inspect.custom] () {
+    return `${this.name}: ${this.message}`
+  }
+}
+
 async function setup (configFiles: readonly string[]) {
-  const fsx = new FakeFileSystem('/', await createFsTree())
+  const fsx = new MockedFileSystem('/', await createFsTree())
   const path = new FakePath()
   const tjs = new TJS()
   const result = await clean({
@@ -34,6 +55,9 @@ const configFiles = [
   'circular-reference/3/0.json',
   'file-reading-failure/single.json',
   'file-reading-failure/multiple.json',
+  'file-tree-loading-failure/container/foo.json',
+  'file-tree-loading-failure/container/bar.json',
+  'file-tree-loading-failure/container/baz.json',
   'output-file-conflict/obvious-conflicts/foo.json',
   'output-file-conflict/obvious-conflicts/bar.json',
   'text-parsing-failure/invalid-config',
