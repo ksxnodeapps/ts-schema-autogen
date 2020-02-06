@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls remove 1`] = `
+Array [
+  Array [
+    "yaml/single-symbol/single-output/output-filename/output.schema.json",
+  ],
+  Array [
+    "yaml/single-symbol/single-output/output-descriptor/output.schema.json",
+  ],
+  Array [
+    "yaml/single-symbol/multiple-output/output-filename/abc.schema.json",
+  ],
+  Array [
+    "yaml/single-symbol/multiple-output/output-filename/def.schema.json",
+  ],
+  Array [
+    "yaml/single-symbol/multiple-output/output-filename/ghi.schema.json",
+  ],
+  Array [
+    "yaml/multiple-symbol/single-output/output-filename/foo.schema.json",
+  ],
+  Array [
+    "yaml/multiple-symbol/single-output/output-filename/bar.schema.json",
+  ],
+  Array [
+    "json/single-symbol/single-output/output-filename/output.schema.json",
+  ],
+]
+`;
