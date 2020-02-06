@@ -96,14 +96,17 @@ export const serialize = (schema: any, { indent }: OutputDescriptor) =>
   JSON.stringify(schema, undefined, getIndent(indent)) + '\n'
 
 /** Call a function on a list of {@link FileWritingInstruction} */
-export async function processWriteInstructions<ActFailure extends Failure<any>> (
-  param: processWriteInstructions.Param<ActFailure>
-): Promise<processWriteInstructions.Return<ActFailure>> {
-  const { act, instruction } = param
+export async function processWriteInstructions<
+  ActFailure extends Failure<any>,
+  ActRejection extends Failure<any>
+> (
+  param: processWriteInstructions.Param<ActFailure, ActRejection>
+): Promise<processWriteInstructions.Return<ActFailure, ActRejection>> {
+  const { act, onreject, instruction } = param
   const duplicationCheckingArray: OutputDescriptor[] = []
   const duplicationMap = new Map<string, OutputDescriptor[]>()
   const actFuncs: Array<() => Promise<unknown>> = []
-  const actErrors: Array<ActFailure | FileWritingFailure> = []
+  const actErrors: Array<ActFailure | ActRejection> = []
 
   for (const { schema, instruction: { output } } of instruction) {
     const descriptors = ensureOutputDescriptorArray(output)
@@ -125,7 +128,7 @@ export async function processWriteInstructions<ActFailure extends Failure<any>> 
       actFuncs.push(
         () => act(filename, serialize(schema, desc))
           .then(failure => failure && actErrors.push(failure))
-          .catch(error => actErrors.push(new FileWritingFailure(filename, error)))
+          .catch(error => actErrors.push(onreject(filename, error)))
       )
     }
   }
@@ -137,9 +140,12 @@ export async function processWriteInstructions<ActFailure extends Failure<any>> 
 }
 
 export namespace processWriteInstructions {
-  export interface Param<Failure> {
+  export interface Param<Failure, Rejection> {
     /** Function to be called on each {@link FileWritingInstruction} */
     readonly act: Act<Failure>
+
+    /** Function to be called on `act`'s rejection */
+    readonly onreject: OnReject<Rejection>
 
     /** List of writing instructions */
     readonly instruction: Iterable<FileWritingInstruction<any>>
@@ -153,9 +159,17 @@ export namespace processWriteInstructions {
     (filename: string, content: string): Promise<Failure | void>
   }
 
-  export type Return<ActFailure extends Failure<any>> =
+  export interface OnReject<Rejection> {
+    /**
+     * @param filename Path to the file that caused rejection
+     * @param reason Rejection reason
+     */
+    (filename: string, reason: any): Rejection
+  }
+
+  export type Return<ActFailure extends Failure<any>, ActRejection extends Failure<any>> =
     OutputFileConflict |
-    MultipleFailures.Maybe<ActFailure | FileWritingFailure> |
+    MultipleFailures.Maybe<ActFailure | ActRejection> |
     Success<void>
 }
 
@@ -202,8 +216,9 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     return new Success(writeInstruction.value)
   }
 
-  private async mayWriteSchemas<ActFailure extends OutdatedFile> (
+  private async mayWriteSchemas<ActFailure extends OutdatedFile, ActRejection extends Failure<any>> (
     act: processWriteInstructions.Act<ActFailure>,
+    onreject: processWriteInstructions.OnReject<ActRejection>,
     configPaths: readonly string[],
     path: Path.Mod
   ) {
@@ -212,7 +227,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
       await Promise.all(configPaths.map(x => this.singleConfig(x, path)))
     )
     return MultipleFailures.maybe(errors) ||
-      processWriteInstructions({ act, instruction })
+      processWriteInstructions({ act, onreject, instruction })
   }
 
   /**
@@ -223,7 +238,9 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
     const { outputFile } = this.param.fsx
     const act: processWriteInstructions.Act<never> =
       (filename, content) => outputFile(filename, content)
-    return this.mayWriteSchemas(act, configPaths, this.param.path)
+    const onreject: processWriteInstructions.OnReject<FileWritingFailure> =
+      (filename, reason) => new FileWritingFailure(filename, reason)
+    return this.mayWriteSchemas(act, onreject, configPaths, this.param.path)
   }
 
   /**
@@ -241,7 +258,10 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
         return new OutdatedFile(filename, { expectedContent, receivedContent })
       }
     }
-    return this.mayWriteSchemas(act, configPaths, this.param.path)
+    // TODO: Change `FileWritingFailure` to something else
+    const onreject: processWriteInstructions.OnReject<FileWritingFailure> =
+      (filename, reason) => new FileWritingFailure(filename, reason)
+    return this.mayWriteSchemas(act, onreject, configPaths, this.param.path)
   }
 }
 
