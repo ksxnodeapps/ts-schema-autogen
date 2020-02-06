@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error messages 1`] = `
+"
+FileReadingFailure
+    path: directory
+    error:
+        EISDIR {
+          syscall: 'read',
+          path: [ 'directory' ],
+          errno: -21,
+          code: 'EISDIR'
+        }
+"
+`;
+
+exports[`returns result matching snapshot 1`] = `
+FileReadingFailure {
+  "code": 5,
+  "error": EISDIR {
+    "code": "EISDIR",
+    "errno": -21,
+    "path": Array [
+      "directory",
+    ],
+    "syscall": "read",
+  },
+  "path": "directory",
+  "value": undefined,
+}
+`;

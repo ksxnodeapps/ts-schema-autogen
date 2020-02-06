@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error messages 1`] = `
+"
+FileWritingFailure
+    path: directory
+    error:
+        EISDIR {
+          syscall: 'open',
+          path: [ 'directory' ],
+          errno: -21,
+          code: 'EISDIR'
+        }
+"
+`;
+
+exports[`returns result matching snapshot 1`] = `
+FileWritingFailure {
+  "code": 4,
+  "error": EISDIR {
+    "code": "EISDIR",
+    "errno": -21,
+    "path": Array [
+      "directory",
+    ],
+    "syscall": "open",
+  },
+  "path": "directory",
+  "value": undefined,
+}
+`;
