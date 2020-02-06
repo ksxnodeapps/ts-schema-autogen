@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls console.info 1`] = `
+Array [
+  Array [
+    "[SUCCESS] All tests passed",
+  ],
+]
+`;
+
+exports[`messages 1`] = `
+"
+[SUCCESS] All tests passed
+"
+`;
