@@ -1,3 +1,4 @@
+import { createJoinFunction } from 'better-path-join'
 import { Instruction, FSX, Path } from '@ts-schema-autogen/types'
 import { MaybeAsyncIterable } from '@ts-schema-autogen/utils'
 import { FileTreeRemovalFailure, MultipleFailures, Success } from '@ts-schema-autogen/status'
@@ -8,11 +9,14 @@ import { ConfigLoader } from './load-config'
 
 /** Determine output files from instruction and delete them */
 export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
+  const { directory } = param
   const { remove } = param.fsx
+  const join = createJoinFunction(param.path)
+  const removeFile = (filename: string) => remove(join(directory, filename))
   const result = listSymbolInstruction(param.instruction)
     .map(instruction => ensureOutputDescriptorArray(instruction.output))
     .reduce((acc, cur) => [...acc, ...cur], [])
-    .map(({ filename }) => ({ filename, promise: remove(filename) }))
+    .map(({ filename }) => ({ filename, promise: removeFile(filename) }))
   return result
 }
 
@@ -20,6 +24,12 @@ export namespace cleanUnit {
   export interface Param {
     /** `fs-extra` module to perform file deletion */
     readonly fsx: FSX.Mod
+
+    /** `path` module to resolve paths  */
+    readonly path: Path.Mod
+
+    /** Directory that clean targets belong to */
+    readonly directory: string
 
     /** Instruction whose output files need to be deleted */
     readonly instruction: Instruction
@@ -38,6 +48,7 @@ export namespace cleanUnit {
 
 /** Determine output files from multiple configs and delete them */
 export async function clean (param: clean.Param): Promise<clean.Return> {
+  const { fsx, path } = param
   const configLoader = new ConfigLoader(param)
   const errors: Array<
     Exclude<ConfigLoader.LoaderReturn, Success<any>> |
@@ -52,7 +63,9 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
     }
 
     const removalResults = cleanUnit({
-      fsx: param.fsx,
+      fsx,
+      path,
+      directory: path.dirname(configFile),
       instruction: configResult.value.instruction
     })
 
