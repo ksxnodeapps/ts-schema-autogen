@@ -1,11 +1,20 @@
 instruction:
   compilerOptions:
     strictNullChecks: true
+    strict: true
+    target: es2018
+    noEmit: true
+    lib: [esnext]
   schemaSettings:
     required: true
   input:
     - ./types.ts
-    - ./node_modules/@ts-schema-autogen/types.ts
   list:
+    - symbol: OutputDescriptor
+      output: output-descriptor.schema.json
+    - symbol: SymbolInstruction
+      output: symbol-instruction.schema.json
+    - symbol: Instruction
+      output: instruction.schema.json
     - symbol: Config
       output: config.schema.json
