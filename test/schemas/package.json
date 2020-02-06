@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "@ts-schema-autogen/cli": "file:../../packages/cli",
+    "@tools/preloaded-node": "file:../../tools/preloaded-node",
+    "@tools/test-spawn": "file:../../tools/test-spawn"
+  }
+}
