@@ -19,6 +19,10 @@
     "generate",
     "auto"
   ],
+  "bin": {
+    "ts-schema-autogen": "ts-schema-autogen",
+    "generate-json-schema-from-typescript": "ts-schema-autogen"
+  },
   "sideEffects": false,
   "dependencies": {
     "typescript-json-schema": "^0.42.0",
