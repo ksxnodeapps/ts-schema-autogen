@@ -15,7 +15,7 @@ export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
   const removeFile = (filename: string) => remove(join(directory, filename))
   const result = listSymbolInstruction(param.instruction)
     .map(instruction => ensureOutputDescriptorArray(instruction.output))
-    .reduce((acc, cur) => [...acc, ...cur], [])
+    .flat()
     .map(({ filename }) => ({ filename, promise: removeFile(filename) }))
   return result
 }
