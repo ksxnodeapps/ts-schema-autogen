@@ -5,9 +5,9 @@ exports[`error messages 1`] = `
 GeneratorConstructingFailure
     Failed to build schema generator
     input:
-        abc.ts
-        def.ts
-        ghi.ts
+        foo/bar/baz/abc.ts
+        foo/bar/baz/def.ts
+        foo/bar/baz/ghi.ts
     settings:
         undefined
 "
@@ -18,9 +18,9 @@ GeneratorConstructingFailure {
   "code": 11,
   "error": Object {
     "input": Array [
-      "abc.ts",
-      "def.ts",
-      "ghi.ts",
+      "foo/bar/baz/abc.ts",
+      "foo/bar/baz/def.ts",
+      "foo/bar/baz/ghi.ts",
     ],
     "settings": undefined,
   },

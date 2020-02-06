@@ -19,8 +19,8 @@ async function setup () {
   const fsx = new FakeFileSystem('/')
   const path = new FakePath()
   const tjs = new TJS()
-  const configPath = 'config.json'
-  fsx.writeFileSync(configPath, JSON.stringify({
+  const configPath = 'foo/bar/baz/config.json'
+  fsx.outputFileSync(configPath, JSON.stringify({
     instruction: {
       input: ['abc.ts', 'def.ts', 'ghi.ts'],
       symbol: 'Foo',
