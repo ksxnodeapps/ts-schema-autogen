@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls console.error 1`] = `
+Array [
+  Array [
+    "[FAILURE] Failed to generate JSON schemas",
+  ],
+  Array [
+    "MultipleFailures",
+  ],
+  Array [
+    "    TextParsingFailure",
+  ],
+  Array [
+    "        YAML Parser",
+  ],
+  Array [
+    "            YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"wdir/text-parsing-failure/foo.schema.autogen.yaml\\" at line 1, column 16:",
+  ],
+  Array [
+    "                neither : json : nor : yaml",
+  ],
+  Array [
+    "                               ^",
+  ],
+  Array [
+    "    TextParsingFailure",
+  ],
+  Array [
+    "        JSON Parser",
+  ],
+  Array [
+    "            SyntaxError: Unexpected token e in JSON at position 1",
+  ],
+  Array [
+    "    TextParsingFailure",
+  ],
+  Array [
+    "        YAML Parser",
+  ],
+  Array [
+    "            YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"wdir/text-parsing-failure/baz.schema.autogen.yaml\\" at line 1, column 16:",
+  ],
+  Array [
+    "                neither : yaml : nor : json",
+  ],
+  Array [
+    "                               ^",
+  ],
+]
+`;
+
+exports[`messages 1`] = `
+"
+[FAILURE] Failed to generate JSON schemas
+MultipleFailures
+    TextParsingFailure
+        YAML Parser
+            YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"wdir/text-parsing-failure/foo.schema.autogen.yaml\\" at line 1, column 16:
+                neither : json : nor : yaml
+                               ^
+    TextParsingFailure
+        JSON Parser
+            SyntaxError: Unexpected token e in JSON at position 1
+    TextParsingFailure
+        YAML Parser
+            YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"wdir/text-parsing-failure/baz.schema.autogen.yaml\\" at line 1, column 16:
+                neither : yaml : nor : json
+                               ^
+"
+`;
