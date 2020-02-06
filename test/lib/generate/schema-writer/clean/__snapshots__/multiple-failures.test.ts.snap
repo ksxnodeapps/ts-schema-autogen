@@ -1,0 +1,268 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error messages 1`] = `
+"
+MultipleFailures
+    CircularReference
+        circular-reference/1/0.json
+    CircularReference
+        circular-reference/2/0.json
+        circular-reference/2/1.json
+    CircularReference
+        circular-reference/3/0.json
+        circular-reference/3/1.json
+        circular-reference/3/2.json
+    FileReadingFailure
+        path: file-reading-failure/not-exist.json
+        error:
+            ENOENT {
+              syscall: 'read',
+              path: [ 'file-reading-failure', 'not-exist.json' ],
+              errno: -2,
+              code: 'ENOENT'
+            }
+    FileReadingFailure
+        path: file-reading-failure/not-exist-0.json
+        error:
+            ENOENT {
+              syscall: 'read',
+              path: [ 'file-reading-failure', 'not-exist-0.json' ],
+              errno: -2,
+              code: 'ENOENT'
+            }
+    FileReadingFailure
+        path: file-tree-loading-failure/container/foo.json
+        error:
+            ENOENT {
+              syscall: 'read',
+              path: [ 'file-tree-loading-failure', 'container', 'foo.json' ],
+              errno: -2,
+              code: 'ENOENT'
+            }
+    FileReadingFailure
+        path: file-tree-loading-failure/container/bar.json
+        error:
+            ENOENT {
+              syscall: 'read',
+              path: [ 'file-tree-loading-failure', 'container', 'bar.json' ],
+              errno: -2,
+              code: 'ENOENT'
+            }
+    FileReadingFailure
+        path: file-tree-loading-failure/container/baz.json
+        error:
+            ENOENT {
+              syscall: 'read',
+              path: [ 'file-tree-loading-failure', 'container', 'baz.json' ],
+              errno: -2,
+              code: 'ENOENT'
+            }
+    FileTreeRemovalFailure
+        path: output-file-conflict/obvious-conflicts/shared-output.json
+        error:
+            [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted]
+    FileTreeRemovalFailure
+        path: output-file-conflict/obvious-conflicts/shared-output.json
+        error:
+            [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted]
+    TextParsingFailure
+        JSON Parser
+            SyntaxError: Unexpected token e in JSON at position 1
+        YAML Parser
+            YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"text-parsing-failure/invalid-config\\" at line 1, column 11:
+                neither: a: valid: yaml: nor: a: valid: json:
+                          ^
+    FileTreeRemovalFailure
+        path: valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json
+        error:
+            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json' cannot be deleted]
+    FileTreeRemovalFailure
+        path: valid-config-only/yaml/single-symbol/single-output/output-descriptor/output.schema.json
+        error:
+            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-descriptor/output.schema.json' cannot be deleted]
+    FileTreeRemovalFailure
+        path: valid-config-only/yaml/single-symbol/multiple-output/output-filename/abc.schema.json
+        error:
+            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/abc.schema.json' cannot be deleted]
+    FileTreeRemovalFailure
+        path: valid-config-only/yaml/single-symbol/multiple-output/output-filename/def.schema.json
+        error:
+            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/def.schema.json' cannot be deleted]
+    FileTreeRemovalFailure
+        path: valid-config-only/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json
+        error:
+            [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json' cannot be deleted]
+"
+`;
+
+exports[`returns result matching snapshot 1`] = `
+MultipleFailures {
+  "code": 2,
+  "error": Array [
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "circular-reference/1/0.json",
+      ],
+      "value": undefined,
+    },
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "circular-reference/2/0.json",
+        "circular-reference/2/1.json",
+      ],
+      "value": undefined,
+    },
+    CircularReference {
+      "code": 8,
+      "error": Array [
+        "circular-reference/3/0.json",
+        "circular-reference/3/1.json",
+        "circular-reference/3/2.json",
+      ],
+      "value": undefined,
+    },
+    FileReadingFailure {
+      "code": 5,
+      "error": ENOENT {
+        "code": "ENOENT",
+        "errno": -2,
+        "path": Array [
+          "file-reading-failure",
+          "not-exist.json",
+        ],
+        "syscall": "read",
+      },
+      "path": "file-reading-failure/not-exist.json",
+      "value": undefined,
+    },
+    FileReadingFailure {
+      "code": 5,
+      "error": ENOENT {
+        "code": "ENOENT",
+        "errno": -2,
+        "path": Array [
+          "file-reading-failure",
+          "not-exist-0.json",
+        ],
+        "syscall": "read",
+      },
+      "path": "file-reading-failure/not-exist-0.json",
+      "value": undefined,
+    },
+    FileReadingFailure {
+      "code": 5,
+      "error": ENOENT {
+        "code": "ENOENT",
+        "errno": -2,
+        "path": Array [
+          "file-tree-loading-failure",
+          "container",
+          "foo.json",
+        ],
+        "syscall": "read",
+      },
+      "path": "file-tree-loading-failure/container/foo.json",
+      "value": undefined,
+    },
+    FileReadingFailure {
+      "code": 5,
+      "error": ENOENT {
+        "code": "ENOENT",
+        "errno": -2,
+        "path": Array [
+          "file-tree-loading-failure",
+          "container",
+          "bar.json",
+        ],
+        "syscall": "read",
+      },
+      "path": "file-tree-loading-failure/container/bar.json",
+      "value": undefined,
+    },
+    FileReadingFailure {
+      "code": 5,
+      "error": ENOENT {
+        "code": "ENOENT",
+        "errno": -2,
+        "path": Array [
+          "file-tree-loading-failure",
+          "container",
+          "baz.json",
+        ],
+        "syscall": "read",
+      },
+      "path": "file-tree-loading-failure/container/baz.json",
+      "value": undefined,
+    },
+    FileTreeRemovalFailure {
+      "code": 7,
+      "error": [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted],
+      "path": "output-file-conflict/obvious-conflicts/shared-output.json",
+      "value": undefined,
+    },
+    FileTreeRemovalFailure {
+      "code": 7,
+      "error": [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted],
+      "path": "output-file-conflict/obvious-conflicts/shared-output.json",
+      "value": undefined,
+    },
+    TextParsingFailure {
+      "code": 6,
+      "error": Array [
+        Object {
+          "error": [SyntaxError: Unexpected token e in JSON at position 1],
+          "parser": Object {
+            "name": "JSON Parser",
+            "parseConfigText": [Function],
+            "testFileName": [Function],
+          },
+        },
+        Object {
+          "error": [YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in "text-parsing-failure/invalid-config" at line 1, column 11:
+    neither: a: valid: yaml: nor: a: valid: json:
+              ^],
+          "parser": Object {
+            "name": "YAML Parser",
+            "parseConfigText": [Function],
+            "testFileName": [Function],
+          },
+        },
+      ],
+      "value": undefined,
+    },
+    FileTreeRemovalFailure {
+      "code": 7,
+      "error": [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json' cannot be deleted],
+      "path": "valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json",
+      "value": undefined,
+    },
+    FileTreeRemovalFailure {
+      "code": 7,
+      "error": [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/single-output/output-descriptor/output.schema.json' cannot be deleted],
+      "path": "valid-config-only/yaml/single-symbol/single-output/output-descriptor/output.schema.json",
+      "value": undefined,
+    },
+    FileTreeRemovalFailure {
+      "code": 7,
+      "error": [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/abc.schema.json' cannot be deleted],
+      "path": "valid-config-only/yaml/single-symbol/multiple-output/output-filename/abc.schema.json",
+      "value": undefined,
+    },
+    FileTreeRemovalFailure {
+      "code": 7,
+      "error": [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/def.schema.json' cannot be deleted],
+      "path": "valid-config-only/yaml/single-symbol/multiple-output/output-filename/def.schema.json",
+      "value": undefined,
+    },
+    FileTreeRemovalFailure {
+      "code": 7,
+      "error": [RemovalError: File or directory 'valid-config-only/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json' cannot be deleted],
+      "path": "valid-config-only/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json",
+      "value": undefined,
+    },
+  ],
+  "value": undefined,
+}
+`;
