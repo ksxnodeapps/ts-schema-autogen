@@ -4,13 +4,13 @@ const file = (config: Config) => JSON.stringify(config)
 
 const fsTree: FsTree = {
   success: {
-    'foo.success.schema.autogen.json': file({
+    'foo.schema.autogen.json': file({
       instruction: {
         symbol: 'Foo',
         output: 'foo.schema.json'
       }
     }),
-    'bar.success.schema.autogen.yaml': file({
+    'bar.schema.autogen.yaml': file({
       instruction: {
         symbol: 'Foo',
         output: 'bar.schema.json'
