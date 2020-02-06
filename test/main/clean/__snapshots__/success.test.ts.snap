@@ -8,8 +8,194 @@ Array [
 ]
 `;
 
+exports[`calls fsx.remove 1`] = `
+Array [
+  Array [
+    "wdir/yaml/single-symbol/single-output/output-filename/output.schema.json",
+  ],
+  Array [
+    "wdir/yaml/single-symbol/single-output/output-descriptor/output.schema.json",
+  ],
+  Array [
+    "wdir/yaml/single-symbol/multiple-output/output-filename/abc.schema.json",
+  ],
+  Array [
+    "wdir/yaml/single-symbol/multiple-output/output-filename/def.schema.json",
+  ],
+  Array [
+    "wdir/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json",
+  ],
+  Array [
+    "wdir/yaml/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
+  ],
+  Array [
+    "wdir/yaml/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
+  ],
+  Array [
+    "wdir/yaml/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/single-output/output-filename/foo.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/single-output/output-filename/bar.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/single-output/output-descriptor/foo.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/single-output/output-descriptor/bar.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
+  ],
+  Array [
+    "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/single-output/output-filename/output.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/single-output/output-descriptor/output.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/multiple-output/output-filename/abc.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/multiple-output/output-filename/def.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/multiple-output/output-filename/ghi.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
+  ],
+  Array [
+    "wdir/json/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/single-output/output-filename/foo.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/single-output/output-filename/bar.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/single-output/output-descriptor/foo.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/single-output/output-descriptor/bar.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
+  ],
+  Array [
+    "wdir/json/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
+  ],
+]
+`;
+
 exports[`messages 1`] = `
 "
 [SUCCESS]
 "
+`;
+
+exports[`removed paths 1`] = `
+Array [
+  "wdir/yaml/single-symbol/single-output/output-filename/output.schema.json",
+  "wdir/yaml/single-symbol/single-output/output-descriptor/output.schema.json",
+  "wdir/yaml/single-symbol/multiple-output/output-filename/abc.schema.json",
+  "wdir/yaml/single-symbol/multiple-output/output-filename/def.schema.json",
+  "wdir/yaml/single-symbol/multiple-output/output-filename/ghi.schema.json",
+  "wdir/yaml/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
+  "wdir/yaml/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
+  "wdir/yaml/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
+  "wdir/yaml/multiple-symbol/single-output/output-filename/foo.schema.json",
+  "wdir/yaml/multiple-symbol/single-output/output-filename/bar.schema.json",
+  "wdir/yaml/multiple-symbol/single-output/output-descriptor/foo.schema.json",
+  "wdir/yaml/multiple-symbol/single-output/output-descriptor/bar.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
+  "wdir/yaml/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
+  "wdir/json/single-symbol/single-output/output-filename/output.schema.json",
+  "wdir/json/single-symbol/single-output/output-descriptor/output.schema.json",
+  "wdir/json/single-symbol/multiple-output/output-filename/abc.schema.json",
+  "wdir/json/single-symbol/multiple-output/output-filename/def.schema.json",
+  "wdir/json/single-symbol/multiple-output/output-filename/ghi.schema.json",
+  "wdir/json/single-symbol/multiple-output/output-descriptor/non-descriptor.schema.json",
+  "wdir/json/single-symbol/multiple-output/output-descriptor/default-descriptor.schema.json",
+  "wdir/json/single-symbol/multiple-output/output-descriptor/custom-descriptor.schema.json",
+  "wdir/json/multiple-symbol/single-output/output-filename/foo.schema.json",
+  "wdir/json/multiple-symbol/single-output/output-filename/bar.schema.json",
+  "wdir/json/multiple-symbol/single-output/output-descriptor/foo.schema.json",
+  "wdir/json/multiple-symbol/single-output/output-descriptor/bar.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-filename/abc.foo.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-filename/def.foo.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-filename/ghi.foo.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-filename/abc.bar.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-filename/def.bar.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-filename/ghi.bar.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-descriptor/foo.filename.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-descriptor/foo.default.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-descriptor/foo.custom.schema.json",
+  "wdir/json/multiple-symbol/multiple-output/output-descriptor/bar.4.schema.json",
+]
 `;

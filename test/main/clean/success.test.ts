@@ -43,6 +43,11 @@ it('returns Status.Success', async () => {
   expect(result).toBe(Status.Success)
 })
 
+it('calls fsx.remove', async () => {
+  const { fsx } = await setup()
+  expect(fsx.remove.mock.calls).toMatchSnapshot()
+})
+
 it('calls console.info', async () => {
   const { console } = await setup()
   expect(console.info.mock.calls).toMatchSnapshot()
@@ -51,6 +56,11 @@ it('calls console.info', async () => {
 it('does not call console.error', async () => {
   const { console } = await setup()
   expect(console.error).not.toBeCalled()
+})
+
+it('removed paths', async () => {
+  const { fsx } = await setup()
+  expect(fsx.remove.mock.calls.map(x => x[0])).toMatchSnapshot()
 })
 
 it('messages', async () => {
