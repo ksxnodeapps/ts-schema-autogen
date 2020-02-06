@@ -47,6 +47,6 @@ describe('when input field is an empty string', () => {
 
   it('calls getProgramFromFiles with empty array as input TypeScript files', async () => {
     const { tjs } = await setup(configPaths)
-    expect(tjs.getProgramFromFiles).toBeCalledWith([''], expect.anything())
+    expect(tjs.getProgramFromFiles).toBeCalledWith(['.'], expect.anything())
   })
 })
