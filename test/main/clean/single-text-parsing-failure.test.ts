@@ -38,9 +38,9 @@ async function setup () {
   }
 }
 
-it('returns status code that is not Status.Success', async () => {
+it('returns Status.TextParsingFailure', async () => {
   const { result } = await setup()
-  expect(result).not.toBe(Status.Success)
+  expect(result).toBe(Status.TextParsingFailure)
 })
 
 it('calls console.error', async () => {
