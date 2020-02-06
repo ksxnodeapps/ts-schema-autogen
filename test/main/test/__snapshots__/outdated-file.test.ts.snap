@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls console.error 1`] = `
+Array [
+  Array [
+    "[FAILURE] Some errors occurred",
+  ],
+  Array [
+    "MultipleFailures",
+  ],
+  Array [
+    "    OutdatedFile",
+  ],
+  Array [
+    "        file: wdir/content-missing/bar/filename.json",
+  ],
+  Array [
+    "        expected: file exists",
+  ],
+  Array [
+    "        received: file does not exist",
+  ],
+  Array [
+    "    OutdatedFile",
+  ],
+  Array [
+    "        file: wdir/content-missing/baz/default.json",
+  ],
+  Array [
+    "        expected: file exists",
+  ],
+  Array [
+    "        received: file does not exist",
+  ],
+  Array [
+    "    OutdatedFile",
+  ],
+  Array [
+    "        file: wdir/content-missing/baz/minified.json",
+  ],
+  Array [
+    "        expected: file exists",
+  ],
+  Array [
+    "        received: file does not exist",
+  ],
+  Array [
+    "    OutdatedFile",
+  ],
+  Array [
+    "        file: wdir/content-mismatches/bar/filename.json",
+  ],
+  Array [
+    "        content mismatches",
+  ],
+  Array [
+    "    OutdatedFile",
+  ],
+  Array [
+    "        file: wdir/content-mismatches/baz/default.json",
+  ],
+  Array [
+    "        content mismatches",
+  ],
+  Array [
+    "    OutdatedFile",
+  ],
+  Array [
+    "        file: wdir/content-mismatches/baz/minified.json",
+  ],
+  Array [
+    "        content mismatches",
+  ],
+]
+`;
+
+exports[`messages 1`] = `
+"
+[FAILURE] Some errors occurred
+MultipleFailures
+    OutdatedFile
+        file: wdir/content-missing/bar/filename.json
+        expected: file exists
+        received: file does not exist
+    OutdatedFile
+        file: wdir/content-missing/baz/default.json
+        expected: file exists
+        received: file does not exist
+    OutdatedFile
+        file: wdir/content-missing/baz/minified.json
+        expected: file exists
+        received: file does not exist
+    OutdatedFile
+        file: wdir/content-mismatches/bar/filename.json
+        content mismatches
+    OutdatedFile
+        file: wdir/content-mismatches/baz/default.json
+        content mismatches
+    OutdatedFile
+        file: wdir/content-mismatches/baz/minified.json
+        content mismatches
+"
+`;
