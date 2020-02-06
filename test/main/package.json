@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "@ts-schema-autogen/main": "file:../../packages/main"
+    "@ts-schema-autogen/main": "file:../../packages/main",
+    "@tools/test-utils": "file:../../tools/test-utils"
   }
 }
