@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls console.error 1`] = `
+Array [
+  Array [
+    "[FAILURE] Failed to clean",
+  ],
+  Array [
+    "TextParsingFailure",
+  ],
+  Array [
+    "    YAML Parser",
+  ],
+  Array [
+    "        YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"wdir/text-parsing-failure/foo.schema.autogen.yaml\\" at line 1, column 16:",
+  ],
+  Array [
+    "            neither : json : nor : yaml",
+  ],
+  Array [
+    "                           ^",
+  ],
+]
+`;
+
+exports[`messages 1`] = `
+"
+[FAILURE] Failed to clean
+TextParsingFailure
+    YAML Parser
+        YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"wdir/text-parsing-failure/foo.schema.autogen.yaml\\" at line 1, column 16:
+            neither : json : nor : yaml
+                           ^
+"
+`;
