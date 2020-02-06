@@ -1,5 +1,5 @@
 import { createJoinFunction } from 'better-path-join'
-import { Instruction, FSX, Path } from '@ts-schema-autogen/types'
+import { Instruction, FSX, Path, OutputDescriptor } from '@ts-schema-autogen/types'
 import { MaybeAsyncIterable } from '@ts-schema-autogen/utils'
 import { FileTreeRemovalFailure, MultipleFailures, Success } from '@ts-schema-autogen/status'
 import { listSymbolInstruction } from './instruction'
@@ -12,11 +12,15 @@ export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
   const { directory } = param
   const { remove } = param.fsx
   const join = createJoinFunction(param.path)
-  const removeFile = (filename: string) => remove(join(directory, filename))
+  function handleOutputDescriptor (desc: OutputDescriptor): cleanUnit.ReturnItem {
+    const filename = join(directory, desc.filename)
+    const promise = remove(filename)
+    return { filename, promise }
+  }
   const result = listSymbolInstruction(param.instruction)
     .map(instruction => ensureOutputDescriptorArray(instruction.output))
     .flat()
-    .map(({ filename }) => ({ filename, promise: removeFile(filename) }))
+    .map(handleOutputDescriptor)
   return result
 }
 
