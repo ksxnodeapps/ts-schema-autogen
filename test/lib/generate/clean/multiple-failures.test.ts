@@ -1,6 +1,6 @@
 import { inspect } from 'util'
-import createFsTree from '../../../../fixtures/fs-tree/multiple-failures'
-import TJS from '../../../../fixtures/tjs'
+import createFsTree from '../../../fixtures/fs-tree/multiple-failures'
+import TJS from '../../../fixtures/tjs'
 import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
