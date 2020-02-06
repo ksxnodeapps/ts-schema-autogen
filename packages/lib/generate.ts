@@ -42,7 +42,7 @@ export function generateUnit<
 > (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
   const { tjs, instruction, resolvePath } = param
   const { buildGenerator, getProgramFromFiles } = tjs
-  const input = ensureArray(instruction.input ?? [])
+  const input = ensureArray(instruction.input ?? []).map(path => resolvePath(path))
   const program = getProgramFromFiles(
     input,
     instruction.compilerOptions
