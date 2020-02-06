@@ -1,4 +1,4 @@
-import fsTree from '../../fixtures/fs-tree/main-text-parsing-failure'
+import fsTree from '../../fixtures/fs-tree/main-single-text-parsing-failure'
 import TJS from '../../fixtures/tjs'
 import { FakeConsole, FakeFileSystem, FakePath, FakeProcess } from '@tools/test-utils'
 
