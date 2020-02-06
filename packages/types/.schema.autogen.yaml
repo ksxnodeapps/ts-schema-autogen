@@ -1,0 +1,11 @@
+instruction:
+  compilerOptions:
+    strictNullChecks: true
+  schemaSettings:
+    required: true
+  input:
+    - ./types.ts
+    - ./node_modules/@ts-schema-autogen/types.ts
+  list:
+    - symbol: Config
+      output: config.schema.json
