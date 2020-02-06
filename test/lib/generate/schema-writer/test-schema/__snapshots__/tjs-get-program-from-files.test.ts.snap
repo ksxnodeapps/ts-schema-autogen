@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+Array [
+  Array [
+    Array [],
+    "compilerOptions",
+  ],
+  Array [
+    Array [
+      "input-filename/input.ts",
+    ],
+    "compilerOptions",
+  ],
+  Array [
+    Array [
+      "input-array/input/abc.ts",
+      "input-array/input/def.ts",
+      "input-array/input/ghi.ts",
+    ],
+    "compilerOptions",
+  ],
+]
+`;
