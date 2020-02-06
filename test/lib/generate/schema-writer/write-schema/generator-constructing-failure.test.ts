@@ -54,7 +54,7 @@ it('returns result containing expected properties', async () => {
   expect(result).toMatchObject({
     code: Status.GeneratorConstructingFailure,
     error: {
-      program: expect.any(Object),
+      input: expect.any(Array),
       settings: undefined
     }
   })
