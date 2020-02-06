@@ -258,9 +258,8 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
         return new OutdatedFile(filename, { expectedContent, receivedContent })
       }
     }
-    // TODO: Change `FileWritingFailure` to something else
-    const onreject: processWriteInstructions.OnReject<FileWritingFailure> =
-      (filename, reason) => new FileWritingFailure(filename, reason)
+    const onreject: processWriteInstructions.OnReject<FileReadingFailure> =
+      (filename, reason) => new FileReadingFailure(filename, reason)
     return this.mayWriteSchemas(act, onreject, configPaths, this.param.path)
   }
 }
@@ -286,11 +285,10 @@ export namespace SchemaWriter {
   type WriteTestSchemaReturn<Extra extends Failure<any>, Program, Definition> =
     MultipleFailures.Maybe<SingleConfigFailure<Program, Definition> | Extra> |
     OutputFileConflict |
-    FileWritingFailure |
     Success<void>
 
   export type WriteSchemaReturn<Program, Definition> =
-    WriteTestSchemaReturn<never, Program, Definition>
+    WriteTestSchemaReturn<FileWritingFailure, Program, Definition>
   export type TestSchemaReturn<Program, Definition> =
-    WriteTestSchemaReturn<OutdatedFile, Program, Definition>
+    WriteTestSchemaReturn<OutdatedFile | FileReadingFailure, Program, Definition>
 }
