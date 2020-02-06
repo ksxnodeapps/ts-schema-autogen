@@ -268,23 +268,25 @@ export class MissingFileParser extends Failure<void> {
   }
 }
 
-export class GeneratorConstructingFailure<Program, Settings>
-extends Failure<GeneratorConstructingFailure.Error<Program, Settings>> {
+export class GeneratorConstructingFailure<Settings>
+extends Failure<GeneratorConstructingFailure.Error<Settings>> {
   public readonly code = Status.GeneratorConstructingFailure
 
   public * log () {
     yield this.name
     yield Failure.indent(1) + 'Failed to build schema generator'
-    yield Failure.indent(1) + 'program:'
-    yield * iterateIndentedLines(2, inspect(this.error.program))
+    yield Failure.indent(1) + 'input:'
+    for (const item of this.error.input) {
+      yield Failure.indent(2) + item
+    }
     yield Failure.indent(1) + 'settings:'
     yield * iterateIndentedLines(2, inspect(this.error.settings))
   }
 }
 
 export namespace GeneratorConstructingFailure {
-  export interface Error<Program, Settings> {
-    readonly program: Program
+  export interface Error<Settings> {
+    readonly input: readonly string[]
     readonly settings: Settings
   }
 }

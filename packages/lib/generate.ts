@@ -39,17 +39,18 @@ export interface FileWritingInstruction<Definition> {
 export function generateUnit<
   Prog = Program,
   Def = Definition
-> (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Prog, Def> {
+> (param: generateUnit.Param<Prog, Def>): generateUnit.Return<Def> {
   const { tjs, instruction, resolvePath } = param
   const { buildGenerator, getProgramFromFiles } = tjs
+  const input = ensureArray(instruction.input ?? [])
   const program = getProgramFromFiles(
-    ensureArray(instruction.input ?? []),
+    input,
     instruction.compilerOptions
   )
   const settings = instruction.schemaSettings
   const generator = buildGenerator(program, settings)
 
-  if (!generator) return new GeneratorConstructingFailure({ program, settings })
+  if (!generator) return new GeneratorConstructingFailure({ input, settings })
 
   function * generate (): Generator<FileWritingInstruction<Def>, void> {
     for (const symbolInstruction of listSymbolInstruction(instruction)) {
@@ -87,8 +88,8 @@ export namespace generateUnit {
     (output: string): string
   }
 
-  export type Return<Program, Definition> =
-    GeneratorConstructingFailure<Program, Settings | undefined> |
+  export type Return<Definition> =
+    GeneratorConstructingFailure<Settings | undefined> |
     Success<Iterable<FileWritingInstruction<Definition>>>
 }
 
@@ -181,7 +182,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
 
   private readonly loader = new ConfigLoader(this.param)
 
-  private static joinCfgRes<Prog, Def> (list: Iterable<SchemaWriter.SingleConfigReturn<Prog, Def>>) {
+  private static joinCfgRes<Def> (list: Iterable<SchemaWriter.SingleConfigReturn<Def>>) {
     const errors = []
     let instruction: Iterable<FileWritingInstruction<Def>> = []
 
@@ -201,7 +202,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * @param configPath Path to the config file
    * @param path Path module
    */
-  public async singleConfig (configPath: string, path: Path.Mod): Promise<SchemaWriter.SingleConfigReturn<Prog, Def>> {
+  public async singleConfig (configPath: string, path: Path.Mod): Promise<SchemaWriter.SingleConfigReturn<Def>> {
     const config = await this.loader.loadConfig(configPath)
     if (config.code) return config
     const { join } = path
@@ -234,7 +235,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * Write schemas according to multiple config files
    * @param configPaths List of paths to config files
    */
-  public writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn<Prog, Def>> {
+  public writeSchemas (configPaths: readonly string[]): Promise<SchemaWriter.WriteSchemaReturn<Def>> {
     const { outputFile } = this.param.fsx
     const act: processWriteInstructions.Act<never> =
       (filename, content) => outputFile(filename, content)
@@ -247,7 +248,7 @@ export class SchemaWriter<Prog = Program, Def = Definition> {
    * Test if schema files referred to by config files are up-to-date
    * @param configPaths List of paths to config files
    */
-  public testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn<Prog, Def>> {
+  public testSchemas (configPaths: readonly string[]): Promise<SchemaWriter.TestSchemaReturn<Def>> {
     const { pathExists, readFile } = this.param.fsx
     async function act (filename: string, expectedContent: string): Promise<OutdatedFile | void> {
       const exists = pathExists(filename)
@@ -270,25 +271,25 @@ export namespace SchemaWriter {
     readonly tjs: TJS.Mod<Program, Definition>
   }
 
-  export type SingleConfigReturn<Program, Definition> =
+  export type SingleConfigReturn<Definition> =
     FileReadingFailure |
     FileWritingFailure |
     TextParsingFailure<ConfigParseError> |
     CircularReference |
     OutputFileConflict |
     MissingFileParser |
-    GeneratorConstructingFailure<Program, Settings | undefined> |
+    GeneratorConstructingFailure<Settings | undefined> |
     Success<Iterable<FileWritingInstruction<Definition>>>
 
-  type SingleConfigFailure<Program, Definition> =
-    Exclude<SingleConfigReturn<Program, Definition>, Success<any>>
-  type WriteTestSchemaReturn<Extra extends Failure<any>, Program, Definition> =
-    MultipleFailures.Maybe<SingleConfigFailure<Program, Definition> | Extra> |
+  type SingleConfigFailure<Definition> =
+    Exclude<SingleConfigReturn<Definition>, Success<any>>
+  type WriteTestSchemaReturn<Extra extends Failure<any>, Definition> =
+    MultipleFailures.Maybe<SingleConfigFailure<Definition> | Extra> |
     OutputFileConflict |
     Success<void>
 
-  export type WriteSchemaReturn<Program, Definition> =
-    WriteTestSchemaReturn<FileWritingFailure, Program, Definition>
-  export type TestSchemaReturn<Program, Definition> =
-    WriteTestSchemaReturn<OutdatedFile | FileReadingFailure, Program, Definition>
+  export type WriteSchemaReturn<Definition> =
+    WriteTestSchemaReturn<FileWritingFailure, Definition>
+  export type TestSchemaReturn<Definition> =
+    WriteTestSchemaReturn<OutdatedFile | FileReadingFailure, Definition>
 }
