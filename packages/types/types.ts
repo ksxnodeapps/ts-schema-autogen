@@ -64,8 +64,6 @@ export type Instruction = MultiSymbolInstruction | SingleSymbolInstruction
 
 /** Properties of a configuration file */
 export interface Config {
-  /** Required generator in npm range syntax (this is for compatibility checking) */
-  readonly generator: string
   /** File(s) to inherit from */
   readonly extends?: string | readonly string[]
   /** Instruction to generate JSON schemas */

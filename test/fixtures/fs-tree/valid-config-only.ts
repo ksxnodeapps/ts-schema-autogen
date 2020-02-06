@@ -13,7 +13,6 @@ import {
 const subTree = (basename: string, dump: Dump): FsTree => ({
   'extensions': {
     'abc.yaml': safeDump({
-      generator: null!,
       extends: 'def-json',
       instruction: {
         compilerOptions: {
@@ -29,7 +28,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       } as InstructionSharedProperties
     } as Config),
     'abc.json': JSON.stringify({
-      generator: null!,
       extends: 'def-yaml',
       instruction: {
         compilerOptions: {
@@ -45,7 +43,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       } as InstructionSharedProperties
     } as Config, undefined, 2),
     'def-yaml': safeDump({
-      generator: null!,
       instruction: {
         compilerOptions: {
           '(extensions.def-yaml.compilerOptions) format': 'YAML',
@@ -60,7 +57,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       } as InstructionSharedProperties
     } as Config),
     'def-json': JSON.stringify({
-      generator: null!,
       instruction: {
         compilerOptions: {
           '(extensions.def-json.compilerOptions) format': 'JSON',
@@ -79,7 +75,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'single-output': {
       'output-filename': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'
@@ -99,7 +94,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       },
       'output-descriptor': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'
@@ -125,7 +119,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'multiple-output': {
       'output-filename': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'
@@ -149,7 +142,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       },
       'output-descriptor': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'
@@ -183,7 +175,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'single-output': {
       'output-filename': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'
@@ -211,7 +202,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       },
       'output-descriptor': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'
@@ -249,7 +239,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
     'multiple-output': {
       'output-filename': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'
@@ -285,7 +274,6 @@ const subTree = (basename: string, dump: Dump): FsTree => ({
       },
       'output-descriptor': {
         [basename]: dump({
-          generator: null!,
           extends: [
             '../../../extensions/abc.yaml',
             '../../../extensions/abc.json'

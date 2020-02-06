@@ -21,7 +21,6 @@ async function setup () {
   const tjs = new TJS()
   const configPath = 'config.json'
   fsx.writeFileSync(configPath, JSON.stringify({
-    generator: null!,
     instruction: {
       symbol: 'Foo',
       output: 'output.json'

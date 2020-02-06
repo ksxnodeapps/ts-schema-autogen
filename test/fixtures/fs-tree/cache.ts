@@ -3,7 +3,6 @@ import { Config, FsTree } from './_'
 const file = (config: Config) => JSON.stringify(config)
 
 const config = (id: number, extension?: string) => file({
-  generator: null!,
   extends: extension,
   instruction: {
     compilerOptions: {

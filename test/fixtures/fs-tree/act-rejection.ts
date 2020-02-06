@@ -5,7 +5,6 @@ export const fsTree: FsTree = {
     file: 'abc'
   },
   '.schema.autogen.json': JSON.stringify({
-    generator: null!,
     instruction: {
       symbol: 'Foo',
       output: 'directory'

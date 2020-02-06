@@ -4,7 +4,6 @@ const file = (config: Config) => JSON.stringify(config)
 
 export const fsTree: FsTree = {
   'no-input.schema.autogen.json': file({
-    generator: null!,
     instruction: {
       input: undefined,
       symbol: 'Foo',
@@ -13,7 +12,6 @@ export const fsTree: FsTree = {
     }
   }),
   'empty-string-input.schema.autogen.json': file({
-    generator: null!,
     instruction: {
       input: '',
       symbol: 'Bar',

@@ -5,7 +5,6 @@ import { Config, FsTree, dump } from './_'
 const file = (config: Config) => dump(config)
 
 const config = (value: 'base' | 'extension' | undefined): Config => ({
-  generator: null!,
   instruction: {
     compilerOptions: {
       a: {

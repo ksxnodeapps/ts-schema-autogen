@@ -6,7 +6,6 @@ const jsonFile = (object: any, indent?: string | number) =>
 const configFile = (config: Config) => JSON.stringify(config)
 
 const config = (symbol: string) => configFile({
-  generator: null!,
   instruction: {
     symbol,
     output: [

@@ -2,7 +2,6 @@ import { Config, FsTree } from './_'
 
 const file = (config: Config) => JSON.stringify(config)
 const config = (target?: string | readonly string[]) => file({
-  generator: null!,
   extends: target,
   instruction: {}
 })

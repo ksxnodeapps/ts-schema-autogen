@@ -5,14 +5,12 @@ const file = (config: Config) => JSON.stringify(config)
 export const fsTree: FsTree = {
   'obvious-conflicts': {
     'foo.json': file({
-      generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Foo'
       }
     }),
     'bar.json': file({
-      generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Bar'
@@ -22,7 +20,6 @@ export const fsTree: FsTree = {
   'not-obvious-conflicts': {
     foo: {
       '.schema.autogen.json': file({
-        generator: null!,
         instruction: {
           output: [
             '../shared-output/schema.json'
@@ -32,7 +29,6 @@ export const fsTree: FsTree = {
       })
     },
     'bar.schema.autogen.json': file({
-      generator: null!,
       instruction: {
         output: {
           filename: 'shared-output/schema.json'
@@ -43,21 +39,18 @@ export const fsTree: FsTree = {
   },
   'more-than-one-conflicts': {
     'foo.json': file({
-      generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Foo'
       }
     }),
     'bar.json': file({
-      generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Bar'
       }
     }),
     'baz.json': file({
-      generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Baz'
@@ -66,28 +59,24 @@ export const fsTree: FsTree = {
   },
   'mixed-with-non-conflicts': {
     'conflicted-foo.json': file({
-      generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Foo'
       }
     }),
     'okay-foo.json': file({
-      generator: null!,
       instruction: {
         output: 'foo.schema.json',
         symbol: 'Foo'
       }
     }),
     'conflicted-bar.json': file({
-      generator: null!,
       instruction: {
         output: 'shared-output.json',
         symbol: 'Bar'
       }
     }),
     'okay-bar.json': file({
-      generator: null!,
       instruction: {
         output: 'bar.schema.json',
         symbol: 'Bar'
