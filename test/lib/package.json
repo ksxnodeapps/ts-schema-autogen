@@ -6,6 +6,8 @@
     "@types/js-yaml": "^3.12.2",
     "@tsfun/result": "^0.0.15",
     "@ts-schema-autogen/lib": "file:../../packages/lib",
+    "@ts-schema-autogen/main": "file:../../packages/main",
+    "@ts-schema-autogen/utils": "file:../../packages/utils",
     "@tools/test-utils": "file:../../tools/test-utils"
   }
 }

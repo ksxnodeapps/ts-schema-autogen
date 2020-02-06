@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns result matching snapshot 1`] = `
+Array [
+  "container/yaml/single-symbol/single-output/output-filename/.schema.autogen.yaml",
+  "container/yaml/single-symbol/single-output/output-descriptor/.schema.autogen.yaml",
+  "container/yaml/single-symbol/multiple-output/output-filename/.schema.autogen.yaml",
+  "container/yaml/single-symbol/multiple-output/output-descriptor/.schema.autogen.yaml",
+  "container/yaml/multiple-symbol/single-output/output-filename/.schema.autogen.yaml",
+  "container/yaml/multiple-symbol/single-output/output-descriptor/.schema.autogen.yaml",
+  "container/yaml/multiple-symbol/multiple-output/output-filename/.schema.autogen.yaml",
+  "container/yaml/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.yaml",
+  "container/json/single-symbol/single-output/output-filename/.schema.autogen.json",
+  "container/json/single-symbol/single-output/output-descriptor/.schema.autogen.json",
+  "container/json/single-symbol/multiple-output/output-filename/.schema.autogen.json",
+  "container/json/single-symbol/multiple-output/output-descriptor/.schema.autogen.json",
+  "container/json/multiple-symbol/single-output/output-filename/.schema.autogen.json",
+  "container/json/multiple-symbol/single-output/output-descriptor/.schema.autogen.json",
+  "container/json/multiple-symbol/multiple-output/output-filename/.schema.autogen.json",
+  "container/json/multiple-symbol/multiple-output/output-descriptor/.schema.autogen.json",
+]
+`;
