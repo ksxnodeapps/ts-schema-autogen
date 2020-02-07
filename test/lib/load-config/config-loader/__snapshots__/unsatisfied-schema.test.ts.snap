@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error messages 1`] = `
+"
+UnsatisfiedSchema
+    path: multiple-errors/.schema.autogen.json
+    error:
+        instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>
+"
+`;
+
+exports[`result matches snapshot 1`] = `
+UnsatisfiedSchema {
+  "code": 12,
+  "error": Array [
+    ValidationError {
+      "argument": Array [
+        "<#/definitions/MultiSymbolInstruction>",
+        "<#/definitions/SingleSymbolInstruction>",
+      ],
+      "instance": Object {
+        "compilerOptions": Object {
+          "allowJs": "invalid",
+          "checkJs": "invalid",
+          "esModuleInterop": "invalid",
+          "strict": false,
+          "strictNullChecks": true,
+        },
+        "input": Array [
+          "valid-input.ts",
+          Object {
+            "invalid": "input.ts",
+          },
+          null,
+        ],
+        "output": Array [
+          "valid-output-filename.json",
+          Object {
+            "filename": "valid-output-descriptor.json",
+          },
+          Object {
+            "filename": null,
+          },
+          Object {},
+          "invalid",
+        ],
+        "schemaSettings": Object {
+          "aliasRef": true,
+          "defaultNumberType": "invalid",
+          "excludePrivate": "invalid",
+        },
+        "symbol": "Foo",
+      },
+      "message": "is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+      "name": "anyOf",
+      "property": "instance.instruction",
+      "schema": Object {
+        "anyOf": Array [
+          Object {
+            "$ref": "#/definitions/MultiSymbolInstruction",
+          },
+          Object {
+            "$ref": "#/definitions/SingleSymbolInstruction",
+          },
+        ],
+        "description": "Instruction to generate JSON schemas",
+      },
+      "stack": "instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+    },
+  ],
+  "path": "multiple-errors/.schema.autogen.json",
+  "value": undefined,
+}
+`;

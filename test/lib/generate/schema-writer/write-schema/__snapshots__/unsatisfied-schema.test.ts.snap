@@ -1,0 +1,1425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`multiple failures error messages 1`] = `
+"
+MultipleFailures
+    UnsatisfiedSchema
+        path: string-instead-of-object/.schema.autogen.json
+        error:
+            instance is not of a type(s) object
+    UnsatisfiedSchema
+        path: missing-instruction/.schema.autogen.json
+        error:
+            instance requires property \\"instruction\\"
+    UnsatisfiedSchema
+        path: invalid-instruction/.schema.autogen.json
+        error:
+            instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>
+    UnsatisfiedSchema
+        path: multiple-errors/.schema.autogen.json
+        error:
+            instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>
+"
+`;
+
+exports[`multiple failures returns result matching snapshot 1`] = `
+MultipleFailures {
+  "code": 2,
+  "error": Array [
+    UnsatisfiedSchema {
+      "code": 12,
+      "error": Array [
+        ValidationError {
+          "argument": Array [
+            "object",
+          ],
+          "instance": "not a valid config",
+          "message": "is not of a type(s) object",
+          "name": "type",
+          "property": "instance",
+          "schema": Object {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "definitions": Object {
+              "MapLike<string[]>": Object {
+                "additionalProperties": Object {
+                  "$ref": "#/definitions/T",
+                },
+                "description": "Type of objects whose values are all of the same type.
+The \`in\` and \`for-in\` operators can *not* be safely used,
+since \`Object.prototype\` may be modified by outside code.",
+                "type": "object",
+              },
+              "MultiSymbolInstruction": Object {
+                "description": "Instruction for multiple symbols",
+                "properties": Object {
+                  "compilerOptions": Object {
+                    "$ref": "#/definitions/Partial<CompilerOptions>",
+                    "description": "Compiler options to pass to typescript-json-schema module",
+                  },
+                  "input": Object {
+                    "anyOf": Array [
+                      Object {
+                        "items": Object {
+                          "type": "string",
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "TypeScript source file(s)",
+                  },
+                  "list": Object {
+                    "description": "List of instruction units",
+                    "items": Object {
+                      "$ref": "#/definitions/SymbolInstruction",
+                    },
+                    "type": "array",
+                  },
+                  "output": Object {
+                    "type": "null",
+                  },
+                  "schemaSettings": Object {
+                    "$ref": "#/definitions/Partial<Args>",
+                    "description": "Settings to pass to typescript-json-schema module",
+                  },
+                  "symbol": Object {
+                    "type": "null",
+                  },
+                },
+                "type": "object",
+              },
+              "OutputDescriptor": Object {
+                "description": "Formats of output JSON schema files",
+                "properties": Object {
+                  "filename": Object {
+                    "description": "Name of output schema file",
+                    "type": "string",
+                  },
+                  "format": Object {
+                    "description": "Data format",
+                    "enum": Array [
+                      "json",
+                    ],
+                    "type": "string",
+                  },
+                  "indent": Object {
+                    "anyOf": Array [
+                      Object {
+                        "enum": Array [
+                          "none",
+                          "tab",
+                        ],
+                        "type": "string",
+                      },
+                      Object {
+                        "type": "number",
+                      },
+                    ],
+                    "description": "JSON indentation",
+                  },
+                },
+                "required": Array [
+                  "filename",
+                ],
+                "type": "object",
+              },
+              "Partial<Args>": Object {
+                "properties": Object {
+                  "aliasRef": Object {
+                    "type": "boolean",
+                  },
+                  "defaultNumberType": Object {
+                    "enum": Array [
+                      "integer",
+                      "number",
+                    ],
+                    "type": "string",
+                  },
+                  "defaultProps": Object {
+                    "type": "boolean",
+                  },
+                  "excludePrivate": Object {
+                    "type": "boolean",
+                  },
+                  "id": Object {
+                    "type": "string",
+                  },
+                  "ignoreErrors": Object {
+                    "type": "boolean",
+                  },
+                  "include": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "noExtraProps": Object {
+                    "type": "boolean",
+                  },
+                  "out": Object {
+                    "type": "string",
+                  },
+                  "propOrder": Object {
+                    "type": "boolean",
+                  },
+                  "ref": Object {
+                    "type": "boolean",
+                  },
+                  "rejectDateType": Object {
+                    "type": "boolean",
+                  },
+                  "required": Object {
+                    "type": "boolean",
+                  },
+                  "strictNullChecks": Object {
+                    "type": "boolean",
+                  },
+                  "titles": Object {
+                    "type": "boolean",
+                  },
+                  "topRef": Object {
+                    "type": "boolean",
+                  },
+                  "typeOfKeyword": Object {
+                    "type": "boolean",
+                  },
+                  "uniqueNames": Object {
+                    "type": "boolean",
+                  },
+                  "validationKeywords": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                },
+                "type": "object",
+              },
+              "Partial<CompilerOptions>": Object {
+                "properties": Object {
+                  "allowJs": Object {
+                    "type": "boolean",
+                  },
+                  "allowSyntheticDefaultImports": Object {
+                    "type": "boolean",
+                  },
+                  "allowUmdGlobalAccess": Object {
+                    "type": "boolean",
+                  },
+                  "allowUnreachableCode": Object {
+                    "type": "boolean",
+                  },
+                  "allowUnusedLabels": Object {
+                    "type": "boolean",
+                  },
+                  "alwaysStrict": Object {
+                    "type": "boolean",
+                  },
+                  "baseUrl": Object {
+                    "type": "string",
+                  },
+                  "charset": Object {
+                    "type": "string",
+                  },
+                  "checkJs": Object {
+                    "type": "boolean",
+                  },
+                  "composite": Object {
+                    "type": "boolean",
+                  },
+                  "declaration": Object {
+                    "type": "boolean",
+                  },
+                  "declarationDir": Object {
+                    "type": "string",
+                  },
+                  "declarationMap": Object {
+                    "type": "boolean",
+                  },
+                  "disableSizeLimit": Object {
+                    "type": "boolean",
+                  },
+                  "disableSourceOfProjectReferenceRedirect": Object {
+                    "type": "boolean",
+                  },
+                  "downlevelIteration": Object {
+                    "type": "boolean",
+                  },
+                  "emitBOM": Object {
+                    "type": "boolean",
+                  },
+                  "emitDeclarationOnly": Object {
+                    "type": "boolean",
+                  },
+                  "emitDecoratorMetadata": Object {
+                    "type": "boolean",
+                  },
+                  "esModuleInterop": Object {
+                    "type": "boolean",
+                  },
+                  "experimentalDecorators": Object {
+                    "type": "boolean",
+                  },
+                  "forceConsistentCasingInFileNames": Object {
+                    "type": "boolean",
+                  },
+                  "importHelpers": Object {
+                    "type": "boolean",
+                  },
+                  "incremental": Object {
+                    "type": "boolean",
+                  },
+                  "inlineSourceMap": Object {
+                    "type": "boolean",
+                  },
+                  "inlineSources": Object {
+                    "type": "boolean",
+                  },
+                  "isolatedModules": Object {
+                    "type": "boolean",
+                  },
+                  "jsx": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                      2,
+                      3,
+                    ],
+                    "type": "number",
+                  },
+                  "jsxFactory": Object {
+                    "type": "string",
+                  },
+                  "keyofStringsOnly": Object {
+                    "type": "boolean",
+                  },
+                  "lib": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "locale": Object {
+                    "type": "string",
+                  },
+                  "mapRoot": Object {
+                    "type": "string",
+                  },
+                  "maxNodeModuleJsDepth": Object {
+                    "type": "number",
+                  },
+                  "module": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      99,
+                    ],
+                    "type": "number",
+                  },
+                  "moduleResolution": Object {
+                    "enum": Array [
+                      1,
+                      2,
+                    ],
+                    "type": "number",
+                  },
+                  "newLine": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                    ],
+                    "type": "number",
+                  },
+                  "noEmit": Object {
+                    "type": "boolean",
+                  },
+                  "noEmitHelpers": Object {
+                    "type": "boolean",
+                  },
+                  "noEmitOnError": Object {
+                    "type": "boolean",
+                  },
+                  "noErrorTruncation": Object {
+                    "type": "boolean",
+                  },
+                  "noFallthroughCasesInSwitch": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitAny": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitReturns": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitThis": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitUseStrict": Object {
+                    "type": "boolean",
+                  },
+                  "noLib": Object {
+                    "type": "boolean",
+                  },
+                  "noResolve": Object {
+                    "type": "boolean",
+                  },
+                  "noStrictGenericChecks": Object {
+                    "type": "boolean",
+                  },
+                  "noUnusedLocals": Object {
+                    "type": "boolean",
+                  },
+                  "noUnusedParameters": Object {
+                    "type": "boolean",
+                  },
+                  "out": Object {
+                    "type": "string",
+                  },
+                  "outDir": Object {
+                    "type": "string",
+                  },
+                  "outFile": Object {
+                    "type": "string",
+                  },
+                  "paths": Object {
+                    "$ref": "#/definitions/MapLike<string[]>",
+                    "description": "Type of objects whose values are all of the same type.
+The \`in\` and \`for-in\` operators can *not* be safely used,
+since \`Object.prototype\` may be modified by outside code.",
+                  },
+                  "preserveConstEnums": Object {
+                    "type": "boolean",
+                  },
+                  "preserveSymlinks": Object {
+                    "type": "boolean",
+                  },
+                  "project": Object {
+                    "type": "string",
+                  },
+                  "reactNamespace": Object {
+                    "type": "string",
+                  },
+                  "removeComments": Object {
+                    "type": "boolean",
+                  },
+                  "resolveJsonModule": Object {
+                    "type": "boolean",
+                  },
+                  "rootDir": Object {
+                    "type": "string",
+                  },
+                  "rootDirs": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "skipDefaultLibCheck": Object {
+                    "type": "boolean",
+                  },
+                  "skipLibCheck": Object {
+                    "type": "boolean",
+                  },
+                  "sourceMap": Object {
+                    "type": "boolean",
+                  },
+                  "sourceRoot": Object {
+                    "type": "string",
+                  },
+                  "strict": Object {
+                    "type": "boolean",
+                  },
+                  "strictBindCallApply": Object {
+                    "type": "boolean",
+                  },
+                  "strictFunctionTypes": Object {
+                    "type": "boolean",
+                  },
+                  "strictNullChecks": Object {
+                    "type": "boolean",
+                  },
+                  "strictPropertyInitialization": Object {
+                    "type": "boolean",
+                  },
+                  "stripInternal": Object {
+                    "type": "boolean",
+                  },
+                  "suppressExcessPropertyErrors": Object {
+                    "type": "boolean",
+                  },
+                  "suppressImplicitAnyIndexErrors": Object {
+                    "type": "boolean",
+                  },
+                  "target": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                      100,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      99,
+                    ],
+                    "type": "number",
+                  },
+                  "traceResolution": Object {
+                    "type": "boolean",
+                  },
+                  "tsBuildInfoFile": Object {
+                    "type": "string",
+                  },
+                  "typeRoots": Object {
+                    "description": "Paths used to compute primary types search locations",
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "types": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "useDefineForClassFields": Object {
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+              "SingleSymbolInstruction": Object {
+                "description": "Instruction for a single symbol",
+                "properties": Object {
+                  "compilerOptions": Object {
+                    "$ref": "#/definitions/Partial<CompilerOptions>",
+                    "description": "Compiler options to pass to typescript-json-schema module",
+                  },
+                  "input": Object {
+                    "anyOf": Array [
+                      Object {
+                        "items": Object {
+                          "type": "string",
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "TypeScript source file(s)",
+                  },
+                  "list": Object {
+                    "type": "null",
+                  },
+                  "output": Object {
+                    "anyOf": Array [
+                      Object {
+                        "$ref": "#/definitions/OutputDescriptor",
+                      },
+                      Object {
+                        "items": Object {
+                          "anyOf": Array [
+                            Object {
+                              "$ref": "#/definitions/OutputDescriptor",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "Output descriptor(s) and filename(s)",
+                  },
+                  "schemaSettings": Object {
+                    "$ref": "#/definitions/Partial<Args>",
+                    "description": "Settings to pass to typescript-json-schema module",
+                  },
+                  "symbol": Object {
+                    "description": "Targeted type name",
+                    "type": "string",
+                  },
+                },
+                "required": Array [
+                  "output",
+                  "symbol",
+                ],
+                "type": "object",
+              },
+              "SymbolInstruction": Object {
+                "description": "Instruction for a single symbol",
+                "properties": Object {
+                  "output": Object {
+                    "anyOf": Array [
+                      Object {
+                        "$ref": "#/definitions/OutputDescriptor",
+                      },
+                      Object {
+                        "items": Object {
+                          "anyOf": Array [
+                            Object {
+                              "$ref": "#/definitions/OutputDescriptor",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "Output descriptor(s) and filename(s)",
+                  },
+                  "symbol": Object {
+                    "description": "Targeted type name",
+                    "type": "string",
+                  },
+                },
+                "required": Array [
+                  "output",
+                  "symbol",
+                ],
+                "type": "object",
+              },
+              "T": Object {
+                "type": "object",
+              },
+            },
+            "description": "Properties of a configuration file",
+            "properties": Object {
+              "extends": Object {
+                "anyOf": Array [
+                  Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+                "description": "File(s) to inherit from",
+              },
+              "instruction": Object {
+                "anyOf": Array [
+                  Object {
+                    "$ref": "#/definitions/MultiSymbolInstruction",
+                  },
+                  Object {
+                    "$ref": "#/definitions/SingleSymbolInstruction",
+                  },
+                ],
+                "description": "Instruction to generate JSON schemas",
+              },
+            },
+            "required": Array [
+              "instruction",
+            ],
+            "type": "object",
+          },
+          "stack": "instance is not of a type(s) object",
+        },
+      ],
+      "path": "string-instead-of-object/.schema.autogen.json",
+      "value": undefined,
+    },
+    UnsatisfiedSchema {
+      "code": 12,
+      "error": Array [
+        ValidationError {
+          "argument": "instruction",
+          "instance": Object {},
+          "message": "requires property \\"instruction\\"",
+          "name": "required",
+          "property": "instance",
+          "schema": Object {
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "definitions": Object {
+              "MapLike<string[]>": Object {
+                "additionalProperties": Object {
+                  "$ref": "#/definitions/T",
+                },
+                "description": "Type of objects whose values are all of the same type.
+The \`in\` and \`for-in\` operators can *not* be safely used,
+since \`Object.prototype\` may be modified by outside code.",
+                "type": "object",
+              },
+              "MultiSymbolInstruction": Object {
+                "description": "Instruction for multiple symbols",
+                "properties": Object {
+                  "compilerOptions": Object {
+                    "$ref": "#/definitions/Partial<CompilerOptions>",
+                    "description": "Compiler options to pass to typescript-json-schema module",
+                  },
+                  "input": Object {
+                    "anyOf": Array [
+                      Object {
+                        "items": Object {
+                          "type": "string",
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "TypeScript source file(s)",
+                  },
+                  "list": Object {
+                    "description": "List of instruction units",
+                    "items": Object {
+                      "$ref": "#/definitions/SymbolInstruction",
+                    },
+                    "type": "array",
+                  },
+                  "output": Object {
+                    "type": "null",
+                  },
+                  "schemaSettings": Object {
+                    "$ref": "#/definitions/Partial<Args>",
+                    "description": "Settings to pass to typescript-json-schema module",
+                  },
+                  "symbol": Object {
+                    "type": "null",
+                  },
+                },
+                "type": "object",
+              },
+              "OutputDescriptor": Object {
+                "description": "Formats of output JSON schema files",
+                "properties": Object {
+                  "filename": Object {
+                    "description": "Name of output schema file",
+                    "type": "string",
+                  },
+                  "format": Object {
+                    "description": "Data format",
+                    "enum": Array [
+                      "json",
+                    ],
+                    "type": "string",
+                  },
+                  "indent": Object {
+                    "anyOf": Array [
+                      Object {
+                        "enum": Array [
+                          "none",
+                          "tab",
+                        ],
+                        "type": "string",
+                      },
+                      Object {
+                        "type": "number",
+                      },
+                    ],
+                    "description": "JSON indentation",
+                  },
+                },
+                "required": Array [
+                  "filename",
+                ],
+                "type": "object",
+              },
+              "Partial<Args>": Object {
+                "properties": Object {
+                  "aliasRef": Object {
+                    "type": "boolean",
+                  },
+                  "defaultNumberType": Object {
+                    "enum": Array [
+                      "integer",
+                      "number",
+                    ],
+                    "type": "string",
+                  },
+                  "defaultProps": Object {
+                    "type": "boolean",
+                  },
+                  "excludePrivate": Object {
+                    "type": "boolean",
+                  },
+                  "id": Object {
+                    "type": "string",
+                  },
+                  "ignoreErrors": Object {
+                    "type": "boolean",
+                  },
+                  "include": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "noExtraProps": Object {
+                    "type": "boolean",
+                  },
+                  "out": Object {
+                    "type": "string",
+                  },
+                  "propOrder": Object {
+                    "type": "boolean",
+                  },
+                  "ref": Object {
+                    "type": "boolean",
+                  },
+                  "rejectDateType": Object {
+                    "type": "boolean",
+                  },
+                  "required": Object {
+                    "type": "boolean",
+                  },
+                  "strictNullChecks": Object {
+                    "type": "boolean",
+                  },
+                  "titles": Object {
+                    "type": "boolean",
+                  },
+                  "topRef": Object {
+                    "type": "boolean",
+                  },
+                  "typeOfKeyword": Object {
+                    "type": "boolean",
+                  },
+                  "uniqueNames": Object {
+                    "type": "boolean",
+                  },
+                  "validationKeywords": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                },
+                "type": "object",
+              },
+              "Partial<CompilerOptions>": Object {
+                "properties": Object {
+                  "allowJs": Object {
+                    "type": "boolean",
+                  },
+                  "allowSyntheticDefaultImports": Object {
+                    "type": "boolean",
+                  },
+                  "allowUmdGlobalAccess": Object {
+                    "type": "boolean",
+                  },
+                  "allowUnreachableCode": Object {
+                    "type": "boolean",
+                  },
+                  "allowUnusedLabels": Object {
+                    "type": "boolean",
+                  },
+                  "alwaysStrict": Object {
+                    "type": "boolean",
+                  },
+                  "baseUrl": Object {
+                    "type": "string",
+                  },
+                  "charset": Object {
+                    "type": "string",
+                  },
+                  "checkJs": Object {
+                    "type": "boolean",
+                  },
+                  "composite": Object {
+                    "type": "boolean",
+                  },
+                  "declaration": Object {
+                    "type": "boolean",
+                  },
+                  "declarationDir": Object {
+                    "type": "string",
+                  },
+                  "declarationMap": Object {
+                    "type": "boolean",
+                  },
+                  "disableSizeLimit": Object {
+                    "type": "boolean",
+                  },
+                  "disableSourceOfProjectReferenceRedirect": Object {
+                    "type": "boolean",
+                  },
+                  "downlevelIteration": Object {
+                    "type": "boolean",
+                  },
+                  "emitBOM": Object {
+                    "type": "boolean",
+                  },
+                  "emitDeclarationOnly": Object {
+                    "type": "boolean",
+                  },
+                  "emitDecoratorMetadata": Object {
+                    "type": "boolean",
+                  },
+                  "esModuleInterop": Object {
+                    "type": "boolean",
+                  },
+                  "experimentalDecorators": Object {
+                    "type": "boolean",
+                  },
+                  "forceConsistentCasingInFileNames": Object {
+                    "type": "boolean",
+                  },
+                  "importHelpers": Object {
+                    "type": "boolean",
+                  },
+                  "incremental": Object {
+                    "type": "boolean",
+                  },
+                  "inlineSourceMap": Object {
+                    "type": "boolean",
+                  },
+                  "inlineSources": Object {
+                    "type": "boolean",
+                  },
+                  "isolatedModules": Object {
+                    "type": "boolean",
+                  },
+                  "jsx": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                      2,
+                      3,
+                    ],
+                    "type": "number",
+                  },
+                  "jsxFactory": Object {
+                    "type": "string",
+                  },
+                  "keyofStringsOnly": Object {
+                    "type": "boolean",
+                  },
+                  "lib": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "locale": Object {
+                    "type": "string",
+                  },
+                  "mapRoot": Object {
+                    "type": "string",
+                  },
+                  "maxNodeModuleJsDepth": Object {
+                    "type": "number",
+                  },
+                  "module": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      99,
+                    ],
+                    "type": "number",
+                  },
+                  "moduleResolution": Object {
+                    "enum": Array [
+                      1,
+                      2,
+                    ],
+                    "type": "number",
+                  },
+                  "newLine": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                    ],
+                    "type": "number",
+                  },
+                  "noEmit": Object {
+                    "type": "boolean",
+                  },
+                  "noEmitHelpers": Object {
+                    "type": "boolean",
+                  },
+                  "noEmitOnError": Object {
+                    "type": "boolean",
+                  },
+                  "noErrorTruncation": Object {
+                    "type": "boolean",
+                  },
+                  "noFallthroughCasesInSwitch": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitAny": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitReturns": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitThis": Object {
+                    "type": "boolean",
+                  },
+                  "noImplicitUseStrict": Object {
+                    "type": "boolean",
+                  },
+                  "noLib": Object {
+                    "type": "boolean",
+                  },
+                  "noResolve": Object {
+                    "type": "boolean",
+                  },
+                  "noStrictGenericChecks": Object {
+                    "type": "boolean",
+                  },
+                  "noUnusedLocals": Object {
+                    "type": "boolean",
+                  },
+                  "noUnusedParameters": Object {
+                    "type": "boolean",
+                  },
+                  "out": Object {
+                    "type": "string",
+                  },
+                  "outDir": Object {
+                    "type": "string",
+                  },
+                  "outFile": Object {
+                    "type": "string",
+                  },
+                  "paths": Object {
+                    "$ref": "#/definitions/MapLike<string[]>",
+                    "description": "Type of objects whose values are all of the same type.
+The \`in\` and \`for-in\` operators can *not* be safely used,
+since \`Object.prototype\` may be modified by outside code.",
+                  },
+                  "preserveConstEnums": Object {
+                    "type": "boolean",
+                  },
+                  "preserveSymlinks": Object {
+                    "type": "boolean",
+                  },
+                  "project": Object {
+                    "type": "string",
+                  },
+                  "reactNamespace": Object {
+                    "type": "string",
+                  },
+                  "removeComments": Object {
+                    "type": "boolean",
+                  },
+                  "resolveJsonModule": Object {
+                    "type": "boolean",
+                  },
+                  "rootDir": Object {
+                    "type": "string",
+                  },
+                  "rootDirs": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "skipDefaultLibCheck": Object {
+                    "type": "boolean",
+                  },
+                  "skipLibCheck": Object {
+                    "type": "boolean",
+                  },
+                  "sourceMap": Object {
+                    "type": "boolean",
+                  },
+                  "sourceRoot": Object {
+                    "type": "string",
+                  },
+                  "strict": Object {
+                    "type": "boolean",
+                  },
+                  "strictBindCallApply": Object {
+                    "type": "boolean",
+                  },
+                  "strictFunctionTypes": Object {
+                    "type": "boolean",
+                  },
+                  "strictNullChecks": Object {
+                    "type": "boolean",
+                  },
+                  "strictPropertyInitialization": Object {
+                    "type": "boolean",
+                  },
+                  "stripInternal": Object {
+                    "type": "boolean",
+                  },
+                  "suppressExcessPropertyErrors": Object {
+                    "type": "boolean",
+                  },
+                  "suppressImplicitAnyIndexErrors": Object {
+                    "type": "boolean",
+                  },
+                  "target": Object {
+                    "enum": Array [
+                      0,
+                      1,
+                      100,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      99,
+                    ],
+                    "type": "number",
+                  },
+                  "traceResolution": Object {
+                    "type": "boolean",
+                  },
+                  "tsBuildInfoFile": Object {
+                    "type": "string",
+                  },
+                  "typeRoots": Object {
+                    "description": "Paths used to compute primary types search locations",
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "types": Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  "useDefineForClassFields": Object {
+                    "type": "boolean",
+                  },
+                },
+                "type": "object",
+              },
+              "SingleSymbolInstruction": Object {
+                "description": "Instruction for a single symbol",
+                "properties": Object {
+                  "compilerOptions": Object {
+                    "$ref": "#/definitions/Partial<CompilerOptions>",
+                    "description": "Compiler options to pass to typescript-json-schema module",
+                  },
+                  "input": Object {
+                    "anyOf": Array [
+                      Object {
+                        "items": Object {
+                          "type": "string",
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "TypeScript source file(s)",
+                  },
+                  "list": Object {
+                    "type": "null",
+                  },
+                  "output": Object {
+                    "anyOf": Array [
+                      Object {
+                        "$ref": "#/definitions/OutputDescriptor",
+                      },
+                      Object {
+                        "items": Object {
+                          "anyOf": Array [
+                            Object {
+                              "$ref": "#/definitions/OutputDescriptor",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "Output descriptor(s) and filename(s)",
+                  },
+                  "schemaSettings": Object {
+                    "$ref": "#/definitions/Partial<Args>",
+                    "description": "Settings to pass to typescript-json-schema module",
+                  },
+                  "symbol": Object {
+                    "description": "Targeted type name",
+                    "type": "string",
+                  },
+                },
+                "required": Array [
+                  "output",
+                  "symbol",
+                ],
+                "type": "object",
+              },
+              "SymbolInstruction": Object {
+                "description": "Instruction for a single symbol",
+                "properties": Object {
+                  "output": Object {
+                    "anyOf": Array [
+                      Object {
+                        "$ref": "#/definitions/OutputDescriptor",
+                      },
+                      Object {
+                        "items": Object {
+                          "anyOf": Array [
+                            Object {
+                              "$ref": "#/definitions/OutputDescriptor",
+                            },
+                            Object {
+                              "type": "string",
+                            },
+                          ],
+                        },
+                        "type": "array",
+                      },
+                      Object {
+                        "type": "string",
+                      },
+                    ],
+                    "description": "Output descriptor(s) and filename(s)",
+                  },
+                  "symbol": Object {
+                    "description": "Targeted type name",
+                    "type": "string",
+                  },
+                },
+                "required": Array [
+                  "output",
+                  "symbol",
+                ],
+                "type": "object",
+              },
+              "T": Object {
+                "type": "object",
+              },
+            },
+            "description": "Properties of a configuration file",
+            "properties": Object {
+              "extends": Object {
+                "anyOf": Array [
+                  Object {
+                    "items": Object {
+                      "type": "string",
+                    },
+                    "type": "array",
+                  },
+                  Object {
+                    "type": "string",
+                  },
+                ],
+                "description": "File(s) to inherit from",
+              },
+              "instruction": Object {
+                "anyOf": Array [
+                  Object {
+                    "$ref": "#/definitions/MultiSymbolInstruction",
+                  },
+                  Object {
+                    "$ref": "#/definitions/SingleSymbolInstruction",
+                  },
+                ],
+                "description": "Instruction to generate JSON schemas",
+              },
+            },
+            "required": Array [
+              "instruction",
+            ],
+            "type": "object",
+          },
+          "stack": "instance requires property \\"instruction\\"",
+        },
+      ],
+      "path": "missing-instruction/.schema.autogen.json",
+      "value": undefined,
+    },
+    UnsatisfiedSchema {
+      "code": 12,
+      "error": Array [
+        ValidationError {
+          "argument": Array [
+            "<#/definitions/MultiSymbolInstruction>",
+            "<#/definitions/SingleSymbolInstruction>",
+          ],
+          "instance": Array [
+            0,
+            1,
+            2,
+          ],
+          "message": "is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+          "name": "anyOf",
+          "property": "instance.instruction",
+          "schema": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "#/definitions/MultiSymbolInstruction",
+              },
+              Object {
+                "$ref": "#/definitions/SingleSymbolInstruction",
+              },
+            ],
+            "description": "Instruction to generate JSON schemas",
+          },
+          "stack": "instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+        },
+      ],
+      "path": "invalid-instruction/.schema.autogen.json",
+      "value": undefined,
+    },
+    UnsatisfiedSchema {
+      "code": 12,
+      "error": Array [
+        ValidationError {
+          "argument": Array [
+            "<#/definitions/MultiSymbolInstruction>",
+            "<#/definitions/SingleSymbolInstruction>",
+          ],
+          "instance": Object {
+            "compilerOptions": Object {
+              "allowJs": "invalid",
+              "checkJs": "invalid",
+              "esModuleInterop": "invalid",
+              "strict": false,
+              "strictNullChecks": true,
+            },
+            "input": Array [
+              "valid-input.ts",
+              Object {
+                "invalid": "input.ts",
+              },
+              null,
+            ],
+            "output": Array [
+              "valid-output-filename.json",
+              Object {
+                "filename": "valid-output-descriptor.json",
+              },
+              Object {
+                "filename": null,
+              },
+              Object {},
+              "invalid",
+            ],
+            "schemaSettings": Object {
+              "aliasRef": true,
+              "defaultNumberType": "invalid",
+              "excludePrivate": "invalid",
+            },
+            "symbol": "Foo",
+          },
+          "message": "is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+          "name": "anyOf",
+          "property": "instance.instruction",
+          "schema": Object {
+            "anyOf": Array [
+              Object {
+                "$ref": "#/definitions/MultiSymbolInstruction",
+              },
+              Object {
+                "$ref": "#/definitions/SingleSymbolInstruction",
+              },
+            ],
+            "description": "Instruction to generate JSON schemas",
+          },
+          "stack": "instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+        },
+      ],
+      "path": "multiple-errors/.schema.autogen.json",
+      "value": undefined,
+    },
+  ],
+  "value": undefined,
+}
+`;
+
+exports[`single failure error messages 1`] = `
+"
+UnsatisfiedSchema
+    path: multiple-errors/.schema.autogen.json
+    error:
+        instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>
+"
+`;
+
+exports[`single failure returns result matching snapshot 1`] = `
+UnsatisfiedSchema {
+  "code": 12,
+  "error": Array [
+    ValidationError {
+      "argument": Array [
+        "<#/definitions/MultiSymbolInstruction>",
+        "<#/definitions/SingleSymbolInstruction>",
+      ],
+      "instance": Object {
+        "compilerOptions": Object {
+          "allowJs": "invalid",
+          "checkJs": "invalid",
+          "esModuleInterop": "invalid",
+          "strict": false,
+          "strictNullChecks": true,
+        },
+        "input": Array [
+          "valid-input.ts",
+          Object {
+            "invalid": "input.ts",
+          },
+          null,
+        ],
+        "output": Array [
+          "valid-output-filename.json",
+          Object {
+            "filename": "valid-output-descriptor.json",
+          },
+          Object {
+            "filename": null,
+          },
+          Object {},
+          "invalid",
+        ],
+        "schemaSettings": Object {
+          "aliasRef": true,
+          "defaultNumberType": "invalid",
+          "excludePrivate": "invalid",
+        },
+        "symbol": "Foo",
+      },
+      "message": "is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+      "name": "anyOf",
+      "property": "instance.instruction",
+      "schema": Object {
+        "anyOf": Array [
+          Object {
+            "$ref": "#/definitions/MultiSymbolInstruction",
+          },
+          Object {
+            "$ref": "#/definitions/SingleSymbolInstruction",
+          },
+        ],
+        "description": "Instruction to generate JSON schemas",
+      },
+      "stack": "instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+    },
+  ],
+  "path": "multiple-errors/.schema.autogen.json",
+  "value": undefined,
+}
+`;
