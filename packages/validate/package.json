@@ -20,6 +20,6 @@
     "tslib": "^1.10.0",
     "@ts-schema-autogen/types": "^0.0.0",
     "@ts-schema-autogen/schemas": "^0.0.0",
-    "@types/node": "^13.1.8"
+    "@types/node": "^13.7.0"
   }
 }

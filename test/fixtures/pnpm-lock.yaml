@@ -2,7 +2,7 @@ dependencies:
   '@tools/test-utils': 'link:../../tools/test-utils'
   '@ts-schema-autogen/types': 'link:../../packages/types'
   '@tsfun/object': 0.0.16
-  '@types/js-yaml': 3.12.1
+  '@types/js-yaml': 3.12.2
   js-yaml: 3.13.1
 lockfileVersion: 5.1
 packages:
@@ -14,10 +14,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-75/OG0K2mcr4Jl4lczo7tHvhELGI5pbvV0XvKU4jVVh4LOFlZ3kYPgOTfNTYO+rampS8p1Z0XqLzCMNXPPenUg==
-  /@types/js-yaml/3.12.1:
+  /@types/js-yaml/3.12.2:
     dev: false
     resolution:
-      integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
+      integrity: sha512-0CFu/g4mDSNkodVwWijdlr8jH7RoplRWNgovjFLEZeT+QEbbZXjBmCe3HwaWheAlCbHwomTwzZoSedeOycABug==
   /@types/node/13.5.3:
     dev: false
     resolution:
@@ -61,5 +61,5 @@ specifiers:
   '@tools/test-utils': 'file:../../tools/test-utils'
   '@ts-schema-autogen/types': 'file:../../packages/types'
   '@tsfun/object': ^0.0.16
-  '@types/js-yaml': ^3.12.1
+  '@types/js-yaml': ^3.12.2
   js-yaml: ^3.13.1

@@ -5,10 +5,10 @@ dependencies:
   '@ts-schema-autogen/validate': 'link:../validate'
   '@tsfun/object': 0.0.16
   '@tsfun/result': 0.0.15
-  '@types/js-yaml': 3.12.1
-  '@types/node': 13.1.8
+  '@types/js-yaml': 3.12.2
+  '@types/node': 13.7.0
   better-path-join: 0.0.0
-  fast-traverse: 0.1.3
+  fast-traverse: 0.1.4
   js-yaml: 3.13.1
   tslib: 1.10.0
 lockfileVersion: 5.1
@@ -56,10 +56,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-00ULLfaVuFb4H0KyHZqutAuNE3WewDEZzUt+fQifl83hElfO+AX5yCoxjMi7e4JZX0cJi/pmce6HuEOhJOzqdg==
-  /@types/js-yaml/3.12.1:
+  /@types/js-yaml/3.12.2:
     dev: false
     resolution:
-      integrity: sha512-SGGAhXLHDx+PK4YLNcNGa6goPf9XRWQNAUUbffkwVGGXIxmDKWyGGL4inzq2sPmExu431Ekb9aEMn9BkPqEYFA==
+      integrity: sha512-0CFu/g4mDSNkodVwWijdlr8jH7RoplRWNgovjFLEZeT+QEbbZXjBmCe3HwaWheAlCbHwomTwzZoSedeOycABug==
   /@types/node/13.1.8:
     dev: false
     resolution:
@@ -68,6 +68,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
+  /@types/node/13.7.0:
+    dev: false
+    resolution:
+      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -88,13 +92,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
-  /fast-traverse/0.1.3:
+  /fast-traverse/0.1.4:
     dependencies:
-      '@types/node': 13.1.8
+      '@types/node': 13.7.0
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-eg7KPgo+iXO2pcRsfBQo9stenztWiDXCYuZtpU5yRa23ajkzYLjEgXpiu+DeOFNpkqfRWV8HmTaPxjAPxhSt4Q==
+      integrity: sha512-A2sTvxdA+ZhXLGYh0UOZyWYRe9jHFGBI/or8P31AG29OXXZ9l7ff2aM2s2GCRdCfax+K92C8PI5UXYzTMMoBig==
   /js-yaml/3.13.1:
     dependencies:
       argparse: 1.0.10
@@ -124,9 +128,9 @@ specifiers:
   '@ts-schema-autogen/validate': ^0.0.0
   '@tsfun/object': ^0.0.16
   '@tsfun/result': ^0.0.15
-  '@types/js-yaml': ^3.12.1
-  '@types/node': ^13.1.8
+  '@types/js-yaml': ^3.12.2
+  '@types/node': ^13.7.0
   better-path-join: ^0.0.0
-  fast-traverse: ^0.1.3
+  fast-traverse: ^0.1.4
   js-yaml: ^3.13.1
   tslib: ^1.10.0

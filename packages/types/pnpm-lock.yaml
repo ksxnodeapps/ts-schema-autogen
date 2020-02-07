@@ -1,6 +1,6 @@
 dependencies:
   '@ts-schema-autogen/utils': 'link:../utils'
-  '@types/node': 13.1.8
+  '@types/node': 13.7.0
   tslib: 1.10.0
   typescript-json-schema: 0.42.0
 lockfileVersion: 5.1
@@ -9,10 +9,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
-  /@types/node/13.1.8:
+  /@types/node/13.7.0:
     dev: false
     resolution:
-      integrity: sha512-6XzyyNM9EKQW4HKuzbo/CkOIjn/evtCmsU+MUM1xDfJ+3/rNjBttM1NgN7AOQvN6tP1Sl1D1PIKMreTArnxM9A==
+      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
   /ansi-regex/4.1.0:
     dev: false
     engines:
@@ -288,6 +288,6 @@ packages:
       integrity: sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
 specifiers:
   '@ts-schema-autogen/utils': ^0.0.0
-  '@types/node': ^13.1.8
+  '@types/node': ^13.7.0
   tslib: ^1.10.0
   typescript-json-schema: ^0.42.0
