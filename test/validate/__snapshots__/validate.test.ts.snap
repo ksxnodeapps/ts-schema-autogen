@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`validateConfig negative matches snapshot 1`] = `
+Object {
+  "error": Array [
+    Object {
+      "argument": Array [
+        "object",
+      ],
+      "instance": "Not Valid",
+      "message": "is not of a type(s) object",
+      "name": "type",
+      "property": "instance",
+      "schema": Any<Object>,
+      "stack": "instance is not of a type(s) object",
+    },
+  ],
+  "tag": false,
+}
+`;
+
+exports[`validateInstruction negative matches snapshot 1`] = `
+Object {
+  "error": Array [
+    Object {
+      "argument": Array [
+        "<#/definitions/MultiSymbolInstruction>",
+        "<#/definitions/SingleSymbolInstruction>",
+      ],
+      "instance": "Not Valid",
+      "message": "is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+      "name": "anyOf",
+      "property": "instance",
+      "schema": Any<Object>,
+      "stack": "instance is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+    },
+  ],
+  "tag": false,
+}
+`;
+
+exports[`validateOutputDescriptor negative matches snapshot 1`] = `
+Object {
+  "error": Array [
+    Object {
+      "argument": Array [
+        "object",
+      ],
+      "instance": "Not Valid",
+      "message": "is not of a type(s) object",
+      "name": "type",
+      "property": "instance",
+      "schema": Any<Object>,
+      "stack": "instance is not of a type(s) object",
+    },
+  ],
+  "tag": false,
+}
+`;
+
+exports[`validateSymbolInstruction negative matches snapshot 1`] = `
+Object {
+  "error": Array [
+    Object {
+      "argument": Array [
+        "object",
+      ],
+      "instance": "Not Valid",
+      "message": "is not of a type(s) object",
+      "name": "type",
+      "property": "instance",
+      "schema": Any<Object>,
+      "stack": "instance is not of a type(s) object",
+    },
+  ],
+  "tag": false,
+}
+`;

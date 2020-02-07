@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "@tsfun/result": "^0.0.15",
+    "@ts-schema-autogen/validate": "file:../../packages/validate"
+  }
+}
