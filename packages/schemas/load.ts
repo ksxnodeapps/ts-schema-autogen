@@ -1,6 +1,6 @@
 import path from 'path'
-import { Schema } from 'jsonschema'
 import { readFileSync } from 'fs'
+import { JsonSchema as Schema } from '@ts-schema-autogen/types'
 
 export { Schema }
 

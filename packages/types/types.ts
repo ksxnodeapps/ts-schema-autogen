@@ -1,4 +1,5 @@
 import { MaybeArray } from '@ts-schema-autogen/utils'
+import { HttpJsonSchemaOrgDraft04Schema } from './generated/json-schema'
 import { JSONSchemaForTheTypeScriptCompilerSConfigurationFile } from './generated/tsconfig'
 
 import {
@@ -13,6 +14,9 @@ export {
   JsonSchemaGenerator,
   Definition
 }
+
+/** Interface for a schema file */
+export type JsonSchema = HttpJsonSchemaOrgDraft04Schema
 
 /** TypeScript compiler options */
 export type CompilerOptions = JSONSchemaForTheTypeScriptCompilerSConfigurationFile['compilerOptions']
