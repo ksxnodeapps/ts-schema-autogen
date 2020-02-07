@@ -322,5 +322,6 @@ export namespace UnsatisfiedSchema {
 
   interface Params {
     readonly allowedValues?: readonly any[]
+    readonly [_: string]: any
   }
 }
