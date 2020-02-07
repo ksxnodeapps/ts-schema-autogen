@@ -176,12 +176,10 @@ Commands:
 
 Options:
   --version  Show version number                                       [boolean]
-  --help     Show help                                                 [boolean]
   --pattern  Regular expression that matches basename of config files
                     [string] [default: "\.schema\.autogen(\.(json|yaml|yml))?$"]
   --ignored  Name of directories to be ignored
                                       [array] [default: [".git","node_modules"]]
-  --version  Show version number                                       [boolean]
   --help     Show help                                                 [boolean]
 ```
 
