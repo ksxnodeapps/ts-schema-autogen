@@ -4,13 +4,19 @@ exports[`calls tjs.getProgramFromFiles 1`] = `
 Array [
   Array [
     Array [],
-    "compilerOptions",
+    Object {
+      "strict": true,
+      "strictNullChecks": true,
+    },
   ],
   Array [
     Array [
       "wdir/input-filename/input.ts",
     ],
-    "compilerOptions",
+    Object {
+      "strict": true,
+      "strictNullChecks": true,
+    },
   ],
   Array [
     Array [
@@ -18,7 +24,10 @@ Array [
       "wdir/input-array/input/def.ts",
       "wdir/input-array/input/ghi.ts",
     ],
-    "compilerOptions",
+    Object {
+      "strict": true,
+      "strictNullChecks": true,
+    },
   ],
 ]
 `;
