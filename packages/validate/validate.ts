@@ -17,9 +17,11 @@ export {
 
 export type ValidationResult<Type> = Result<Type, ValidationError[]>
 
-const VALIDATION_OPTIONS: Options = Object.freeze({
+// don't freeze this object
+// know that jsonschema will modify this object
+const VALIDATION_OPTIONS: Options = {
   allowUnknownAttributes: true
-})
+}
 
 export class ValidatorFactory extends SchemaLoader {
   private readonly validator = new Validator()
