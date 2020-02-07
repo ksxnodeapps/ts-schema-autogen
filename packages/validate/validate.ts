@@ -8,6 +8,7 @@ import {
   OutputDescriptor,
   SymbolInstruction
 } from '@ts-schema-autogen/types'
+export * from '@ts-schema-autogen/types'
 
 export type ValidationResult<Type> = Result<Type, ValidationError[]>
 
