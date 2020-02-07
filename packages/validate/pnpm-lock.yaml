@@ -1,9 +1,7 @@
 dependencies:
   '@ts-schema-autogen/types': 'link:../types'
   '@tsfun/result': 0.0.15
-  '@types/fs-extra': 8.0.1
   '@types/node': 13.5.3
-  fs-extra: 8.1.0
   jsonschema: 1.2.5
   tslib: 1.10.0
 lockfileVersion: 5.1
@@ -43,36 +41,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-00ULLfaVuFb4H0KyHZqutAuNE3WewDEZzUt+fQifl83hElfO+AX5yCoxjMi7e4JZX0cJi/pmce6HuEOhJOzqdg==
-  /@types/fs-extra/8.0.1:
-    dependencies:
-      '@types/node': 13.5.3
-    dev: false
-    resolution:
-      integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
   /@types/node/13.5.3:
     dev: false
     resolution:
       integrity: sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
-  /fs-extra/8.1.0:
-    dependencies:
-      graceful-fs: 4.2.3
-      jsonfile: 4.0.0
-      universalify: 0.1.2
-    dev: false
-    engines:
-      node: '>=6 <7 || >=8'
-    resolution:
-      integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==
-  /graceful-fs/4.2.3:
-    dev: false
-    resolution:
-      integrity: sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
-  /jsonfile/4.0.0:
-    dev: false
-    optionalDependencies:
-      graceful-fs: 4.2.3
-    resolution:
-      integrity: sha1-h3Gq4HmbZAdrdmQPygWPnBDjPss=
   /jsonschema/1.2.5:
     dev: false
     resolution:
@@ -81,17 +53,9 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
-  /universalify/0.1.2:
-    dev: false
-    engines:
-      node: '>= 4.0.0'
-    resolution:
-      integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
 specifiers:
   '@ts-schema-autogen/types': ^0.0.0
   '@tsfun/result': ^0.0.15
-  '@types/fs-extra': ^8.0.1
   '@types/node': ^13.1.8
-  fs-extra: ^8.1.0
   jsonschema: ^1.2.5
   tslib: ^1.10.0

@@ -1,6 +1,6 @@
 import path from 'path'
 import { Schema } from 'jsonschema'
-import { readFileSync } from 'fs-extra'
+import { readFileSync } from 'fs'
 
 export { Schema }
 
