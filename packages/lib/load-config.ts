@@ -26,7 +26,7 @@ export interface ConfigParseError {
 
 /** Load a config file */
 export async function loadConfigFile (param: loadConfigFile.Param): Promise<loadConfigFile.Return> {
-  const { filename, validate } = param
+  const { filename } = param
   const readingResult = await param.fsx.readFile(filename, 'utf8').then(ok, err)
   if (!readingResult.tag) return new FileReadingFailure(filename, readingResult.error)
   const text = readingResult.value
@@ -36,9 +36,7 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
   for (const parser of param.parsers) {
     if (!parser.testFileName(filename)) continue
     const parseResult = parser.parseConfigText(text, filename)
-    const validateResult = validate(parseResult.value)
-    if (!validateResult.tag) return new UnsatisfiedSchema(filename, validateResult.error)
-    if (parseResult.tag) return new Success(validateResult.value)
+    if (parseResult.tag) return new Success(parseResult.value)
     parseErrors.push({ parser, error: parseResult.error })
   }
 
@@ -55,16 +53,12 @@ export namespace loadConfigFile {
 
     /** List of parsers to be attempted on the config file */
     readonly parsers: Iterable<ConfigParser>
-
-    /** Validate file content against JSON schema */
-    readonly validate: ValidatorFactory['Config']
   }
 
   export type Return =
     FileReadingFailure |
     TextParsingFailure<ConfigParseError> |
-    UnsatisfiedSchema<ValidationError> |
-    Success<Config>
+    Success<unknown>
 }
 
 /** Merge a config with extensions */
@@ -107,14 +101,13 @@ export class ConfigLoader {
 
     if (!param.parsers.length) return new MissingFileParser()
 
-    const lcfRet = await loadConfigFile({
-      ...param,
-      validate: this.validator.Config,
-      filename
-    })
+    const lcfRet = await loadConfigFile(addProperty(param, 'filename', filename))
     if (lcfRet.code) return lcfRet
 
-    let config = lcfRet.value
+    const validateResult = this.validator.Config(lcfRet.value)
+    if (!validateResult.tag) return new UnsatisfiedSchema(filename, validateResult.error)
+
+    let config = validateResult.value
     if (!config.extends) return new Success(config)
     for (const path of ensureArray(config.extends)) {
       const absPath = join(dirname(filename), path)
