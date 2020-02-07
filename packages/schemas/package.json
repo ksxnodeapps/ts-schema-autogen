@@ -1,7 +1,7 @@
 {
-  "name": "@ts-schema-autogen/validate",
+  "name": "@ts-schema-autogen/schemas",
   "version": "0.0.0",
-  "description": "Validate types from @ts-schema-autogen/types",
+  "description": "JSON schemas used by ts-schema-autogen",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ksxnodeapps/ts-schema-autogen#readme",
@@ -16,10 +16,8 @@
   "dependencies": {
     "jsonschema": "^1.2.5",
     "exec-once": "^0.1.5",
-    "@tsfun/result": "^0.0.15",
     "tslib": "^1.10.0",
     "@ts-schema-autogen/types": "^0.0.0",
-    "@ts-schema-autogen/schemas": "^0.0.0",
     "@types/node": "^13.1.8"
   }
 }

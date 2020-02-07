@@ -1,4 +1,5 @@
 dependencies:
+  '@ts-schema-autogen/schemas': 'link:../schemas'
   '@ts-schema-autogen/types': 'link:../types'
   '@tsfun/result': 0.0.15
   '@types/node': 13.5.3
@@ -62,6 +63,7 @@ packages:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
+  '@ts-schema-autogen/schemas': ^0.0.0
   '@ts-schema-autogen/types': ^0.0.0
   '@tsfun/result': ^0.0.15
   '@types/node': ^13.1.8

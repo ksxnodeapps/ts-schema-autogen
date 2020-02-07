@@ -1,7 +1,7 @@
 import { Validator, Options, ValidationError } from 'jsonschema'
 import once from 'exec-once'
 import { Result, ok, err } from '@tsfun/result'
-import SchemaLoader from './load'
+import SchemaLoader from '@ts-schema-autogen/schemas'
 
 import {
   Config,
