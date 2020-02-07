@@ -300,8 +300,10 @@ extends FileSystemFailure<readonly Item[]> {
 
   public * log () {
     yield this.name
+    yield Failure.indent(1) + 'path: ' + this.path
+    yield Failure.indent(1) + 'error:'
     for (const item of this.error) {
-      yield * iterateIndentedLines(1, item.stack)
+      yield * iterateIndentedLines(2, item.stack)
     }
   }
 }
