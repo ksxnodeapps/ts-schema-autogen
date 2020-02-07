@@ -1,10 +1,46 @@
 dependencies:
   '@ts-schema-autogen/types': 'link:../types'
+  '@tsfun/result': 0.0.15
   '@types/node': 13.5.3
   jsonschema: 1.2.5
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
+  /@tsfun/prv-option-result-common/0.0.10:
+    dependencies:
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-UTXoMYDAtedfqgeb2e562qsOJqA4aBM6Ql41f+gXs/EACo2ILf/8pUyAh6iXq1tKsIjXebu3pNdD7YDtQvTMiw==
+  /@tsfun/prv-types/0.0.6:
+    dependencies:
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-s97gvRX2SjGTdU+Odsi6RgsVFi+xNOx3T6Jew2mo7m7Wj6eJmM0HB0HlFPmwIIi2MtXIpSr71TZmRVcMeU3Atw==
+  /@tsfun/result/0.0.15:
+    dependencies:
+      '@tsfun/prv-option-result-common': 0.0.10
+      '@tsfun/prv-types': 0.0.6
+      '@tsfun/tap': 0.0.9
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    engines:
+      node: '>= 8.9.0'
+    resolution:
+      integrity: sha512-doM0jLMIRgriynd+jRgdqZmkBeSbcURyKlxgf6bSJQSHcVvQxQVJ//tHjbM29G6+40fVEdqwh3TSxWGrd4uaUA==
+  /@tsfun/tap/0.0.9:
+    dependencies:
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-00ULLfaVuFb4H0KyHZqutAuNE3WewDEZzUt+fQifl83hElfO+AX5yCoxjMi7e4JZX0cJi/pmce6HuEOhJOzqdg==
   /@types/node/13.5.3:
     dev: false
     resolution:
@@ -19,6 +55,7 @@ packages:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
   '@ts-schema-autogen/types': ^0.0.0
+  '@tsfun/result': ^0.0.15
   '@types/node': ^13.1.8
   jsonschema: ^1.2.5
   tslib: ^1.10.0
