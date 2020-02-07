@@ -23,17 +23,7 @@ const modules: ModuleSet<tjs.Program, tjs.Definition> = {
   fsx
 }
 
-export const buildArgs = (yargs: yargs.Argv) => yargs
-  .option('pattern', {
-    type: 'string',
-    describe: 'Regular expression that matches basename of config files',
-    default: DEFAULT_PATTERN
-  })
-  .option('ignored', {
-    type: 'array',
-    describe: 'Name of directories to be ignored',
-    default: DEFAULT_IGNORED
-  })
+const NO_TRANSFORM = <X> (x: X) => x
 
 const handleStatus = (status: Promise<Status>) => status
   .then(status => process.exit(status))
@@ -44,22 +34,32 @@ const handleStatus = (status: Promise<Status>) => status
 
 // tslint:disable-next-line:no-unused-expression
 yargs
+  .option('pattern', {
+    type: 'string',
+    describe: 'Regular expression that matches basename of config files',
+    default: DEFAULT_PATTERN
+  })
+  .option('ignored', {
+    type: 'array',
+    describe: 'Name of directories to be ignored',
+    default: DEFAULT_IGNORED
+  })
   .command(
     'test',
     'Check for out-of-date schema files',
-    buildArgs,
+    NO_TRANSFORM,
     args => handleStatus(cmdTest({ args, modules }))
   )
   .command(
     'generate',
     'Generate schema files',
-    buildArgs,
+    NO_TRANSFORM,
     args => handleStatus(cmdGenerate({ args, modules }))
   )
   .command(
     'clean',
     'Delete generated schema files',
-    buildArgs,
+    NO_TRANSFORM,
     args => handleStatus(cmdClean({ args, modules }))
   )
   .demandCommand()
