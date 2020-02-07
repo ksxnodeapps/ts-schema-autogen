@@ -32,41 +32,6 @@
     "instruction"
   ],
   "definitions": {
-    "OutputDescriptor": {
-      "description": "Formats of output JSON schema files",
-      "type": "object",
-      "properties": {
-        "filename": {
-          "description": "Name of output schema file",
-          "type": "string"
-        },
-        "format": {
-          "description": "Data format",
-          "enum": [
-            "json"
-          ],
-          "type": "string"
-        },
-        "indent": {
-          "description": "JSON indentation",
-          "anyOf": [
-            {
-              "enum": [
-                "none",
-                "tab"
-              ],
-              "type": "string"
-            },
-            {
-              "type": "number"
-            }
-          ]
-        }
-      },
-      "required": [
-        "filename"
-      ]
-    },
     "MultiSymbolInstruction": {
       "description": "Instruction for multiple symbols",
       "type": "object",
@@ -672,6 +637,41 @@
       "required": [
         "output",
         "symbol"
+      ]
+    },
+    "OutputDescriptor": {
+      "description": "Formats of output JSON schema files",
+      "type": "object",
+      "properties": {
+        "filename": {
+          "description": "Name of output schema file",
+          "type": "string"
+        },
+        "format": {
+          "description": "Data format",
+          "enum": [
+            "json"
+          ],
+          "type": "string"
+        },
+        "indent": {
+          "description": "JSON indentation",
+          "anyOf": [
+            {
+              "enum": [
+                "none",
+                "tab"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": [
+        "filename"
       ]
     },
     "Partial<Args>": {
