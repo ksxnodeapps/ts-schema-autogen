@@ -28,8 +28,8 @@ export class ValidatorFactory extends SchemaLoader {
     const { validator } = this
     const schema = this.load(name)
 
-    return async (instance: unknown): Promise<ValidationResult<Type>> => {
-      const result = validator.validate(instance, await schema, VALIDATION_OPTIONS)
+    return (instance: unknown): ValidationResult<Type> => {
+      const result = validator.validate(instance, schema, VALIDATION_OPTIONS)
       return result.valid ? ok(instance as Type) : err(result.errors)
     }
   }
