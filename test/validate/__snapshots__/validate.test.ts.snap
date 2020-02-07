@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`validateConfig negative matches snapshot 1`] = `
+exports[`Config negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {
@@ -19,7 +19,7 @@ Object {
 }
 `;
 
-exports[`validateInstruction negative matches snapshot 1`] = `
+exports[`Instruction negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {
@@ -39,7 +39,7 @@ Object {
 }
 `;
 
-exports[`validateOutputDescriptor negative matches snapshot 1`] = `
+exports[`OutputDescriptor negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {
@@ -58,7 +58,7 @@ Object {
 }
 `;
 
-exports[`validateSymbolInstruction negative matches snapshot 1`] = `
+exports[`SymbolInstruction negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {

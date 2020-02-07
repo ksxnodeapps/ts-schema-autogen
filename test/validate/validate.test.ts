@@ -8,10 +8,10 @@ import {
   ValidatorFactory
 } from '@ts-schema-autogen/validate'
 
-describe('validateConfig', () => {
+describe('Config', () => {
   function validate (instance: unknown) {
     const factory = new ValidatorFactory()
-    const result = factory.validateConfig(instance)
+    const result = factory.Config(instance)
     return { factory, result }
   }
 
@@ -57,10 +57,10 @@ describe('validateConfig', () => {
   })
 })
 
-describe('validateInstruction', () => {
+describe('Instruction', () => {
   function validate (instance: unknown) {
     const factory = new ValidatorFactory()
-    const result = factory.validateInstruction(instance)
+    const result = factory.Instruction(instance)
     return { factory, result }
   }
 
@@ -104,10 +104,10 @@ describe('validateInstruction', () => {
   })
 })
 
-describe('validateOutputDescriptor', () => {
+describe('OutputDescriptor', () => {
   function validate (instance: unknown) {
     const factory = new ValidatorFactory()
-    const result = factory.validateOutputDescriptor(instance)
+    const result = factory.OutputDescriptor(instance)
     return { factory, result }
   }
 
@@ -150,10 +150,10 @@ describe('validateOutputDescriptor', () => {
   })
 })
 
-describe('validateSymbolInstruction', () => {
+describe('SymbolInstruction', () => {
   function validate (instance: unknown) {
     const factory = new ValidatorFactory()
-    const result = factory.validateSymbolInstruction(instance)
+    const result = factory.SymbolInstruction(instance)
     return { factory, result }
   }
 

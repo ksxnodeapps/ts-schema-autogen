@@ -39,10 +39,10 @@ export class ValidatorFactory extends SchemaLoader {
     return validate
   }
 
-  public readonly validateConfig = this.createValidator<Config>('config')
-  public readonly validateInstruction = this.createValidator<Instruction>('instruction')
-  public readonly validateOutputDescriptor = this.createValidator<OutputDescriptor>('output-descriptor')
-  public readonly validateSymbolInstruction = this.createValidator<SymbolInstruction>('symbol-instruction')
+  public readonly Config = this.createValidator<Config>('config')
+  public readonly Instruction = this.createValidator<Instruction>('instruction')
+  public readonly OutputDescriptor = this.createValidator<OutputDescriptor>('output-descriptor')
+  public readonly SymbolInstruction = this.createValidator<SymbolInstruction>('symbol-instruction')
 }
 
 export default ValidatorFactory
