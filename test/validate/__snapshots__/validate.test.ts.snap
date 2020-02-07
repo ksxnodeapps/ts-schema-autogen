@@ -4,15 +4,13 @@ exports[`Config negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {
-      "argument": Array [
-        "object",
-      ],
-      "instance": "Not Valid",
-      "message": "is not of a type(s) object",
-      "name": "type",
-      "property": "instance",
-      "schema": Any<Object>,
-      "stack": "instance is not of a type(s) object",
+      "dataPath": "",
+      "keyword": "type",
+      "message": "should be object",
+      "params": Object {
+        "type": "object",
+      },
+      "schemaPath": "#/type",
     },
   ],
   "tag": false,
@@ -23,16 +21,29 @@ exports[`Instruction negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {
-      "argument": Array [
-        "<#/definitions/MultiSymbolInstruction>",
-        "<#/definitions/SingleSymbolInstruction>",
-      ],
-      "instance": "Not Valid",
-      "message": "is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
-      "name": "anyOf",
-      "property": "instance",
-      "schema": Any<Object>,
-      "stack": "instance is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+      "dataPath": "",
+      "keyword": "type",
+      "message": "should be object",
+      "params": Object {
+        "type": "object",
+      },
+      "schemaPath": "#/type",
+    },
+    Object {
+      "dataPath": "",
+      "keyword": "type",
+      "message": "should be object",
+      "params": Object {
+        "type": "object",
+      },
+      "schemaPath": "#/type",
+    },
+    Object {
+      "dataPath": "",
+      "keyword": "anyOf",
+      "message": "should match some schema in anyOf",
+      "params": Object {},
+      "schemaPath": "#/anyOf",
     },
   ],
   "tag": false,
@@ -43,15 +54,13 @@ exports[`OutputDescriptor negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {
-      "argument": Array [
-        "object",
-      ],
-      "instance": "Not Valid",
-      "message": "is not of a type(s) object",
-      "name": "type",
-      "property": "instance",
-      "schema": Any<Object>,
-      "stack": "instance is not of a type(s) object",
+      "dataPath": "",
+      "keyword": "type",
+      "message": "should be object",
+      "params": Object {
+        "type": "object",
+      },
+      "schemaPath": "#/type",
     },
   ],
   "tag": false,
@@ -62,15 +71,13 @@ exports[`SymbolInstruction negative matches snapshot 1`] = `
 Object {
   "error": Array [
     Object {
-      "argument": Array [
-        "object",
-      ],
-      "instance": "Not Valid",
-      "message": "is not of a type(s) object",
-      "name": "type",
-      "property": "instance",
-      "schema": Any<Object>,
-      "stack": "instance is not of a type(s) object",
+      "dataPath": "",
+      "keyword": "type",
+      "message": "should be object",
+      "params": Object {
+        "type": "object",
+      },
+      "schemaPath": "#/type",
     },
   ],
   "tag": false,

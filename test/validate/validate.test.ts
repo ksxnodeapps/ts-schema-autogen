@@ -50,9 +50,7 @@ describe('Config', () => {
 
     it('matches snapshot', () => {
       const { result } = setup()
-      expect(result).toMatchSnapshot({
-        error: [{ schema: expect.any(Object) }]
-      })
+      expect(result).toMatchSnapshot()
     })
   })
 })
@@ -97,9 +95,7 @@ describe('Instruction', () => {
 
     it('matches snapshot', () => {
       const { result } = setup()
-      expect(result).toMatchSnapshot({
-        error: [{ schema: expect.any(Object) }]
-      })
+      expect(result).toMatchSnapshot()
     })
   })
 })
@@ -143,9 +139,7 @@ describe('OutputDescriptor', () => {
 
     it('matches snapshot', () => {
       const { result } = setup()
-      expect(result).toMatchSnapshot({
-        error: [{ schema: expect.any(Object) }]
-      })
+      expect(result).toMatchSnapshot()
     })
   })
 })
@@ -190,9 +184,7 @@ describe('SymbolInstruction', () => {
 
     it('matches snapshot', () => {
       const { result } = setup()
-      expect(result).toMatchSnapshot({
-        error: [{ schema: expect.any(Object) }]
-      })
+      expect(result).toMatchSnapshot()
     })
   })
 })
