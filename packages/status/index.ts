@@ -4,6 +4,9 @@ import { OutputDescriptor, Console } from '@ts-schema-autogen/types'
 
 /** Error code as well as discriminant of {@link Success} and {@link Failure} */
 export enum Status {
+  /** Data does not satisfy JSON schema */
+  UnsatisfiedSchema = 12,
+
   /** Failed to build schema generator */
   GeneratorConstructingFailure = 11,
 
@@ -288,5 +291,23 @@ export namespace GeneratorConstructingFailure {
   export interface Error<Settings> {
     readonly input: readonly string[]
     readonly settings: Settings
+  }
+}
+
+export class UnsatisfiedSchema<Item extends UnsatisfiedSchema.ErrorItem>
+extends FileSystemFailure<readonly Item[]> {
+  public readonly code = Status.UnsatisfiedSchema
+
+  public * log () {
+    yield this.name
+    for (const item of this.error) {
+      yield * iterateIndentedLines(1, item.stack)
+    }
+  }
+}
+
+export namespace UnsatisfiedSchema {
+  export interface ErrorItem {
+    readonly stack: string
   }
 }
