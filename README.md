@@ -2,6 +2,62 @@
 
 Read config files and generate json schema files
 
+## Development
+
+### System Requirements
+
+* Node.js ≥ 13.6.0
+* Package Manager: [pnpm](https://pnpm.js.org/)
+* Git
+
+### Scripts
+
+#### Build
+
+```sh
+pnpm run build
+```
+
+#### Clean
+
+```sh
+pnpm run clean
+```
+
+#### Test
+
+##### Test Everything
+
+```sh
+pnpm test
+```
+
+##### Test Everything Without Coverage
+
+```sh
+pnpm run test:no-coverage
+```
+
+##### Test Changed Files Only
+
+```sh
+pnpm test -- --onlyChanged
+```
+
+##### Update Jest Snapshot
+
+```sh
+pnpm test -- -u
+```
+
+#### Start Node.js REPL
+
+This starts a Node.js REPL where you can import every module inside `packages/` folder.
+
+```sh
+pnpm run repl
+```
+
 ## Installation
 
 This program requires [Node.js](https://nodejs.org) to run.
@@ -183,62 +239,6 @@ Options:
                                       [array] [default: [".git","node_modules"]]
   --version  Show version number                                       [boolean]
   --help     Show help                                                 [boolean]
-```
-
-## Development
-
-### System Requirements
-
-* Node.js ≥ 13.6.0
-* Package Manager: [pnpm](https://pnpm.js.org/)
-* Git
-
-### Scripts
-
-#### Build
-
-```sh
-pnpm run build
-```
-
-#### Clean
-
-```sh
-pnpm run clean
-```
-
-#### Test
-
-##### Test Everything
-
-```sh
-pnpm test
-```
-
-##### Test Everything Without Coverage
-
-```sh
-pnpm run test:no-coverage
-```
-
-##### Test Changed Files Only
-
-```sh
-pnpm test -- --onlyChanged
-```
-
-##### Update Jest Snapshot
-
-```sh
-pnpm test -- -u
-```
-
-#### Start Node.js REPL
-
-This starts a Node.js REPL where you can import every module inside `packages/` folder.
-
-```sh
-pnpm run repl
 ```
 
 ## License
