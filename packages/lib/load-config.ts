@@ -3,6 +3,7 @@ import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '
 import { createJoinFunction } from 'better-path-join'
 import { ensureArray } from '@ts-schema-autogen/utils'
 import { Config, FSX, Path } from '@ts-schema-autogen/types'
+import { ValidatorFactory } from '@ts-schema-autogen/validate'
 import { ConfigParser } from './config-parser'
 
 import {
@@ -24,7 +25,7 @@ export interface ConfigParseError {
 
 /** Load a config file */
 export async function loadConfigFile (param: loadConfigFile.Param): Promise<loadConfigFile.Return> {
-  const { filename } = param
+  const { filename, validate } = param
   const readingResult = await param.fsx.readFile(filename, 'utf8').then(ok, err)
   if (!readingResult.tag) return new FileReadingFailure(filename, readingResult.error)
   const text = readingResult.value
@@ -34,7 +35,10 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
   for (const parser of param.parsers) {
     if (!parser.testFileName(filename)) continue
     const parseResult = parser.parseConfigText(text, filename)
-    if (parseResult.tag) return new Success(parseResult.value)
+    const validateResult = validate(parseResult.value)
+    // TODO: Convert the line below to returning a Failure
+    if (!validateResult.tag) throw new TypeError(validateResult.error.join('\n'))
+    if (parseResult.tag) return new Success(validateResult.value)
     parseErrors.push({ parser, error: parseResult.error })
   }
 
@@ -51,6 +55,9 @@ export namespace loadConfigFile {
 
     /** List of parsers to be attempted on the config file */
     readonly parsers: Iterable<ConfigParser>
+
+    /** Validate file content against JSON schema */
+    readonly validate: ValidatorFactory['Config']
   }
 
   export type Return =
@@ -79,6 +86,7 @@ const MERGE_CONFLICT_RESOLVER = ([value]: [unknown, unknown]) =>
 export class ConfigLoader {
   constructor (private readonly param: ConfigLoader.ConstructorParam) {}
   private readonly simpleCache = new Map<string, Config>()
+  private readonly validator = new ValidatorFactory()
 
   private async prvLoadConfig (
     filename: string,
@@ -98,7 +106,11 @@ export class ConfigLoader {
 
     if (!param.parsers.length) return new MissingFileParser()
 
-    const lcfRet = await loadConfigFile(addProperty(param, 'filename', filename))
+    const lcfRet = await loadConfigFile({
+      ...param,
+      validate: this.validator.Config,
+      filename
+    })
     if (lcfRet.code) return lcfRet
 
     let config = lcfRet.value

@@ -2,6 +2,7 @@ dependencies:
   '@ts-schema-autogen/status': 'link:../status'
   '@ts-schema-autogen/types': 'link:../types'
   '@ts-schema-autogen/utils': 'link:../utils'
+  '@ts-schema-autogen/validate': 'link:../validate'
   '@tsfun/object': 0.0.16
   '@tsfun/result': 0.0.15
   '@types/js-yaml': 3.12.1
@@ -120,6 +121,7 @@ specifiers:
   '@ts-schema-autogen/status': ^0.0.0
   '@ts-schema-autogen/types': ^0.0.0
   '@ts-schema-autogen/utils': ^0.0.0
+  '@ts-schema-autogen/validate': ^0.0.0
   '@tsfun/object': ^0.0.16
   '@tsfun/result': ^0.0.15
   '@types/js-yaml': ^3.12.1

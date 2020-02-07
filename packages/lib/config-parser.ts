@@ -1,5 +1,4 @@
 import { Result, tryExec } from '@tsfun/result'
-import { Config } from '@ts-schema-autogen/types'
 
 export interface ConfigParser {
   /** Name of the parser */
@@ -16,7 +15,7 @@ export interface ConfigParser {
    * @param text Content of the file in text
    * @param filename Path to the file
    */
-  parseConfigText (text: string, filename: string): Result<Config, unknown>
+  parseConfigText (text: string, filename: string): Result<unknown, unknown>
 }
 
 export async function createJsonConfigParser (name: string): Promise<ConfigParser> {

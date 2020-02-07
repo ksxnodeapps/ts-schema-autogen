@@ -28,6 +28,7 @@
     "@ts-schema-autogen/status": "^0.0.0",
     "@ts-schema-autogen/types": "^0.0.0",
     "@ts-schema-autogen/utils": "^0.0.0",
+    "@ts-schema-autogen/validate": "^0.0.0",
     "@types/js-yaml": "^3.12.1",
     "@types/node": "^13.1.8"
   }
