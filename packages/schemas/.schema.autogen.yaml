@@ -11,11 +11,5 @@ instruction:
   input:
     - ./types.ts
   list:
-    - symbol: OutputDescriptor
-      output: output-descriptor.schema.json
-    - symbol: SymbolInstruction
-      output: symbol-instruction.schema.json
-    - symbol: Instruction
-      output: instruction.schema.json
     - symbol: Config
       output: config.schema.json

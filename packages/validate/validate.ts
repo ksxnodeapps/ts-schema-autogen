@@ -2,19 +2,8 @@ import Ajv from 'ajv'
 import once from 'exec-once'
 import { Result, ok, err } from '@tsfun/result'
 import SchemaLoader from '@ts-schema-autogen/schemas'
-
-import {
-  Config,
-  Instruction,
-  OutputDescriptor,
-  SymbolInstruction
-} from '@ts-schema-autogen/types'
-export {
-  Config,
-  Instruction,
-  OutputDescriptor,
-  SymbolInstruction
-} from '@ts-schema-autogen/types'
+import { Config } from '@ts-schema-autogen/types'
+export { Config }
 
 export type ValidationError = Ajv.ErrorObject
 export type ValidationResult<Type> = Result<Type, ValidationError[]>
@@ -38,9 +27,6 @@ export class ValidatorFactory extends SchemaLoader {
   }
 
   public readonly Config = this.createValidator<Config>('config')
-  public readonly Instruction = this.createValidator<Instruction>('instruction')
-  public readonly OutputDescriptor = this.createValidator<OutputDescriptor>('output-descriptor')
-  public readonly SymbolInstruction = this.createValidator<SymbolInstruction>('symbol-instruction')
 }
 
 export default ValidatorFactory
