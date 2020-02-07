@@ -31,3 +31,4 @@ pnpm-lock*
 renovate*
 TODO.md
 .npmignore.*
+*.schema.autogen.*
