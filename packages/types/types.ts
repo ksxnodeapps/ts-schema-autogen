@@ -1,19 +1,21 @@
 import { MaybeArray } from '@ts-schema-autogen/utils'
+import { JSONSchemaForTheTypeScriptCompilerSConfigurationFile } from './generated/tsconfig'
 
 import {
-  CompilerOptions,
   PartialArgs as Settings,
   Program,
   JsonSchemaGenerator,
   Definition
 } from 'typescript-json-schema'
 export {
-  CompilerOptions,
   Settings,
   Program,
   JsonSchemaGenerator,
   Definition
 }
+
+/** TypeScript compiler options */
+export type CompilerOptions = JSONSchemaForTheTypeScriptCompilerSConfigurationFile['compilerOptions']
 
 /** Formats of output JSON schema files */
 export interface OutputDescriptor {
@@ -36,7 +38,7 @@ export interface SymbolInstruction {
 /** Shared properties of instruction interfaces */
 export interface InstructionSharedProperties {
   /** Compiler options to pass to typescript-json-schema module */
-  readonly compilerOptions?: Partial<CompilerOptions>
+  readonly compilerOptions?: CompilerOptions
   /** Settings to pass to typescript-json-schema module */
   readonly schemaSettings?: Settings
   /** TypeScript source file(s) */
