@@ -1,4 +1,4 @@
-import { Validator, Options, ValidationError } from 'jsonschema'
+import Ajv from 'ajv'
 import once from 'exec-once'
 import { Result, ok, err } from '@tsfun/result'
 import SchemaLoader from '@ts-schema-autogen/schemas'
@@ -16,25 +16,22 @@ export {
   SymbolInstruction
 } from '@ts-schema-autogen/types'
 
-export { ValidationError }
+export type ValidationError = Ajv.ErrorObject
 export type ValidationResult<Type> = Result<Type, ValidationError[]>
 
-// don't freeze this object
-// know that jsonschema will modify this object
-const VALIDATION_OPTIONS: Options = {
-  allowUnknownAttributes: true
-}
-
 export class ValidatorFactory extends SchemaLoader {
-  private readonly validator = new Validator()
+  private readonly ajv = new Ajv({
+    allErrors: true,
+    async: false
+  })
 
   private createValidator<Type> (name: string) {
-    const { validator } = this
-    const schema = once(() => this.load(name))
+    const { ajv } = this
+    const getFn = once(() => ajv.compile(this.load(name)))
 
-    function validate (instance: unknown): ValidationResult<Type> {
-      const result = validator.validate(instance, schema(), VALIDATION_OPTIONS)
-      return result.valid ? ok(instance as Type) : err(result.errors)
+    function validate (data: unknown): ValidationResult<Type> {
+      const fn = getFn()
+      return fn(data) ? ok(data as Type) : err(fn.errors!)
     }
 
     return validate

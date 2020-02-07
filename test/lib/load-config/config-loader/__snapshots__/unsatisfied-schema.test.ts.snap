@@ -5,7 +5,38 @@ exports[`error messages 1`] = `
 UnsatisfiedSchema
     path: multiple-errors/.schema.autogen.json
     error:
-        instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>
+        <data>.instruction.output should be null
+        <data>.instruction.symbol should be null
+        <data>.instruction.compilerOptions.allowJs should be boolean
+        <data>.instruction.compilerOptions.checkJs should be boolean
+        <data>.instruction.compilerOptions.esModuleInterop should be boolean
+        <data>.instruction.schemaSettings.excludePrivate should be boolean
+        <data>.instruction.schemaSettings.defaultNumberType should be equal to one of the allowed values
+            allowed values: [ 'integer', 'number' ]
+        <data>.instruction.input[1] should be string
+        <data>.instruction.input[2] should be string
+        <data>.instruction.input should be string
+        <data>.instruction.input should match some schema in anyOf
+        <data>.instruction.compilerOptions.allowJs should be boolean
+        <data>.instruction.compilerOptions.checkJs should be boolean
+        <data>.instruction.compilerOptions.esModuleInterop should be boolean
+        <data>.instruction.schemaSettings.excludePrivate should be boolean
+        <data>.instruction.schemaSettings.defaultNumberType should be equal to one of the allowed values
+            allowed values: [ 'integer', 'number' ]
+        <data>.instruction.input[1] should be string
+        <data>.instruction.input[2] should be string
+        <data>.instruction.input should be string
+        <data>.instruction.input should match some schema in anyOf
+        <data>.instruction.output should be object
+        <data>.instruction.output[2].filename should be string
+        <data>.instruction.output[2] should be string
+        <data>.instruction.output[2] should match some schema in anyOf
+        <data>.instruction.output[3] should have required property 'filename'
+        <data>.instruction.output[3] should be string
+        <data>.instruction.output[3] should match some schema in anyOf
+        <data>.instruction.output should be string
+        <data>.instruction.output should match some schema in anyOf
+        <data>.instruction should match some schema in anyOf
 "
 `;
 
@@ -13,59 +44,269 @@ exports[`result matches snapshot 1`] = `
 UnsatisfiedSchema {
   "code": 12,
   "error": Array [
-    ValidationError {
-      "argument": Array [
-        "<#/definitions/MultiSymbolInstruction>",
-        "<#/definitions/SingleSymbolInstruction>",
-      ],
-      "instance": Object {
-        "compilerOptions": Object {
-          "allowJs": "invalid",
-          "checkJs": "invalid",
-          "esModuleInterop": "invalid",
-          "strict": false,
-          "strictNullChecks": true,
-        },
-        "input": Array [
-          "valid-input.ts",
-          Object {
-            "invalid": "input.ts",
-          },
-          null,
-        ],
-        "output": Array [
-          "valid-output-filename.json",
-          Object {
-            "filename": "valid-output-descriptor.json",
-          },
-          Object {
-            "filename": null,
-          },
-          Object {},
-          "invalid",
-        ],
-        "schemaSettings": Object {
-          "aliasRef": true,
-          "defaultNumberType": "invalid",
-          "excludePrivate": "invalid",
-        },
-        "symbol": "Foo",
+    Object {
+      "dataPath": ".instruction.output",
+      "keyword": "type",
+      "message": "should be null",
+      "params": Object {
+        "type": "null",
       },
-      "message": "is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
-      "name": "anyOf",
-      "property": "instance.instruction",
-      "schema": Object {
-        "anyOf": Array [
-          Object {
-            "$ref": "#/definitions/MultiSymbolInstruction",
-          },
-          Object {
-            "$ref": "#/definitions/SingleSymbolInstruction",
-          },
-        ],
-        "description": "Instruction to generate JSON schemas",
+      "schemaPath": "#/properties/output/type",
+    },
+    Object {
+      "dataPath": ".instruction.symbol",
+      "keyword": "type",
+      "message": "should be null",
+      "params": Object {
+        "type": "null",
       },
-      "stack": "instance.instruction is not any of <#/definitions/MultiSymbolInstruction>,<#/definitions/SingleSymbolInstruction>",
+      "schemaPath": "#/properties/symbol/type",
+    },
+    Object {
+      "dataPath": ".instruction.compilerOptions.allowJs",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/properties/compilerOptions/properties/allowJs/type",
+    },
+    Object {
+      "dataPath": ".instruction.compilerOptions.checkJs",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/properties/compilerOptions/properties/checkJs/type",
+    },
+    Object {
+      "dataPath": ".instruction.compilerOptions.esModuleInterop",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/properties/compilerOptions/properties/esModuleInterop/type",
+    },
+    Object {
+      "dataPath": ".instruction.schemaSettings.excludePrivate",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/definitions/Partial<Args>/properties/excludePrivate/type",
+    },
+    Object {
+      "dataPath": ".instruction.schemaSettings.defaultNumberType",
+      "keyword": "enum",
+      "message": "should be equal to one of the allowed values",
+      "params": Object {
+        "allowedValues": Array [
+          "integer",
+          "number",
+        ],
+      },
+      "schemaPath": "#/definitions/Partial<Args>/properties/defaultNumberType/enum",
+    },
+    Object {
+      "dataPath": ".instruction.input[1]",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/input/anyOf/0/items/type",
+    },
+    Object {
+      "dataPath": ".instruction.input[2]",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/input/anyOf/0/items/type",
+    },
+    Object {
+      "dataPath": ".instruction.input",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/input/anyOf/1/type",
+    },
+    Object {
+      "dataPath": ".instruction.input",
+      "keyword": "anyOf",
+      "message": "should match some schema in anyOf",
+      "params": Object {},
+      "schemaPath": "#/properties/input/anyOf",
+    },
+    Object {
+      "dataPath": ".instruction.compilerOptions.allowJs",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/properties/compilerOptions/properties/allowJs/type",
+    },
+    Object {
+      "dataPath": ".instruction.compilerOptions.checkJs",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/properties/compilerOptions/properties/checkJs/type",
+    },
+    Object {
+      "dataPath": ".instruction.compilerOptions.esModuleInterop",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/properties/compilerOptions/properties/esModuleInterop/type",
+    },
+    Object {
+      "dataPath": ".instruction.schemaSettings.excludePrivate",
+      "keyword": "type",
+      "message": "should be boolean",
+      "params": Object {
+        "type": "boolean",
+      },
+      "schemaPath": "#/definitions/Partial<Args>/properties/excludePrivate/type",
+    },
+    Object {
+      "dataPath": ".instruction.schemaSettings.defaultNumberType",
+      "keyword": "enum",
+      "message": "should be equal to one of the allowed values",
+      "params": Object {
+        "allowedValues": Array [
+          "integer",
+          "number",
+        ],
+      },
+      "schemaPath": "#/definitions/Partial<Args>/properties/defaultNumberType/enum",
+    },
+    Object {
+      "dataPath": ".instruction.input[1]",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/input/anyOf/0/items/type",
+    },
+    Object {
+      "dataPath": ".instruction.input[2]",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/input/anyOf/0/items/type",
+    },
+    Object {
+      "dataPath": ".instruction.input",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/input/anyOf/1/type",
+    },
+    Object {
+      "dataPath": ".instruction.input",
+      "keyword": "anyOf",
+      "message": "should match some schema in anyOf",
+      "params": Object {},
+      "schemaPath": "#/properties/input/anyOf",
+    },
+    Object {
+      "dataPath": ".instruction.output",
+      "keyword": "type",
+      "message": "should be object",
+      "params": Object {
+        "type": "object",
+      },
+      "schemaPath": "#/definitions/OutputDescriptor/type",
+    },
+    Object {
+      "dataPath": ".instruction.output[2].filename",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/definitions/OutputDescriptor/properties/filename/type",
+    },
+    Object {
+      "dataPath": ".instruction.output[2]",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/output/anyOf/1/items/anyOf/1/type",
+    },
+    Object {
+      "dataPath": ".instruction.output[2]",
+      "keyword": "anyOf",
+      "message": "should match some schema in anyOf",
+      "params": Object {},
+      "schemaPath": "#/properties/output/anyOf/1/items/anyOf",
+    },
+    Object {
+      "dataPath": ".instruction.output[3]",
+      "keyword": "required",
+      "message": "should have required property 'filename'",
+      "params": Object {
+        "missingProperty": "filename",
+      },
+      "schemaPath": "#/definitions/OutputDescriptor/required",
+    },
+    Object {
+      "dataPath": ".instruction.output[3]",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/output/anyOf/1/items/anyOf/1/type",
+    },
+    Object {
+      "dataPath": ".instruction.output[3]",
+      "keyword": "anyOf",
+      "message": "should match some schema in anyOf",
+      "params": Object {},
+      "schemaPath": "#/properties/output/anyOf/1/items/anyOf",
+    },
+    Object {
+      "dataPath": ".instruction.output",
+      "keyword": "type",
+      "message": "should be string",
+      "params": Object {
+        "type": "string",
+      },
+      "schemaPath": "#/properties/output/anyOf/2/type",
+    },
+    Object {
+      "dataPath": ".instruction.output",
+      "keyword": "anyOf",
+      "message": "should match some schema in anyOf",
+      "params": Object {},
+      "schemaPath": "#/properties/output/anyOf",
+    },
+    Object {
+      "dataPath": ".instruction",
+      "keyword": "anyOf",
+      "message": "should match some schema in anyOf",
+      "params": Object {},
+      "schemaPath": "#/properties/instruction/anyOf",
     },
   ],
   "path": "multiple-errors/.schema.autogen.json",

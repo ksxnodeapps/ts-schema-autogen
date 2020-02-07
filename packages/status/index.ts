@@ -303,13 +303,24 @@ extends FileSystemFailure<readonly Item[]> {
     yield Failure.indent(1) + 'path: ' + this.path
     yield Failure.indent(1) + 'error:'
     for (const item of this.error) {
-      yield * iterateIndentedLines(2, item.stack)
+      yield Failure.indent(2) + `<data>${item.dataPath} ${item.message}`
+
+      const { allowedValues } = item.params
+      if (allowedValues) {
+        yield Failure.indent(3) + 'allowed values: ' + inspect(allowedValues)
+      }
     }
   }
 }
 
 export namespace UnsatisfiedSchema {
   export interface ErrorItem {
-    readonly stack: string
+    readonly dataPath: string
+    readonly message?: string
+    readonly params: Params
+  }
+
+  interface Params {
+    readonly allowedValues?: readonly any[]
   }
 }

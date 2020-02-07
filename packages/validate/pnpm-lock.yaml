@@ -3,8 +3,8 @@ dependencies:
   '@ts-schema-autogen/types': 'link:../types'
   '@tsfun/result': 0.0.15
   '@types/node': 13.5.3
+  ajv: 6.11.0
   exec-once: 0.1.5
-  jsonschema: 1.2.5
   tslib: 1.10.0
 lockfileVersion: 5.1
 packages:
@@ -47,6 +47,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
+  /ajv/6.11.0:
+    dependencies:
+      fast-deep-equal: 3.1.1
+      fast-json-stable-stringify: 2.1.0
+      json-schema-traverse: 0.4.1
+      uri-js: 4.2.2
+    dev: false
+    resolution:
+      integrity: sha512-nCprB/0syFYy9fVYU1ox1l2KN8S9I+tziH8D4zdZuLT3N6RMlGSGt5FSTpAiHB/Whv8Qs1cWHma1aMKZyaHRKA==
   /exec-once/0.1.5:
     dependencies:
       '@types/node': 13.5.3
@@ -54,19 +63,39 @@ packages:
     dev: false
     resolution:
       integrity: sha512-JU23u+gWLMmBwZjCgrKExqiEIlzMKmniwVa/z/1nXggZa5YCKcYABn8YeRE80dQjgpIeDV9Ap4N9svtqGIoWWA==
-  /jsonschema/1.2.5:
+  /fast-deep-equal/3.1.1:
     dev: false
     resolution:
-      integrity: sha512-kVTF+08x25PQ0CjuVc0gRM9EUPb0Fe9Ln/utFOgcdxEIOHuU7ooBk/UPTd7t1M91pP35m0MU1T8M5P7vP1bRRw==
+      integrity: sha512-8UEa58QDLauDNfpbrX55Q9jrGHThw2ZMdOky5Gl1CDtVeJDPVrG4Jxx1N8jw2gkWaff5UUuX1KJd+9zGe2B+ZA==
+  /fast-json-stable-stringify/2.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==
+  /json-schema-traverse/0.4.1:
+    dev: false
+    resolution:
+      integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==
+  /punycode/2.1.1:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /uri-js/4.2.2:
+    dependencies:
+      punycode: 2.1.1
+    dev: false
+    resolution:
+      integrity: sha512-KY9Frmirql91X2Qgjry0Wd4Y+YTdrdZheS8TFwvkbLWf/G5KNJDCh6pKL5OZctEW4+0Baa5idK2ZQuELRwPznQ==
 specifiers:
   '@ts-schema-autogen/schemas': ^0.0.0
   '@ts-schema-autogen/types': ^0.0.0
   '@tsfun/result': ^0.0.15
   '@types/node': ^13.1.8
+  ajv: ^6.11.0
   exec-once: ^0.1.5
-  jsonschema: ^1.2.5
   tslib: ^1.10.0
