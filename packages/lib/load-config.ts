@@ -3,8 +3,15 @@ import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '
 import { createJoinFunction } from 'better-path-join'
 import { ensureArray } from '@ts-schema-autogen/utils'
 import { Config, FSX, Path } from '@ts-schema-autogen/types'
-import { FileReadingFailure, TextParsingFailure, CircularReference, MissingFileParser, Success } from '@ts-schema-autogen/status'
 import { ConfigParser } from './config-parser'
+
+import {
+  FileReadingFailure,
+  TextParsingFailure,
+  CircularReference,
+  MissingFileParser,
+  Success
+} from '@ts-schema-autogen/status'
 
 /** Error carried by {@link TextParsingFailure} */
 export interface ConfigParseError {
