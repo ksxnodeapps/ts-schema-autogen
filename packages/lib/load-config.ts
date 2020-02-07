@@ -3,7 +3,7 @@ import { PropertyPreference, addProperty, omit, deepMergeWithPreference } from '
 import { createJoinFunction } from 'better-path-join'
 import { ensureArray } from '@ts-schema-autogen/utils'
 import { Config, FSX, Path } from '@ts-schema-autogen/types'
-import { ValidatorFactory } from '@ts-schema-autogen/validate'
+import { ValidatorFactory, ValidationError } from '@ts-schema-autogen/validate'
 import { ConfigParser } from './config-parser'
 
 import {
@@ -11,6 +11,7 @@ import {
   TextParsingFailure,
   CircularReference,
   MissingFileParser,
+  UnsatisfiedSchema,
   Success
 } from '@ts-schema-autogen/status'
 
@@ -36,8 +37,7 @@ export async function loadConfigFile (param: loadConfigFile.Param): Promise<load
     if (!parser.testFileName(filename)) continue
     const parseResult = parser.parseConfigText(text, filename)
     const validateResult = validate(parseResult.value)
-    // TODO: Convert the line below to returning a Failure
-    if (!validateResult.tag) throw new TypeError(validateResult.error.join('\n'))
+    if (!validateResult.tag) return new UnsatisfiedSchema(filename, validateResult.error)
     if (parseResult.tag) return new Success(validateResult.value)
     parseErrors.push({ parser, error: parseResult.error })
   }
@@ -63,6 +63,7 @@ export namespace loadConfigFile {
   export type Return =
     FileReadingFailure |
     TextParsingFailure<ConfigParseError> |
+    UnsatisfiedSchema<ValidationError> |
     Success<Config>
 }
 
@@ -149,5 +150,6 @@ export namespace ConfigLoader {
     TextParsingFailure<ConfigParseError> |
     MissingFileParser |
     CircularReference |
+    UnsatisfiedSchema<ValidationError> |
     Success<Config>
 }

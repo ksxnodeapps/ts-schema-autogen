@@ -1,5 +1,6 @@
 import { addProperty, objectExtends } from '@tsfun/object'
 import { ensureArray, concatIterable, getIndent } from '@ts-schema-autogen/utils'
+import { ValidationError } from '@ts-schema-autogen/validate'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
 import { ConfigParseError, ConfigLoader } from './load-config'
@@ -26,6 +27,7 @@ import {
   OutdatedFile,
   MissingFileParser,
   GeneratorConstructingFailure,
+  UnsatisfiedSchema,
   Success
 } from '@ts-schema-autogen/status'
 
@@ -276,6 +278,7 @@ export namespace SchemaWriter {
     OutputFileConflict |
     MissingFileParser |
     GeneratorConstructingFailure<Settings | undefined> |
+    UnsatisfiedSchema<ValidationError> |
     Success<Iterable<FileWritingInstruction<Definition>>>
 
   type SingleConfigFailure<Definition> =
