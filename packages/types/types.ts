@@ -49,14 +49,14 @@ export interface MultiSymbolInstruction extends InstructionSharedProperties {
   readonly list?: readonly SymbolInstruction[]
 
   // omitted properties
-  readonly output?: undefined
-  readonly symbol?: undefined
+  readonly output?: null
+  readonly symbol?: null
 }
 
 /** Instruction for a single symbol */
 export interface SingleSymbolInstruction extends InstructionSharedProperties, SymbolInstruction {
   // omitted properties
-  readonly list?: undefined
+  readonly list?: null
 }
 
 /** Instruction to generate JSON schemas */

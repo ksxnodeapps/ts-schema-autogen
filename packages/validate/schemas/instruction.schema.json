@@ -55,10 +55,10 @@
           }
         },
         "output": {
-          "type": "undefined"
+          "type": "null"
         },
         "symbol": {
-          "type": "undefined"
+          "type": "null"
         },
         "compilerOptions": {
           "description": "Compiler options to pass to typescript-json-schema module",
@@ -506,7 +506,7 @@
       "type": "object",
       "properties": {
         "list": {
-          "type": "undefined"
+          "type": "null"
         },
         "compilerOptions": {
           "description": "Compiler options to pass to typescript-json-schema module",
