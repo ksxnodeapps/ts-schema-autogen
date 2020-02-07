@@ -2,6 +2,7 @@ dependencies:
   '@ts-schema-autogen/types': 'link:../types'
   '@tsfun/result': 0.0.15
   '@types/node': 13.5.3
+  exec-once: 0.1.5
   jsonschema: 1.2.5
   tslib: 1.10.0
 lockfileVersion: 5.1
@@ -45,6 +46,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
+  /exec-once/0.1.5:
+    dependencies:
+      '@types/node': 13.5.3
+      tslib: 1.10.0
+    dev: false
+    resolution:
+      integrity: sha512-JU23u+gWLMmBwZjCgrKExqiEIlzMKmniwVa/z/1nXggZa5YCKcYABn8YeRE80dQjgpIeDV9Ap4N9svtqGIoWWA==
   /jsonschema/1.2.5:
     dev: false
     resolution:
@@ -57,5 +65,6 @@ specifiers:
   '@ts-schema-autogen/types': ^0.0.0
   '@tsfun/result': ^0.0.15
   '@types/node': ^13.1.8
+  exec-once: ^0.1.5
   jsonschema: ^1.2.5
   tslib: ^1.10.0

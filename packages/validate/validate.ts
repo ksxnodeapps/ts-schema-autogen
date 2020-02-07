@@ -1,4 +1,5 @@
 import { Validator, Options, ValidationError } from 'jsonschema'
+import once from 'exec-once'
 import { Result, ok, err } from '@tsfun/result'
 import SchemaLoader from './load'
 
@@ -28,10 +29,10 @@ export class ValidatorFactory extends SchemaLoader {
 
   private createValidator<Type> (name: string) {
     const { validator } = this
-    const schema = this.load(name)
+    const schema = once(() => this.load(name))
 
     function validate (instance: unknown): ValidationResult<Type> {
-      const result = validator.validate(instance, schema, VALIDATION_OPTIONS)
+      const result = validator.validate(instance, schema(), VALIDATION_OPTIONS)
       return result.valid ? ok(instance as Type) : err(result.errors)
     }
 
