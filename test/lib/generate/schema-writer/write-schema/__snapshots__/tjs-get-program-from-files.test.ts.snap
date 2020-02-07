@@ -4,13 +4,19 @@ exports[`snapshot 1`] = `
 Array [
   Array [
     Array [],
-    "compilerOptions",
+    Object {
+      "strict": true,
+      "strictNullChecks": true,
+    },
   ],
   Array [
     Array [
       "input-filename/input.ts",
     ],
-    "compilerOptions",
+    Object {
+      "strict": true,
+      "strictNullChecks": true,
+    },
   ],
   Array [
     Array [
@@ -18,7 +24,10 @@ Array [
       "input-array/input/def.ts",
       "input-array/input/ghi.ts",
     ],
-    "compilerOptions",
+    Object {
+      "strict": true,
+      "strictNullChecks": true,
+    },
   ],
 ]
 `;

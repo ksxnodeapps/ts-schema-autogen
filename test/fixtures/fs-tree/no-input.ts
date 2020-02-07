@@ -8,7 +8,10 @@ export const fsTree: FsTree = {
       input: undefined,
       symbol: 'Foo',
       output: 'no-input.schema.json',
-      compilerOptions: 'compilerOptions' as any
+      compilerOptions: {
+        allowJs: true,
+        checkJs: false
+      }
     }
   }),
   'empty-string-input.schema.autogen.json': file({
@@ -16,7 +19,10 @@ export const fsTree: FsTree = {
       input: '',
       symbol: 'Bar',
       output: 'empty-string-input.schema.json',
-      compilerOptions: 'compilerOptions' as any
+      compilerOptions: {
+        allowJs: false,
+        checkJs: true
+      }
     }
   })
 }
