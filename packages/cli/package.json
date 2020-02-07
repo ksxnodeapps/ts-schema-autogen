@@ -1,7 +1,7 @@
 {
   "name": "@ts-schema-autogen/cli",
   "version": "0.0.0",
-  "description": "Read instruction files and generate json schema files",
+  "description": "Read config files and generate json schema files",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/ksxnodeapps/ts-schema-autogen#readme",
