@@ -16,6 +16,7 @@ export {
   SymbolInstruction
 } from '@ts-schema-autogen/types'
 
+export { ValidationError }
 export type ValidationResult<Type> = Result<Type, ValidationError[]>
 
 // don't freeze this object
