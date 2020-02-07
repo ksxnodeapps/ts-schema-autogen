@@ -307,7 +307,11 @@ extends FileSystemFailure<readonly Item[]> {
 
       const { allowedValues } = item.params
       if (allowedValues) {
-        yield Failure.indent(3) + 'allowed values: ' + inspect(allowedValues)
+        const allowedValuesString = inspect(allowedValues, {
+          compact: true,
+          breakLength: Infinity
+        })
+        yield Failure.indent(3) + 'allowed values: ' + allowedValuesString
       }
     }
   }
