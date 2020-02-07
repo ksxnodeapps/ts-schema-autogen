@@ -2,9 +2,9 @@ instruction:
   compilerOptions:
     strictNullChecks: true
     strict: true
-    target: es2018
+    target: ES2018
     noEmit: true
-    lib: [esnext]
+    lib: [ESNext]
   schemaSettings:
     required: true
   input:
