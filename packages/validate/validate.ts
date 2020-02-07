@@ -30,10 +30,12 @@ export class ValidatorFactory extends SchemaLoader {
     const { validator } = this
     const schema = this.load(name)
 
-    return (instance: unknown): ValidationResult<Type> => {
+    function validate (instance: unknown): ValidationResult<Type> {
       const result = validator.validate(instance, schema, VALIDATION_OPTIONS)
       return result.valid ? ok(instance as Type) : err(result.errors)
     }
+
+    return validate
   }
 
   public readonly validateConfig = this.createValidator<Config>('config')
