@@ -1,0 +1,398 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@ts-schema-autogen/status — Reference</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@ts-schema-autogen/status — Reference</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@ts-schema-autogen/status — Reference</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#typescript-schema-automatic-generator" id="typescript-schema-automatic-generator" style="color: inherit; text-decoration: none;">
+					<h1>TypeScript Schema Automatic Generator</h1>
+				</a>
+				<p>Read config files and generate json schema files</p>
+				<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+					<h2>Development</h2>
+				</a>
+				<a href="#system-requirements" id="system-requirements" style="color: inherit; text-decoration: none;">
+					<h3>System Requirements</h3>
+				</a>
+				<ul>
+					<li>Node.js ≥ 13.6.0</li>
+					<li>Package Manager: <a href="https://pnpm.js.org/">pnpm</a></li>
+					<li>Git</li>
+				</ul>
+				<a href="#scripts" id="scripts" style="color: inherit; text-decoration: none;">
+					<h3>Scripts</h3>
+				</a>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h4>Build</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run build</code></pre>
+				<a href="#clean" id="clean" style="color: inherit; text-decoration: none;">
+					<h4>Clean</h4>
+				</a>
+				<pre><code class="language-sh">pnpm run clean</code></pre>
+				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
+					<h4>Test</h4>
+				</a>
+				<a href="#test-everything" id="test-everything" style="color: inherit; text-decoration: none;">
+					<h5>Test Everything</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span></code></pre>
+				<a href="#test-everything-without-coverage" id="test-everything-without-coverage" style="color: inherit; text-decoration: none;">
+					<h5>Test Everything Without Coverage</h5>
+				</a>
+				<pre><code class="language-sh">pnpm run <span class="hljs-built_in">test</span>:no-coverage</code></pre>
+				<a href="#test-changed-files-only" id="test-changed-files-only" style="color: inherit; text-decoration: none;">
+					<h5>Test Changed Files Only</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- --onlyChanged</code></pre>
+				<a href="#update-jest-snapshot" id="update-jest-snapshot" style="color: inherit; text-decoration: none;">
+					<h5>Update Jest Snapshot</h5>
+				</a>
+				<pre><code class="language-sh">pnpm <span class="hljs-built_in">test</span> -- -u</code></pre>
+				<a href="#start-nodejs-repl" id="start-nodejs-repl" style="color: inherit; text-decoration: none;">
+					<h4>Start Node.js REPL</h4>
+				</a>
+				<p>This starts a Node.js REPL where you can import every module inside <code>packages/</code> folder.</p>
+				<pre><code class="language-sh">pnpm run repl</code></pre>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<p>This program requires <a href="https://nodejs.org">Node.js</a> to run.</p>
+				<pre><code class="language-sh">npm install --global @ts-schema-autogen/cli</code></pre>
+				<a href="#usages" id="usages" style="color: inherit; text-decoration: none;">
+					<h2>Usages</h2>
+				</a>
+				<p>The program will scan through directory tree from working directory and search for <a href="#config-file">config files</a> whose names end with <code>.schema.autogen.{json,yaml}</code> to perform actions.</p>
+				<a href="#config-file" id="config-file" style="color: inherit; text-decoration: none;">
+					<h3>Config File</h3>
+				</a>
+				<p>A config file is a JSON or YAML file that satisfies <a href="https://github.com/ksxnodeapps/ts-schema-autogen/blob/master/packages/types/types.ts#L72-L77">the <code>Config</code> type</a> or <a href="https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json">config.schema.json JSON schema</a>.</p>
+				<p>Config files whose names end with either <code>.schema.autogen.json</code> or <code>.schema.autogen.yaml</code> will be scanned by <a href="cli-commands"><code>ts-schema-autogen</code></a>, others will be skipped.</p>
+				<p>A config file can inherit <code>compilerOptions</code> and <code>schemaSettings</code> from other config files via <code>extends</code> property.</p>
+				<p>If your editor support IntelliSense for JSON schemas (such as Visual Studio Code), it is recommended that you have <code>$schema</code> property set to <code>https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json</code>. Alternatively, you can use <code>npm</code> to install <code>@ts-schema-autogen/schemas</code> and set <code>$schema</code> property to <code>./node_modules/@ts-schema-autogen/schemas/config.schema.json</code>.</p>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h4>Examples</h4>
+				</a>
+				<a href="#read-1-symbol-from-1-typescript-file-and-create-1-schema-file" id="read-1-symbol-from-1-typescript-file-and-create-1-schema-file" style="color: inherit; text-decoration: none;">
+					<h5>Read 1 symbol from 1 TypeScript file and create 1 schema file</h5>
+				</a>
+				<p><strong>input.ts</strong></p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> MyType {
+  foo: <span class="hljs-number">123</span>
+  bar: <span class="hljs-number">456</span>
+}</code></pre>
+				<p><strong>.schema.autogen.json</strong></p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json"</span>,
+  <span class="hljs-attr">"instruction"</span>: {
+    <span class="hljs-attr">"compilerOptions"</span>: {
+      <span class="hljs-attr">"strictNullChecks"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"strict"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"target"</span>: <span class="hljs-string">"ES2018"</span>,
+      <span class="hljs-attr">"noEmit"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"lib"</span>: [<span class="hljs-string">"ESNext"</span>]
+    },
+    <span class="hljs-attr">"schemaSettings"</span>: {
+      <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">"input"</span>: <span class="hljs-string">"input.ts"</span>,
+    <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"MyType"</span>,
+    <span class="hljs-attr">"output"</span>: <span class="hljs-string">"output.json"</span>
+  }
+}</code></pre>
+				<a href="#read-2-symbols-from-2-typescript-files-and-create-2-schema-files" id="read-2-symbols-from-2-typescript-files-and-create-2-schema-files" style="color: inherit; text-decoration: none;">
+					<h5>Read 2 symbols from 2 TypeScript files and create 2 schema files</h5>
+				</a>
+				<p><strong>foo.ts</strong></p>
+				<pre><code class="language-typescript"><span class="hljs-comment">/// &lt;reference path="./bar.ts" /&gt;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Foo {
+  readonly bar?: Bar
+}</code></pre>
+				<p><strong>bar.ts</strong></p>
+				<pre><code class="language-typescript"><span class="hljs-comment">/// &lt;reference path="./foo.ts" /&gt;</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> Bar {
+  readonly foo?: Foo
+}</code></pre>
+				<p><strong>.schema.autogen.json</strong></p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json"</span>,
+  <span class="hljs-attr">"instruction"</span>: {
+    <span class="hljs-attr">"compilerOptions"</span>: {
+      <span class="hljs-attr">"strictNullChecks"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"strict"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"target"</span>: <span class="hljs-string">"ES2018"</span>,
+      <span class="hljs-attr">"noEmit"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"lib"</span>: [<span class="hljs-string">"ESNext"</span>]
+    },
+    <span class="hljs-attr">"schemaSettings"</span>: {
+      <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+    },
+    <span class="hljs-attr">"input"</span>: [
+      <span class="hljs-string">"foo.ts"</span>,
+      <span class="hljs-string">"bar.ts"</span>
+    ],
+    <span class="hljs-attr">"list"</span>: [
+      {
+        <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"Foo"</span>,
+        <span class="hljs-attr">"output"</span>: <span class="hljs-string">"foo.schema.json"</span>
+      },
+      {
+        <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"Bar"</span>,
+        <span class="hljs-attr">"output"</span>: <span class="hljs-string">"bar.schema.json"</span>
+      }
+    ]
+  }
+}</code></pre>
+				<a href="#if-you-have-multiple-config-files-you-may-want-to-use-codeextendscode-to-inherit-codecompileroptionscode-and-codeschemasettingscode-from-a-common-source" id="if-you-have-multiple-config-files-you-may-want-to-use-codeextendscode-to-inherit-codecompileroptionscode-and-codeschemasettingscode-from-a-common-source" style="color: inherit; text-decoration: none;">
+					<h5>If you have multiple config files, you may want to use <code>extends</code> to inherit <code>compilerOptions</code> and <code>schemaSettings</code> from a common source</h5>
+				</a>
+				<p><strong>settings.json</strong></p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json"</span>,
+  <span class="hljs-attr">"instruction"</span>: {
+    <span class="hljs-attr">"compilerOptions"</span>: {
+      <span class="hljs-attr">"strictNullChecks"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"strict"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"target"</span>: <span class="hljs-string">"ES2018"</span>,
+      <span class="hljs-attr">"noEmit"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"lib"</span>: [<span class="hljs-string">"ESNext"</span>]
+    },
+    <span class="hljs-attr">"schemaSettings"</span>: {
+      <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+    }
+  }
+}</code></pre>
+				<p><strong>foo.schema.autogen.json</strong></p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json"</span>,
+  <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"settings.json"</span>,
+  <span class="hljs-attr">"instruction"</span>: {
+    <span class="hljs-attr">"input"</span>: <span class="hljs-string">"foo.ts"</span>,
+    <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"Foo"</span>,
+    <span class="hljs-attr">"output"</span>: <span class="hljs-string">"foo.schema.json"</span>
+  }
+}</code></pre>
+				<p><strong>bar.schema.autogen.json</strong></p>
+				<pre><code class="language-json">{
+  <span class="hljs-attr">"$schema"</span>: <span class="hljs-string">"https://raw.githubusercontent.com/ksxnodeapps/ts-schema-autogen/master/packages/schemas/config.schema.json"</span>,
+  <span class="hljs-attr">"extends"</span>: <span class="hljs-string">"settings.json"</span>,
+  <span class="hljs-attr">"instruction"</span>: {
+    <span class="hljs-attr">"input"</span>: <span class="hljs-string">"bar.ts"</span>,
+    <span class="hljs-attr">"symbol"</span>: <span class="hljs-string">"Bar"</span>,
+    <span class="hljs-attr">"output"</span>: <span class="hljs-string">"bar.schema.json"</span>
+  }
+}</code></pre>
+				<a href="#cli-commands" id="cli-commands" style="color: inherit; text-decoration: none;">
+					<h3>CLI Commands</h3>
+				</a>
+				<pre><code><span class="hljs-keyword">ts</span>-schema-autogen <span class="hljs-symbol">&lt;command&gt;</span>
+
+Command<span class="hljs-variable">s:</span>
+  <span class="hljs-keyword">ts</span>-schema-autogen test      Check <span class="hljs-keyword">for</span> out-of-date schema <span class="hljs-keyword">files</span>
+  <span class="hljs-keyword">ts</span>-schema-autogen generate  Generate schema <span class="hljs-keyword">files</span>
+  <span class="hljs-keyword">ts</span>-schema-autogen clean     Delete generated schema <span class="hljs-keyword">files</span>
+
+Option<span class="hljs-variable">s:</span>
+  --<span class="hljs-keyword">version</span>  Show <span class="hljs-keyword">version</span> <span class="hljs-keyword">number</span>                                       [boolean]
+  --<span class="hljs-keyword">help</span>     Show <span class="hljs-keyword">help</span>                                                 [boolean]
+  --pattern  Regular expression that matches basename of config <span class="hljs-keyword">files</span>
+                    [<span class="hljs-built_in">string</span>] [defaul<span class="hljs-variable">t:</span> <span class="hljs-string">"\.schema\.autogen(\.(json|yaml|yml))?$"</span>]
+  --ignored  Name of directories <span class="hljs-keyword">to</span> <span class="hljs-keyword">be</span> ignored
+                                      [array] [defaul<span class="hljs-variable">t:</span> [<span class="hljs-string">".git"</span>,<span class="hljs-string">"node_modules"</span>]]
+  --<span class="hljs-keyword">version</span>  Show <span class="hljs-keyword">version</span> <span class="hljs-keyword">number</span>                                       [boolean]
+  --<span class="hljs-keyword">help</span>     Show <span class="hljs-keyword">help</span>                                                 [boolean]</code></pre>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p><a href="https://git.io/Jvntb">MIT</a> © <a href="https://github.com/KSXGitHub">Hoàng Văn Khải</a></p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/status.html" class="tsd-kind-icon">Status</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/circularreference.html" class="tsd-kind-icon">Circular<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/failure.html" class="tsd-kind-icon">Failure</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/filereadingfailure.html" class="tsd-kind-icon">File<wbr>Reading<wbr>Failure</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/filesystemfailure.html" class="tsd-kind-icon">File<wbr>System<wbr>Failure</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/filetreeremovalfailure.html" class="tsd-kind-icon">File<wbr>Tree<wbr>Removal<wbr>Failure</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/filewritingfailure.html" class="tsd-kind-icon">File<wbr>Writing<wbr>Failure</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/generatorconstructingfailure.html" class="tsd-kind-icon">Generator<wbr>Constructing<wbr>Failure</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/missingfileparser.html" class="tsd-kind-icon">Missing<wbr>File<wbr>Parser</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/multiplefailures.html" class="tsd-kind-icon">Multiple<wbr>Failures</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/outdatedfile.html" class="tsd-kind-icon">Outdated<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/outputfileconflict.html" class="tsd-kind-icon">Output<wbr>File<wbr>Conflict</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/resultbase.html" class="tsd-kind-icon">Result<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/success.html" class="tsd-kind-icon">Success</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/textparsingfailure.html" class="tsd-kind-icon">Text<wbr>Parsing<wbr>Failure</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/unsatisfiedschema.html" class="tsd-kind-icon">Unsatisfied<wbr>Schema</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
