@@ -97,7 +97,7 @@ MultipleFailures {
       "value": undefined,
     },
     TextParsingFailure {
-      "code": 6,
+      "code": 7,
       "error": Array [
         Object {
           "error": [SyntaxError: Unexpected token e in JSON at position 1],

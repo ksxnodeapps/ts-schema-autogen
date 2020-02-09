@@ -3,11 +3,11 @@
 exports[`multiple failures error messages 1`] = `
 "
 MultipleFailures
-    FileTreeRemovalFailure
+    FileRemovalFailure
         path: container/bar.unremovable
         error:
             RemovalError: File or directory 'container/bar.unremovable' cannot be deleted
-    FileTreeRemovalFailure
+    FileRemovalFailure
         path: container/baz.unremovable
         error:
             RemovalError: File or directory 'container/baz.unremovable' cannot be deleted
@@ -18,14 +18,14 @@ exports[`multiple failures returns a result matching snapshot 1`] = `
 MultipleFailures {
   "code": 2,
   "error": Array [
-    FileTreeRemovalFailure {
-      "code": 7,
+    FileRemovalFailure {
+      "code": 6,
       "error": [RemovalError: File or directory 'container/bar.unremovable' cannot be deleted],
       "path": "container/bar.unremovable",
       "value": undefined,
     },
-    FileTreeRemovalFailure {
-      "code": 7,
+    FileRemovalFailure {
+      "code": 6,
       "error": [RemovalError: File or directory 'container/baz.unremovable' cannot be deleted],
       "path": "container/baz.unremovable",
       "value": undefined,
@@ -37,7 +37,7 @@ MultipleFailures {
 
 exports[`one failure error messages 1`] = `
 "
-FileTreeRemovalFailure
+FileRemovalFailure
     path: container/bar.unremovable
     error:
         RemovalError: File or directory 'container/bar.unremovable' cannot be deleted
@@ -45,8 +45,8 @@ FileTreeRemovalFailure
 `;
 
 exports[`one failure returns a result matching snapshot 1`] = `
-FileTreeRemovalFailure {
-  "code": 7,
+FileRemovalFailure {
+  "code": 6,
   "error": [RemovalError: File or directory 'container/bar.unremovable' cannot be deleted],
   "path": "container/bar.unremovable",
   "value": undefined,

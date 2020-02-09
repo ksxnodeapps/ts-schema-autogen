@@ -40,7 +40,7 @@ it('returns a Success', async () => {
   expect(result).toBeInstanceOf(Success)
 })
 
-it('calls remove', async () => {
+it('calls unlink', async () => {
   const { fsx } = await setup(configFiles)
-  expect(fsx.remove.mock.calls).toMatchSnapshot()
+  expect(fsx.unlink.mock.calls).toMatchSnapshot()
 })

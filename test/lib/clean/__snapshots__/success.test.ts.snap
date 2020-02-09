@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`calls remove 1`] = `
+exports[`calls unlink 1`] = `
 Array [
   Array [
     "yaml/single-symbol/single-output/output-filename/output.schema.json",

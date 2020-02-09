@@ -43,9 +43,9 @@ it('returns Status.Success', async () => {
   expect(result).toBe(Status.Success)
 })
 
-it('calls fsx.remove', async () => {
+it('calls fsx.unlink', async () => {
   const { fsx } = await setup()
-  expect(fsx.remove.mock.calls).toMatchSnapshot()
+  expect(fsx.unlink.mock.calls).toMatchSnapshot()
 })
 
 it('calls console.info', async () => {
@@ -60,7 +60,7 @@ it('does not call console.error', async () => {
 
 it('removed paths', async () => {
   const { fsx } = await setup()
-  expect(fsx.remove.mock.calls.map(x => x[0])).toMatchSnapshot()
+  expect(fsx.unlink.mock.calls.map(x => x[0])).toMatchSnapshot()
 })
 
 it('messages', async () => {

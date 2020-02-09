@@ -5,14 +5,14 @@ import { FakeFileSystem, FakePath, printResult } from '@tools/test-utils'
 
 import {
   Status,
-  FileTreeRemovalFailure,
+  FileRemovalFailure,
   MultipleFailures,
   clean,
   createJsonConfigParser
 } from '@ts-schema-autogen/lib'
 
 class MockedFileSystem extends FakeFileSystem {
-  public readonly remove = jest.fn(
+  public readonly unlink = jest.fn(
     (path: string) => path.endsWith('.removable')
       ? Promise.resolve()
       : Promise.reject(new RemovalError(path))
@@ -57,15 +57,15 @@ describe('one failure', () => {
     expect(result).toMatchSnapshot()
   })
 
-  it('returns a FileTreeRemovalFailure', async () => {
+  it('returns a FileRemovalFailure', async () => {
     const { result } = await setup(configFiles)
-    expect(result).toBeInstanceOf(FileTreeRemovalFailure)
+    expect(result).toBeInstanceOf(FileRemovalFailure)
   })
 
   it('returns a result containing expected properties', async () => {
     const { result } = await setup(configFiles)
     expect(result).toMatchObject({
-      code: Status.FileTreeRemovalFailure,
+      code: Status.FileRemovalFailure,
       path: expect.any(String),
       error: expect.any(RemovalError)
     })
@@ -78,7 +78,7 @@ describe('one failure', () => {
 
   it('status code', async () => {
     const { result } = await setup(configFiles)
-    expect(result.getStatusCode()).toBe(Status.FileTreeRemovalFailure)
+    expect(result.getStatusCode()).toBe(Status.FileRemovalFailure)
   })
 })
 
@@ -105,12 +105,12 @@ describe('multiple failures', () => {
       code: Status.MultipleFailures,
       error: [
         {
-          code: Status.FileTreeRemovalFailure,
+          code: Status.FileRemovalFailure,
           path: expect.any(String),
           error: expect.any(RemovalError)
         },
         {
-          code: Status.FileTreeRemovalFailure,
+          code: Status.FileRemovalFailure,
           path: expect.any(String),
           error: expect.any(RemovalError)
         }
@@ -125,6 +125,6 @@ describe('multiple failures', () => {
 
   it('status code', async () => {
     const { result } = await setup(configFiles)
-    expect(result.getStatusCode()).toBe(Status.FileTreeRemovalFailure)
+    expect(result.getStatusCode()).toBe(Status.FileRemovalFailure)
   })
 })

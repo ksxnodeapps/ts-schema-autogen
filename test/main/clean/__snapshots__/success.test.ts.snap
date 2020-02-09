@@ -8,7 +8,7 @@ Array [
 ]
 `;
 
-exports[`calls fsx.remove 1`] = `
+exports[`calls fsx.unlink 1`] = `
 Array [
   Array [
     "wdir/yaml/single-symbol/single-output/output-filename/output.schema.json",
