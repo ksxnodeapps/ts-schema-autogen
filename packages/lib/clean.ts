@@ -14,8 +14,8 @@ export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
   const join = createJoinFunction(param.path)
   function handleOutputDescriptor (desc: OutputDescriptor): cleanUnit.ReturnItem {
     const filename = join(directory, desc.filename)
-    const promise = unlink(filename)
-    return { filename, promise }
+    const execute = () => unlink(filename)
+    return { filename, execute }
   }
   const result = listSymbolInstruction(param.instruction)
     .map(instruction => ensureOutputDescriptorArray(instruction.output))
@@ -43,8 +43,8 @@ export namespace cleanUnit {
     /** Path to the deleted file */
     readonly filename: string
 
-    /** Promise that resolves when deletion completes */
-    readonly promise: Promise<void>
+    /** Perform deletion */
+    readonly execute: () => Promise<void>
   }
 
   export type Return = ReturnItem[]
@@ -54,6 +54,7 @@ export namespace cleanUnit {
 export async function clean (param: clean.Param): Promise<clean.Return> {
   const { fsx, path } = param
   const configLoader = new ConfigLoader(param)
+  const deleteFunctions: Array<() => Promise<void>> = []
   const errors: Array<
     Exclude<ConfigLoader.LoaderReturn, Success<any>> |
     FileRemovalFailure
@@ -66,20 +67,26 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
       continue
     }
 
-    const removalResults = cleanUnit({
+    const removalInstructions = cleanUnit({
       fsx,
       path,
       directory: path.dirname(configFile),
       instruction: configResult.value.instruction
     })
 
-    for (const { filename, promise } of removalResults) {
-      await promise.catch(error =>
+    for (const { filename, execute } of removalInstructions) {
+      const fn = () => execute().catch(error => {
         errors.push(new FileRemovalFailure(filename, error))
-      )
+      })
+      deleteFunctions.push(fn)
     }
   }
 
+  // Problem: With eager deletion, `fast-traverse` calls `stat` upon files that no longer exist
+  // Solution: Use lazy method of deletion
+  // TODO: Add test to detect this problem
+  // TODO: Fix fastTraverse
+  await Promise.all(deleteFunctions.map(fn => fn()))
   return MultipleFailures.maybe(errors) || new Success(undefined)
 }
 
