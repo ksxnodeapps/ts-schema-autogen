@@ -30,6 +30,13 @@ MultipleFailures
               errno: -2,
               code: 'ENOENT'
             }
+    TextParsingFailure
+        JSON Parser
+            SyntaxError: Unexpected token e in JSON at position 1
+        YAML Parser
+            YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"text-parsing-failure/invalid-config\\" at line 1, column 11:
+                neither: a: valid: yaml: nor: a: valid: json:
+                          ^
     FileRemovalFailure
         path: file-removal-failure/container/bar.unremovable
         error:
@@ -46,13 +53,6 @@ MultipleFailures
         path: output-file-conflict/obvious-conflicts/shared-output.json
         error:
             RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted
-    TextParsingFailure
-        JSON Parser
-            SyntaxError: Unexpected token e in JSON at position 1
-        YAML Parser
-            YAMLException: incomplete explicit mapping pair; a key node is missed; or followed by a non-tabulated empty line in \\"text-parsing-failure/invalid-config\\" at line 1, column 11:
-                neither: a: valid: yaml: nor: a: valid: json:
-                          ^
     FileRemovalFailure
         path: valid-config-only/yaml/single-symbol/single-output/output-filename/output.schema.json
         error:
@@ -132,30 +132,6 @@ MultipleFailures {
       "path": "file-reading-failure/not-exist-0.json",
       "value": undefined,
     },
-    FileRemovalFailure {
-      "code": 6,
-      "error": [RemovalError: File or directory 'file-removal-failure/container/bar.unremovable' cannot be deleted],
-      "path": "file-removal-failure/container/bar.unremovable",
-      "value": undefined,
-    },
-    FileRemovalFailure {
-      "code": 6,
-      "error": [RemovalError: File or directory 'file-removal-failure/container/baz.unremovable' cannot be deleted],
-      "path": "file-removal-failure/container/baz.unremovable",
-      "value": undefined,
-    },
-    FileRemovalFailure {
-      "code": 6,
-      "error": [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted],
-      "path": "output-file-conflict/obvious-conflicts/shared-output.json",
-      "value": undefined,
-    },
-    FileRemovalFailure {
-      "code": 6,
-      "error": [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted],
-      "path": "output-file-conflict/obvious-conflicts/shared-output.json",
-      "value": undefined,
-    },
     TextParsingFailure {
       "code": 7,
       "error": Array [
@@ -178,6 +154,30 @@ MultipleFailures {
           },
         },
       ],
+      "value": undefined,
+    },
+    FileRemovalFailure {
+      "code": 6,
+      "error": [RemovalError: File or directory 'file-removal-failure/container/bar.unremovable' cannot be deleted],
+      "path": "file-removal-failure/container/bar.unremovable",
+      "value": undefined,
+    },
+    FileRemovalFailure {
+      "code": 6,
+      "error": [RemovalError: File or directory 'file-removal-failure/container/baz.unremovable' cannot be deleted],
+      "path": "file-removal-failure/container/baz.unremovable",
+      "value": undefined,
+    },
+    FileRemovalFailure {
+      "code": 6,
+      "error": [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted],
+      "path": "output-file-conflict/obvious-conflicts/shared-output.json",
+      "value": undefined,
+    },
+    FileRemovalFailure {
+      "code": 6,
+      "error": [RemovalError: File or directory 'output-file-conflict/obvious-conflicts/shared-output.json' cannot be deleted],
+      "path": "output-file-conflict/obvious-conflicts/shared-output.json",
       "value": undefined,
     },
     FileRemovalFailure {
