@@ -14,7 +14,7 @@ packages:
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
 specifiers:
-  '@ts-schema-autogen/types': ^0.0.0
+  '@ts-schema-autogen/types': ^0.1.0
   '@ts-schema-autogen/utils': ^0.0.0
   '@types/node': ^13.7.0
   tslib: ^1.10.0

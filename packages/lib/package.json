@@ -1,6 +1,6 @@
 {
   "name": "@ts-schema-autogen/lib",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Functions and classes for @ts-schema-autogen",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -25,10 +25,10 @@
     "better-path-join": "^0.0.0",
     "fast-traverse": "^0.1.4",
     "tslib": "^1.10.0",
-    "@ts-schema-autogen/status": "^0.0.0",
-    "@ts-schema-autogen/types": "^0.0.0",
+    "@ts-schema-autogen/status": "^0.1.0",
+    "@ts-schema-autogen/types": "^0.1.0",
     "@ts-schema-autogen/utils": "^0.0.0",
-    "@ts-schema-autogen/validate": "^0.0.0",
+    "@ts-schema-autogen/validate": "^0.1.0",
     "@types/js-yaml": "^3.12.2",
     "@types/node": "^13.7.0"
   }

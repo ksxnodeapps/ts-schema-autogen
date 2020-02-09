@@ -1,6 +1,6 @@
 {
   "name": "@ts-schema-autogen/schemas",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "JSON schemas used by ts-schema-autogen",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "dependencies": {
     "exec-once": "^0.1.5",
     "tslib": "^1.10.0",
-    "@ts-schema-autogen/types": "^0.0.0",
+    "@ts-schema-autogen/types": "^0.1.0",
     "@types/node": "^13.7.0"
   }
 }

@@ -96,8 +96,8 @@ packages:
     resolution:
       integrity: sha512-KY9Frmirql91X2Qgjry0Wd4Y+YTdrdZheS8TFwvkbLWf/G5KNJDCh6pKL5OZctEW4+0Baa5idK2ZQuELRwPznQ==
 specifiers:
-  '@ts-schema-autogen/schemas': ^0.0.0
-  '@ts-schema-autogen/types': ^0.0.0
+  '@ts-schema-autogen/schemas': ^0.1.0
+  '@ts-schema-autogen/types': ^0.1.0
   '@tsfun/result': ^0.0.15
   '@types/node': ^13.7.0
   ajv: ^6.11.0
