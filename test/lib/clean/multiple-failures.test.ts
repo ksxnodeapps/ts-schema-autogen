@@ -17,7 +17,7 @@ const getParsers = () => Promise.all([
 ])
 
 class MockedFileSystem extends FakeFileSystem {
-  public readonly remove = jest.fn(
+  public readonly unlink = jest.fn(
     (path: string) => path.endsWith('.removable')
       ? Promise.resolve()
       : Promise.reject(new RemovalError(path))
@@ -55,9 +55,9 @@ const configFiles = [
   'circular-reference/3/0.json',
   'file-reading-failure/single.json',
   'file-reading-failure/multiple.json',
-  'file-tree-loading-failure/container/foo.json',
-  'file-tree-loading-failure/container/bar.json',
-  'file-tree-loading-failure/container/baz.json',
+  'file-removal-failure/container/foo.json',
+  'file-removal-failure/container/bar.json',
+  'file-removal-failure/container/baz.json',
   'output-file-conflict/obvious-conflicts/foo.json',
   'output-file-conflict/obvious-conflicts/bar.json',
   'text-parsing-failure/invalid-config',
