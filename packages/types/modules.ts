@@ -20,7 +20,7 @@ export namespace FSX {
     readdir (dirname: string): Promise<readonly string[]>
     readFile (filename: string, encoding: 'utf8'): Promise<string>
     outputFile (filename: string, content: string): Promise<void>
-    remove (filename: string): Promise<void>
+    unlink (filename: string): Promise<void>
   }
 
   export interface Stats {

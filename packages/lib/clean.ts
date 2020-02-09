@@ -1,7 +1,7 @@
 import { createJoinFunction } from 'better-path-join'
 import { Instruction, FSX, Path, OutputDescriptor } from '@ts-schema-autogen/types'
 import { MaybeAsyncIterable } from '@ts-schema-autogen/utils'
-import { FileTreeRemovalFailure, MultipleFailures, Success } from '@ts-schema-autogen/status'
+import { FileRemovalFailure, MultipleFailures, Success } from '@ts-schema-autogen/status'
 import { listSymbolInstruction } from './instruction'
 import { ensureOutputDescriptorArray } from './output-descriptor'
 import { ConfigParser } from './config-parser'
@@ -10,11 +10,11 @@ import { ConfigLoader } from './load-config'
 /** Determine output files from instruction and delete them */
 export function cleanUnit (param: cleanUnit.Param): cleanUnit.Return {
   const { directory } = param
-  const { remove } = param.fsx
+  const { unlink } = param.fsx
   const join = createJoinFunction(param.path)
   function handleOutputDescriptor (desc: OutputDescriptor): cleanUnit.ReturnItem {
     const filename = join(directory, desc.filename)
-    const promise = remove(filename)
+    const promise = unlink(filename)
     return { filename, promise }
   }
   const result = listSymbolInstruction(param.instruction)
@@ -56,7 +56,7 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
   const configLoader = new ConfigLoader(param)
   const errors: Array<
     Exclude<ConfigLoader.LoaderReturn, Success<any>> |
-    FileTreeRemovalFailure<unknown>
+    FileRemovalFailure
   > = []
 
   for await (const configFile of param.configFiles) {
@@ -75,7 +75,7 @@ export async function clean (param: clean.Param): Promise<clean.Return> {
 
     for (const { filename, promise } of removalResults) {
       await promise.catch(error =>
-        errors.push(new FileTreeRemovalFailure(filename, error))
+        errors.push(new FileRemovalFailure(filename, error))
       )
     }
   }
@@ -100,6 +100,6 @@ export namespace clean {
 
   type ConfigLoaderFailure = Exclude<ConfigLoader.LoaderReturn, Success<any>>
   export type Return =
-    MultipleFailures.Maybe<ConfigLoaderFailure | FileTreeRemovalFailure<unknown>> |
+    MultipleFailures.Maybe<ConfigLoaderFailure | FileRemovalFailure> |
     Success<void>
 }

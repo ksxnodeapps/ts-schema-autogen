@@ -12,5 +12,5 @@ export class FakeFileSystem extends StringPathFileSystem implements FSX.Mod {
   public readonly readFile = this.mkfn(this.readFileSync)
   public readonly outputFile = this.mkfn(this.outputFileSync)
   public readonly writeFile = this.mkfn(this.writeFileSync)
-  public readonly remove = jest.fn((_: string) => Promise.resolve())
+  public readonly unlink = jest.fn((_: string) => Promise.resolve())
 }

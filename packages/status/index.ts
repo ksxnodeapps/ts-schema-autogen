@@ -19,11 +19,11 @@ export enum Status {
   /** Two or more configs inherit from each other directly or indirectly */
   CircularReference = 8,
 
-  /** Failed to delete a file or directory */
-  FileTreeRemovalFailure = 7,
-
   /** Failed to parse text data into structured data */
-  TextParsingFailure = 6,
+  TextParsingFailure = 7,
+
+  /** Failed to delete a file or directory */
+  FileRemovalFailure = 6,
 
   /** Failed to read data from a file */
   FileReadingFailure = 5,
@@ -195,6 +195,11 @@ export class FileReadingFailure extends FileSystemFailure<unknown> {
   public readonly code = Status.FileReadingFailure
 }
 
+/** Failed to unlink a file */
+export class FileRemovalFailure extends FileSystemFailure<unknown> {
+  public readonly code = Status.FileRemovalFailure
+}
+
 /** Failed to parse a text data into structured data */
 export class TextParsingFailure<Error extends TextParsingFailure.ConfigParseError<any>>
 extends Failure<readonly Error[]> {
@@ -220,11 +225,6 @@ export namespace TextParsingFailure {
     /** Error that `loader.parseConfigText` thrown */
     readonly error: Error
   }
-}
-
-/** Failed to delete a file or directory */
-export class FileTreeRemovalFailure<Error> extends FileSystemFailure<Error> {
-  public readonly code = Status.FileTreeRemovalFailure
 }
 
 /** Two or more configs inherit from each other directly or indirectly */
