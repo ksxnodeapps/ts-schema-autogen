@@ -16,7 +16,7 @@
   "dependencies": {
     "ajv": "^6.11.0",
     "exec-once": "^0.1.5",
-    "@tsfun/result": "^0.0.15",
+    "@tsfun/result": "^0.0.16",
     "tslib": "^1.10.0",
     "@ts-schema-autogen/types": "^0.1.0",
     "@ts-schema-autogen/schemas": "^0.1.0",
