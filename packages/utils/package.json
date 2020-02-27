@@ -1,6 +1,6 @@
 {
   "name": "@ts-schema-autogen/utils",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Utilities used by other packages of @ts-schema-autogen",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",

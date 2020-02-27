@@ -466,7 +466,7 @@ packages:
     resolution:
       integrity: sha512-T39FNN1b6hCW4SOIk1XyTOWxtXdcen0t+XYrysQmChzSipvhBO8Bj0nK1ozAasdk24dNWuMZvr4k24nz+8HHLg==
 specifiers:
-  '@ts-schema-autogen/main': ^0.1.0
+  '@ts-schema-autogen/main': ^0.1.1
   '@types/fs-extra': ^8.1.0
   '@types/node': ^13.7.6
   '@types/yargs': ^15.0.4

@@ -287,7 +287,7 @@ packages:
     resolution:
       integrity: sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
 specifiers:
-  '@ts-schema-autogen/utils': ^0.0.0
+  '@ts-schema-autogen/utils': ^0.0.1
   '@types/node': ^13.7.6
   tslib: ^1.11.0
   typescript-json-schema: ^0.42.0

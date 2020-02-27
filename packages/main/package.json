@@ -1,6 +1,6 @@
 {
   "name": "@ts-schema-autogen/main",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Main program function of @ts-schema-autogen",
   "author": "Hoàng Văn Khải <hvksmr1996@gmail.com>",
   "license": "MIT",
@@ -17,10 +17,10 @@
     "@tsfun/pipe": "^0.0.11",
     "@tsfun/object": "^0.0.17",
     "tslib": "^1.11.0",
-    "@ts-schema-autogen/lib": "^0.1.0",
-    "@ts-schema-autogen/status": "^0.1.0",
-    "@ts-schema-autogen/types": "^0.1.0",
-    "@ts-schema-autogen/utils": "^0.0.0",
+    "@ts-schema-autogen/lib": "^0.1.1",
+    "@ts-schema-autogen/status": "^0.1.1",
+    "@ts-schema-autogen/types": "^0.1.1",
+    "@ts-schema-autogen/utils": "^0.0.1",
     "@types/node": "^13.7.6"
   }
 }
