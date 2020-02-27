@@ -14,9 +14,9 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "exec-once": "^0.1.5",
-    "tslib": "^1.10.0",
+    "exec-once": "^0.1.6",
+    "tslib": "^1.11.0",
     "@ts-schema-autogen/types": "^0.1.0",
-    "@types/node": "^13.7.0"
+    "@types/node": "^13.7.6"
   }
 }

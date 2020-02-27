@@ -1,27 +1,27 @@
 dependencies:
   '@tools/test-utils': 'link:../../tools/test-utils'
   '@ts-schema-autogen/types': 'link:../../packages/types'
-  '@tsfun/object': 0.0.16
+  '@tsfun/object': 0.0.17
   '@types/js-yaml': 3.12.2
   js-yaml: 3.13.1
 lockfileVersion: 5.1
 packages:
-  /@tsfun/object/0.0.16:
+  /@tsfun/object/0.0.17:
     dependencies:
-      '@types/node': 13.5.3
+      '@types/node': 13.7.6
       tslib: 1.10.0
       utility-types: 3.10.0
     dev: false
     resolution:
-      integrity: sha512-75/OG0K2mcr4Jl4lczo7tHvhELGI5pbvV0XvKU4jVVh4LOFlZ3kYPgOTfNTYO+rampS8p1Z0XqLzCMNXPPenUg==
+      integrity: sha512-H/hRAlGWkoui1ZqIX2iPSQdK07mUF7QZwIkyY5SzwBIe1jVkSRNXmHtm9WvWMuoaGCr3peCZGXphximX3DEzig==
   /@types/js-yaml/3.12.2:
     dev: false
     resolution:
       integrity: sha512-0CFu/g4mDSNkodVwWijdlr8jH7RoplRWNgovjFLEZeT+QEbbZXjBmCe3HwaWheAlCbHwomTwzZoSedeOycABug==
-  /@types/node/13.5.3:
+  /@types/node/13.7.6:
     dev: false
     resolution:
-      integrity: sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -60,6 +60,6 @@ packages:
 specifiers:
   '@tools/test-utils': 'file:../../tools/test-utils'
   '@ts-schema-autogen/types': 'file:../../packages/types'
-  '@tsfun/object': ^0.0.16
+  '@tsfun/object': ^0.0.17
   '@types/js-yaml': ^3.12.2
   js-yaml: ^3.13.1

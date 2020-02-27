@@ -3,7 +3,7 @@ dependencies:
   '@ts-schema-autogen/lib': 'link:../../packages/lib'
   '@ts-schema-autogen/main': 'link:../../packages/main'
   '@ts-schema-autogen/utils': 'link:../../packages/utils'
-  '@tsfun/result': 0.0.15
+  '@tsfun/result': 0.0.16
   '@types/js-yaml': 3.12.2
   iter-tools: 6.2.6
   js-yaml: 3.13.1
@@ -22,49 +22,49 @@ packages:
     dev: false
     resolution:
       integrity: sha512-fVHx1rzEmwB130VTkLnxR+HmxcTjGzH12LYQcFFoBwakMd3aOMD4OsRN7tGG/UOYE2ektgFrS8uACAoRk1CY0w==
-  /@tsfun/prv-option-result-common/0.0.10:
+  /@tsfun/prv-option-result-common/0.0.11:
     dependencies:
-      '@types/node': 13.5.3
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-UTXoMYDAtedfqgeb2e562qsOJqA4aBM6Ql41f+gXs/EACo2ILf/8pUyAh6iXq1tKsIjXebu3pNdD7YDtQvTMiw==
+      integrity: sha512-AIp2Oygr9WD12BG4p+fUEhyGtPnchRVALahzDab2eobkD2IhxRnHsKZh4J3v84faEIuXbnpdfALwGkzaOcgkPA==
   /@tsfun/prv-types/0.0.6:
     dependencies:
-      '@types/node': 13.5.3
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     resolution:
       integrity: sha512-s97gvRX2SjGTdU+Odsi6RgsVFi+xNOx3T6Jew2mo7m7Wj6eJmM0HB0HlFPmwIIi2MtXIpSr71TZmRVcMeU3Atw==
-  /@tsfun/result/0.0.15:
+  /@tsfun/result/0.0.16:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.10
+      '@tsfun/prv-option-result-common': 0.0.11
       '@tsfun/prv-types': 0.0.6
-      '@tsfun/tap': 0.0.9
-      '@types/node': 13.5.3
+      '@tsfun/tap': 0.0.10
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-doM0jLMIRgriynd+jRgdqZmkBeSbcURyKlxgf6bSJQSHcVvQxQVJ//tHjbM29G6+40fVEdqwh3TSxWGrd4uaUA==
-  /@tsfun/tap/0.0.9:
+      integrity: sha512-lUpVISAm0RUxRdyVUuAOLBe7ArdrQkepdLz4nML0a/2/WvrDsAIn2PIdRL3eZXqqdyhS2dy+ot5E5vc/RNWOEQ==
+  /@tsfun/tap/0.0.10:
     dependencies:
-      '@types/node': 13.5.3
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-00ULLfaVuFb4H0KyHZqutAuNE3WewDEZzUt+fQifl83hElfO+AX5yCoxjMi7e4JZX0cJi/pmce6HuEOhJOzqdg==
+      integrity: sha512-ArfW5g+1BxUXhqWOCOceiR3iviWn6PvDjOHzSBCCw3luYlVJ8JwYMcvj9ZXITBbP33uM8NKbxwzjRGGVckXLdg==
   /@types/js-yaml/3.12.2:
     dev: false
     resolution:
       integrity: sha512-0CFu/g4mDSNkodVwWijdlr8jH7RoplRWNgovjFLEZeT+QEbbZXjBmCe3HwaWheAlCbHwomTwzZoSedeOycABug==
-  /@types/node/13.5.3:
+  /@types/node/13.7.6:
     dev: false
     resolution:
-      integrity: sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -158,7 +158,7 @@ specifiers:
   '@ts-schema-autogen/lib': 'file:../../packages/lib'
   '@ts-schema-autogen/main': 'file:../../packages/main'
   '@ts-schema-autogen/utils': 'file:../../packages/utils'
-  '@tsfun/result': ^0.0.15
+  '@tsfun/result': ^0.0.16
   '@types/js-yaml': ^3.12.2
   iter-tools: ^6.2.6
   js-yaml: ^3.13.1

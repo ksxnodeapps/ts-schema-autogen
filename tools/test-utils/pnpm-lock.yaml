@@ -1,38 +1,38 @@
 dependencies:
   '@ts-schema-autogen/status': 'link:../../packages/status'
   '@ts-schema-autogen/types': 'link:../../packages/types'
-  simple-fake-console: 0.1.5
-  simple-fake-fs: 0.0.7
-  simple-fake-path: 0.0.1
+  simple-fake-console: 0.1.6
+  simple-fake-fs: 0.0.8
+  simple-fake-path: 0.0.2
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.5.2:
+  /@types/node/13.7.6:
     dev: false
     resolution:
-      integrity: sha512-Fr6a47c84PRLfd7M7u3/hEknyUdQrrBA6VoPmkze0tcflhU5UnpWEX2kn12ktA/lb+MNHSqFlSiPHIHsaErTPA==
-  /simple-fake-console/0.1.5:
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+  /simple-fake-console/0.1.6:
     dependencies:
-      '@types/node': 13.5.2
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-cZse0VgEoolstDzYAnt/4plq8xPAL2doNCBxnj5aP1gP0y6piftZtEyw4gYNUb30OY4sgWo51WlID124h0VxXQ==
-  /simple-fake-fs/0.0.7:
+      integrity: sha512-6KFsHVmAVrVyxh8tLbAZRWSBaOrHhJu80RSIfiHzOUgiNri9SdTPP1OdeTy//XIiR5hZPUlrmhgwfCSCZyKZlA==
+  /simple-fake-fs/0.0.8:
     dependencies:
-      '@types/node': 13.5.2
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-jkANqneqCOHOwxhKZFG6b0kBJIE6cpBjTroQR1uXQJ75IARHHfrIqLEdmgpjJdMce+2UH3zm04JZRKya5csSPw==
-  /simple-fake-path/0.0.1:
+      integrity: sha512-09qiFZ70yayXyJ82jLqYsf18I/6tBtfDICmKNkVXVrY8OfT/+ThdVIfRC363GrAeTCdnIFrlqn9PfP1ZFNW/gA==
+  /simple-fake-path/0.0.2:
     dependencies:
-      '@types/node': 13.5.2
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-PwdtbINHHx4bQa0MenMeDKePW83e/M4dBQZrKtcHra859GZAEruEiYBpshPik6aEjdQsOZPV+wLoZgy9Zg3eHQ==
+      integrity: sha512-+nKFVB1zri4O36vn5hHbhu+537iGG5gd91VBLFRqMvgP2RuUHDvzirKwLaTHcoC/fBflmvM4/iOg5Koz4Z0VEA==
   /tslib/1.10.0:
     dev: false
     resolution:
@@ -40,6 +40,6 @@ packages:
 specifiers:
   '@ts-schema-autogen/status': 'file:../../packages/status'
   '@ts-schema-autogen/types': 'file:../../packages/types'
-  simple-fake-console: ^0.1.5
-  simple-fake-fs: ^0.0.7
-  simple-fake-path: ^0.0.1
+  simple-fake-console: ^0.1.6
+  simple-fake-fs: ^0.0.8
+  simple-fake-path: ^0.0.2

@@ -3,49 +3,49 @@ dependencies:
   '@ts-schema-autogen/status': 'link:../status'
   '@ts-schema-autogen/types': 'link:../types'
   '@ts-schema-autogen/utils': 'link:../utils'
-  '@tsfun/object': 0.0.16
-  '@tsfun/pipe': 0.0.10
-  '@types/node': 13.7.0
-  tslib: 1.10.0
+  '@tsfun/object': 0.0.17
+  '@tsfun/pipe': 0.0.11
+  '@types/node': 13.7.6
+  tslib: 1.11.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/object/0.0.16:
+  /@tsfun/object/0.0.17:
     dependencies:
-      '@types/node': 13.7.0
-      tslib: 1.10.0
+      '@types/node': 13.7.6
+      tslib: 1.11.0
       utility-types: 3.10.0
     dev: false
     resolution:
-      integrity: sha512-75/OG0K2mcr4Jl4lczo7tHvhELGI5pbvV0XvKU4jVVh4LOFlZ3kYPgOTfNTYO+rampS8p1Z0XqLzCMNXPPenUg==
-  /@tsfun/pipe/0.0.10:
+      integrity: sha512-H/hRAlGWkoui1ZqIX2iPSQdK07mUF7QZwIkyY5SzwBIe1jVkSRNXmHtm9WvWMuoaGCr3peCZGXphximX3DEzig==
+  /@tsfun/pipe/0.0.11:
     dependencies:
-      '@tsfun/tap': 0.0.9
-      '@types/node': 13.1.8
-      tslib: 1.10.0
+      '@tsfun/tap': 0.0.10
+      '@types/node': 13.7.6
+      tslib: 1.11.0
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-WrQoqGJ5OhumvtNwz7A7s88Y/2jjEayfkS6fWsnZWX2q2miIPYxb+TiG51y5V15zfcbRFY4p0DbwYv8Z3EKd9A==
-  /@tsfun/tap/0.0.9:
+      integrity: sha512-jL88eyhDR/Pena+eBzY9bw8SOED9nET2QPNSgvXpz4XK9t2CBmwtu6YUPzdZCBG6RTSZoQV5VKmsXu4255qVaA==
+  /@tsfun/tap/0.0.10:
     dependencies:
-      '@types/node': 13.1.8
+      '@types/node': 13.7.6
       tslib: 1.10.0
     dev: false
     resolution:
-      integrity: sha512-00ULLfaVuFb4H0KyHZqutAuNE3WewDEZzUt+fQifl83hElfO+AX5yCoxjMi7e4JZX0cJi/pmce6HuEOhJOzqdg==
-  /@types/node/13.1.8:
+      integrity: sha512-ArfW5g+1BxUXhqWOCOceiR3iviWn6PvDjOHzSBCCw3luYlVJ8JwYMcvj9ZXITBbP33uM8NKbxwzjRGGVckXLdg==
+  /@types/node/13.7.6:
     dev: false
     resolution:
-      integrity: sha512-6XzyyNM9EKQW4HKuzbo/CkOIjn/evtCmsU+MUM1xDfJ+3/rNjBttM1NgN7AOQvN6tP1Sl1D1PIKMreTArnxM9A==
-  /@types/node/13.7.0:
-    dev: false
-    resolution:
-      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /tslib/1.10.0:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/1.11.0:
+    dev: false
+    resolution:
+      integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -57,7 +57,7 @@ specifiers:
   '@ts-schema-autogen/status': ^0.1.0
   '@ts-schema-autogen/types': ^0.1.0
   '@ts-schema-autogen/utils': ^0.0.0
-  '@tsfun/object': ^0.0.16
-  '@tsfun/pipe': ^0.0.10
-  '@types/node': ^13.7.0
-  tslib: ^1.10.0
+  '@tsfun/object': ^0.0.17
+  '@tsfun/pipe': ^0.0.11
+  '@types/node': ^13.7.6
+  tslib: ^1.11.0

@@ -1,7 +1,7 @@
 dependencies:
   '@ts-schema-autogen/utils': 'link:../utils'
-  '@types/node': 13.7.0
-  tslib: 1.10.0
+  '@types/node': 13.7.6
+  tslib: 1.11.0
   typescript-json-schema: 0.42.0
 lockfileVersion: 5.1
 packages:
@@ -9,10 +9,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==
-  /@types/node/13.7.0:
+  /@types/node/13.7.6:
     dev: false
     resolution:
-      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /ansi-regex/4.1.0:
     dev: false
     engines:
@@ -219,10 +219,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
-  /tslib/1.10.0:
+  /tslib/1.11.0:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+      integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
   /typescript-json-schema/0.42.0:
     dependencies:
       '@types/json-schema': 7.0.4
@@ -288,6 +288,6 @@ packages:
       integrity: sha512-/4ld+4VV5RnrynMhPZJ/ZpOCGSCeghMykZ3BhdFBDa9Wy/RH6uEGNWDJog+aUlq+9OM1CFTgtYRW5Is1Po9NOA==
 specifiers:
   '@ts-schema-autogen/utils': ^0.0.0
-  '@types/node': ^13.7.0
-  tslib: ^1.10.0
+  '@types/node': ^13.7.6
+  tslib: ^1.11.0
   typescript-json-schema: ^0.42.0

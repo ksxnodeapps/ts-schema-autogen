@@ -1,31 +1,27 @@
 dependencies:
   '@ts-schema-autogen/types': 'link:../types'
-  '@types/node': 13.7.0
-  exec-once: 0.1.5
-  tslib: 1.10.0
+  '@types/node': 13.7.6
+  exec-once: 0.1.6
+  tslib: 1.11.0
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.5.3:
+  /@types/node/13.7.6:
     dev: false
     resolution:
-      integrity: sha512-ZPnWX9PW992w6DUsz3JIXHaSb5v7qmKCVzC3km6SxcDGxk7zmLfYaCJTbktIa5NeywJkkZDhGldKqDIvC5DRrA==
-  /@types/node/13.7.0:
-    dev: false
-    resolution:
-      integrity: sha512-GnZbirvmqZUzMgkFn70c74OQpTTUcCzlhQliTzYjQMqg+hVKcDnxdL19Ne3UdYzdMA/+W3eb646FWn/ZaT1NfQ==
-  /exec-once/0.1.5:
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+  /exec-once/0.1.6:
     dependencies:
-      '@types/node': 13.5.3
-      tslib: 1.10.0
+      '@types/node': 13.7.6
+      tslib: 1.11.0
     dev: false
     resolution:
-      integrity: sha512-JU23u+gWLMmBwZjCgrKExqiEIlzMKmniwVa/z/1nXggZa5YCKcYABn8YeRE80dQjgpIeDV9Ap4N9svtqGIoWWA==
-  /tslib/1.10.0:
+      integrity: sha512-DMCRTmVoGgGJLS+Z7NfaV53QiQTi8XedoBNVWsl5S7ZQGgt587MOKqlu8k/ybtkEEVjkl4RjO4REOJv4v2ZBxw==
+  /tslib/1.11.0:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+      integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
 specifiers:
   '@ts-schema-autogen/types': ^0.1.0
-  '@types/node': ^13.7.0
-  exec-once: ^0.1.5
-  tslib: ^1.10.0
+  '@types/node': ^13.7.6
+  exec-once: ^0.1.6
+  tslib: ^1.11.0

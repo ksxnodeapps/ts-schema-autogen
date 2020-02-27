@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "simple-fake-fs": "^0.0.7",
-    "simple-fake-console": "^0.1.5",
-    "simple-fake-path": "^0.0.1",
+    "simple-fake-fs": "^0.0.8",
+    "simple-fake-console": "^0.1.6",
+    "simple-fake-path": "^0.0.2",
     "@ts-schema-autogen/status": "file:../../packages/status",
     "@ts-schema-autogen/types": "file:../../packages/types"
   }
