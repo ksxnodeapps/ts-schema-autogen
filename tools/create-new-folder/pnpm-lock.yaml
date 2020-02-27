@@ -3,9 +3,9 @@ dependencies:
   '@tools/places': 'link:../places'
   '@tools/preloaded-node': 'link:../preloaded-node'
   '@tools/utils': 'link:../utils'
-  '@types/fs-extra': 8.0.1
+  '@types/fs-extra': 8.1.0
   '@types/inquirer': 6.5.0
-  '@types/yargs': 15.0.3
+  '@types/yargs': 15.0.4
   fs-extra: 8.1.0
   inquirer: 7.0.4
   yargs: 15.1.0
@@ -15,12 +15,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
-  /@types/fs-extra/8.0.1:
+  /@types/fs-extra/8.1.0:
     dependencies:
       '@types/node': 12.12.21
     dev: false
     resolution:
-      integrity: sha512-J00cVDALmi/hJOYsunyT52Hva5TnJeKP5yd1r+mH/ZU0mbYZflR0Z5kw5kITtKTRYMhm1JMClOFYdHnQszEvqw==
+      integrity: sha512-UoOfVEzAUpeSPmjm7h1uk5MH6KZma2z2O7a75onTGjnNvAvMVrPzPL/vBbT65iIGHWj6rokwfmYcmxmlSf2uwg==
   /@types/inquirer/6.5.0:
     dependencies:
       '@types/through': 0.0.29
@@ -46,12 +46,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-gCubfBUZ6KxzoibJ+SCUc/57Ms1jz5NjHe4+dI2krNmU5zCPAphyLJYyTOg06ueIyfj+SaCUqmzun7ImlxDcKg==
-  /@types/yargs/15.0.3:
+  /@types/yargs/15.0.4:
     dependencies:
       '@types/yargs-parser': 13.1.0
     dev: false
     resolution:
-      integrity: sha512-XCMQRK6kfpNBixHLyHUsGmXrpEmFFxzMrcnSXFMziHd8CoNJo8l16FkHyQq4x+xbM7E2XL83/O78OD8u+iZTdQ==
+      integrity: sha512-9T1auFmbPZoxHz0enUFlUuKRy3it01R+hlggyVUMtnCTQRunsQYifnSGb8hET4Xo8yiC0o0r1paW3ud5+rbURg==
   /ansi-escapes/4.2.1:
     dependencies:
       type-fest: 0.5.2
@@ -485,9 +485,9 @@ specifiers:
   '@tools/places': 'file:../places'
   '@tools/preloaded-node': 'file:../preloaded-node'
   '@tools/utils': 'file:../utils'
-  '@types/fs-extra': ^8.0.1
+  '@types/fs-extra': ^8.1.0
   '@types/inquirer': ^6.5.0
-  '@types/yargs': ^15.0.3
+  '@types/yargs': ^15.0.4
   fs-extra: ^8.1.0
   inquirer: ^7.0.4
   yargs: ^15.1.0
