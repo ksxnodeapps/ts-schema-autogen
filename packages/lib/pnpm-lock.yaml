@@ -118,7 +118,7 @@ packages:
     resolution:
       integrity: sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 specifiers:
-  '@ts-schema-autogen/status': ^0.1.1
+  '@ts-schema-autogen/status': ^0.1.0
   '@ts-schema-autogen/types': ^0.1.1
   '@ts-schema-autogen/utils': ^0.0.1
   '@ts-schema-autogen/validate': ^0.1.1
