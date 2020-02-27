@@ -53,7 +53,7 @@ const subTreeOmit = (
   symbol: string,
   schema: any,
   omitted: readonly string[] = []
-): FsTree => omit(subTree(symbol, schema), omitted)
+): FsTree => omit(subTree(symbol, schema), omitted) as FsTree
 
 export function createFsTree (): FsTree {
   const tjs = new TJS()
