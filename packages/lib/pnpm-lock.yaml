@@ -10,7 +10,7 @@ dependencies:
   better-path-join: 0.0.1
   fast-traverse: 0.1.5
   js-yaml: 3.13.1
-  tslib: 1.11.0
+  tslib: 2.0.0
 lockfileVersion: 5.1
 packages:
   /@tsfun/object/0.0.17:
@@ -111,6 +111,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
+  /tslib/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -129,4 +133,4 @@ specifiers:
   better-path-join: ^0.0.1
   fast-traverse: ^0.1.5
   js-yaml: ^3.13.1
-  tslib: ^1.11.0
+  tslib: ^2.0.0

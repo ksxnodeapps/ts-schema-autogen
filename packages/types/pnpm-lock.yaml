@@ -1,7 +1,7 @@
 dependencies:
   '@ts-schema-autogen/utils': 'link:../utils'
   '@types/node': 13.7.6
-  tslib: 1.11.0
+  tslib: 2.0.0
   typescript-json-schema: 0.42.0
 lockfileVersion: 5.1
 packages:
@@ -219,10 +219,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
-  /tslib/1.11.0:
+  /tslib/2.0.0:
     dev: false
     resolution:
-      integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /typescript-json-schema/0.42.0:
     dependencies:
       '@types/json-schema': 7.0.4
@@ -289,5 +289,5 @@ packages:
 specifiers:
   '@ts-schema-autogen/utils': ^0.0.1
   '@types/node': ^13.7.6
-  tslib: ^1.11.0
+  tslib: ^2.0.0
   typescript-json-schema: ^0.42.0
