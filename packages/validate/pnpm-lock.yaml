@@ -5,7 +5,7 @@ dependencies:
   '@types/node': 13.7.6
   ajv: 6.12.0
   exec-once: 0.1.6
-  tslib: 1.11.0
+  tslib: 2.0.0
 lockfileVersion: 5.1
 packages:
   /@tsfun/prv-option-result-common/0.0.11:
@@ -89,6 +89,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
+  /tslib/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-lTqkx847PI7xEDYJntxZH89L2/aXInsyF2luSafe/+0fHOMjlBNXdH6th7f70qxLDhul7KZK0zC8V5ZIyHl0/g==
   /uri-js/4.2.2:
     dependencies:
       punycode: 2.1.1
@@ -102,4 +106,4 @@ specifiers:
   '@types/node': ^13.7.6
   ajv: ^6.12.0
   exec-once: ^0.1.6
-  tslib: ^1.11.0
+  tslib: ^2.0.0
