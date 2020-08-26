@@ -3,7 +3,7 @@ dependencies:
   '@ts-schema-autogen/types': 'link:../types'
   '@ts-schema-autogen/utils': 'link:../utils'
   '@ts-schema-autogen/validate': 'link:../validate'
-  '@tsfun/object': 0.0.17
+  '@tsfun/object': 0.0.21
   '@tsfun/result': 0.0.16
   '@types/js-yaml': 3.12.2
   '@types/node': 13.7.6
@@ -13,14 +13,14 @@ dependencies:
   tslib: 1.11.0
 lockfileVersion: 5.1
 packages:
-  /@tsfun/object/0.0.17:
+  /@tsfun/object/0.0.21:
     dependencies:
-      '@types/node': 13.7.6
-      tslib: 1.11.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
       utility-types: 3.10.0
     dev: false
     resolution:
-      integrity: sha512-H/hRAlGWkoui1ZqIX2iPSQdK07mUF7QZwIkyY5SzwBIe1jVkSRNXmHtm9WvWMuoaGCr3peCZGXphximX3DEzig==
+      integrity: sha512-bq4HlP+5JFNGcKysmgPI1nR8vqPLlMRhWdZ/rph8sI8jHghQGSXV8BaqzTQ8krUgM/xkUfDK0x+fXMkw0020pQ==
   /@tsfun/prv-option-result-common/0.0.11:
     dependencies:
       '@types/node': 13.7.6
@@ -64,6 +64,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+  /@types/node/14.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -111,6 +115,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
+  /tslib/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -122,7 +130,7 @@ specifiers:
   '@ts-schema-autogen/types': ^0.1.1
   '@ts-schema-autogen/utils': ^0.0.1
   '@ts-schema-autogen/validate': ^0.1.1
-  '@tsfun/object': ^0.0.17
+  '@tsfun/object': ^0.0.21
   '@tsfun/result': ^0.0.16
   '@types/js-yaml': ^3.12.2
   '@types/node': ^13.7.6
