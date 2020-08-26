@@ -4,7 +4,7 @@ dependencies:
   '@ts-schema-autogen/utils': 'link:../utils'
   '@ts-schema-autogen/validate': 'link:../validate'
   '@tsfun/object': 0.0.17
-  '@tsfun/result': 0.0.16
+  '@tsfun/result': 0.0.20
   '@types/js-yaml': 3.12.2
   '@types/node': 13.7.6
   better-path-join: 0.0.1
@@ -21,41 +21,41 @@ packages:
     dev: false
     resolution:
       integrity: sha512-H/hRAlGWkoui1ZqIX2iPSQdK07mUF7QZwIkyY5SzwBIe1jVkSRNXmHtm9WvWMuoaGCr3peCZGXphximX3DEzig==
-  /@tsfun/prv-option-result-common/0.0.11:
+  /@tsfun/prv-option-result-common/0.0.15:
     dependencies:
-      '@types/node': 13.7.6
-      tslib: 1.10.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-AIp2Oygr9WD12BG4p+fUEhyGtPnchRVALahzDab2eobkD2IhxRnHsKZh4J3v84faEIuXbnpdfALwGkzaOcgkPA==
-  /@tsfun/prv-types/0.0.6:
+      integrity: sha512-oqmmMHkoD1IXADxtOupJ9JFBcocuToxbSuqMIw3VszZIyvysJ3t9y+LlP+qxo92pOj/GJz4oohhzKBHkaaLqWA==
+  /@tsfun/prv-types/0.0.10:
     dependencies:
-      '@types/node': 13.7.6
-      tslib: 1.10.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-s97gvRX2SjGTdU+Odsi6RgsVFi+xNOx3T6Jew2mo7m7Wj6eJmM0HB0HlFPmwIIi2MtXIpSr71TZmRVcMeU3Atw==
-  /@tsfun/result/0.0.16:
+      integrity: sha512-8QJUR81Zyf9gLhl7llp10bTZ+4WgXBM6LaiKZTmgjmviggFIQobm1hDzirZ9gUMxG1lGtTr4glszSkvuCcSjaA==
+  /@tsfun/result/0.0.20:
     dependencies:
-      '@tsfun/prv-option-result-common': 0.0.11
-      '@tsfun/prv-types': 0.0.6
-      '@tsfun/tap': 0.0.10
-      '@types/node': 13.7.6
-      tslib: 1.11.0
+      '@tsfun/prv-option-result-common': 0.0.15
+      '@tsfun/prv-types': 0.0.10
+      '@tsfun/tap': 0.0.14
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     engines:
       node: '>= 8.9.0'
     resolution:
-      integrity: sha512-lUpVISAm0RUxRdyVUuAOLBe7ArdrQkepdLz4nML0a/2/WvrDsAIn2PIdRL3eZXqqdyhS2dy+ot5E5vc/RNWOEQ==
-  /@tsfun/tap/0.0.10:
+      integrity: sha512-7IXm8ab6hRl7dNliHvFCoHdDXcDITSOPFKZl+7VxEKTXXmSrUe5QupvzzBro1G5Q104do/xiHZT1RBhwLzg1iw==
+  /@tsfun/tap/0.0.14:
     dependencies:
-      '@types/node': 13.7.6
-      tslib: 1.10.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-ArfW5g+1BxUXhqWOCOceiR3iviWn6PvDjOHzSBCCw3luYlVJ8JwYMcvj9ZXITBbP33uM8NKbxwzjRGGVckXLdg==
+      integrity: sha512-hXrhnrFidsbi4zeo6HaiHEMFLcjNTSc4osYps2Py7cgbgwW6nNxcZwRbDlQaMIdvpuQuHFd1+bxhDYQ0C9r6xA==
   /@types/js-yaml/3.12.2:
     dev: false
     resolution:
@@ -64,6 +64,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+  /@types/node/14.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -103,14 +107,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
-  /tslib/1.10.0:
-    dev: false
-    resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
   /tslib/1.11.0:
     dev: false
     resolution:
       integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
+  /tslib/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -123,7 +127,7 @@ specifiers:
   '@ts-schema-autogen/utils': ^0.0.1
   '@ts-schema-autogen/validate': ^0.1.1
   '@tsfun/object': ^0.0.17
-  '@tsfun/result': ^0.0.16
+  '@tsfun/result': ^0.0.20
   '@types/js-yaml': ^3.12.2
   '@types/node': ^13.7.6
   better-path-join: ^0.0.1
