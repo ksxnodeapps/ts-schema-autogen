@@ -20,7 +20,7 @@
   "sideEffects": false,
   "dependencies": {
     "js-yaml": "^3.13.1",
-    "@tsfun/result": "^0.0.16",
+    "@tsfun/result": "^0.0.20",
     "@tsfun/object": "^0.0.17",
     "better-path-join": "^0.0.1",
     "fast-traverse": "^0.1.5",
