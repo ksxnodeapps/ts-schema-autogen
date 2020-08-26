@@ -22,7 +22,7 @@
     "js-yaml": "^3.13.1",
     "@tsfun/result": "^0.0.16",
     "@tsfun/object": "^0.0.17",
-    "better-path-join": "^0.0.1",
+    "better-path-join": "^0.0.3",
     "fast-traverse": "^0.1.5",
     "tslib": "^1.11.0",
     "@ts-schema-autogen/status": "^0.1.1",

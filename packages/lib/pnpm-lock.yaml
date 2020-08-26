@@ -7,7 +7,7 @@ dependencies:
   '@tsfun/result': 0.0.16
   '@types/js-yaml': 3.12.2
   '@types/node': 13.7.6
-  better-path-join: 0.0.1
+  better-path-join: 0.0.3
   fast-traverse: 0.1.5
   js-yaml: 3.13.1
   tslib: 1.11.0
@@ -64,19 +64,23 @@ packages:
     dev: false
     resolution:
       integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+  /@types/node/14.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /argparse/1.0.10:
     dependencies:
       sprintf-js: 1.0.3
     dev: false
     resolution:
       integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==
-  /better-path-join/0.0.1:
+  /better-path-join/0.0.3:
     dependencies:
-      '@types/node': 13.7.6
-      tslib: 1.11.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-JIv4V7rh19/Hg0O5I0l8eSobC3F+aUWaL9D9QQKAKFw4Qj+whdRrlRejrYICPS2NEJ/2vsDjhKur3iFhQf49QQ==
+      integrity: sha512-GhszPXpw5KWT2kLxt0u5kD2/quUuokwPIy+TQhyxjfJEk3eZqzhe9g3KyAQ3fcQZLbtHc2XkpUh2Q8IrxekRaA==
   /esprima/4.0.1:
     dev: false
     engines:
@@ -111,6 +115,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-BmndXUtiTn/VDDrJzQE7Mm22Ix3PxgLltW9bSNLoeCY31gnG2OPx0QqJnuc9oMIKioYrz487i6K9o4Pdn0j+Kg==
+  /tslib/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
   /utility-types/3.10.0:
     dev: false
     engines:
@@ -126,7 +134,7 @@ specifiers:
   '@tsfun/result': ^0.0.16
   '@types/js-yaml': ^3.12.2
   '@types/node': ^13.7.6
-  better-path-join: ^0.0.1
+  better-path-join: ^0.0.3
   fast-traverse: ^0.1.5
   js-yaml: ^3.13.1
   tslib: ^1.11.0
