@@ -2,7 +2,7 @@ dependencies:
   '@ts-schema-autogen/status': 'link:../../packages/status'
   '@ts-schema-autogen/types': 'link:../../packages/types'
   simple-fake-console: 0.1.6
-  simple-fake-fs: 0.0.8
+  simple-fake-fs: 0.0.10
   simple-fake-path: 0.0.2
 lockfileVersion: 5.1
 packages:
@@ -10,6 +10,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+  /@types/node/14.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
   /simple-fake-console/0.1.6:
     dependencies:
       '@types/node': 13.7.6
@@ -19,13 +23,13 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-6KFsHVmAVrVyxh8tLbAZRWSBaOrHhJu80RSIfiHzOUgiNri9SdTPP1OdeTy//XIiR5hZPUlrmhgwfCSCZyKZlA==
-  /simple-fake-fs/0.0.8:
+  /simple-fake-fs/0.0.10:
     dependencies:
-      '@types/node': 13.7.6
-      tslib: 1.10.0
+      '@types/node': 14.6.0
+      tslib: 2.0.1
     dev: false
     resolution:
-      integrity: sha512-09qiFZ70yayXyJ82jLqYsf18I/6tBtfDICmKNkVXVrY8OfT/+ThdVIfRC363GrAeTCdnIFrlqn9PfP1ZFNW/gA==
+      integrity: sha512-0dS2Sa00Jc+9FfwcgnKZgdgC7l6ys0yi8bi/x/8bCu3Nuqpvr5xdaFJRmOMZrZllEcFQFVrvo1XJJoWeCewkJA==
   /simple-fake-path/0.0.2:
     dependencies:
       '@types/node': 13.7.6
@@ -37,9 +41,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+  /tslib/2.0.1:
+    dev: false
+    resolution:
+      integrity: sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 specifiers:
   '@ts-schema-autogen/status': 'file:../../packages/status'
   '@ts-schema-autogen/types': 'file:../../packages/types'
   simple-fake-console: ^0.1.6
-  simple-fake-fs: ^0.0.8
+  simple-fake-fs: ^0.0.10
   simple-fake-path: ^0.0.2
