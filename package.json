@@ -11,7 +11,7 @@
     "url": "https://github.com/ksxnodeapps/ts-schema-autogen/issues"
   },
   "devDependencies": {
-    "standard": "^14.3.1",
+    "standard": "^15.0.0",
     "tslint": "^6.0.0",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^3.8.2",
