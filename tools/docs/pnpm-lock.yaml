@@ -2,7 +2,7 @@ dependencies:
   '@tools/places': 'link:../places'
   '@tools/preloaded-node': 'link:../preloaded-node'
   '@tools/utils': 'link:../utils'
-  '@tsfun/array': 0.0.2
+  '@tsfun/array': 0.0.8
   '@types/fs-extra': 8.1.0
   '@types/minimatch': 3.0.3
   '@types/pretty': 2.0.0
@@ -12,15 +12,15 @@ dependencies:
   pretty: 2.0.0
   typedoc: 0.16.10
   typescript: 3.8.2
-lockfileVersion: 5.1
+lockfileVersion: 5.2
 packages:
-  /@tsfun/array/0.0.2:
+  /@tsfun/array/0.0.8:
     dependencies:
-      '@types/node': 13.7.4
-      tslib: 1.10.0
+      '@types/node': 14.14.5
+      tslib: 2.0.3
     dev: false
     resolution:
-      integrity: sha512-Slm4H9fgnivx68Bghgv0/1r4sBrUUzcIoQlEBL6fOeUHRwa5fM0qfxQo1bbXJxSPE1cXxUpkvCXT5HIoRZMVsg==
+      integrity: sha512-7G8HXcIl5wPTuEdPG2Nz+jrIbtL1rvN6f1zgheG+FLJhWvaxJOgAX5oAC+e1nSK29yXIpW8WuMJDSpyUp2W3ag==
   /@types/fs-extra/8.1.0:
     dependencies:
       '@types/node': 13.7.4
@@ -35,6 +35,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
+  /@types/node/14.14.5:
+    dev: false
+    resolution:
+      integrity: sha512-H5Wn24s/ZOukBmDn03nnGTp18A60ny9AmCwnEcgJiTgSGsCO7k+NWP7zjCCbhlcnVCoI+co52dUAt9GMhOSULw==
   /@types/pretty/2.0.0:
     dev: false
     resolution:
@@ -437,10 +441,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-oRSIpR8pxT1Wr2FquTNnGet79b3BWljqOuoW/h4oBhxJ/HUbX5nX6JSruTkvXDCFMwDPvsaTTbvMLKZWSy0R5g==
-  /tslib/1.10.0:
+  /tslib/2.0.3:
     dev: false
     resolution:
-      integrity: sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+      integrity: sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
   /typedoc-default-themes/0.7.2:
     dependencies:
       backbone: 1.4.0
@@ -524,7 +528,7 @@ specifiers:
   '@tools/places': 'file:../places'
   '@tools/preloaded-node': 'file:../preloaded-node'
   '@tools/utils': 'file:../utils'
-  '@tsfun/array': ^0.0.2
+  '@tsfun/array': ^0.0.8
   '@types/fs-extra': ^8.1.0
   '@types/minimatch': ^3.0.3
   '@types/pretty': ^2.0.0
