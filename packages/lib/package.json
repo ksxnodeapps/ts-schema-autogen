@@ -30,6 +30,6 @@
     "@ts-schema-autogen/utils": "^0.0.1",
     "@ts-schema-autogen/validate": "^0.1.1",
     "@types/js-yaml": "^3.12.2",
-    "@types/node": "^13.7.6"
+    "@types/node": "^14.0.0"
   }
 }
