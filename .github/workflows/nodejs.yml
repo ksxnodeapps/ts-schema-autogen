@@ -33,7 +33,7 @@ jobs:
           - node: 13.x
             pnpm: --frozen-lockfile
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.vars.node }}
         uses: actions/setup-node@v1
         with:
